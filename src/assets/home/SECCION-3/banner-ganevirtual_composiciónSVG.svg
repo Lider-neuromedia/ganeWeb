@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="234px" height="140px" viewBox="0 0 234 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>banner-ganevirtual_composiciónSVG</title>
+    <defs>
+        <path d="M38.515642,8.61381816 L194.090438,0.93622295 C204.313235,0.431729296 213.009422,8.30997076 213.513916,18.5327678 C213.521408,18.6845788 213.527032,18.8364763 213.530786,18.9884257 L213.542052,19.4443337 C213.796772,29.7524954 205.783133,38.3823527 195.484358,38.8905959 L39.9095621,46.5681911 C29.6867651,47.0726847 20.9905778,39.1944433 20.4860841,28.9716463 C20.4785923,28.8198352 20.4729684,28.6679377 20.4692136,28.5159883 L20.4579479,28.0600803 C20.203228,17.7519186 28.2168669,9.12206133 38.515642,8.61381816 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="194" height="47.504414" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="banner-ganevirtual_composición">
+            <use id="Rectangle-Copy-9" stroke="#EAB73B" mask="url(#mask-2)" stroke-width="2" stroke-dasharray="3" xlink:href="#path-1"></use>
+            <rect id="Rectangle" fill="#FFFFFF" x="20" y="5" width="194" height="38" rx="19"></rect>
+            <text id="Todos-nuestros-servi" font-family="OpenSans-Bold, Open Sans" font-size="13" font-weight="bold" fill="#025BF5">
+                <tspan x="38" y="29">Todos nuestros servicios</tspan>
+            </text>
+            <text id="de-tu-mano" font-family="OpenSans-ExtraBold, Open Sans" font-size="40" font-weight="600" fill="#FFFFFF">
+                <tspan x="0.18359375" y="128">de tu mano</tspan>
+            </text>
+            <text id="al-alcance" font-family="Pacifico-Regular, Pacifico" font-size="40" font-weight="normal" fill="#EAB73B">
+                <tspan x="37" y="89">al alcance</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

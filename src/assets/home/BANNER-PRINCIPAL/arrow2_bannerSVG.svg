@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="25px" viewBox="0 0 30 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrow2_bannerSVG</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g filter="url(#filter-1)" id="arrow2_banner">
+            <g transform="translate(15.000000, 12.500000) scale(1, -1) translate(-15.000000, -12.500000) translate(0.000000, 0.000000)">
+                <path d="M18.361875,0.344669336 C17.8625,-0.130962043 17.070625,-0.112211792 16.595,0.387794914 C16.11875,0.88780162 16.13875,1.67906223 16.638125,2.15531862 L26.226875,11.2498156 L1.25,11.2498156 C0.56,11.2498156 0,11.8098231 0,12.4998324 C0,13.1898416 0.56,13.7498491 1.25,13.7498491 L26.186875,13.7498491 L16.638125,22.8449711 C16.138125,23.3212275 16.11875,24.1124881 16.595,24.6124948 C16.840625,24.8699983 17.17,25 17.5,25 C17.81,25 18.12,24.8856235 18.361875,24.6549954 L29.2675,14.2673561 C29.74,13.7954747 30,13.1679663 30,12.4998324 C30,11.8316984 29.74,11.20419 29.245625,10.7110584 L18.361875,0.344669336 Z" id="Path" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
