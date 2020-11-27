@@ -100,15 +100,40 @@
         </div>
     </div>
 </section>
-<div class="jumbotron">
-    <div class="container">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
+<div class="jumbotron bk-gane-virtual">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 block-gvirtual">
+                <img class="w-100" src="./assets/home/SECCION-3/brazoPNG.png" alt="gane-virtual">
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <img class="mx-auto d-block" src="./assets/home/SECCION-3/banner-ganevirtual_composiciónPNG.png" alt="al alcance">
+                <p class="txt-inform text-center space-txt">Para más información <br>visita nuestro portal</p>
+                <a href="#" class="btn btn-yellow-txt-white">Ingresar ahora</a>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <img class="w-100" src="./assets/home/SECCION-3/banner-ganevirtual_concepto2PNG.png" alt="gane-virtual">
+            </div>
+        </div>
+        <div class="row section-ganev">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item1" href="#">Consultas</a>
+            </div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item2" href="#">Transacciones</a>
+            </div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item3" href="#">Recargas</a>
+            </div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item4" href="#">Dónde estamos</a>
+            </div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item5" href="#">Contactos</a>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
     </div>
 </div>
 <div class="section4 container">
@@ -191,7 +216,7 @@
                 <ul class="nav nav-tabs nav-justified border-0" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link text-blue size16 font-weight-bold pt-3 pb-3 active" id="calcula-tab" data-toggle="tab" href="#calcula" role="tab" aria-controls="calcula" aria-selected="true">
-                            <img id="btn-example1" src="./assets/home/SECCION-4/CALCULA/giro.png"> Calcula tu Giro
+                            <img id="btn-example1" src="./assets/home/SECCION-4/CALCULA/gira copyPNG.png"> Calcula tu Giro
                         </a>
                     </li>
                     <li class="nav-item">
@@ -201,8 +226,71 @@
                     </li>
                 </ul>
                 <div class="tab-content border-top" id="myTabContent">
-                    <div class="tab-pane fade show active" id="calcula" role="tabpanel" aria-labelledby="calcula-tab">...</div>
-                    <div class="tab-pane fade" id="simulador" role="tabpanel" aria-labelledby="simulador-tab">...</div>
+                    <div class="tab-pane fade show active" id="calcula" role="tabpanel" aria-labelledby="calcula-tab">
+                        <div class="container contenedor-calculo">
+                            <div class="row">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Origen</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Cali - Valle del Cauca</option>
+                                        <option>Bogotá - Cundinamarca</option>
+                                        <option>Popayán - Cauca</option>
+                                        <option>Pereira - Risaralda</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect2">Destino</label>
+                                        <select class="form-control" id="exampleFormControlSelect2">
+                                        <option>Cali - Valle del Cauca</option>
+                                        <option>Bogotá - Cundinamarca</option>
+                                        <option>Popayán - Cauca</option>
+                                        <option>Pereira - Risaralda</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="exampleFormControlInput1">Monto</label>
+                                    <input type="number" class="form-control monto-enviar" id="exampleFormControlInput1" placeholder="$100000">
+                                    </div>
+
+                                    <img class="img-supergiros" src="./assets/home/SECCION-4/CALCULA/super_giros copyPNG.png" alt="super giros">
+                                    <button type="button" class="btn btn-yellow btn-primary btn-lg btn-block consulta-giro">Consultar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="simulador" role="tabpanel" aria-labelledby="simulador-tab">
+                        <div class="container contenedor-calculo">
+                            <div class="row">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Valor a apostar</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>$5.000</option>
+                                        <option>$10.000</option>
+                                        <option>$15.000</option>
+                                        <option>$25.000</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect2">Modalidad</label>
+                                        <select class="form-control" id="exampleFormControlSelect2">
+                                        <option>Chontico Millonario</option>
+                                        <option>Bogotá - Cundinamarca</option>
+                                        <option>Popayán - Cauca</option>
+                                        <option>Pereira - Risaralda</option>
+                                        </select>
+                                    </div>
+                                    <button class="calcular-apuesta" type="button">Calcular</button>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Resultado</label>
+                                        <input type="number" class="form-control monto-enviar" id="exampleFormControlInput1" readonly>
+                                    </div>
+                                    <p class="restricciones">*Aplican restricciones de ley</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -287,7 +375,7 @@
     </div>
 </section>
 <section class="section7">
-    <div class="jumbotron border-0 rounded-0 pt-5 pb-5 mb-0" style="background:url(./assets/home/SECCION-7/newsletter_bg.png);background-size: auto;background-repeat: no-repeat;background-position: center;">
+    <div class="jumbotron suscribe border-0 rounded-0 pt-5 mb-0" style="background:url(./assets/home/SECCION-7/newsletter_bg.png);background-size: auto;background-repeat: no-repeat;background-position: center;">
         <div class="container h-100">
             <h2 class="text-center text-blue text-white mb-4">Suscríbete para recibir los resultados</h2>
             <form>
@@ -308,4 +396,4 @@
         </div>
     </div>
 </section>
-<app-footer></app-footer>
+<!--<app-footer></app-footer>-->

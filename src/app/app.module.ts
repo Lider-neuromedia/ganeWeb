@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { ServicesComponent } from './services/services.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { GirosComponent } from './giros/giros.component';
+import { BetplayComponent } from './betplay/betplay.component';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { GirosComponent } from './giros/giros.component';
     HeaderComponent,
     ServicesComponent,
     InicioComponent,
-    GirosComponent
+    GirosComponent,
+    BetplayComponent,
+    QuienesSomosComponent
   ],
   imports: [
     BrowserModule,

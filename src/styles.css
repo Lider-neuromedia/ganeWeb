@@ -57,6 +57,10 @@
     color: #EAB73B;
 }
 
+.space-txt{
+    margin: 20px 0;
+}
+
 .bg-gray {
     background: #F6F6F6;
 }
@@ -85,6 +89,9 @@
     box-shadow: none;
 }
 
+.close-section{
+    margin-bottom:80px;
+}
 .line-height1-4 {
     line-height: 1-4;
 }
@@ -131,16 +138,115 @@ a:hover {
 
 
 /* HEADER */
+.topbar{
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
 .topbar li a:hover,
 .topbar li a:active {
     background: #E4E4E4;
+    color:#29448b !important;
+    font-weight:500;
 }
+
+.topbar li a{
+    padding-right:15px;
+    padding-left:15px;
+}
+
+
 
 
 /* HEADER */
 
 
+/*SECTION3*/
+.bk-gane-virtual{
+    background-image: url("./assets/home/SECCION-3/banner-ganevirtual_bgSVG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0;
+}
+
+.txt-inform{
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight:200;
+}
+
+.item-link-gane{
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.section-ganev{
+    margin-top:30px;
+}
+
+.block-gvirtual{
+    padding-left:0;
+}
+
+.section-ganev .item1:before{
+    content: "";
+    position: absolute;
+    background-image: url("./assets/home/SECCION-3/icono1PNG.png");
+    background-repeat: no-repeat;
+    display: block;
+    width: 33px;
+    height: 33px;
+    top: -5px;
+}
+
+.section-ganev .item2:before{
+    content: "";
+    position: absolute;
+    background-image: url("./assets/home/SECCION-3/icono2PNG.png");
+    background-repeat: no-repeat;
+    display: block;
+    width: 33px;
+    height: 33px;
+    top: -5px;
+    left: 5px;
+}
+
+.section-ganev .item3:before{
+    content: "";
+    position: absolute;
+    background-image: url("./assets/home/SECCION-3/icono3PNG.png");
+    background-repeat: no-repeat;
+    display: block;
+    width: 33px;
+    height: 33px;
+    top: -5px;
+}
+
+.section-ganev .item4:before{
+    content: "";
+    position: absolute;
+    background-image: url("./assets/home/SECCION-3/icono4PNG.png");
+    background-repeat: no-repeat;
+    display: block;
+    width: 33px;
+    height: 33px;
+    top: -5px;
+    left: 0px;
+}
+
+.section-ganev .item5:before{
+    content: "";
+    position: absolute;
+    background-image: url("./assets/home/SECCION-3/icono5PNG.png");
+    background-repeat: no-repeat;
+    display: block;
+    width: 33px;
+    height: 33px;
+    top: -5px;
+}
 /*SECTION4*/
 
 .section4 .nav-tabs a {
@@ -174,5 +280,311 @@ a:hover {
     border-radius: 10px;
 }
 
+.section4 .container-tabs .tab-content .label-text-giro{
+    color: #3A3A3A;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    line-height: 17px;
+}
 
-/*SECTION4*/
+.section4 .container-tabs .tab-content .contenedor-calculo{
+    padding:28px 50px;
+}
+
+.section4 .container-tabs .tab-content .contenedor-calculo form{
+    width:100%;
+}
+
+.section4 .container-tabs .tab-content .contenedor-calculo .custom-select{
+    border: 1px solid #192D6D;
+}
+
+.section4 .container-tabs .tab-content .contenedor-calculo .custom-select option{
+    color: #192D6D;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.calcular-apuesta{
+    display: block;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #192D6D;
+    border: 1px solid #192D6D;
+}
+
+.calcular-apuesta:hover{
+    transition: .3s;
+    background-color: #fff;
+    border: 1px solid #192D6D;
+    color:#192D6D;
+}
+
+.img-supergiros{
+    margin:0 auto;
+    display:block;
+}
+
+.consulta-giro{
+    margin-top:20px;
+}
+
+.restricciones{
+    color: #616161;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    text-align:center;
+}
+
+/***Sección 7***/
+.jumbotron.suscribe{
+    padding-bottom: 0.5rem;
+}
+
+.btn-yellow-txt-white{
+    background-color: #EAB73B;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+    transition: .5s;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: block;
+    width:60%;
+    margin:0 auto;
+}
+
+.btn-yellow-txt-white:hover {
+    background: #192D6D;
+    color: #EAB73B;
+}
+
+/***MENU PRINCIPAL***/
+
+.img-logo{
+    width:90px;
+}
+
+.nav-link-main{
+    color:#FFF !important;
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+}
+
+.bg-blue-main{
+    background-color:#29448b;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar.bg-blue-main .navbar-nav .nav-item{
+    
+}
+.navbar.bg-blue-main .navbar-nav .nav-item:hover{
+    background-color:#162751 !important;
+    border-bottom: 2px solid #eab73b;
+}
+
+.navbar.bg-blue-main ul.navbar-nav li.nav-item:hover .nav-link-main{
+    color:#eab73b !important;
+}
+
+.nav-link-main{
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+.nav-link.btn-yellow-wborder{
+    background-color: #eab73b;
+    padding-top: 19px;
+    padding-bottom: 21px;
+}
+
+.nav-link.btn-yellow-wborder:hover{
+    border-bottom: 2px solid #eab73b;
+}
+
+/*****Página de Giros******/
+.bk-puntos{
+    background-image: url("./assets/giros_page/texturaPNG.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.btn-consultar {
+    color: #444444;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #EAB73B;
+  border-radius: 8px;
+    font-size: 18px;
+    line-height: 22px;
+    width: 40%;
+    font-weight:700;
+}
+
+.btn-consultar:hover {
+    background-color: #EAB73B;
+    transition:.4s;
+}
+
+.txt-giros{
+    color: #0A0A0A;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1.08px;
+    line-height: 19px;
+}
+
+.btn-supergiros{
+  background-color: #EFEFEF;
+  border: 1px solid #BABABA;
+  border-radius: 4px;
+  padding:10px 5px;
+  display:block;
+  color: #192D6D;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.formulario-giro{
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.31);
+    width: 100%;
+}
+
+.formulario-giro .title-giro{
+    background-color: #EFEFEF;
+  border-radius: 8px 8px 0 0;
+}
+
+.formulario-giro .title-giro h3{
+    color: #192D6D;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.formulario-giro form{
+    padding:20px 50px;
+}
+
+.img-60{
+    width:60%;
+}
+
+.full-table{
+    width:100%;
+}
+
+.full-table td, .full-table th {
+    border: 1px solid #ddd;
+  }
+  
+.full-table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.full-table td{
+    text-align:center;
+    padding:10px 0;
+}
+.full-table th{
+    text-align:center;
+    background-color: #192D6D;
+    color:#fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight:400;
+    padding:10px 0;
+}
+
+.full-table th.celda-yellow{
+    background-color:#EAB73B !important;
+    color: #192D6D !important;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight:600;
+}
+
+.giros-pagina .section3 h2{
+    color: #192D6D;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px;
+    line-height: 28px;
+    font-weight:700;
+}
+
+.giros-pagina .section3 p{
+  color: #0A0A0A;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1.08px;
+  line-height: 19px;
+}
+
+.giros-pagina .section3 a{
+  color: #192D6D;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1.08px;
+  line-height: 19px;
+}
+
+.card-internacional{
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.32);
+    padding: 7px 10px 0px;
+}
+
+.giros-pagina .card-internacional .txt-country{
+    display:inline-block;
+    color: #0A0A0A;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1.08px;
+    line-height: 19px;
+    font-weight:600;
+}
+
+/**********************************/
+
+/********Página Betplay********/
+.betplay_pagina .section2 h3{
+    color: #192D6D;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight:700;
+}
+
+.betplay_pagina .section2 p{
+    color: #0A0A0A;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.64px;
+    line-height: 18px;
+}
+
+.betplay_pagina .section2 ul li{
+    color: #0A0A0A;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.64px;
+    line-height: 18px;
+}
