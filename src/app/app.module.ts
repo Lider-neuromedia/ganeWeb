@@ -13,6 +13,15 @@ import { InicioComponent } from './inicio/inicio.component';
 import { GirosComponent } from './giros/giros.component';
 import { BetplayComponent } from './betplay/betplay.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
+import { JuegosComponent } from './juegos/juegos.component';
+import { PagosComponent } from './pagos/pagos.component';
+import { ComunicadosComponent } from './comunicados/comunicados.component';
+import { PeriodicoComponent } from './periodico/periodico.component';
+import { PrivacidadComponent } from './privacidad/privacidad.component';
+import { FinancierosComponent } from './financieros/financieros.component';
+import { RecargasComponent } from './recargas/recargas.component';
+import { SoatComponent } from './soat/soat.component';
+import { CampanasComponent } from './campanas/campanas.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +32,16 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
     InicioComponent,
     GirosComponent,
     BetplayComponent,
-    QuienesSomosComponent
+    QuienesSomosComponent,
+    JuegosComponent,
+    PagosComponent,
+    ComunicadosComponent,
+    PeriodicoComponent,
+    PrivacidadComponent,
+    FinancierosComponent,
+    RecargasComponent,
+    SoatComponent,
+    CampanasComponent
   ],
   imports: [
     BrowserModule,
