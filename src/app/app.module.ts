@@ -22,6 +22,26 @@ import { FinancierosComponent } from './financieros/financieros.component';
 import { RecargasComponent } from './recargas/recargas.component';
 import { SoatComponent } from './soat/soat.component';
 import { CampanasComponent } from './campanas/campanas.component';
+import { ContactenosComponent } from './contactenos/contactenos.component';
+import { BlogComponent } from './blog/blog.component';
+import { GestionCalidadComponent } from './gestion-calidad/gestion-calidad.component';
+import { PagoPremiosComponent } from './pago-premios/pago-premios.component';
+import { PreguntasComponent } from './preguntas/preguntas.component';
+import { AmericaCaliComponent } from './america-cali/america-cali.component';
+import { AyudasComponent } from './ayudas/ayudas.component';
+import { PoliticasComponent } from './politicas/politicas.component';
+import { EducacionComponent } from './educacion/educacion.component';
+import { SaludComponent } from './salud/salud.component';
+import { ViviendaComponent } from './vivienda/vivienda.component';
+import { CulturaComponent } from './cultura/cultura.component';
+import { PrimeraInfanciaComponent } from './primera-infancia/primera-infancia.component';
+import { CuidarteComponent } from './cuidarte/cuidarte.component';
+import { EscuelaComponent } from './escuela/escuela.component';
+import { PoliticasFeganeComponent } from './politicas-fegane/politicas-fegane.component';
+import { FundacionSocialComponent } from './fundacion-social/fundacion-social.component';
+import { CulturaAnticorrupcionComponent } from './cultura-anticorrupcion/cultura-anticorrupcion.component';
+import { LineaEticaComponent } from './linea-etica/linea-etica.component';
+import { CulturaAntilavadoComponent } from './cultura-antilavado/cultura-antilavado.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +61,27 @@ import { CampanasComponent } from './campanas/campanas.component';
     FinancierosComponent,
     RecargasComponent,
     SoatComponent,
-    CampanasComponent
+    CampanasComponent,
+    ContactenosComponent,
+    BlogComponent,
+    GestionCalidadComponent,
+    PagoPremiosComponent,
+    PreguntasComponent,
+    AmericaCaliComponent,
+    AyudasComponent,
+    PoliticasComponent,
+    EducacionComponent,
+    SaludComponent,
+    ViviendaComponent,
+    CulturaComponent,
+    PrimeraInfanciaComponent,
+    CuidarteComponent,
+    EscuelaComponent,
+    PoliticasFeganeComponent,
+    FundacionSocialComponent,
+    CulturaAnticorrupcionComponent,
+    LineaEticaComponent,
+    CulturaAntilavadoComponent
   ],
   imports: [
     BrowserModule,
