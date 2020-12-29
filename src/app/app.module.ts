@@ -42,6 +42,10 @@ import { FundacionSocialComponent } from './fundacion-social/fundacion-social.co
 import { CulturaAnticorrupcionComponent } from './cultura-anticorrupcion/cultura-anticorrupcion.component';
 import { LineaEticaComponent } from './linea-etica/linea-etica.component';
 import { CulturaAntilavadoComponent } from './cultura-antilavado/cultura-antilavado.component';
+import { PuntosVentaComponent } from './puntos-venta/puntos-venta.component';
+import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
+import { CampanaInternaComponent } from './campana-interna/campana-interna.component';
+import { BlogInternaComponent } from './blog-interna/blog-interna.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +85,11 @@ import { CulturaAntilavadoComponent } from './cultura-antilavado/cultura-antilav
     FundacionSocialComponent,
     CulturaAnticorrupcionComponent,
     LineaEticaComponent,
-    CulturaAntilavadoComponent
+    CulturaAntilavadoComponent,
+    PuntosVentaComponent,
+    ComunicadoInternaComponent,
+    CampanaInternaComponent,
+    BlogInternaComponent
   ],
   imports: [
     BrowserModule,

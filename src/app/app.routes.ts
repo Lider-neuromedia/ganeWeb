@@ -33,6 +33,10 @@ import { FundacionSocialComponent } from './fundacion-social/fundacion-social.co
 import { CulturaAnticorrupcionComponent } from './cultura-anticorrupcion/cultura-anticorrupcion.component';
 import { LineaEticaComponent } from './linea-etica/linea-etica.component';
 import { CulturaAntilavadoComponent } from './cultura-antilavado/cultura-antilavado.component';
+import { PuntosVentaComponent } from './puntos-venta/puntos-venta.component';
+import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
+import { CampanaInternaComponent } from './campana-interna/campana-interna.component';
+import { BlogInternaComponent } from './blog-interna/blog-interna.component';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -71,6 +75,10 @@ const APP_ROUTES: Routes = [
     {path: 'cultura-anticorrupcion', component: CulturaAnticorrupcionComponent},
     {path: 'cultura-antilavado', component: CulturaAntilavadoComponent},
     {path: 'linea-etica', component: LineaEticaComponent},
+    {path: 'puntos-venta', component: PuntosVentaComponent},
+    {path: 'comunicado-interna', component: ComunicadoInternaComponent},
+    {path: 'campana-interna', component: CampanaInternaComponent},
+    {path: 'blog-interna', component: BlogInternaComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
 ];
 

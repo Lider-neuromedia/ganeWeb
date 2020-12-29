@@ -1,10 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light topbar">
-    <div class="container justify-content-end">
-        <div class="row">
-            <ul class="navbar-nav mr-auto">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTopbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTopbarContent">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nuestra empresa</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu fade-up" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#/quienes-somos">¿Quiénes somos?</a>
                         <a class="dropdown-item" href="#/comunicados">Comunicados de prensa</a>
                         <a class="dropdown-item" href="#/periodico">Periódico gane al día</a>
@@ -67,7 +70,7 @@
                                 <div class="col-md-4 serviciosItem">
                                     <a class="bk-transparent" href="#/betplay">
                                         <div class="img-servicio">
-                                            <img class="imagenMarcaMenu"src="./assets/home/iconos-header/betplay_ICONPNG.png" alt="BetPlay">
+                                            <img class="imagenMarcaMenu"src="./assets/home/iconos-header/logoBet.png" alt="BetPlay">
                                         </div>
                                         <div class="txt-servicio">
                                             <p class="tituloItem-servicio">BetPlay</p>
@@ -87,7 +90,7 @@
                                     </a>
                                 </div>
                         </div>
-                   </div> <!-- dropdown-mega-menu.// -->
+                </div> <!-- dropdown-mega-menu.// -->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#/campanas">Campañas</a>
@@ -96,7 +99,7 @@
                     <a class="nav-link" href="#/contactenos">Contáctenos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Puntos de venta</a>
+                    <a class="nav-link" href="#/puntos-venta">Puntos de venta</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#/blog">Blog</a>
@@ -107,15 +110,12 @@
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-blue-main" #stickyMenu [class.sticky]="sticky">
     <div class="container">
-        <div class="row">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="./assets/img/logo.png" alt="" class="img-logo"></a>
-        </div>
-        <div class="row">
+            <a class="navbar-brand" href="#"><img src="./assets/home/LogoPrincipal.png" alt="" class="img-logo"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav navbar-right main-menu-list">
+                <ul class="navbar-nav navbar-right main-menu-list ml-auto">
                     <li class="nav-item">
                         <a class="nav-link nav-link-main" href="#/juegos">Juegos</a>
                     </li>
@@ -133,7 +133,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
     </div>
 </nav>
 
