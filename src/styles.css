@@ -70,6 +70,17 @@
     height: 30px;
 }
 
+::-webkit-scrollbar-thumb {
+    background: #0684C5;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
 /**********************/
 .txt-normal{
     color: #0A0A0A;
@@ -453,6 +464,11 @@ table th, table td{
 a:hover {
     text-decoration: none;
     /*color: #29448b;*/
+}
+
+.scale:hover{
+    transition: 0.4s;
+    transform: scale(1.05);    
 }
 
 /* BASE */
@@ -1556,6 +1572,15 @@ line-height: 30px;
     }
     .mt-n70{
         margin-top: 0;
+    }
+    .item-menu-servicios{
+        width: 21rem;
+        transform: translatex(0%);
+    }
+
+    .nav-link.btn-yellow-wborder{
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;    
     }
 }
 
