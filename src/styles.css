@@ -651,23 +651,52 @@ a:hover {
 .section4 .nav-tabs a {
     color: #192D6D;
     background-color: #E2E2E2;
+    transition: 0.9s;
 }
 
 .section4 .nav-tabs li {
     margin-bottom: 0;
+    position: relative;
+}
+.section4 .tabs-num-suerte ul .nav-item a{
+    font-weight: 700;
 }
 .section4 .tabs-num-suerte ul .nav-item a.active{
     font-weight: 700;
 }
-
+.section4 .tabs-num-suerte ul .nav-item a.active:before{
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.section4 .tabs-num-suerte ul .nav-item a:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #29448b;
+    -webkit-transform: scale3d(0, 1, 1);
+    transform: scale3d(0, 1, 1);
+    -webkit-transition: -webkit-transform 0.1s;
+    transition: transform 0.1s;
+}
+.section4 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: #fff;
+    transition: 0.9s;
+}
 .section4 .nav-tabs li:last-child a {
-    border: 0 !important;
+    border: 0;
     border-radius: 0 !important;
     border-top-right-radius: 10px !important;
 }
 
 .section4 .nav-tabs li:first-child a {
-    border: 0 !important;
+    border: 0;
     border-radius: 0 !important;
     border-top-left-radius: 10px !important;
 }
@@ -1234,6 +1263,15 @@ tr td:hover{
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 19px;
+}
+
+.contactenos input:hover{
+    border: 2px solid #000;
+    transition:.1s;
+}
+.contactenos textarea:hover{
+    border: 2px solid #000;
+    transition:.1s;
 }
 
 .contactenos input::placeholder{
