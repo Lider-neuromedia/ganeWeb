@@ -3,7 +3,7 @@
 .content-social-bar {
     position: fixed;
     z-index: 30;
-    top: 45%;
+    top: 35%;
     bottom: 50%;
 	right: 0%;
     display: block;
@@ -44,6 +44,28 @@
 	background-color: #1e3480;
 	transition: .3s;
 }
+.tiktok {
+    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/tikPNG.png);
+    background-position: center;
+	border: 1px solid #D8DFE5;
+	padding: 20px;
+}
+.tiktok:hover{
+	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/tik-blancoPNG.png);
+	background-color: #1e3480;
+	transition: .3s;
+}
+.linkedin {
+    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/linkedPNG.png);
+    background-position: center;
+	border: 1px solid #D8DFE5;
+	padding: 20px;
+}
+.linkedin:hover{
+	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/linked-blancoPNG.png);
+	background-color: #1e3480;
+	transition: .3s;
+}
 .youtub {
     background-image: url(/N-1057/assets/home/REDES-FLOTANTE/youtube_color.png);
     background-position: center;
@@ -68,6 +90,58 @@
     z-index: 999;
     width: 30px;
     height: 30px;
+}
+
+a.whatsapp-buble {
+    outline: none;
+    text-decoration: none;
+    position: fixed;
+    top: 90%;
+    right: 15px;
+    padding: 12px 15px;
+    background-color: #00C34D;
+    color: #fff;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    line-height: 16px;
+    z-index: 999;
+    box-shadow: 2px 2px 8px 0px rgb(0 0 0 / 50%);
+}
+
+.whatsapp-buble:hover{
+    color:#fff;
+}
+
+.whatsapp-buble {
+    animation-duration: 3s;
+    animation-name: bounceIn;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes bounceIn{
+  0%{
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+  }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}
+
+.whatsapp-buble {
+    animation-duration: 3s;
+    animation-name: bounceIn;
+    animation-iteration-count: infinite;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -428,21 +502,23 @@ table th, table td{
 .size19 {
     font-size: 19px;
 }
-
-.size24 {
-    font-size: 24px;
-}
-
 .size20 {
     font-size: 20px;
 }
-
+.size21 {
+    font-size: 21px;
+}
+.size24 {
+    font-size: 24px;
+}
 .size25 {
     font-size: 25px;
 }
-
 .size35 {
     font-size: 35px;
+}
+.size50 {
+    font-size: 50px;
 }
 
 .title35{
@@ -736,6 +812,12 @@ a:hover {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 19px;
+}
+
+.section4 .background-ruleta{
+    background:url(./assets/home/SECCION-4/bg_numero.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .calcular-apuesta{
@@ -1373,6 +1455,12 @@ tr td:hover{
     }
     .title-slide{
         font-size: 1.5rem;
+    }
+    .slotwrapper ul {
+        width: 25%;
+    }
+    .slotwrapper {
+        width: 70%;
     }
 }
 

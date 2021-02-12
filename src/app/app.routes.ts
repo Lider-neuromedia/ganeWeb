@@ -37,6 +37,9 @@ import { PuntosVentaComponent } from './puntos-venta/puntos-venta.component';
 import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
 import { CampanaInternaComponent } from './campana-interna/campana-interna.component';
 import { BlogInternaComponent } from './blog-interna/blog-interna.component';
+import { PrevenirComponent } from './prevenir/prevenir.component';
+import { ImportanteComponent } from './importante/importante.component';
+import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -79,6 +82,9 @@ const APP_ROUTES: Routes = [
     {path: 'comunicado-interna', component: ComunicadoInternaComponent},
     {path: 'campana-interna', component: CampanaInternaComponent},
     {path: 'blog-interna', component: BlogInternaComponent},
+    {path: 'prevenir', component: PrevenirComponent},
+    {path: 'importante', component: ImportanteComponent},
+    {path: 'cultura-transparencia', component: CulturaTransparenciaComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
 ];
 

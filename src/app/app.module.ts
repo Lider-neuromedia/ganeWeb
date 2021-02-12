@@ -46,6 +46,9 @@ import { PuntosVentaComponent } from './puntos-venta/puntos-venta.component';
 import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
 import { CampanaInternaComponent } from './campana-interna/campana-interna.component';
 import { BlogInternaComponent } from './blog-interna/blog-interna.component';
+import { PrevenirComponent } from './prevenir/prevenir.component';
+import { ImportanteComponent } from './importante/importante.component';
+import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +92,10 @@ import { BlogInternaComponent } from './blog-interna/blog-interna.component';
     PuntosVentaComponent,
     ComunicadoInternaComponent,
     CampanaInternaComponent,
-    BlogInternaComponent
+    BlogInternaComponent,
+    PrevenirComponent,
+    ImportanteComponent,
+    CulturaTransparenciaComponent
   ],
   imports: [
     BrowserModule,
