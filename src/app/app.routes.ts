@@ -40,6 +40,7 @@ import { BlogInternaComponent } from './blog-interna/blog-interna.component';
 import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
 import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
+import { RestauranteComponent } from './restaurante/restaurante.component';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -85,6 +86,7 @@ const APP_ROUTES: Routes = [
     {path: 'prevenir', component: PrevenirComponent},
     {path: 'importante', component: ImportanteComponent},
     {path: 'cultura-transparencia', component: CulturaTransparenciaComponent},
+    {path: 'restaurante', component: RestauranteComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
 ];
 

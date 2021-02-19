@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
+import { HomeService } from './services/home.service';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { ServicesComponent } from './services/services.component';
+// import { ServicesComponent } from './services/services.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { GirosComponent } from './giros/giros.component';
 import { BetplayComponent } from './betplay/betplay.component';
@@ -49,13 +50,14 @@ import { BlogInternaComponent } from './blog-interna/blog-interna.component';
 import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
 import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
+import { RestauranteComponent } from './restaurante/restaurante.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    ServicesComponent,
+    // ServicesComponent,
     InicioComponent,
     GirosComponent,
     BetplayComponent,
@@ -95,15 +97,19 @@ import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-t
     BlogInternaComponent,
     PrevenirComponent,
     ImportanteComponent,
-    CulturaTransparenciaComponent
+    CulturaTransparenciaComponent,
+    RestauranteComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    HomeService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
