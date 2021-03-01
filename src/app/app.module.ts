@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
 import { HomeService } from './services/home.service';
+import { CampanaService } from './services/campana.service'; 
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -109,6 +110,7 @@ import { RestauranteComponent } from './restaurante/restaurante.component';
   ],
   providers: [
     HomeService,
+    CampanaService
   ],
   bootstrap: [AppComponent]
 })

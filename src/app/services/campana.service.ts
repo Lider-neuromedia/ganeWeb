@@ -6,16 +6,15 @@ import { GLOBAL } from './global';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class CampanaService {
 
-  public url: string;
+  public postC: string;
 
   constructor(private _http: HttpClient) {
-    this.url = GLOBAL.url;
+    this.postC = GLOBAL.postC;
   }
 
-  getHome(): Observable<any>{
-    return this._http.get(`${this.url}/pages/2/`);
+getCampanas(): Observable<any>{
+    return this._http.get(`${this.postC}/campanas`);
   }
-  
 }

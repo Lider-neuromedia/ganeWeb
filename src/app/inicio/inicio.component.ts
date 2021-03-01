@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HomeService } from './../services/home.service';
+import { CampanaService } from './../services/campana.service';
 
 @Component({
   selector: 'app-inicio',
@@ -25,9 +26,9 @@ export class InicioComponent implements OnInit {
   recuadros_data:any[] = [];
   ganevirtual_data:any;
   puntosventa_data:any;
+  campanas_data:any[] = [];
 
-
-  constructor(private httpClient:HttpClient, private fb:FormBuilder, private _homeservice:HomeService) { }
+  constructor(private httpClient:HttpClient, private fb:FormBuilder, private _homeservice:HomeService, private _campanaservice:CampanaService) { }
 
   ngOnInit(): void {
     this.registrationForm = this.fb.group({
@@ -47,6 +48,12 @@ export class InicioComponent implements OnInit {
       this.recuadros_data = res.acf.recuadros_seccion2;
       this.ganevirtual_data = res.acf.virtual_seccion3;
       this.puntosventa_data = res.acf.puntos_de_venta_seccion5;
+    });
+
+    this._campanaservice.getCampanas()
+    .subscribe((res:any) => {
+      this.campanas_data = res;
+      console.log(res);
     });
     
   }

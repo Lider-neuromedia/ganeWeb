@@ -1720,6 +1720,11 @@ line-height: 30px;
     font-weight:700;
 }
 
+.p-custom p{
+    color: #fff;
+    font-size: 21px;
+    line-height: 30px;
+}
 
 /************FOOTER*******/
 @media screen and (max-width: 767px) {

@@ -308,23 +308,24 @@
     </div>
 </div>
 <section class="section5">
-    <div class="jumbotron border-0 rounded-0 pt-5 pb-5" style="background:url(./assets/home/SECCION-5/bg_puntosventa.jpg);background-attachment: fixed;background-size: cover;background-repeat: no-repeat;background-position: center;height:380px">
-        <div class="container h-100">
-            <div class="row align-items-center h-100">
-                <div class="col-sm-12 col-md-6">
-                    <div class="media wow animate__animated animate__fadeInLeft">
-                        <img src="{{ puntosventa_data.icono }}" class="align-self-start mr-3 pt-2" alt="...">
-                        <div class="media-body">
-                            <h1 class="text-white font-weight-bold">{{ puntosventa_data.titulo }}</h1>
-                            <p class="text-white size21 line-height30" >{{ puntosventa_data.texto }}  
-                            </p>
-                            <a class="btn btn-yellow font-weight-bold size18 pr-5 pl-5" href="{{ puntosventa_data.url }}">{{ puntosventa_data.texto_boton }}</a>
+    <ng-container *ngIf="puntosventa_data.fondo">
+        <div class="jumbotron border-0 rounded-0 pt-5 pb-5" style="background:url('{{ puntosventa_data.fondo }}');background-attachment: fixed;background-size: cover;background-repeat: no-repeat;background-position: center;height:380px">
+            <div class="container h-100">
+                <div class="row align-items-center h-100">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="media wow animate__animated animate__fadeInLeft">
+                            <img src="{{ puntosventa_data.icono }}" class="align-self-start mr-3 pt-2" alt="...">
+                            <div class="media-body">
+                                <h1 class="text-white font-weight-bold">{{ puntosventa_data.titulo }}</h1>
+                                <p class="text-white size21 line-height30" [innerHTML]="puntosventa_data.texto"></p>
+                                <a class="btn btn-yellow font-weight-bold size18 pr-5 pl-5" href="{{ puntosventa_data.url }}">{{ puntosventa_data.texto_boton }}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </ng-container>
 </section>
 
 <section class="section6">
