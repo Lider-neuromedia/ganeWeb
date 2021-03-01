@@ -76,42 +76,42 @@
         </div>
     </div>
 </section>
-<div class="jumbotron bk-gane-virtual" [ngStyle]="{ 'background-image': 'url(' + ganevirtual_data.fondo + ')'}">> 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-md-4 block-gvirtual">
-                <img class="w-100" src="{{ ganevirtual_data.chance_virtual_img }}" alt="gane-virtual">
+<div class="jumbotron bk-gane-virtual" [style.background-image]="'url(' + ganevirtual_data.fondo + ')'"> 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-4 block-gvirtual">
+                    <img class="w-100" src="{{ ganevirtual_data.chance_virtual_img }}" alt="gane-virtual">
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <img class="mx-auto d-block" src="{{ ganevirtual_data.alcance_de_tu_mano_img }}" alt="al alcance">
+                    <p class="txt-inform text-center space-txt" [innerHTML]="ganevirtual_data.texto_informacion"></p>
+                    <a href="#" class="btn btn-yellow-txt-white wow animate__animated animate__fadeInUp">{{ ganevirtual_data.texto_boton }}</a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <img class="w-100" src="{{ ganevirtual_data.chance_servicios_img }}" alt="gane-virtual">
+                </div>
             </div>
-            <div class="col-xs-12 col-md-4">
-                <img class="mx-auto d-block" src="{{ ganevirtual_data.alcance_de_tu_mano_img }}" alt="al alcance">
-                <p class="txt-inform text-center space-txt" [innerHTML]="ganevirtual_data.texto_informacion"></p>
-                <a href="#" class="btn btn-yellow-txt-white wow animate__animated animate__fadeInUp">{{ ganevirtual_data.texto_boton }}</a>
+            <div class="row section-ganev">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <a class="text-center mx-auto d-block item-link-gane item1" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_consultas_img }}" alt="item1"> {{ ganevirtual_data.boton_consultas_texto }}</a>
+                </div>
+                <div class="col-md-2">
+                    <a class="text-center mx-auto d-block item-link-gane item2" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_transaccion_img }}" alt="item2"> {{ ganevirtual_data.boton_transaccion_texto }}</a>
+                </div>
+                <div class="col-md-2">
+                    <a class="text-center mx-auto d-block item-link-gane item3" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_recargas_img }}" alt="item3"> {{ ganevirtual_data.boton_recargas_texto }}</a>
+                </div>
+                <div class="col-md-2">
+                    <a class="text-center mx-auto d-block item-link-gane item4" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_donde_img }}" alt="item4"> {{ ganevirtual_data.boton_donde_texto }}</a>
+                </div>
+                <div class="col-md-2">
+                    <a class="text-center mx-auto d-block item-link-gane item5" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_contactos_img }}" alt="item5"> {{ ganevirtual_data.boton_contactos_texto }}</a>
+                </div>
+                <div class="col-md-1"></div>
             </div>
-            <div class="col-xs-12 col-md-4">
-                <img class="w-100" src="{{ ganevirtual_data.chance_servicios_img }}" alt="gane-virtual">
-            </div>
-        </div>
-        <div class="row section-ganev">
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-                <a class="text-center mx-auto d-block item-link-gane item1" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_consultas_img }}" alt="item1"> {{ ganevirtual_data.boton_consultas_texto }}</a>
-            </div>
-            <div class="col-md-2">
-                <a class="text-center mx-auto d-block item-link-gane item2" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_transaccion_img }}" alt="item2"> {{ ganevirtual_data.boton_transaccion_texto }}</a>
-            </div>
-            <div class="col-md-2">
-                <a class="text-center mx-auto d-block item-link-gane item3" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_recargas_img }}" alt="item3"> {{ ganevirtual_data.boton_recargas_texto }}</a>
-            </div>
-            <div class="col-md-2">
-                <a class="text-center mx-auto d-block item-link-gane item4" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_donde_img }}" alt="item4"> {{ ganevirtual_data.boton_donde_texto }}</a>
-            </div>
-            <div class="col-md-2">
-                <a class="text-center mx-auto d-block item-link-gane item5" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_contactos_img }}" alt="item5"> {{ ganevirtual_data.boton_contactos_texto }}</a>
-            </div>
-            <div class="col-md-1"></div>
         </div>
     </div>
-</div>
 <div class="section4 container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6">
