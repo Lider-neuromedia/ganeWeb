@@ -24,11 +24,13 @@ export class InicioComponent implements OnInit {
 
   sliderprincipal_data:any[] = [];
   recuadros_data:any[] = [];
-  ganevirtual_data:any;
-  puntosventa_data:any;
+  ganevirtual_data:any = {};
+  puntosventa_data:any = {};
   campanas_data:any[] = [];
 
-  constructor(private httpClient:HttpClient, private fb:FormBuilder, private _homeservice:HomeService, private _campanaservice:CampanaService) { }
+  constructor(private httpClient:HttpClient, private fb:FormBuilder, private _homeservice:HomeService, private _campanaservice:CampanaService) {
+    
+  }
 
   ngOnInit(): void {
     this.registrationForm = this.fb.group({
@@ -36,7 +38,7 @@ export class InicioComponent implements OnInit {
     });
 
     //Calling API to get Dynamic Control Details
-    this.httpClient.get('/assets/DynamicFormControl.json').subscribe(data => {
+    this.httpClient.get('./assets/DynamicFormControl.json').subscribe(data => {
       this.dynamicFormArray = data;
       this.createFormControl();
       console.log(data);
@@ -56,7 +58,9 @@ export class InicioComponent implements OnInit {
       console.log(res);
     });
     
+    
   }
+  
   createFormControl() {
     this.dynamicFormArray.forEach(element => {
       if(element.Required === true){

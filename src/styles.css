@@ -10,71 +10,59 @@
 }
 
 .fb{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/facebook.png);
     background-position: center;
 	padding: 20px;
     border: 1px solid #D8DFE5;
     border-radius: 10px 0 0;
 }
 .fb:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/face_blanco.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 
 .ins{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/instagram.png);
     background-position: center;
 	border: 1px solid #D8DFE5;
 	padding: 20px;
 }
 .ins:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/instagram.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 .twit {
-    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/twitter.png);
     background-position: center;
 	border: 1px solid #D8DFE5;
 	padding: 20px;
 }
 .twit:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/twitter_blanco.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 .tiktok {
-    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/tikPNG.png);
     background-position: center;
 	border: 1px solid #D8DFE5;
 	padding: 20px;
 }
 .tiktok:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/tik-blancoPNG.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 .linkedin {
-    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/linkedPNG.png);
     background-position: center;
 	border: 1px solid #D8DFE5;
 	padding: 20px;
 }
 .linkedin:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/linked-blancoPNG.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 .youtub {
-    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/youtube_color.png);
     background-position: center;
     padding: 20px;
     border: 1px solid #D8DFE5;
     border-radius: 0 0 0 10px;
 }
 .youtub:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/youtube_blanco.png);
 	background-color: #1e3480;
 	transition: .3s;
 }

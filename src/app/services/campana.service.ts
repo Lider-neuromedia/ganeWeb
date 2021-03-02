@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { GLOBAL } from './global';
 
@@ -7,14 +7,16 @@ import { GLOBAL } from './global';
   providedIn: 'root'
 })
 export class CampanaService {
-
+  mapImg = new Map<number,string>();
+  
   public postC: string;
 
   constructor(private _http: HttpClient) {
     this.postC = GLOBAL.postC;
   }
 
-getCampanas(): Observable<any>{
+  getCampanas(): Observable<any>{
     return this._http.get(`${this.postC}/campanas`);
   }
 }
+

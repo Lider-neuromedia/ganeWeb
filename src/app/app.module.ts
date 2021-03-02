@@ -1,11 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
 import { HomeService } from './services/home.service';
 import { CampanaService } from './services/campana.service'; 
+
+// Lenguaje
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs, 'es');
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -109,6 +114,7 @@ import { RestauranteComponent } from './restaurante/restaurante.component';
     APP_ROUTING
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'es'},
     HomeService,
     CampanaService
   ],
