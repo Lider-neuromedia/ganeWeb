@@ -41,6 +41,7 @@ import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
 import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
 import { RestauranteComponent } from './restaurante/restaurante.component';
+import { CampanaComponent } from './campana/campana.component';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -59,6 +60,8 @@ const APP_ROUTES: Routes = [
     {path: 'recargas', component: RecargasComponent},
     {path: 'soat', component: SoatComponent},
     {path: 'campanas', component: CampanasComponent},
+    {path: 'campana/:id', component: CampanaComponent},
+    // {path: 'campana-interna', component: CampanaInternaComponent},
     {path: 'contactenos', component: ContactenosComponent},
     {path: 'blog', component: BlogComponent},
     {path: 'gestion', component: GestionCalidadComponent},
@@ -81,7 +84,6 @@ const APP_ROUTES: Routes = [
     {path: 'linea-etica', component: LineaEticaComponent},
     {path: 'puntos-venta', component: PuntosVentaComponent},
     {path: 'comunicado-interna', component: ComunicadoInternaComponent},
-    {path: 'campana-interna', component: CampanaInternaComponent},
     {path: 'blog-interna', component: BlogInternaComponent},
     {path: 'prevenir', component: PrevenirComponent},
     {path: 'importante', component: ImportanteComponent},

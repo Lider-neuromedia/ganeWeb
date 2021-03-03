@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HomeService } from './../services/home.service';
 import { CampanaService } from './../services/campana.service';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-inicio',
@@ -28,7 +29,7 @@ export class InicioComponent implements OnInit {
   puntosventa_data:any = {};
   campanas_data:any[] = [];
 
-  constructor(private httpClient:HttpClient, private fb:FormBuilder, private _homeservice:HomeService, private _campanaservice:CampanaService) {
+  constructor(private _router:Router, private httpClient:HttpClient, private fb:FormBuilder, private _homeservice:HomeService, private _campanaservice:CampanaService) {
     
   }
 
@@ -41,7 +42,6 @@ export class InicioComponent implements OnInit {
     this.httpClient.get('./assets/DynamicFormControl.json').subscribe(data => {
       this.dynamicFormArray = data;
       this.createFormControl();
-      console.log(data);
     });
 
     this._homeservice.getHome()
@@ -55,12 +55,13 @@ export class InicioComponent implements OnInit {
     this._campanaservice.getCampanas()
     .subscribe((res:any) => {
       this.campanas_data = res;
-      console.log(res);
     });
-    
-    
   }
   
+  verCampana(slug:string){
+    this._router.navigate(['/campana', slug]);
+  }
+
   createFormControl() {
     this.dynamicFormArray.forEach(element => {
       if(element.Required === true){

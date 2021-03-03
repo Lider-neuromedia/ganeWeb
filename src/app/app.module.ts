@@ -57,6 +57,7 @@ import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
 import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
 import { RestauranteComponent } from './restaurante/restaurante.component';
+import { CampanaComponent } from './campana/campana.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +105,8 @@ import { RestauranteComponent } from './restaurante/restaurante.component';
     PrevenirComponent,
     ImportanteComponent,
     CulturaTransparenciaComponent,
-    RestauranteComponent
+    RestauranteComponent,
+    CampanaComponent
   ],
   imports: [
     BrowserModule,

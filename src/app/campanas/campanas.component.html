@@ -1,7 +1,52 @@
 <div class="campana_pagina pb-5">
     <div class="container">
             <h3 class="title44 text-center d-block mb-5 mt-5 wow animate__animated animate__fadeInUp">Campañas</h3>
-            <div class="row pt-3 pb-3 wow animate__animated animate__fadeInUp">
+            <div class="row">
+                <ng-container *ngFor="let campanas of campanas_data">
+                    <div class="col-sm-3">
+                        <div class="card border-0 card-shadow-hover">
+                            <a (click)="verCampana(campanas.id)" *ngIf="campanas.acf.imagen_destacada == null">
+                                <p class="text-center pt-2 pb-2">
+                                    <i class="far fa-image text-gray d-block w-100" style="font-size:8em"></i>
+                                    <span><em class="text-gray">Imagen no disponible</em></span>
+                                </p>
+                            </a>
+                            <a (click)="verCampana(campanas.id)" *ngIf="campanas.acf.imagen_destacada != null">
+                                <img class="card-img-top" src="{{ campanas.acf.imagen_destacada }}" alt="Card image cap">
+                            </a>
+                            <div class="card-body p-2">
+                                <h5 class="card-title text-blue font-weight-bold">{{ campanas.title.rendered }}</h5>
+                                <h5 *ngIf="campanas.acf.estado === 'Vigente'">
+                                    <span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">{{ campanas.acf.estado }}</span>
+                                </h5>
+                                <h5 *ngIf="campanas.acf.estado === 'Terminada'">
+                                    <span class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1">{{ campanas.acf.estado }}</span>
+                                </h5>
+                                <small class="text-blue"><i class="far fa-clock"></i> {{ campanas.acf.fecha_de_inicio | date:'fullDate' | titlecase }}</small>
+                                <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">{{ campanas.acf.sub_titulo }}</p>
+                                <p class="size14 line-height1-4 text-blue mb-2">{{ campanas.excerpt.rendered }}</p>
+                                <a (click)="verCampana(campanas.id)" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <!-- <div class="row pt-3 pb-3 wow animate__animated animate__fadeInUp">
+                <div class="col-sm-3">
+                    <div class="card border-0 card-shadow-hover">
+                        <a href="#/campana-interna"><img class="card-img-top" src="./assets/home/SECCION-6/campana4PNG.png" alt="Card image cap"></a>
+                        <div class="card-body p-2">
+                            <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
+                            <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
+                            <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
+                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
+                            <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
+                            <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="row pt-3 pb-3">
                 <div class="col-sm-3">
                     <div class="card border-0 card-shadow-hover">
                         <a href="#/campana-interna"><img class="card-img-top" src="./assets/home/SECCION-6/campana4PNG.png" alt="Card image cap"></a>
@@ -108,60 +153,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row pt-3 pb-3">
-                <div class="col-sm-3">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#/campana-interna"><img class="card-img-top" src="./assets/home/SECCION-6/campana4PNG.png" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                            <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
-                            <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                            <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#/campana-interna"><img class="card-img-top" src="./assets/home/SECCION-6/campana3PNG.png" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                            <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
-                            <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                            <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#/campana-interna"><img class="card-img-top" src="./assets/home/SECCION-6/campana1PNG.png" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                            <h5><span class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1">Vigente</span></h5>
-                            <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                            <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#/campana-interna"><img class="card-img-top" src="./assets/home/SECCION-6/campana2PNG.png" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                            <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
-                            <small class="text-blue mb-2"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                            <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
     </div>
 </div>
