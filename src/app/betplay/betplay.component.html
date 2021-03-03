@@ -2,23 +2,20 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <img class="d-block mx-auto mt-5 mb-5 img-fluid wow animate__animated animate__backInDown" src="./assets/betplay_page/betplay_logo_internaPNG.png" alt="Betplay">
+                <img class="d-block mx-auto mt-5 mb-5 img-fluid wow animate__animated animate__backInDown" src="{{seccion_1_data.img_principal}}" alt="Betplay">
             </div>
         </div>
         <div class="row section2 mb-5">
             <div class="col-xs-12 col-md-6">
-                <h3>Recarga</h3>
-                <p>Realiza tus recargas BetPlay desde $2.000 en cualquiera de nuestros Puntos de servicio Gane SuperGIROS.
+                <h3>{{seccion_1_data.recarga_titulo}}</h3>
+                <p>{{seccion_1_data.recarga_texto}}
                 </p>
 
-                <h3>Retira tu dinero</h3>
+                <h3>{{seccion_1_data.retira_dinero_titulo}}</h3>
                 <ul>
-                    <li> El retiro de tu saldo lo puedes realizar en cualquiera de nuestros puntos Gane SuperGiros.</li>
-                    <li> El titular de la cuenta es la única persona autorizada para retirar el saldo.</li>
-                    <li> Desde tu cuenta en BetPlay selecciona la opción "Retirar saldo" y elije la opción  - Retirar en punto de venta - código - PIN.</li>
-                    <li> Ingresa el valor que deseas retirar en el campo "Importe" y haz click en proceder.</li>
-                    <li> En pantalla te aparecerá el código PIN de 6 dígitos, que igualmente será enviado por mensaje de texto al celular y por correo electrónico.</li>
-                    <li> Con este código PIN y tu C.C te puedes acercar a cualquier punto de venta y  retirar tu dinero.</li>
+                    <ng-container *ngFor="let item of seccion_1_data.retira_dinero_texto">
+                        <li>{{ item.texto }}</li>
+                    </ng-container>
                 </ul>
             </div>
             <div class="col-xs-12 col-md-6">
@@ -27,10 +24,10 @@
         </div>
         <div class="row section3">
             <div class="col-xs-12 col-md-12">
-                <img class="w-100 d-block" src="./assets/betplay_page/betplay-gane-cali-2048x1025.jpg" alt="seguridad">
-                <h4 class="text-center mt-5 mb-3 title35"><strong>Comunicado a la Opinión Pública</strong></h4>
+                <img class="w-100 d-block" src="{{seccion_2_data}}" alt="seguridad">
+                <h4 class="text-center mt-5 mb-3 title35"><strong>{{seccion_3_data.seccion_3_titulo}}</strong></h4>
                 <p class="text-justify">
-                    Gane Cali se permite informar a todos sus clientes BetPlay que para la realización de retiros en los puntos de servicio, deberán presentar la cédula original y física, de lo contrario no se les hará el desembolso del dinero. Lo anterior se toma como medida para prevenir y combatir los posibles casos de suplantación de identidad.                    
+                    {{seccion_3_data.seccion_3_texto}}
                 </p>
             </div>
         </div>
@@ -43,71 +40,13 @@
                         <th>Dirección</th>
                     </thead>
                     <tbody>
-                    <tr>
-                    <td>Prados del norte</td>
-                    <td>CALI SUPER CAJA PASARELA VALLE DEL CAUCA</td>
-                    <td>CLL 23DN #5-60</td>
-                    </tr>
-                    <tr>
-                    <td>Las Delicias</td>
-                    <td> CALI SUPER CAJA 14 CALIMA VALLE DEL CAUCA</td>
-                    <td>CRA 1 #70-01</td>
-                    </tr>
-                    <tr>
-                    <td>Chapinero</td>
-                    <td>CALI SUPER CAJA CC UNICO VALLE</td>
-                    <td>CLL 52 #3-29</td>
-                    </tr>
-                    <tr>
-                    <td>San Pedro</td>
-                    <td>CALI SUPER CAJA COSMOCENTRO 1 VALLE DEL CAUCA</td>
-                    <td>CLL 5 #50-103 LOCAL 127B</td>
-                    </tr>
-                    <tr>
-                    <td>Caldas</td>
-                    <td> SEDE CALDAS VALLE DEL CAUCA</td>
-                    <td>CLL 5 #69-14</td>
-                    </tr>
-                    <tr>
-                    <td>Junín</td>
-                    <td>SEDE LA INDEPENDENCIA – VALLE DEL CAUCA</td>
-                    <td>CLL 27 #40B-02 </td>
-                    </tr>
-                    <tr>
-                    <td>La Independencia</td>
-                    <td> SEDE DIAMANTE VALLE DEL CAUCA</td>
-                    <td>CRA 29 #40-32</td>
-                    </tr>
-                    <tr>
-                    <td>El Diamante</td>
-                    <td>SEDE BONILLA ARAGON – VALLE DEL CAUCA</td>
-                    <td>CRA 27 #91-50</td>
-                    </tr>
-                    <tr>
-                    <td>Alfonso Bonilla Aragón</td>
-                    <td>SEDE LA RIVERA – VALLE DEL CAUCA</td>
-                    <td>CLL 70 #1C-14</td>
-                    </tr>
-                    <tr>
-                    <td>San Luis</td>
-                    <td>SEDE CANEY VALLE DEL CAUCA</td>
-                    <td>CRA 83C $25-46</td>
-                    </tr>
-                    <tr>
-                    <td>Ciudadela Comfandi</td>
-                    <td>SEDE GANE PRINCIPAL CENTRO VALLE DEL CAUCA</td>
-                    <td>CLL 13 #4-17</td>
-                    </tr>
-                      <tr>
-                    <td>Nueva Floresta</td>
-                    <td>CALI SUPER CAJA LAFER VALLE DEL CAUCA</td>
-                    <td>CLL 23N #5N-21</td>
-                    </tr>
-                      <tr>
-                    <td>Terrón Colorado</td>
-                    <td> CALI SUPER CAJA SANTA MONICA CENTRAL VALLE DEL CAUCA</td>
-                    <td>CLL 22 #6AN-24</td>
-                    </tr>
+                        <ng-container *ngFor="let item of seccion_tabla_data">
+                            <tr>
+                                <td>{{ item.barrio }}</td>
+                                <td>{{ item.puntos_servicio }}</td>
+                                <td>{{ item.direccion }}</td>
+                            </tr>
+                        </ng-container>
                     </tbody>
                     </table>
                     <!-- DivTable.com -->

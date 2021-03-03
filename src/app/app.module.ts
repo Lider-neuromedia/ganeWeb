@@ -6,6 +6,9 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
 import { HomeService } from './services/home.service';
 import { CampanaService } from './services/campana.service'; 
+import { GirosService } from './services/giros.service'; 
+import { BetplayService } from './services/betplay.service'; 
+import { PagosService } from './services/pagos.service'; 
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -52,6 +55,7 @@ import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
 import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
 import { RestauranteComponent } from './restaurante/restaurante.component';
+import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +103,8 @@ import { RestauranteComponent } from './restaurante/restaurante.component';
     PrevenirComponent,
     ImportanteComponent,
     CulturaTransparenciaComponent,
-    RestauranteComponent
+    RestauranteComponent,
+    CalculatugiroComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +115,10 @@ import { RestauranteComponent } from './restaurante/restaurante.component';
   ],
   providers: [
     HomeService,
-    CampanaService
+    CampanaService,
+    GirosService,
+    BetplayService,
+    PagosService
   ],
   bootstrap: [AppComponent]
 })

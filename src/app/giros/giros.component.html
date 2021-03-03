@@ -1,55 +1,23 @@
 <div class="giros-pagina">
     <div class="container bk-puntos section1">
         <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <img class="mb-5 mt-5 img-60" src="./assets/giros_page/logo supergirosPNG.png" alt="Supergiros">
-                <p class="text-justify txt-giros">¡Gane SuperGIROS, una alianza por Colombia! Ahora los clientes residentes en la sucursal del cielo podrán enviar o recibir sus giros locales y nacionales sin filas, con la tranquilidad que ofrecen las seguras instalaciones de los Súper Gane y las sedes de servicio, en cualquier momento del día, todos los días de la semana. Más de 1.200 puntos de servicios dispuestos para facilitar la vida a los caleños.</p>
+            <div class="col-xs-12 col-md-6 my-auto">
+                <img class="mb-5 mt-5 img-60" src="{{ seccion1_supergiros_data.giros_img }}" alt="Supergiros">
+                <p class="text-justify txt-giros">{{ seccion1_supergiros_data.textos_giros }}</p>
                 <div class="row">
                     <div class="col-md-4">
-                        <a class="btn btn-supergiros txt-center" href="https://www.supergiros.com.co/publicaciones/129393/giros/#internacionales" target="_blank">Giros Internacionales</a>
+                        <a class="btn btn-supergiros txt-center" href="{{ seccion1_supergiros_data.btn_giros_inter }}" target="_blank">{{ seccion1_supergiros_data.texto_btn_giros_inter }}</a>
                     </div>
                     <div class="col-md-4">
-                        <a class="btn btn-supergiros txt-center" href="https://www.supergiros.com.co/publicaciones/129536/protegiro/" target="_blank">Protegiro</a>
+                        <a class="btn btn-supergiros txt-center" href="{{ seccion1_supergiros_data.btn_protegiro }}" target="_blank">{{ seccion1_supergiros_data.texto_btn_protegiro }}</a>
                     </div>
                     <div class="col-md-4">
-                        <a class="btn btn-supergiros txt-center" href="https://www.supergiros.com.co/publicaciones/129517/supertoken/" target="_blank">Super Token</a>
+                        <a class="btn btn-supergiros txt-center" href="{{ seccion1_supergiros_data.btn_supertoken }}" target="_blank">{{ seccion1_supergiros_data.texto_btn_supertoken }}</a>
                     </div>
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
-                <div class="container contenedor-calculo">
-                    <div class="row">
-                        <div class="formulario-giro mt-5 wow animate__animated animate__backInRight">
-                                <div class="title-giro"><h3>Calcula tu giro</h3></div>
-                                <form>
-                                    <div class="form-group">
-                                        <label class="nunito size14 letter-spacing0-4" for="exampleFormControlSelect1">Origen</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>Cali - Valle del Cauca</option>
-                                        <option>Bogotá - Cundinamarca</option>
-                                        <option>Popayán - Cauca</option>
-                                        <option>Pereira - Risaralda</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="nunito size14 letter-spacing0-4" for="exampleFormControlSelect2">Destino</label>
-                                        <select class="form-control" id="exampleFormControlSelect2">
-                                        <option>Cali - Valle del Cauca</option>
-                                        <option>Bogotá - Cundinamarca</option>
-                                        <option>Popayán - Cauca</option>
-                                        <option>Pereira - Risaralda</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                    <label class="nunito size14 letter-spacing0-4" for="exampleFormControlInput1">Monto</label>
-                                    <input type="number" class="form-control monto-enviar" id="exampleFormControlInput1" placeholder="$100000">
-                                    </div>
-
-                                    <button type="button" class="btn mx-auto btn-block btn-consultar consulta-giro text-blue">Calcular</button>
-                                </form>
-                        </div>
-                    </div>
-                </div>
+                <app-calculatugiro></app-calculatugiro>
             </div>
         </div>
     </div>
@@ -66,69 +34,15 @@
                         <th class="celda-yellow">Total</th>
                     </thead>
                     <tbody>
-                    <tr>
-                    <td>$1</td>
-                    <td>$50.000</td>
-                    <td>$4.700</td>
-                    <td>$0</td>
-                    <td>$4.700</td>
-                    </tr>
-                    <tr>
-                    <td>$50.001</td>
-                    <td>$100.000</td>
-                    <td>$6.000</td>
-                    <td>$0</td>
-                    <td>$6.000</td>
-                    </tr>
-                    <tr>
-                    <td>$100.001</td>
-                    <td>$150.000</td>
-                    <td>$7.500</td>
-                    <td>$0</td>
-                    <td>$7.500</td>
-                    </tr>
-                    <tr>
-                    <td>$150.001</td>
-                    <td>$200.000</td>
-                    <td>$8.300</td>
-                    <td>$0</td>
-                    <td>$8.300</td>
-                    </tr>
-                    <tr>
-                    <td>$200.001</td>
-                    <td>$250.000</td>
-                    <td>$8.900</td>
-                    <td>$900</td>
-                    <td>$9.800</td>
-                    </tr>
-                    <tr>
-                    <td>$250.001</td>
-                    <td>$300.000</td>
-                    <td>$9.400</td>
-                    <td>$900</td>
-                    <td>$10.300</td>
-                    </tr>
-                    <tr>
-                    <td>$300.001</td>
-                    <td>$350.000</td>
-                    <td>$9.900</td>
-                    <td>$900</td>
-                    <td>$10.800</td>
-                    </tr>
-                    <tr>
-                    <td>$350.001</td>
-                    <td>$400.000</td>
-                    <td>$10.400</td>
-                    <td>$900</td>
-                    <td>$11.300</td>
-                    </tr>
-                    <tr>
-                    <td>$400.001</td>
-                    <td>En adelante</td>
-                    <td>2,6%</td>
-                    <td>$900</td>
-                    <td>Valor flete + Otros</td>
-                    </tr>
+                        <ng-container *ngFor="let item of seccion2_datostabla; let index = index">
+                            <tr>
+                                <td>{{item.desde}}</td>
+                                <td>{{item.hasta}}</td>
+                                <td>{{item.fletes}}</td>
+                                <td>{{item.otros}}</td>
+                                <td>{{item.total}}</td>
+                            </tr>
+                        </ng-container>
                     </tbody>
                 </table>
                     <!-- DivTable.com -->
@@ -139,44 +53,20 @@
     <div class="container mt-5 mb-5 section3">
         <div class="row wow animate__animated animate__fadeInUp">
             <div class="col-xs-12 col-md-6">
-                <h2>Giros Internacionales</h2>
-                <p class="text-justify mt-4">Estar cerca de los seres queridos emociona el alma, y en Gane SuperGIROS lo sabemos, por eso nuestros clientes ya pueden recibir bienestar desde la distancia reclamando sus giros internacionales en más de 200 puntos de servicio.</p>
-                <a href="https://www.supergiros.com.co/publicaciones/129393/giros/#internacionales" target="_blank">¿En donde puedo reclamar un giro internacional?</a>
+                <h2>{{seccion3_supergiros_data.titulo_seccion3}}</h2>
+                <p class="text-justify mt-4">{{seccion3_supergiros_data.texto_seccion3}}</p>
+                <a href="{{seccion3_supergiros_data.link_seccion3}}" target="_blank">{{seccion3_supergiros_data.texto_link_seccion3}}</a>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="row">
-                    <div class="col-xs-12 col-md-6 pt-3">
-                        <div class="card-internacional card-shadow-hover">
-                            <img src="./assets/giros_page/INTERNACIONALES/001-united-states-of-americaPNG.png" alt="USA">
-                            <p class="txt-country pl-3">Estados Unidos</p>
+                    <ng-container *ngFor="let banderin of banderas_seccion_data">
+                        <div class="col-xs-12 col-md-6 pt-3">
+                            <div class="card-internacional card-shadow-hover">
+                                <img src="{{banderin.bandera_img}}" alt="Bandera">
+                                <p class="txt-country size15 pl-3">{{banderin.bandera_texto}}</p>
+                            </div>
                         </div>
-
-                        <div class="card-internacional mt-4 card-shadow-hover">
-                            <img src="./assets/giros_page/INTERNACIONALES/002-spainPNG.png" alt="España">
-                            <p class="txt-country pl-3">España</p>
-                        </div>
-
-                        <div class="card-internacional mt-4 card-shadow-hover">
-                            <img src="./assets/giros_page/INTERNACIONALES/005-englandPNG.png" alt="Inglaterra">
-                            <p class="txt-country pl-3">Inglaterra</p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-6 pt-3 ">
-                        <div class="card-internacional card-shadow-hover">
-                            <img src="./assets/giros_page/INTERNACIONALES/004-israelPNG.png" alt="Israel">
-                            <p class="txt-country pl-3">Israel</p>
-                        </div>
-
-                        <div class="card-internacional mt-4 card-shadow-hover">
-                            <img src="./assets/giros_page/INTERNACIONALES/003-italyPNG.png" alt="Italia">
-                            <p class="txt-country pl-3">Italia</p>
-                        </div>
-
-                        <div class="card-internacional mt-4 card-shadow-hover">
-                            <img src="./assets/giros_page/INTERNACIONALES/americanoPNG.png" alt="Centro y sur">
-                            <p class="txt-country pl-2">Centro y sur América</p>
-                        </div>
-                    </div>
+                    </ng-container>
                 </div>
             </div>
         </div>
