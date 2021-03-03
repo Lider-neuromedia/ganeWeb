@@ -6,6 +6,9 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
 import { HomeService } from './services/home.service';
 import { CampanaService } from './services/campana.service'; 
+import { GirosService } from './services/giros.service'; 
+import { BetplayService } from './services/betplay.service'; 
+import { PagosService } from './services/pagos.service'; 
 
 // Lenguaje
 import localeEs from '@angular/common/locales/es';
@@ -58,6 +61,7 @@ import { ImportanteComponent } from './importante/importante.component';
 import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
 import { RestauranteComponent } from './restaurante/restaurante.component';
 import { CampanaComponent } from './campana/campana.component';
+import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +110,8 @@ import { CampanaComponent } from './campana/campana.component';
     ImportanteComponent,
     CulturaTransparenciaComponent,
     RestauranteComponent,
-    CampanaComponent
+    CampanaComponent,
+    CalculatugiroComponent
   ],
   imports: [
     BrowserModule,
@@ -118,7 +123,10 @@ import { CampanaComponent } from './campana/campana.component';
   providers: [
     { provide: LOCALE_ID, useValue: 'es'},
     HomeService,
-    CampanaService
+    CampanaService,
+    GirosService,
+    BetplayService,
+    PagosService
   ],
   bootstrap: [AppComponent]
 })

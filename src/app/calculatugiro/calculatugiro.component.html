@@ -1,0 +1,41 @@
+<div class="container contenedor-calculo">
+    <div class="row">
+        <div class="formulario-giro mt-5 wow animate__animated animate__backInRight">
+                <div class="title-giro"><h3>Calcula tu giro</h3></div>
+                <form>
+                    <div class="form-group">
+                        <label class="nunito size14 letter-spacing0-4" for="montoEnvio">Monto</label>
+                        <select class="form-control" id="montoEnvio" name="seleccionaMonto" (change)="SetDropDownValue($event)">
+                            <option value="" disabled>Elija una opción</option>
+                            <option *ngFor="let valorMonto of valores_calcular_data; let i = index;" value="{{i}}">{{ valorMonto.valor_monto }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="nunito size14 letter-spacing0-4" for="Fieldflete">Fletes</label>
+                        <div *ngFor="let valor of valores_calcular_data; let i = index;">
+                            <div [ngSwitch] = 'dropDownValue'>
+                                    <input type="number" class="form-control monto-enviar" id="Fieldflete" *ngSwitchCase="i" placeholder="{{ valor.valor_flete }}" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="nunito size14 letter-spacing0-4" for="FieldOtros">Otros</label>
+                        <div *ngFor="let valor of valores_calcular_data; let i = index;">
+                            <div [ngSwitch] = 'dropDownValue'>
+                                    <input type="number" class="form-control monto-enviar" id="FieldOtros" *ngSwitchCase="i" placeholder="{{ valor.valor_otros }}" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="nunito size14 letter-spacing0-4" for="FieldTotal">Total</label>
+                        <div *ngFor="let valor of valores_calcular_data; let i = index;">
+                            <div [ngSwitch] = 'dropDownValue'>
+                                    <input type="number" class="form-control monto-enviar" id="FieldTotal" *ngSwitchCase="i" placeholder="{{ valor.valor_total }}" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<button type="button" class="btn mx-auto btn-block btn-consultar consulta-giro text-blue">Calcular</button>-->
+                </form>
+        </div>
+    </div>
+</div>
