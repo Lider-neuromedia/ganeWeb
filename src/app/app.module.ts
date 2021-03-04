@@ -125,11 +125,8 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     GirosService,
     BetplayService,
     PagosService,
-<<<<<<< HEAD
-    ArticlesService
-=======
+    ArticlesService,
     JuegosService
->>>>>>> 2f60e2556280f25cbe372d5538a108b4cc219d3c
   ],
   bootstrap: [AppComponent]
 })
