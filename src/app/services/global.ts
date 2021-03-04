@@ -9,6 +9,5 @@ export var GLOBAL = {
     
     // PRODUCCIÓN
     url: 'https://pruebasneuro.co/N-1057backgane/wp-json/acf/v3',
-    postC: 'https://pruebasneuro.co/N-1057backgane/wp-json/wp/v2',
-    // url: 'https://services.gane.com/wp-json/acf/v3',
+    urlW: 'https://pruebasneuro.co/N-1057backgane/wp-json/wp/v2',
   };

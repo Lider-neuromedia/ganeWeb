@@ -1071,7 +1071,6 @@ tr td:hover{
 .giros-pagina .section3 p{
   color: #0A0A0A;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
   letter-spacing: 1.08px;
   line-height: 19px;
 }
@@ -1093,7 +1092,6 @@ tr td:hover{
     display:inline-block;
     color: #0A0A0A;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
     letter-spacing: 1.08px;
     line-height: 19px;
     font-weight:600;
@@ -1369,15 +1367,10 @@ tr td:hover{
 /******* Blog Página *****/
 .tarjetaPublicacion .caption .verNoticia{
     color: #007AFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
     letter-spacing: 0.8px;
     font-weight:500;
     line-height: 19px;
-    position: absolute;
-    bottom: 15px;
 }
-
 .tarjetasdeNoticias{
 	margin-bottom:30px;
 }
@@ -1390,6 +1383,14 @@ tr td:hover{
 	padding:10px 20px;
 }
 
+/* Campañas */
+.campana_pagina a{
+    color: #EAB73B;
+}
+.campana_pagina a:hover,
+.blog_pagina a:hover{
+    cursor: pointer;
+}
 @media screen and (max-width: 991px) {
     .tarjetaPublicacion .sinEspacio img {
 		margin:0 auto;
@@ -1408,7 +1409,7 @@ tr td:hover{
 
 @media screen and (min-width: 992px) {
     .tarjetaPublicacion .caption {
-        min-height: 300px;
+        /* min-height: 300px; */
         }
 }
 
@@ -1456,9 +1457,7 @@ tr td:hover{
 }
 
 @media screen and (min-width: 1024px) {
-	.tarjetaPublicacion {
-    min-height: 525px;
-	}
+	
 }
 
 .tarjetaNoticiaMayor .sinEspacio{

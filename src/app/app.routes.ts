@@ -35,7 +35,6 @@ import { LineaEticaComponent } from './linea-etica/linea-etica.component';
 import { CulturaAntilavadoComponent } from './cultura-antilavado/cultura-antilavado.component';
 import { PuntosVentaComponent } from './puntos-venta/puntos-venta.component';
 import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
-import { CampanaInternaComponent } from './campana-interna/campana-interna.component';
 import { BlogInternaComponent } from './blog-interna/blog-interna.component';
 import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
@@ -61,9 +60,9 @@ const APP_ROUTES: Routes = [
     {path: 'soat', component: SoatComponent},
     {path: 'campanas', component: CampanasComponent},
     {path: 'campana/:id', component: CampanaComponent},
-    // {path: 'campana-interna', component: CampanaInternaComponent},
     {path: 'contactenos', component: ContactenosComponent},
     {path: 'blog', component: BlogComponent},
+    {path: 'articulo/:id', component: BlogInternaComponent},
     {path: 'gestion', component: GestionCalidadComponent},
     {path: 'pago-premios', component: PagoPremiosComponent},
     {path: 'preguntas', component: PreguntasComponent},
@@ -84,7 +83,6 @@ const APP_ROUTES: Routes = [
     {path: 'linea-etica', component: LineaEticaComponent},
     {path: 'puntos-venta', component: PuntosVentaComponent},
     {path: 'comunicado-interna', component: ComunicadoInternaComponent},
-    {path: 'blog-interna', component: BlogInternaComponent},
     {path: 'prevenir', component: PrevenirComponent},
     {path: 'importante', component: ImportanteComponent},
     {path: 'cultura-transparencia', component: CulturaTransparenciaComponent},

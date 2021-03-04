@@ -9,6 +9,7 @@ import { CampanaService } from './services/campana.service';
 import { GirosService } from './services/giros.service'; 
 import { BetplayService } from './services/betplay.service'; 
 import { PagosService } from './services/pagos.service'; 
+import { ArticlesService } from './services/articles.service' 
 
 // Lenguaje
 import localeEs from '@angular/common/locales/es';
@@ -18,7 +19,6 @@ registerLocaleData(localeEs, 'es');
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-// import { ServicesComponent } from './services/services.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { GirosComponent } from './giros/giros.component';
 import { BetplayComponent } from './betplay/betplay.component';
@@ -54,7 +54,6 @@ import { LineaEticaComponent } from './linea-etica/linea-etica.component';
 import { CulturaAntilavadoComponent } from './cultura-antilavado/cultura-antilavado.component';
 import { PuntosVentaComponent } from './puntos-venta/puntos-venta.component';
 import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
-import { CampanaInternaComponent } from './campana-interna/campana-interna.component';
 import { BlogInternaComponent } from './blog-interna/blog-interna.component';
 import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
@@ -68,7 +67,6 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    // ServicesComponent,
     InicioComponent,
     GirosComponent,
     BetplayComponent,
@@ -104,7 +102,6 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     CulturaAntilavadoComponent,
     PuntosVentaComponent,
     ComunicadoInternaComponent,
-    CampanaInternaComponent,
     BlogInternaComponent,
     PrevenirComponent,
     ImportanteComponent,
@@ -126,7 +123,8 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     CampanaService,
     GirosService,
     BetplayService,
-    PagosService
+    PagosService,
+    ArticlesService
   ],
   bootstrap: [AppComponent]
 })

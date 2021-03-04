@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ArticlesService } from './../services/articles.service';
 
 @Component({
   selector: 'app-blog-interna',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogInternaComponent implements OnInit {
 
-  constructor() { }
+  article_data:any = {};
+
+  constructor(private route: ActivatedRoute, private _articleservice:ArticlesService) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this._articleservice.getArticle(id)
+      .subscribe(res => {
+        this.article_data = res;
+      })
   }
 
 }

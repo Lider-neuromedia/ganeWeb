@@ -3,10 +3,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <img class="img-fluid mt-3 mb-3" src="./assets/blog_page/blog_interna.jpg" alt="Banner Interna Blog">
-                    <h2 class="title35 wow animate__animated animate__fadeInUp">Esta es una publicación de prueba</h2>
-                    <p class="text-blue wow animate__animated animate__fadeInUp">Lunes 03 de Octubre de 2020</p>
-                    <p class="wow animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies posuere ornare. Fusce consequat mollis bibendum. Pellentesque convallis tempus nibh commodo tempus. Nulla facilisi. Donec nec malesuada metus, scelerisque sodales nisl. Mauris consequat mattis interdum. Pellentesque eget placerat velit. Nulla vel massa non mauris condimentum ultrices fringilla eu libero. Quisque finibus, purus et luctus blandit, dui justo pretium justo, a interdum felis urna ut nulla. Phasellus pretium orci eu urna rutrum, sed efficitur felis feugiat.</p>
+                    <p class="text-center">
+                        <img class="img-fluid mt-3 mb-3" src="{{ article_data.featured_image }}" alt="Banner Interna Blog">
+                    </p>
+                    <h2 class="title35 wow animate__animated animate__fadeInUp">{{ article_data.title.rendered }}</h2>
+                    <p class="text-blue wow animate__animated animate__fadeInUp">{{ article_data.date | date:'fullDate' | titlecase }}</p>
+                    <p class="wow animate__animated animate__fadeInUp" [innerHTML]="article_data.content.rendered"></p>
                 </div>
             </div>
         </div>
@@ -15,7 +17,7 @@
         <div class="container"> 
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="title-mision font-weight-600 mx-auto text-center d-block wow animate__animated animate__fadeInUp">Otras Campañas</h3>
+                    <h3 class="title-mision font-weight-600 mx-auto text-center d-block wow animate__animated animate__fadeInUp">Otros artículos</h3>
                 </div>
                 <div class="col-sm-4">
                     <div class="card border-0 card-shadow-hover">
