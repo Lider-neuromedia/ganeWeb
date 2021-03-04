@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { JuegosService } from './../services/juegos.service';
 
 @Component({
   selector: 'app-juegos',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JuegosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpClient:HttpClient, private _juegosservice:JuegosService) { }
 
   ngOnInit(): void {
+      this._juegosservice.getJuegos()
+      .subscribe((res:any) => {
+      });
   }
-
+  
 }

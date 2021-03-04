@@ -15,6 +15,7 @@ import { ArticlesService } from './services/articles.service'
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs, 'es');
+import { JuegosService } from './services/juegos.service'; 
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -124,7 +125,11 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     GirosService,
     BetplayService,
     PagosService,
+<<<<<<< HEAD
     ArticlesService
+=======
+    JuegosService
+>>>>>>> 2f60e2556280f25cbe372d5538a108b4cc219d3c
   ],
   bootstrap: [AppComponent]
 })
