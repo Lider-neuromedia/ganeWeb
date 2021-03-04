@@ -9,6 +9,7 @@ import { CampanaService } from './services/campana.service';
 import { GirosService } from './services/giros.service'; 
 import { BetplayService } from './services/betplay.service'; 
 import { PagosService } from './services/pagos.service'; 
+import { JuegosService } from './services/juegos.service'; 
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -118,7 +119,8 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     CampanaService,
     GirosService,
     BetplayService,
-    PagosService
+    PagosService,
+    JuegosService
   ],
   bootstrap: [AppComponent]
 })

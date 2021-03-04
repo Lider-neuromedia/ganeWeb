@@ -13,6 +13,8 @@ export class PagosComponent implements OnInit {
   convenios_logos_data: any[] =[];
   titulo_principal_data:any = {};
   texto_principal_data:any = {};
+  tarjeta_convenio_data:any[] = [];
+  tabla_convenio_popup_data:any[] = [];
   
   constructor(private httpClient:HttpClient, private _pagosservice:PagosService) { }
 
@@ -23,6 +25,8 @@ export class PagosComponent implements OnInit {
       this.titulo_convenios_data = res.acf.titulo_convenios;
       this.convenios_logos_data = res.acf.convenios_pago;
       this.texto_principal_data = res.acf.texto_principal_pagina;
+      this.tarjeta_convenio_data = res.acf.tarjeta_convenio; 
+      this.tabla_convenio_popup_data = res.acf.tarjeta_convenio.popup_tarjeta;
     });
   }
 

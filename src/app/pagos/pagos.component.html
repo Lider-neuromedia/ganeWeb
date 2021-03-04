@@ -7,95 +7,21 @@
                 <hr class="mb-5">
             </div>
         </div>
-        <div class="row mb-3">
-            <div class="col-xs-12 col-md-3 align-content-stretch align-items-stretch mt-2 mb-2 wow animate__animated animate__fadeInLeft">
-                <div class="card card-pagos card-shadow-hover">
-                    <div class="card-body pt-4 pb-4">
-                        <img class="mb-3 d-block mx-auto" src="./assets/pagos_page/EMCALIPNG.png" alt="Emcali">
-                        <p>Ahora pagar los servicios públicos de EMCALI, las facturas de Protelco…</p>
-                          <!-- Button trigger modal -->
-                            <button type="button" class="btn-wback text-center d-block mx-auto" data-toggle="modal" data-target="#ModalEmcali">
+        <div class="row mb-5 mt-1">
+            <ng-container *ngFor="let tarjeta of tarjeta_convenio_data; let i = index">
+                <div class="col-xs-12 col-md-3 align-content-stretch align-items-stretch mt-2 mb-2 wow animate__animated animate__fadeInLeft">
+                    <div class="card card-pagos card-shadow-hover">
+                        <div class="card-body pt-4 pb-4">
+                            <img class="mb-3 d-block mx-auto img-fluid" src="{{ tarjeta.imagen_tarjeta}}" alt="Logo Convenio">
+                            <p>{{ tarjeta.texto_tarjeta }}</p>
+                              <!-- Button trigger modal -->
+                            <button type="button" class="btn-wback text-center d-block mx-auto" data-toggle="modal" [attr.data-target]="'#'+'convenio'+i">
                                 Leer más
                             </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-md-3 align-content-stretch align-items-stretch mt-2 mb-2 wow animate__animated animate__fadeInUp">
-                <div class="card card-pagos card-shadow-hover">
-                    <div class="card-body pt-4 pb-4">
-                        <img class="w-100 mb-3 d-block mx-auto" src="./assets/pagos_page/PASAPORTEPNG.png" alt="Pasaporte">
-                        <p>Para aquellos clientes que desean cumplir su sueño de viajar al exterior…</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn-wback text-center d-block mx-auto" data-toggle="modal" data-target="#ModalPasaporte">
-                            Leer más
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3 align-content-stretch align-items-stretch mt-2 mb-2 wow animate__animated animate__fadeInUp">
-                <div class="card card-pagos card-shadow-hover">
-                    <div class="card-body pt-4 pb-4">
-                        <img class="w-100 mb-3 d-block mx-auto" src="./assets/pagos_page/BANCO-WPNG.png" alt="Bancow">
-                        <p>¡De la mano de las entidades bancarias! En los puntos de servicio…</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn-wback text-center d-block mx-auto" data-toggle="modal" data-target="#ModalBancoW">
-                            Leer más
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3 align-content-stretch align-items-stretch mt-2 mb-2 wow animate__animated animate__fadeInRight">
-                <div class="card card-pagos card-shadow-hover">
-                    <div class="card-body pt-4 pb-4">
-                        <img class="w-100 mb-3 d-block mx-auto" src="./assets/pagos_page/BitmapPNG.png" alt="Registraduría">
-                        <p>Para quienes necesiten realizar el pago de los diferentes servicios…</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn-wback text-center d-block mx-auto" data-toggle="modal" data-target="#ModalRegistraduria">
-                            Leer más
-                        </button>
-                    </div>
-                </div> 
-            </div>
-        </div>
-        <div class="row mb-5">
-            <div class="col-xs-12 col-md-1"></div>
-            <div class="col-xs-12 col-md-3 align-content-stretch align-items-stretch mt-2 mb-2 wow animate__animated animate__fadeInLeft">
-                <div class="card card-pagos card-shadow-hover">
-                    <div class="card-body pt-4 pb-4">
-                        <img class="mb-3 d-block mx-auto" src="./assets/pagos_page/BEPS_CopyPNG.png" alt="BEPS">
-                        <p>El monto mínimo para la transacción es de cinco mil pesos ($5.000) El usuario...</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn-wback text-center d-block mx-auto" data-toggle="modal" data-target="#ModalBeps">
-                            Leer más
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3 align-content-stretch align-items-stretch mt-2 mb-2 wow animate__animated animate__fadeInUp">
-                <div class="card card-pagos card-shadow-hover">
-                    <div class="card-body pt-4 pb-4">
-                        <img class="w-100 mb-3 d-block mx-auto" src="./assets/pagos_page/LOS-OLIVOS_CopyPNG.png" alt="Pasaporte">
-                        <p>Porque Gane conoce la importancia de la tranquilidad frente a los momentos…</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn-wback text-center d-block mx-auto" data-toggle="modal" data-target="#ModalOlivos">
-                            Leer más
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3 align-content-stretch align-items-stretch mt-2 mb-2 wow animate__animated animate__fadeInRight">
-                <div class="card card-pagos card-shadow-hover">
-                    <div class="card-body pt-4 pb-4">
-                        <img class="w-100 mb-3 d-block mx-auto" src="./assets/pagos_page/comfandi-logo_copyPNG.png" alt="Comfandi">
-                        <p>¡En Gane le apostamos a la familia! Ahora los afiliados a la Caja de Compensación…</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn-wback text-center d-block mx-auto" data-toggle="modal" data-target="#ModalComfandi">
-                            Leer más
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-1"></div>
+            </ng-container>
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-12"><p class="title-general text-uppercase text-center">{{titulo_convenios_data}}</p></div>
@@ -109,182 +35,37 @@
 </div>
 
 <!-- Modal 1 -->
-<div class="modal fade" id="ModalEmcali" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">EMCALI</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-        <p class="text-justify">Ahora pagar los servicios públicos de EMCALI, las facturas de Protelco y las cuotas del préstamo SINBA (Sistema de Inclusión para No Bancarizados) es muy fácil; en Gane los clientes pueden acceder a este servicio fácil y rápido.</p>
-        <img class="mb-3 d-block mx-auto" src="./assets/pagos_page/EMCALIPNG.png" alt="Emcali">
-        </div>
-    </div>
-    </div>
-</div>
-
-<!-- Modal 2 -->
-<div class="modal fade" id="ModalPasaporte" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">PASAPORTE</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-        <p class="text-justify">Para aquellos clientes que desean cumplir su sueño de viajar al exterior, Gane ofrece el servicio de Pago de Pasaporte, este recaudo se trata del primer depósito de dinero que se debe realizar dentro del proceso de expedición del documento. 
-            A continuación se presentan los valores a la fecha dependiendo del tipo de pasaporte:
-            </p>
-            <table class="full-table mt-4 mb-4">
-                <thead>
-                    <th>TIPO PASAPORTE</th>
-                    <th>VALOR</th>
-                </thead>
-                <tbody>
-                <tr>
-                <td>Ordinario</td>
-                <td>$169.500</td>
-                </tr>
-                <tr>
-                <td>Ejecutivo</td>
-                <td>$169.500</td>
-                </tr>
-                <tr>
-                <td>Emergencia</td>
-                <td>$115.500</td>
-                </tr>
-                </tbody>
-            </table>
-                <img class="img-fluid mb-3 d-block mx-auto" src="./assets/pagos_page/PASAPORTEPNG.png" alt="Pasaporte">
+<ng-container *ngFor="let popup of tarjeta_convenio_data; let i = index">
+    <div class="modal fade" [attr.id]="'convenio'+i" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titlemodal">{{ popup.popup_tarjeta.titulo_popup }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-justify">{{ popup.popup_tarjeta.texto_popup }}</p>
+                    <div *ngIf="popup.popup_tarjeta.tabla_popup_filas != false">
+                        <table class="full-table mt-4 mb-4">
+                            <thead>
+                                <th>{{ popup.popup_tarjeta.tabla_popup_titulos.titulo1 }}</th>
+                                <th>{{ popup.popup_tarjeta.tabla_popup_titulos.titulo2 }}</th>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let item of popup.popup_tarjeta.tabla_popup_filas">
+                                    <tr>
+                                        <td>{{ item.texto1 }}</td>
+                                        <td>{{ item.texto2 }}</td>
+                                    </tr>
+                                </ng-container>
+                            </tbody>
+                        </table>
+                    </div>
+                    <img class="mb-3 d-block mx-auto img-fluid" src="{{ popup.popup_tarjeta.imagen_popup }}" alt="Logo">
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-</div>
-
-<!-- Modal 3 -->
-<div class="modal fade" id="ModalBancoW" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">BANCO W</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-            <p class="text-justify">¡De la mano de las entidades bancarias! En los puntos de servicio Gane los clientes del banco W podrán realizar las siguientes transacciones:</p>
-            <ul>
-                <li>Retiro.</li>
-                <li>Depósito o Consignación.</li>
-                <li>Pago de cuota.</li>
-                <li>Retiro OTP.</li>
-            </ul>    
-            <p class="text-justify">El cliente debe identificar la sede o el punto de servicio autorizado para realizar su transacción sin filas, en cómodos horarios de lunes a domingo.</p>
-            <img class="img-fluid mb-3 d-block mx-auto" src="./assets/pagos_page/BANCO-WPNG.png" alt="Bancow">
-        </div>
-    </div>
-    </div>
-</div>
-
-<!-- Modal 4 -->
-<div class="modal fade" id="ModalRegistraduria" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">REGISTRADURÍA NACIONAL</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-            <p class="text-justify">Para quienes necesiten realizar el pago de los diferentes servicios que ofrece la Registraduría Nacional del Estado Civil, Gane suma este servicio a su amplio portafolio, brindando a los clientes la posibilidad de realizar el pago para sus trámites de forma rápida ¡sin filas ni complicaciones!
-                El plan tarifario para el recaudo de la Registraduría Nacional del Estado Civil es el siguiente:</p>
-                <table class="full-table mt-4 mb-4">
-                    <thead>
-                        <th>SERVICIO</th>
-                        <th>VALOR</th>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Duplicado Cédula de Ciudadanía</td>
-                        <td>$46.050</td>
-                    </tr>
-                    <tr>
-                        <td>Rectificación de Cédula de Ciudadanía o Corrección de Datos</td>
-                        <td>$46.050</td>
-                    </tr>
-                    <tr>
-                        <td>Duplicado Tarjeta de Identidad Azul Biométrica (por pérdida o deterioro)</td>
-                        <td>$45.150</td>
-                    </tr>
-                    <tr>
-                        <td>Certificado del Registro Civil</td>
-                        <td>$7.500</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <img class="img-fluid mb-3 d-block mx-auto" src="./assets/pagos_page/BitmapPNG.png" alt="Registraduría">
-        </div>
-    </div>
-    </div>
-</div>
-
-<!-- Modal 5 -->
-<div class="modal fade" id="ModalBeps" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">BEPS</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-            <p class="text-justify">Pensando en la vejez de los caleños, Gane ofrece el servicio de ahorro voluntario para la vejez liderado por COLPENSIONES, brindando a los clientes la posibilidad de realizar sus pagos a través de los más de 1.200 puntos de servicio.<br><br>
-                El monto mínimo para la transacción es de cinco mil pesos ($5.000) El usuario vinculado al programa puede ahorrar en el año un máximo de novecientos noventa mil pesos ($990.000). COLPENSIONES cada año establecerá el valor de ahorro a los usuarios que se encuentren vinculados a dicho programa.</p>
-            <img class="img-fluid mt-3 mb-3 d-block mx-auto" src="./assets/pagos_page/BEPS_CopyPNG.png" alt="BEPS">
-        </div>
-    </div>
-    </div>
-</div>
-
-<!-- Modal 6 -->
-<div class="modal fade" id="ModalOlivos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">LOS OLIVOS</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-            <p class="text-justify">Porque Gane conoce la importancia de la tranquilidad frente a los momentos difíciles de la vida, dispone sus puntos de servicio ubicados en toda la ciudad para que los caleños puedan realizar sus pagos de funerarias Los Olivos.</p>
-            <img class="img-fluid mb-3 mt-3 d-block mx-auto" src="./assets/pagos_page/LOS-OLIVOS_CopyPNG.png" alt="Los Olivos">
-        </div>
-    </div>
-    </div>
-</div>
-
-<!-- Modal 7 -->
-<div class="modal fade" id="ModalComfandi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">COMFANDI</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-            <p class="text-justify">¡En Gane le apostamos a la familia! Ahora los afiliados a la Caja de Compensación Familiar COMFANDI podrán reclamar el subsidio familiar en los diferentes puntos de servicio autorizados.</p>
-            <img class="img-fluid mb-3 d-block mx-auto" src="./assets/pagos_page/comfandi-logo_copyPNG.png" alt="Comfandi">
-        </div>
-    </div>
-    </div>
-</div>
+</ng-container>
