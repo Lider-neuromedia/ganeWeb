@@ -9,14 +9,15 @@ import { CampanaService } from './services/campana.service';
 import { GirosService } from './services/giros.service'; 
 import { BetplayService } from './services/betplay.service'; 
 import { PagosService } from './services/pagos.service'; 
-import { ArticlesService } from './services/articles.service' 
+import { ArticlesService } from './services/articles.service';
+import { PagesService } from './services/pages.service';
 
 // Lenguaje
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs, 'es');
-import { JuegosService } from './services/juegos.service'; 
 
+import { JuegosService } from './services/juegos.service'; 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -126,7 +127,8 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     BetplayService,
     PagosService,
     ArticlesService,
-    JuegosService
+    JuegosService,
+    PagesService
   ],
   bootstrap: [AppComponent]
 })

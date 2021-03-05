@@ -3,17 +3,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 col-md-6 pl-100">
-                    <h3 class="title-h3 pt-5 pb-3">¿Quiénes somos?</h3>
-                    <p class="txt-normal text-justify ">Gane es la Red Multiservicios más grande del Valle del Cauca, logrando llegar a los hogares caleños con un amplio portafolio comercial segmentado dentro de las siguientes líneas: juegos, giros, pagos, BetPlay (apuestas deportivas en línea) y recargas. 
-                        A lo anterior se suma la presencia alcanzada a la fecha, con más de 1.200 Puntos de Servicios que cubren toda la ciudad, y una fuerza comercial de más de 4.000 personas; quienes día a día se comprometen con satisfacer las necesidades y sueños de los clientes.
-                        <br><br>
-                        Esta organización nace en el 2006 como iniciativa de 20 visionarios vallecaucanos que decidieron apostarle a la innovación y juntos conformaron el canal para ventas de apuestas más grande del Suroccidente Colombiano, que con los años fue evolucionando hasta convertirse en la Red Multiservicios pionera en la venta de productos y pago  de servicios para todo tipo de clientes; Hoy jugar un chance, hacer una apuesta en BetPlay, enviar o recibir giros, realizar recargas, pagar el SOAT o los servicios públicos es posible en un solo lugar.
-                        <br><br>
-                        Esa capacidad de adaptación frente a las necesidades de expansión del mercado es lo que convierte a Gane en un atractivo canal de recaudo de pequeñas y grandes empresas de la región, toda vez que en los puntos de servicio los clientes pueden realizar sus pagos de manera fácil, rápida y segura; de domingo a domingo y en horario extendido.
-                        </p>
+                    <h3 class="title-h3 pt-5 pb-3">{{ quienesSomos_data.title.rendered }}</h3>
+                    <p class="txt-normal text-justify" [innerHTML]="quienesSomos_data.content.rendered"></p>
                 </div>
                 <div class="col-xs-12 col-md-6 pr-0">
-                    <img class="float-right img-fluid d-inline-block wow animate__animated animate__fadeInRight" src="./assets/quienes_somos_page/Gane.png" alt="grupo">
+                    <img class="float-right img-fluid d-inline-block wow animate__animated animate__fadeInRight" src="{{ quienesSomos_data.acf.imagen }}" alt="grupo">
                 </div>
             </div>
         </div>
@@ -22,20 +16,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-6 wow animate__animated animate__fadeInLeft">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wXGx1Ybwp2A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="col-xs-12 col-md-6 pl-5">
                     <div>
-                        <img class="pr-4" src="./assets/quienes_somos_page/mision 2PNG.png" alt="Misión">
-                        <h4 class="title-mision">Misión</h4>
+                        <img class="pr-4" src="{{ quienesSomos_data.acf.icono_mision }}" alt="Misión">
+                        <h4 class="title-mision">{{ quienesSomos_data.acf.titulo_mision }}</h4>
                     </div>
-                    <p class="txt-normal">Facilitar la vida de los caleños.</p>
+                    <p class="txt-normal" [innerHTML]="quienesSomos_data.acf.descripcion_mision"></p>
                     <br>
                     <div>
-                        <img class="pr-4" src="./assets/quienes_somos_page/telescopioPNG.png" alt="Visión">
-                        <h4 class="title-mision">Visión</h4>
+                        <img class="pr-4" src="{{ quienesSomos_data.acf.icono_vision }}" alt="Visión">
+                        <h4 class="title-mision">{{ quienesSomos_data.acf.titulo_vision }}</h4>
                     </div>
-                        <p class="text-justify txt-normal">Para el año 2022 incrementar los ingresos en más de un 30%, orientando nuestros esfuerzos en ser el lugar preferido por los caleños, brindando experiencias positivas de atención.</p>
+                        <p class="text-justify txt-normal" [innerHTML]="quienesSomos_data.acf.descripcion_vision"></p>
                 </div>
             </div>
         </div>
