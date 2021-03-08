@@ -9,17 +9,17 @@ import { map } from 'rxjs/operators';
 })
 export class CampanaService {
   
-  public urlW: string;
+  public url: string;
 
   constructor(private _http: HttpClient) {
-    this.urlW = GLOBAL.urlW;
+    this.url = GLOBAL.url;
   }
 
   getCampanas(): Observable<any>{
-    return this._http.get(`${this.urlW}/campanas`);
+    return this._http.get(`${this.url}/campanas`);
   }
   getCampana(id: string): Observable<any>{
-    return this._http.get(`${this.urlW}/campanas/${id}/`);
+    return this._http.get(`${this.url}/campanas/${id}/`);
   }
 }
 

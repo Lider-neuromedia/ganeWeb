@@ -11,6 +11,7 @@ import { BetplayService } from './services/betplay.service';
 import { PagosService } from './services/pagos.service'; 
 import { ArticlesService } from './services/articles.service';
 import { PagesService } from './services/pages.service';
+import { PostsService } from './services/posts.service';
 
 // Lenguaje
 import localeEs from '@angular/common/locales/es';
@@ -128,7 +129,8 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     PagosService,
     ArticlesService,
     JuegosService,
-    PagesService
+    PagesService,
+    PostsService
   ],
   bootstrap: [AppComponent]
 })

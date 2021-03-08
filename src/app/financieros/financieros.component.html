@@ -2,40 +2,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="title35 text-center d-block mb-3">Estados Financieros</h3>
+                <h3 class="title35 text-center d-block mb-3" *ngIf="financieros_data.title">{{ financieros_data.title.rendered }}</h3>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12 col-md-4 p-3 d-flex wow animate__animated animate__fadeInLeft">
-                <div class="card d-flex justify-content-center p-4 border-radius border-0 box-shadow card-shadow-hover w-100">
-                    <a href="/assets/financieros_page/ESTADOS-FINANCIEROS-2019.pdf" target="_blank">
-                        <p class="text-center mb-5">
-                            <img class="img-fluid" src="./assets/financieros_page/ESTADOSFINANCIEROSPNG.png" alt="Card image cap">
-                        </p>
-                        <h3 class="text-center text-blue font-weight-bold">ESTADOS FINANCIEROS</h3>
-                    </a>
+        <div class="row" *ngIf="financieros_data.acf">
+            <ng-container *ngFor="let fina of financieros_data.acf.financieros">
+                <div class="col-xs-12 col-md-4 p-3 d-flex wow animate__animated animate__fadeInLeft">
+                    <div class="card d-flex justify-content-center p-4 border-radius border-0 box-shadow card-shadow-hover w-100">
+                        <a href="{{ fina.pdf }}" target="_blank">
+                            <p class="text-center mb-5">
+                                <img class="img-fluid" src="{{ fina.icono }}" alt="{{ fina.titulo }}">
+                            </p>
+                            <h3 class="text-center text-blue font-weight-bold">{{ fina.titulo }}</h3>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-md-4 p-3 d-flex wow animate__animated animate__fadeInDown">
-                <div class="card d-flex justify-content-center p-4 border-radius border-0 box-shadow card-shadow-hover w-100">
-                    <a href="/assets/financieros_page/REVELACIONES.pdf" target="_blank">
-                        <p class="text-center mb-5">
-                            <img class="img-fluid" src="./assets/financieros_page/REVELACIONESPNG.png" alt="Card image cap">
-                        </p>
-                        <h3 class="text-center text-blue font-weight-bold">REVELACIONES</h3>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4 p-3 d-flex wow animate__animated animate__fadeInRight">
-                <div class="card d-flex justify-content-center p-4 border-radius border-0 box-shadow card-shadow-hover w-100">
-                    <a href="/assets/financieros_page/DICTAMEN-DEL-REVISOR-FISCAL.pdf" target="_blank">
-                        <p class="text-center mb-5">
-                            <img class="img-fluid" src="./assets/financieros_page/REVISORFISCALPNG.png" alt="Card image cap">
-                        </p>
-                        <h3 class="text-center text-blue font-weight-bold">DICTAMEN DEL REVISOR FISCAL</h3>
-                    </a>
-                </div>
-            </div>
+            </ng-container>
         </div>
     </div>
 </div>

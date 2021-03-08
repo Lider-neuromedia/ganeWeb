@@ -9,19 +9,16 @@ import { map } from 'rxjs/operators';
 })
 export class ArticlesService {
 
-  public urlW: string;
+  public url: string;
 
   constructor(private _http: HttpClient) {
-    this.urlW = GLOBAL.urlW;
+    this.url = GLOBAL.url;
   }
 
   getArticles(): Observable<any>{
-    return this._http.get(`${this.urlW}/posts`);
+    return this._http.get(`${this.url}/posts`);
   }
   getArticle(id: string): Observable<any>{
-    return this._http.get(`${this.urlW}/posts/${id}/`);
-  }
-  getArticleMedia(id: string): Observable<any>{
-    return this._http.get(`${this.urlW}/media/${id}/`);
+    return this._http.get(`${this.url}/posts/${id}/`);
   }
 }

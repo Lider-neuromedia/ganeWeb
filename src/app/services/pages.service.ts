@@ -8,12 +8,24 @@ import { GLOBAL } from './global';
 })
 export class PagesService {
 
-  public urlW: string;
+  public url: string;
 
   constructor(private _http: HttpClient) {
-    this.urlW = GLOBAL.urlW;
+    this.url = GLOBAL.url;
   }
   getQuienesSomos(): Observable<any>{
-    return this._http.get(`${this.urlW}/pages/352/`);
+    return this._http.get(`${this.url}/pages/352/`);
+  }
+
+  getPeriodicos(): Observable<any>{
+    return this._http.get(`${this.url}/pages/433/`);
+  }
+
+  getFinancieros(): Observable<any>{
+    return this._http.get(`${this.url}/pages/452/`);
+  
+  }
+  getPrivacidad(): Observable<any>{
+    return this._http.get(`${this.url}/pages/469/`);
   }
 }

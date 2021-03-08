@@ -8,7 +8,9 @@
 	right: 0%;
     display: block;
 }
-
+a:hover{
+    cursor: pointer;
+}
 .fb{
     background-position: center;
 	padding: 20px;
@@ -1246,15 +1248,6 @@ tr td:hover{
 /****Página de Comunicados de prensa*****/
 .ver-comunicado{
     margin-bottom: 0;
-}
-.comunicado-prensa{
-    background-color: #fff !important;
-    padding: 0;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    display: inline-block;
 }
 
 .comunicado-prensa .sin-espacios {
