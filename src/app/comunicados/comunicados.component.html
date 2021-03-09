@@ -34,8 +34,8 @@
                       </div>
                   </form> -->
                   <form action="" class="d-flex pt-3 align-items-center">
-                      <input type="text" class="w-50 form-control mr-sm-2" placeholder="Buscar comunicado" (keyup.enter)="buscarComunicado(buscarComunicado.value)" #buscarComunicado>
-                      <button class="btn btn-outline-primary" type="button">Buscar</button>
+                      <input type="text" class="w-50 form-control mr-sm-2" placeholder="Buscar comunicado" (keyup.enter)="buscarComunicado($event)">
+                      <button (click)="buscarComunicado($event)" class="btn btn-outline-primary" type="button">Buscar</button>
                   </form>
             </div>
             <div class="col-xs-12 col-sm-3 col-md-3"></div>

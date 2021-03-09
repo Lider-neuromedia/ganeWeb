@@ -1,26 +1,13 @@
 <div class="comunicado-interna_pagina pt-5 pb-5 bk-gray">
-    <div class="container">
+    <div class="container" *ngIf="comunicado_data.acf">
         <div class="row">
             <div class="col-xs-12 col-md-8">
-                <h3 class="size17 font-weight-bold">CHONTICO MILLONARIO SIGUE HACIENDO  FELICES A LOS CALEÑOS</h3>
+                <h3 class="size17 font-weight-bold" *ngIf="comunicado_data.title">{{ comunicado_data.title.rendered }}</h3>
                 <p class="size14 text-gray-dark">Boletín de Prensa<br>
-                    06 de Julio del 2020,Santiago de Cali
+                    {{ comunicado_data.date | date:'fullDate' | titlecase }}, Santiago de Cali
                 </p>
-                <img class="img-fluid d-block mb-3" src="./assets/comunicados_page/Image1PNG.png" alt="Img Principal Comunicado">
-                <p class="size19 letter-spacing1-4 line-height23 opensans text-gray-dark">Julio inicia con muy buena racha para los caleños, el sorteo del medio día del Chontico Millonario ha dejado como resultado a más de 650 felices ganadores que celebran esta tarde de lunes en la Sucursal del Cielo con el número 1122.<br>
-                    <br>
-                    Gane Cali se complace en informar que el día 06 de Julio del año en curso se presentó una sorprendente premiación con el sorteo Chontico Millonario, más de 310 millones de pesos serán entregado a los caleños.<br>
-                    <br>
-                    Felicitamos a todos los afortunados ganadores y les informamos que tendremos disponibles nuestras oficinas principales para hacer una oportuna y efectiva entrega de los premios.<br>
-                    <br>
-                    <br>
-                    <span class="color-title">Mayores informes:</span><br>
-                    <br>
-                    OFICINA DE COMUNICACIONES GANE
-                    Natalia Varón Betancourt
-                    Coordinadora de Comunicaciones
-                    Tel. Fijo 8843434 – Ext. 45
-                    </p>
+                <img class="img-fluid d-block mb-3"  src="{{comunicado_data.acf.imagen_interna}}" alt="Img Principal Comunicado">
+                <p class="size19 letter-spacing1-4 line-height23 opensans text-gray-dark" [innerHTML]="comunicado_data.content.rendered"></p>
             </div>
             <div class="col-xs-12 col-md-4">
                 <div class="p-4" style="background:url(./assets/home/SECCION-4/bg_numero.jpg);background-size: 100% 445px;background-repeat: no-repeat;">

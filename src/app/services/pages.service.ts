@@ -28,4 +28,7 @@ export class PagesService {
   getPrivacidad(): Observable<any>{
     return this._http.get(`${this.url}/pages/469/`);
   }
+  getRecargas(): Observable<any>{
+    return this._http.get(`${this.url}/pages/500/`);
+  }
 }

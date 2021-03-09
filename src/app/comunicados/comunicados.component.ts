@@ -21,8 +21,8 @@ export class ComunicadosComponent implements OnInit {
     });
   }
 
-  buscarComunicado(text:string){
-    console.log(text);
+  buscarComunicado(text:any){
+    console.log(text.target.value);
   }
 
   verComunicado(slug:string){
