@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { GirosService } from './../services/giros.service';
+import { PagesService } from './../services/pages.service';
 
 @Component({
   selector: 'app-calculatugiro',
@@ -19,7 +19,7 @@ export class CalculatugiroComponent implements OnInit {
     this.dropDownValue = drpValue.target.value;
   }
 
-  constructor(private httpClient:HttpClient, private _girosservice:GirosService) { }
+  constructor(private httpClient:HttpClient, private _girosservice:PagesService) { }
 
     ngOnInit(): void {
       this._girosservice.getGiros()

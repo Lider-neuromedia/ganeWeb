@@ -16,14 +16,11 @@ export class PagesService {
   getQuienesSomos(): Observable<any>{
     return this._http.get(`${this.url}/pages/352/`);
   }
-
   getPeriodicos(): Observable<any>{
     return this._http.get(`${this.url}/pages/433/`);
   }
-
   getFinancieros(): Observable<any>{
     return this._http.get(`${this.url}/pages/452/`);
-  
   }
   getPrivacidad(): Observable<any>{
     return this._http.get(`${this.url}/pages/469/`);
