@@ -6,9 +6,6 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
 import { HomeService } from './services/home.service';
 import { CampanaService } from './services/campana.service'; 
-import { GirosService } from './services/giros.service'; 
-import { BetplayService } from './services/betplay.service'; 
-import { PagosService } from './services/pagos.service'; 
 import { ArticlesService } from './services/articles.service';
 import { PagesService } from './services/pages.service';
 import { PostsService } from './services/posts.service';
@@ -124,11 +121,7 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     { provide: LOCALE_ID, useValue: 'es'},
     HomeService,
     CampanaService,
-    GirosService,
-    BetplayService,
-    PagosService,
     ArticlesService,
-    JuegosService,
     PagesService,
     PostsService
   ],

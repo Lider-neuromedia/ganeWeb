@@ -34,4 +34,16 @@ export class PagesService {
   getSoat(): Observable<any>{
     return this._http.get(`${this.url}/pages/535/`);
   }
+  getGiros(): Observable<any>{
+    return this._http.get(`${this.url}/pages/103/`);
+  }
+  getJuegos(): Observable<any>{
+    return this._http.get(`${this.url}/pages/317/`);
+  }
+  getBetplay(): Observable<any>{
+    return this._http.get(`${this.url}/pages/157/`);
+  }
+  getPagos(): Observable<any>{
+    return this._http.get(`${this.url}/pages/235/`);
+  }
 }

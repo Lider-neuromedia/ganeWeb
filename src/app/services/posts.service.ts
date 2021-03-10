@@ -21,7 +21,6 @@ export class PostsService {
   //   let comunArr:any[] = [];
   //   text = text.toLowerCase();
   //   for(let ){
-
   //   }
   // }
   getComunicado(id: string): Observable<any>{
