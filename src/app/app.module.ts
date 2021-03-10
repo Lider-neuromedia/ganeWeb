@@ -118,9 +118,9 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es'},
-    HomeService,
-    CampanaService,
     ArticlesService,
+    CampanaService,
+    HomeService,
     PagesService,
     PostsService
   ],
