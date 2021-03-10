@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
@@ -9,12 +9,19 @@ import { CampanaService } from './services/campana.service';
 import { GirosService } from './services/giros.service'; 
 import { BetplayService } from './services/betplay.service'; 
 import { PagosService } from './services/pagos.service'; 
-import { JuegosService } from './services/juegos.service'; 
+import { ArticlesService } from './services/articles.service';
+import { PagesService } from './services/pages.service';
+import { PostsService } from './services/posts.service';
 
+// Lenguaje
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs, 'es');
+
+import { JuegosService } from './services/juegos.service'; 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-// import { ServicesComponent } from './services/services.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { GirosComponent } from './giros/giros.component';
 import { BetplayComponent } from './betplay/betplay.component';
@@ -50,12 +57,12 @@ import { LineaEticaComponent } from './linea-etica/linea-etica.component';
 import { CulturaAntilavadoComponent } from './cultura-antilavado/cultura-antilavado.component';
 import { PuntosVentaComponent } from './puntos-venta/puntos-venta.component';
 import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
-import { CampanaInternaComponent } from './campana-interna/campana-interna.component';
 import { BlogInternaComponent } from './blog-interna/blog-interna.component';
 import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
 import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
 import { RestauranteComponent } from './restaurante/restaurante.component';
+import { CampanaComponent } from './campana/campana.component';
 import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component';
 
 @NgModule({
@@ -63,7 +70,6 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    // ServicesComponent,
     InicioComponent,
     GirosComponent,
     BetplayComponent,
@@ -99,12 +105,12 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     CulturaAntilavadoComponent,
     PuntosVentaComponent,
     ComunicadoInternaComponent,
-    CampanaInternaComponent,
     BlogInternaComponent,
     PrevenirComponent,
     ImportanteComponent,
     CulturaTransparenciaComponent,
     RestauranteComponent,
+    CampanaComponent,
     CalculatugiroComponent
   ],
   imports: [
@@ -115,12 +121,16 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     APP_ROUTING
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'es'},
     HomeService,
     CampanaService,
     GirosService,
     BetplayService,
     PagosService,
-    JuegosService
+    ArticlesService,
+    JuegosService,
+    PagesService,
+    PostsService
   ],
   bootstrap: [AppComponent]
 })

@@ -40,7 +40,7 @@
     <div class="container">
         <div class="row">
             <ng-container *ngFor="let recuadro of recuadros_data">
-                <div class="col-xs-12 col p-3 align-items-stretch wow animate__animated animate__bounceInLeft">
+                <div class="col-xs-12 col-sm p-3 align-items-stretch wow animate__animated animate__bounceInLeft">
                     <a href="{{ recuadro.url }}">
                         <div class="card d-flex justify-content-center p-4 border-radius border-0 box-shadow card-shadow-hover">
                             <p class="text-center mb-2">
@@ -76,42 +76,42 @@
         </div>
     </div>
 </section>
-<div class="jumbotron bk-gane-virtual" [style.background-image]="'url(' + ganevirtual_data.fondo + ')'"> 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-md-4 block-gvirtual">
-                    <img class="w-100" src="{{ ganevirtual_data.chance_virtual_img }}" alt="gane-virtual">
-                </div>
-                <div class="col-xs-12 col-md-4">
-                    <img class="mx-auto d-block" src="{{ ganevirtual_data.alcance_de_tu_mano_img }}" alt="al alcance">
-                    <p class="txt-inform text-center space-txt" [innerHTML]="ganevirtual_data.texto_informacion"></p>
-                    <a href="#" class="btn btn-yellow-txt-white wow animate__animated animate__fadeInUp">{{ ganevirtual_data.texto_boton }}</a>
-                </div>
-                <div class="col-xs-12 col-md-4">
-                    <img class="w-100" src="{{ ganevirtual_data.chance_servicios_img }}" alt="gane-virtual">
-                </div>
+<section class="jumbotron bk-gane-virtual" style="background:url( '{{ ganevirtual_data.fondo }}' )"> 
+    <ng-container class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 block-gvirtual">
+                <img class="w-100" src="{{ ganevirtual_data.chance_virtual_img }}" alt="gane-virtual">
             </div>
-            <div class="row section-ganev">
-                <div class="col-md-1"></div>
-                <div class="col-md-2">
-                    <a class="text-center mx-auto d-block item-link-gane item1" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_consultas_img }}" alt="item1"> {{ ganevirtual_data.boton_consultas_texto }}</a>
-                </div>
-                <div class="col-md-2">
-                    <a class="text-center mx-auto d-block item-link-gane item2" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_transaccion_img }}" alt="item2"> {{ ganevirtual_data.boton_transaccion_texto }}</a>
-                </div>
-                <div class="col-md-2">
-                    <a class="text-center mx-auto d-block item-link-gane item3" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_recargas_img }}" alt="item3"> {{ ganevirtual_data.boton_recargas_texto }}</a>
-                </div>
-                <div class="col-md-2">
-                    <a class="text-center mx-auto d-block item-link-gane item4" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_donde_img }}" alt="item4"> {{ ganevirtual_data.boton_donde_texto }}</a>
-                </div>
-                <div class="col-md-2">
-                    <a class="text-center mx-auto d-block item-link-gane item5" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_contactos_img }}" alt="item5"> {{ ganevirtual_data.boton_contactos_texto }}</a>
-                </div>
-                <div class="col-md-1"></div>
+            <div class="col-xs-12 col-md-4">
+                <img class="mx-auto d-block" src="{{ ganevirtual_data.alcance_de_tu_mano_img }}" alt="al alcance">
+                <p class="txt-inform text-center space-txt" [innerHTML]="ganevirtual_data.texto_informacion"></p>
+                <a href="#" class="btn btn-yellow-txt-white wow animate__animated animate__fadeInUp">{{ ganevirtual_data.texto_boton }}</a>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <img class="w-100" src="{{ ganevirtual_data.chance_servicios_img }}" alt="gane-virtual">
             </div>
         </div>
-    </div>
+        <div class="row section-ganev">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item1" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_consultas_img }}" alt="item1"> {{ ganevirtual_data.boton_consultas_texto }}</a>
+            </div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item2" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_transaccion_img }}" alt="item2"> {{ ganevirtual_data.boton_transaccion_texto }}</a>
+            </div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item3" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_recargas_img }}" alt="item3"> {{ ganevirtual_data.boton_recargas_texto }}</a>
+            </div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item4" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_donde_img }}" alt="item4"> {{ ganevirtual_data.boton_donde_texto }}</a>
+            </div>
+            <div class="col-md-2">
+                <a class="text-center mx-auto d-block item-link-gane item5" href="#"><img class="img-fluid" src="{{ ganevirtual_data.boton_contactos_img }}" alt="item5"> {{ ganevirtual_data.boton_contactos_texto }}</a>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </ng-container>
+</section>
 <div class="section4 container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6">
@@ -332,20 +332,39 @@
     <div class="container pb-5 pt-2">
         <h1 class="text-center text-blue mb-4">Campañas</h1>
         <div class="row wow animate__animated animate__fadeInUp">
-            <div class="col-sm-12 col-md-3">
-                <div class="card border-0 card-shadow-hover">
-                    <a href="#/campana-interna"><img class="card-img-top" src="./assets/home/SECCION-6/campana4PNG.png" alt="Card image cap"></a>
-                    <div class="card-body p-2">
-                        <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                        <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
-                        <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                        <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                        <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                        <a href="#/campana-interna" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
+            <ng-container *ngFor="let campanas of campanas_data | slice:0:4; let i = index">
+                <div class="col-sm-12 col-md-3">
+                    <div class="card border-0 card-shadow-hover">
+                        <a (click)="verCampana(campanas.slug)" *ngIf="campanas.acf.imagen_destacada == null">
+                            <p class="text-center pt-2 pb-2">
+                                <i class="far fa-image text-gray d-block w-100" style="font-size:8em"></i>
+                                <span><em class="text-gray">Imagen no disponible</em></span>
+                            </p>
+                        </a>
+                        <a (click)="verCampana(campanas.slug)" *ngIf="campanas.acf.imagen_destacada != null">
+                            <img class="card-img-top" src="{{ campanas.acf.imagen_destacada }}" alt="Card image cap">
+                        </a>
+                        <div class="card-body p-2">
+                            <h5 class="card-title text-blue font-weight-bold">{{ campanas.title.rendered }}</h5>
+                            <h5 *ngIf="campanas.acf.estado === 'Vigente'">
+                                <span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">{{ campanas.acf.estado }}</span>
+                            </h5>
+                            <h5 *ngIf="campanas.acf.estado === 'Terminada'">
+                                <span class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1">{{ campanas.acf.estado }}</span>
+                            </h5>
+                            <small class="text-blue"><i class="far fa-clock"></i> {{ campanas.acf.fecha_de_inicio | date:'fullDate' | titlecase }}</small>
+                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">{{ campanas.acf.sub_titulo }}</p>
+                            <p class="size14 line-height1-4 text-blue mb-2">{{ campanas.excerpt.rendered }}</p>
+                            <!-- <button (click)="verCampana(campanas.id)" type="button" class="size13 text-yellow">
+                                Más información <i class="fas fa-long-arrow-alt-right"></i>
+                            </button> -->
+                            <a (click)="verCampana(campanas.slug)" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
+                            <!-- <a [routerLink]="['/campana', campanas.slug]" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-3">
+            </ng-container>
+            <!-- <div class="col-sm-12 col-md-3">
                 <div class="card border-0 card-shadow-hover">
                     <a href="#"><img class="card-img-top" src="./assets/home/SECCION-6/campana3PNG.png" alt="Card image cap"></a>
                     <div class="card-body p-2">
@@ -383,7 +402,7 @@
                         <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

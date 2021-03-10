@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CampanaInternaComponent } from './campana-interna.component';
+import { CampanaComponent } from './campana.component';
 
-describe('CampanaInternaComponent', () => {
-  let component: CampanaInternaComponent;
-  let fixture: ComponentFixture<CampanaInternaComponent>;
+describe('CampanaComponent', () => {
+  let component: CampanaComponent;
+  let fixture: ComponentFixture<CampanaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CampanaInternaComponent ]
+      declarations: [ CampanaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CampanaInternaComponent);
+    fixture = TestBed.createComponent(CampanaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,19 +7,18 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CampanaService {
-  
+export class ArticlesService {
+
   public url: string;
 
   constructor(private _http: HttpClient) {
     this.url = GLOBAL.url;
   }
 
-  getCampanas(): Observable<any>{
-    return this._http.get(`${this.url}/campanas`);
+  getArticles(): Observable<any>{
+    return this._http.get(`${this.url}/posts`);
   }
-  getCampana(id: string): Observable<any>{
-    return this._http.get(`${this.url}/campanas/${id}/`);
+  getArticle(id: string): Observable<any>{
+    return this._http.get(`${this.url}/posts/${id}/`);
   }
 }
-

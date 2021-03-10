@@ -8,73 +8,63 @@
 	right: 0%;
     display: block;
 }
-
+a:hover{
+    cursor: pointer;
+}
 .fb{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/facebook.png);
     background-position: center;
 	padding: 20px;
     border: 1px solid #D8DFE5;
     border-radius: 10px 0 0;
 }
 .fb:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/face_blanco.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 
 .ins{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/instagram.png);
     background-position: center;
 	border: 1px solid #D8DFE5;
 	padding: 20px;
 }
 .ins:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/instagram.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 .twit {
-    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/twitter.png);
     background-position: center;
 	border: 1px solid #D8DFE5;
 	padding: 20px;
 }
 .twit:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/twitter_blanco.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 .tiktok {
-    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/tikPNG.png);
     background-position: center;
 	border: 1px solid #D8DFE5;
 	padding: 20px;
 }
 .tiktok:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/tik-blancoPNG.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 .linkedin {
-    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/linkedPNG.png);
     background-position: center;
 	border: 1px solid #D8DFE5;
 	padding: 20px;
 }
 .linkedin:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/linked-blancoPNG.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
 .youtub {
-    background-image: url(/N-1057/assets/home/REDES-FLOTANTE/youtube_color.png);
     background-position: center;
     padding: 20px;
     border: 1px solid #D8DFE5;
     border-radius: 0 0 0 10px;
 }
 .youtub:hover{
-	background-image: url(/N-1057/assets/home/REDES-FLOTANTE/youtube_blanco.png);
 	background-color: #1e3480;
 	transition: .3s;
 }
@@ -1083,7 +1073,6 @@ tr td:hover{
 .giros-pagina .section3 p{
   color: #0A0A0A;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
   letter-spacing: 1.08px;
   line-height: 19px;
 }
@@ -1105,7 +1094,6 @@ tr td:hover{
     display:inline-block;
     color: #0A0A0A;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
     letter-spacing: 1.08px;
     line-height: 19px;
     font-weight:600;
@@ -1261,15 +1249,6 @@ tr td:hover{
 .ver-comunicado{
     margin-bottom: 0;
 }
-.comunicado-prensa{
-    background-color: #fff !important;
-    padding: 0;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    display: inline-block;
-}
 
 .comunicado-prensa .sin-espacios {
     max-height: 100%;
@@ -1381,15 +1360,10 @@ tr td:hover{
 /******* Blog Página *****/
 .tarjetaPublicacion .caption .verNoticia{
     color: #007AFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
     letter-spacing: 0.8px;
     font-weight:500;
     line-height: 19px;
-    position: absolute;
-    bottom: 15px;
 }
-
 .tarjetasdeNoticias{
 	margin-bottom:30px;
 }
@@ -1402,6 +1376,14 @@ tr td:hover{
 	padding:10px 20px;
 }
 
+/* Campañas */
+.campana_pagina a{
+    color: #EAB73B;
+}
+.campana_pagina a:hover,
+.blog_pagina a:hover{
+    cursor: pointer;
+}
 @media screen and (max-width: 991px) {
     .tarjetaPublicacion .sinEspacio img {
 		margin:0 auto;
@@ -1420,7 +1402,7 @@ tr td:hover{
 
 @media screen and (min-width: 992px) {
     .tarjetaPublicacion .caption {
-        min-height: 300px;
+        /* min-height: 300px; */
         }
 }
 
@@ -1468,9 +1450,7 @@ tr td:hover{
 }
 
 @media screen and (min-width: 1024px) {
-	.tarjetaPublicacion {
-    min-height: 525px;
-	}
+	
 }
 
 .tarjetaNoticiaMayor .sinEspacio{

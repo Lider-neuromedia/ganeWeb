@@ -35,12 +35,12 @@ import { LineaEticaComponent } from './linea-etica/linea-etica.component';
 import { CulturaAntilavadoComponent } from './cultura-antilavado/cultura-antilavado.component';
 import { PuntosVentaComponent } from './puntos-venta/puntos-venta.component';
 import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
-import { CampanaInternaComponent } from './campana-interna/campana-interna.component';
 import { BlogInternaComponent } from './blog-interna/blog-interna.component';
 import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
 import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
 import { RestauranteComponent } from './restaurante/restaurante.component';
+import { CampanaComponent } from './campana/campana.component';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -53,14 +53,17 @@ const APP_ROUTES: Routes = [
     {path: 'juegos', component: JuegosComponent},
     {path: 'pagos', component: PagosComponent},
     {path: 'comunicados', component: ComunicadosComponent},
+    {path: 'comunicado/:id', component: ComunicadoInternaComponent},
     {path: 'periodico', component: PeriodicoComponent},
     {path: 'privacidad', component: PrivacidadComponent},
     {path: 'financieros', component: FinancierosComponent},
     {path: 'recargas', component: RecargasComponent},
     {path: 'soat', component: SoatComponent},
     {path: 'campanas', component: CampanasComponent},
+    {path: 'campana/:id', component: CampanaComponent},
     {path: 'contactenos', component: ContactenosComponent},
     {path: 'blog', component: BlogComponent},
+    {path: 'articulo/:id', component: BlogInternaComponent},
     {path: 'gestion', component: GestionCalidadComponent},
     {path: 'pago-premios', component: PagoPremiosComponent},
     {path: 'preguntas', component: PreguntasComponent},
@@ -80,9 +83,6 @@ const APP_ROUTES: Routes = [
     {path: 'cultura-antilavado', component: CulturaAntilavadoComponent},
     {path: 'linea-etica', component: LineaEticaComponent},
     {path: 'puntos-venta', component: PuntosVentaComponent},
-    {path: 'comunicado-interna', component: ComunicadoInternaComponent},
-    {path: 'campana-interna', component: CampanaInternaComponent},
-    {path: 'blog-interna', component: BlogInternaComponent},
     {path: 'prevenir', component: PrevenirComponent},
     {path: 'importante', component: ImportanteComponent},
     {path: 'cultura-transparencia', component: CulturaTransparenciaComponent},
