@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { PagosService } from './../services/pagos.service';
+import { PagesService } from './../services/pages.service';
 
 @Component({
   selector: 'app-pagos',
@@ -16,7 +16,7 @@ export class PagosComponent implements OnInit {
   tarjeta_convenio_data:any[] = [];
   tabla_convenio_popup_data:any[] = [];
   
-  constructor(private httpClient:HttpClient, private _pagosservice:PagosService) { }
+  constructor(private httpClient:HttpClient, private _pagosservice:PagesService) { }
 
   ngOnInit(): void {
     this._pagosservice.getPagos()

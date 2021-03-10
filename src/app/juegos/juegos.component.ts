@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { JuegosService } from './../services/juegos.service';
+import { PagesService } from './../services/pages.service';
 
 @Component({
   selector: 'app-juegos',
@@ -13,7 +13,7 @@ export class JuegosComponent implements OnInit {
   info_cobros: any = {}; 
   public activePillIndex:number = 0;
 
-  constructor(private httpClient:HttpClient, private _juegosservice:JuegosService) { }
+  constructor(private httpClient:HttpClient, private _juegosservice:PagesService) { }
 
   ngOnInit(): void {
       this._juegosservice.getJuegos()

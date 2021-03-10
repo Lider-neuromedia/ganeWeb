@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BetplayService } from './../services/betplay.service';
+import { PagesService } from './../services/pages.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
@@ -17,7 +17,7 @@ export class BetplayComponent implements OnInit {
   seccion_tabla_data:any[] = [];
   urlSafe: SafeResourceUrl;
 
-  constructor(private httpClient:HttpClient, private _betplayservice:BetplayService, public sanitizer: DomSanitizer) { }
+  constructor(private httpClient:HttpClient, private _betplayservice:PagesService, public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     var video, results;
