@@ -33,7 +33,7 @@ export class BetplayComponent implements OnInit {
       }
       results = this.seccion_1_video.match('[\\?&]v=([^&#]*)');
       video   = (results === null) ? this.seccion_1_video : results[1];
-      this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);   
+      this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+this.seccion_1_video); 
     });
   }
 }

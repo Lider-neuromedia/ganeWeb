@@ -31,4 +31,7 @@ export class PagesService {
   getRecargas(): Observable<any>{
     return this._http.get(`${this.url}/pages/500/`);
   }
+  getSoat(): Observable<any>{
+    return this._http.get(`${this.url}/pages/535/`);
+  }
 }
