@@ -6,22 +6,6 @@
                     <ng-container *ngFor="let item of item_tab_data; let index = index">
                         <a class="nav-link" [attr.id]="'v-pills-tab-'+index" [ngClass]="{'active': index === activePillIndex}" data-toggle="pill" [attr.href]="'#'+'v-pills-'+index" role="tab" aria-selected="true" (click)="selectPill(index)">{{ item.nombre_item_tab }}</a>
                     </ng-container>
-                    <!--
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Chance</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Doble Chance</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Chance Millonario</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Super Chance</a>
-                    <a class="nav-link" id="v-pills-3-en-linea-tab" data-toggle="pill" href="#v-pills-3-en-linea" role="tab" aria-controls="v-pills-3-en-linea" aria-selected="false">3 en Línea</a>
-                    <a class="nav-link" id="v-pills-en-linea-tab" data-toggle="pill" href="#v-pills-en-linea" role="tab" aria-controls="v-pills-en-linea" aria-selected="false">4 en Línea</a>
-                    <a class="nav-link" id="v-pills-choladito-tab" data-toggle="pill" href="#v-pills-choladito" role="tab" aria-controls="v-pills-choladito" aria-selected="false">El choladito</a>
-                    <a class="nav-link" id="v-pills-pagatodo-tab" data-toggle="pill" href="#v-pills-pagatodo" role="tab" aria-controls="v-pills-pagatodo" aria-selected="false">Paga Todo</a>
-                    <a class="nav-link" id="v-pills-paga-mas-tab" data-toggle="pill" href="#v-pills-paga-mas" role="tab" aria-controls="v-pills-paga-mas" aria-selected="false">Paga más</a>
-                    <a class="nav-link" id="v-pills-gane-suenos-tab" data-toggle="pill" href="#v-pills-gane-suenos" role="tab" aria-controls="v-pills-gane-suenos" aria-selected="false">Gane sueños</a>
-                    <a class="nav-link" id="v-pills-gane5-tab" data-toggle="pill" href="#v-pills-gane5" role="tab" aria-controls="v-pills-gane5" aria-selected="false">Gane 5</a>
-                    <a class="nav-link" id="v-pills-superastro-tab" data-toggle="pill" href="#v-pills-superastro" role="tab" aria-controls="v-pills-superastro" aria-selected="false">Súper Astro</a>-->
-                    <!--<a class="nav-link" id="v-pills-ganemania-tab" data-toggle="pill" href="#v-pills-ganemania" role="tab" aria-controls="v-pills-ganemania" aria-selected="false">GaneManía</a>-->
-                    <!--<a class="nav-link" id="v-pills-loteria-tab" data-toggle="pill" href="#v-pills-loteria" role="tab" aria-controls="v-pills-loteria" aria-selected="false">Lotería</a>
-                    <a class="nav-link" id="v-pills-supergordo-tab" data-toggle="pill" href="#v-pills-supergordo" role="tab" aria-controls="v-pills-supergordo" aria-selected="false">Súper Gordo</a>-->
                 </div>
             </div>
             <div class="col-xs-12 col-md-9">
@@ -31,7 +15,7 @@
                             <img class="w-100 mb-5 border-r5" *ngIf="datos.img_principal_tab != undefined" src="{{ datos.img_principal_tab }}" alt="Banner Juegos">
                             <div class="row mb-3">
                                 <div class="col-md-12">
-                                    <p class="size15 letter-spacing1-01 text-justify" [innerHTML]="datos.texto_1"></p>
+                                    <p class="size15 letter-spacing1-01 text-justify" *ngIf="datos.texto_1 != undefined" [innerHTML]="datos.texto_1"></p>
                                 </div>
                                 <ng-container *ngFor="let tipo of datos.tipo_de_juego">
                                     <div class="col-md-4">
@@ -70,6 +54,60 @@
                                     </ng-container>
                                 </div>
                             </div>
+                            <div class="row wow animate__animated animate__fadeInUp">
+                                <div class="col-md-12">
+                                    <ng-container *ngFor="let datostabla3campos of datos.tabla_de_3_campos">
+                                        <p class="mb-2 text-center size16 letter-spacing1-01 font-weight-bold">{{ datostabla3campos.titulo_general_tabla }}</p> 
+                                        <table class="full-table mt-3 mb-5 wow animate__animated animate__fadeInUp">
+                                            <thead>
+                                                <ng-container>
+                                                    <th>{{ datostabla3campos.titulo_item_1 }}</th>
+                                                    <th>{{ datostabla3campos.titulo_item_2 }}</th>
+                                                    <th>{{ datostabla3campos.titulo_item_3 }}</th>
+                                                </ng-container>
+                                            </thead>
+                                            <tbody>
+                                                <ng-container *ngFor="let data of datostabla3campos.info_items_tabla">
+                                                    <tr>
+                                                        <td>{{ data.info_1 }}</td>
+                                                        <td>{{ data.info_2 }}</td>
+                                                        <td>{{ data.info_3 }}</td>
+                                                    </tr>
+                                                </ng-container>
+                                            </tbody>
+                                        </table>
+                                    </ng-container>
+                                </div>
+                            </div>
+                            <div class="row wow animate__animated animate__fadeInUp" *ngIf="datos.tabla_3_campos_varias_filas_intermedias != false">
+                                <ng-container *ngFor="let datostabla3camposvariasfilas of datos.tabla_3_campos_varias_filas_intermedias">
+                                    <div class="col-md-6">
+                                        <p class="mb-2 text-center size16 letter-spacing1-01 font-weight-bold">{{ datostabla3camposvariasfilas.titulo_general_tabla }}</p> 
+                                        <table class="full-table mt-3 mb-5 wow animate__animated animate__fadeInUp">
+                                            <thead>
+                                                <th>{{ datostabla3camposvariasfilas.titulo_item_1 }}</th>
+                                                <th>{{ datostabla3camposvariasfilas.titulo_item_2 }}</th>
+                                                <th>{{ datostabla3camposvariasfilas.titulo_item_3 }}</th>
+                                            </thead>
+                                            <tbody>
+                                                <ng-container *ngFor="let data of datostabla3camposvariasfilas.info_items_tabla">
+                                                    <tr>
+                                                        <td rowspan="data.info_2_y_3?.length">{{ data.info_1 }}</td>
+                                                        <td>
+                                                            <ng-container *ngFor="let segundodato of data.info_2_y_3">
+                                                                <tr>{{ segundodato.texto_item_2 }}</tr>
+                                                            </ng-container>
+                                                        </td>
+                                                        <td>
+                                                            <tr *ngFor="let tercerdato of data.info_2_y_3">{{ tercerdato.texto_item_3 }}</tr>
+                                                        </td>
+                                                    </tr>
+                                                </ng-container>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </ng-container>
+                            </div>
                             <div class="row mt-3 mb-3">
                                 <ng-container *ngFor="let tipo of datos.tipo_de_juego_2">
                                     <div class="col-md-4">
@@ -104,12 +142,26 @@
                                 </div>
                             </div>
                             <div class="row mt-3 mb-3">
+                                <div class="col-xs-12 col-md-12">
+                                    <p class="size15 letter-spacing1-01 text-justify" [innerHTML]="datos.nota_adicional_1"></p>    
+                                </div>
+                            </div>
+                            <div class="row mt-3 mb-3">
                                 <ng-container *ngFor="let secciontexto2 of datos.seccion_2_titulo_y_texto">
                                     <h3 class="title-general">{{ secciontexto2.titulo }}</h3>
                                     <p class="size15 letter-spacing1-01 text-justify" [innerHTML]="secciontexto2.texto"></p>    
                                 </ng-container>
                             </div>
-                            <div class="row mt-3 wow animate__animated animate__fadeInDown">
+                            <div class="row mt-3 mb-3">
+                                <ng-container *ngFor="let secciontextoconimagen of datos.seccion_texto_con_imagen">
+                                    <div class="col-xs-12 col-md-12">
+                                        <p class="mt-3"><strong>{{ secciontextoconimagen.titulo }}</strong></p>
+                                        <p class="size15 letter-spacing1-01 text-justify" [innerHTML]="secciontextoconimagen.texto"></p> 
+                                        <img class="img-fluid d-block mx-auto wow animate__animated animate__fadeInUp" *ngIf="secciontextoconimagen.imagen != false" src="{{ secciontextoconimagen.imagen }}" alt="Juega">   
+                                    </div> 
+                                </ng-container>
+                            </div>
+                            <div class="row mt-3 wow animate__animated animate__fadeInDown" *ngIf="datos.seccion_cuando_ganas != false">
                                     <ng-container *ngFor="let cuando of datos.seccion_cuando_ganas">
                                         <div class="col-xs-12 col-md-6 lineaVertical">
                                             <h3 class="title-general">{{ cuando.titulo }}</h3>
@@ -118,7 +170,7 @@
                                         </div>
                                     </ng-container>
                             </div>
-                            <div class="row mt-3 mb-3">
+                            <div class="row mt-3 mb-3" *ngIf="datos.seccion_cobros != false">
                                 <div class="col-xs-12 col-md-12">
                                     <ng-container *ngFor="let cobro of datos.seccion_cobros">
                                         <h3 class="color-title font-weight-700 letter-spacing1-69 line-height30 size25">{{ cobro.titulo }}</h3>
@@ -126,7 +178,7 @@
                                     </ng-container>
                                 </div>
                             </div>
-                            <div class="row mt-3 mb-3">
+                            <div class="row mt-3 mb-3" *ngIf="datos.seccion_sorteos != false">
                                 <div class="col-xs-12 col-md-12">
                                     <ng-container *ngFor="let sorteo of datos.seccion_sorteos">
                                         <h3 class="color-title font-weight-700 letter-spacing1-69 line-height30 size25">{{ sorteo.titulo }}</h3>
@@ -140,6 +192,49 @@
                                         </div> 
                                     </ng-container>
                                 </div>
+                            </div>
+                            <div class="row mt-2 mb-2" *ngIf="datos.seccion_burbuja1 != false">
+                                <ng-container *ngFor="let burbuja of datos.seccion_burbuja1">
+                                    <div class="burbuja mb-3">
+                                        <div class="col-xs-12 col-md-12">
+                                                <p><span class="title-font18">{{ burbuja.titulo }}</span> <br><br>
+                                                <p class="size15 letter-spacing1-01" [innerHTML]="burbuja.texto"></p>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                            <div class="row mt-2 mb-2" *ngIf="datos.imagen_repetida_2_columnas != false">
+                                <ng-container *ngFor="let imagen of datos.imagen_repetida_2_columnas">
+                                    <div class="col-xs-12 col-md-12">
+                                        <img class="img-fluid d-block mb-5" src="{{ imagen.imagen }}" alt="Súper astro">
+                                    </div>
+                                </ng-container>
+                            </div>
+                            <ng-container *ngFor="let seccion4 of datos.seccion_4_texto_con_imagen_derecha">
+                                <div class="row mt-2 mb-2 h-100" *ngIf="datos.seccion_4_texto_con_imagen_derecha != false">
+                                    <div class="col-xs-12 col-md-6 my-auto">
+                                        <h3 class="title-general">{{ seccion4.titulo }}</h3>
+                                        <p class="size15 letter-spacing1-01 text-justify" [innerHTML]="seccion4.texto"></p>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <img class="img-fluid"src="{{ seccion4.imagen}}" alt="Pagos">
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <div class="row wow animate__animated animate__bounceInUp" *ngIf="datos.seccion_burbuja2 != false">
+                                <ng-container *ngFor="let burbuja2 of datos.seccion_burbuja2">
+                                    <div class="mb-3 burbuja h-100">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-6">
+                                                <p class="subtitle-general">{{ burbuja2.titulo }}</p>
+                                                <p class="text-justify size15 letter-spacing1-01" [innerHTML]="burbuja2.texto"></p>
+                                            </div>
+                                            <div class="col-xs-12 col-md-6 my-auto">
+                                                <a href="{{ burbuja2.link }}" target="_blank"><img class="img-fluid" src="{{ burbuja2.imagen }}" alt="Click Aquí"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
                             </div>
                             <div class="row oficinas mt-3 mb-2">
                                 <div class="col-md-12">
@@ -156,1214 +251,6 @@
                             </div>
                         </div>
                     </ng-container>
-                    <!--
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <img class="w-100 mb-5 border-r5" src="./assets/juegos_page/CHANCEP1.jpg" alt="Banner Juegos">
-                        <div class="row mb-5">
-                            <div class="col-md-12">
-                                <ul class="size15 letter-spacing1-01 text-justify">
-                                    <li>El número de cifras seleccionadas por el apostar, cuatro (4), tres (3), dos (2) o una (1), corresponde a las cuatro últimas, tres últimas, dos últimas o última cifra del resultado del premio mayor de la lotería o sorteo autorizado.</li>
-                                    <li>Todas las apuestas pueden realizarse en cualquier punto Gane Servicio de la ciudad de Cali.</li>
-                                    <li>A partir del 1 de enero del 2021 a todos los acreedores de ganancias ocasionales como loterías, rifas, apuestas y similares que reciban premios iguales o superiores a $1.743.000 se les practicará Retención en la Fuente a una tarifa del 20%.</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4">
-                                <img class="w-100 wow animate__animated animate__fadeInUp" src="./assets/juegos_page/ChancePNG.png" alt="Chance">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">Chance:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">Consiste en acertar el resultado de una lotería o sorteo, el cual puede ser de una, dos, tres o cuatro cifras. El chance además de ser fácil de jugar, es altamente confiable y transparente por su dinámica sistematizada en la que todos los números cuentan con las mismas probabilidades de ganar.
-                                    El chance tiene las siguientes condiciones:
-                                    Valor mínimo de apuesta por formulario es de $600 y valor máximo es de $60.000.
-                                    La apuesta puede realizarse en cualquier punto de venta fijo o móvil de la ciudad de Cali, Yumbo, La cumbre, Jamundí y Vijes.</p></div>
-                        </div>
-                        <div class="row wow animate__animated animate__fadeInUp">
-                            <div class="col-md-12">
-                                <ul class="size15 letter-spacing1-01 text-justify">
-                                    <li>A partir del 1 de enero del 2020 a todos los acreedores de ganancias ocasionales como loterías, rifas, apuestas y similares que reciban premios iguales o superiores a $1.743.000 se les practicará Retención en la Fuente a una tarifa del 20%.</li>
-                                    <li>El número de cifras seleccionadas por el apostador, cuatro (4), tres (3), dos (2) o una (1), corresponde a las cuatro últimas, tres últimas, dos últimas o última cifra del resultado del premio mayor de la lotería o sorteo autorizado.</li>
-                                    <li>Todas las apuestas pueden realizarse en cualquier punto Gane Servicio de la ciudad de Cali.</li>
-                                </ul>
-                                <h3 class="title-general">Chance de cuatro cifras:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">Este producto debe ser jugado con un número compuesto por cuatro cifras y una o varias loterías y/o sorteos. Gana el apostador que acierte el número de cuatro cifras en orden, con la lotería y/o sorteo jugado. El valor que paga el acierto equivale a $4.500 por peso apostado.</p>
-                                <h3 class="title-general">Chance de tres cifras:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">Este producto debe ser jugado con un número compuesto por tres cifras y una o varias loterías y/o sorteos. Gana el apostador que acierte el número de tres cifras en orden, con la lotería y/o sorteo jugado. El valor que paga el acierto equivale a $400 por peso apostado.</p>
-                                <h3 class="title-general">Chance de dos cifras (pata):</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">Este producto debe ser jugado con un número compuesto por dos cifras y una o varias loterías y/o sorteos. Gana el apostador que acierte el número de dos cifras en orden, con la lotería o sorteo jugado. El valor que paga el acierto equivale a $50 por peso apostado.</p>
-                                <h3 class="title-general">Chance de una cifra (uña):</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">Este producto debe ser jugado con un número compuesto por una cifra y una o varias loterías y/o sorteos. Gana el apostador que acierte el número de una cifra con la lotería o sorteo jugado. El valor que paga el acierto equivale a $5 por peso apostado.</p>
-                                <h3 class="title-general">Chance combinado de cuatro cifras:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">Este producto debe ser jugado con un número compuesto por cuatro cifras y una o varias loterías y/o sorteos. El apostador elige combinar la posición de las cifras, el acierto se da cuando el resultado de la lotería y/o sorteo contiene las cuatro cifras escogidas en cualquier orden. El valor que paga el acierto equivale a $208 por peso apostado.</p>
-                                <h3 class="title-general">Chance combinado de tres cifras:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">Este producto debe ser jugado con un número compuesto por tres cifras y una o varias loterías y/o sorteos. El apostador elige combinar la posición de las cifras, el acierto se da cuando el resultado de la lotería y/o sorteo contiene las tres cifras escogidas en distinto orden. El valor que paga el acierto equivale a $83 por peso apostado.</p>
-                                <h3 class="title-general">Términos y Condiciones</h3>
-                                <ul>
-                                    <li class="size15 letter-spacing1-01">Chance 4 cifras paga $4.500 por peso apostado </li>
-                                    <li class="size15 letter-spacing1-01">Chance 4 cifras combinado paga $208 por peso apostado </li>
-                                    <li class="size15 letter-spacing1-01">Chande 3 cifras paga $400 por peso apostado </li>
-                                    <li class="size15 letter-spacing1-01">Chande 3 cifras combinado paga $83 por peso apostado </li>
-                                    <li class="size15 letter-spacing1-01">Chance 2 cifras paga $50 por peso apostado </li>
-                                    <li class="size15 letter-spacing1-01">Chance 1 cifra paga $5 por peso apostado </li>
-                                    <li class="size15 letter-spacing1-01">El cliente decide sobre que modalidad de chance realizará su apuesta </li>
-                                    <li class="size15 letter-spacing1-01">Aplican descuentos de ley. Ver en <a href="https://www.gane.com.co/pago-de-premios/chance">https://www.gane.com.co/pago-de-premios/chance</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        <img class="w-100 mb-3 border-r5" src="./assets/juegos_page/DOBLECHANCEP2.jpg" alt="Banner Juegos">
-                        <div class="row mt-4 mb-3 h-100">
-                            <div class="col-md-4">
-                                <img class="w-100 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/doble-chance.png" alt="Chance">
-                            </div>
-                            <div class="col-md-8 my-auto">
-                                <h3 class="title-general">Doble Chance Acumulado:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify"><strong>Normatividad:</strong>
-                                    El decreto 176 de febrero de 2017, permite a las empresas concesionarias del juego de apuestas permanentes asociarse para la operación del plan de premios del doble acierto acumulado; esto bajo los parámetros que establece el acuerdo 326 de Mayo 30 de 2017, Por el cual se establecen las condiciones para la operación del plan de premios del doble acierto con premio acumulado del juego de apuestas permanentes o chance.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row mb-3 h-100">
-                            <div class="col-md-4">
-                                <img class="w-100 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/Doble-chance-3-cifras.png" alt="Chance">
-                            </div>
-                            <div class="col-md-8 my-auto">
-                                <h3 class="title-general">Doble Chance Acumulado tres (3) cifras:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">El acumulado inicial será mínimo de dos mil novecientas (2.900) veces el valor apostado, calculado sobre el valor total de la apuesta. De no haber ganadores se Incrementará de forma automática el premio acumulado con el 14% de los ingresos brutos de la venta diaria por esta modalidad.
-                                    <br>
-                                    Cada empresa asociada paga los premios de 1 acierto. Se pagan $300 veces el valor apostado a cada número.
-                                </p>
-                            </div>
-
-                                    <table class="full-table mt-3">
-                                        <thead>
-                                                <th>Periodicidad</th>
-                                                <th>Diario</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Valor Doble Acierto 3 cifras</td>
-                                                <td>$2.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Valor Apuesta Sin IVA</td>
-                                                <td>$1.680</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Acumulado Inicial</td>
-                                                <td>$18.000.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Valor Aproximación 1 acierto</td>
-                                                <td>$50.420</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                        </div>
-                        <div class="row mt-5 mb-5">
-                            <div class="col-xs-12 col-md-12">
-                                <h3 class="title-general">Forma de jugar en la modalidad tres (3) cifras:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">El apostador selecciona cinco (5) números de tres (3) cifras, con la expectativa de que dos (2) de los 5 números elegidos coincidan con el resultado del premio mayor de dos (2) loterías o Sorteos seleccionados y autorizados, que jueguen el mismo día.
-                                    El jugador ganará el PREMIO ACUMULADO vigente del día que se realizó la apuesta.
-                                    <br><br> 
-                                    Cuando en un mismo ciclo diario de juego, varios jugadores seleccionen las combinaciones ganadoras, el premio se distribuirá en partes iguales entre los ganadores. Paramutualidad de las empresas asociadas.                                    
-                                </p>
-                                <br>
-                                <h3 class="title-general text-center">ACUMULADO</h3>
-                                <p class="text-center size14">10/Febrero/2021</p>
-                                <p class="size50 text-gray font-weight-700 text-center">$18.000.000</p>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-xs-12 col-md-4">
-                                <img class="w-100 mb-2 wow animate__animated animate__fadeInRight" src="./assets/juegos_page/Doble-chance-4-cifras.png" alt="Chance">
-                            </div>
-                            <div class="col-xs-12 col-md-8">
-                                <h3 class="title-general">Doble Chance Acumulado cuatro (4) cifras:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">El acumulado inicial será mínimo  de ciento cuarenta y cinco mil (145.000) veces el valor apostado, calculado sobre el valor total de la apuesta. De no haber ganadores se Incrementará de forma automática el premio acumulado con el 6.5% de los ingresos brutos de la venta diaria por esta modalidad. El 7.5% de los ingresos brutos obtenidos, se reservará para garantizar el premio inicial, una vez esta reserva alcance el valor del premio inicial, se destinará dicho porcentaje de forma automática para incrementar el premio acumulado.
-                                    <br>
-                                    Cada empresa asociada paga los premios de 1 acierto. Se pagan $3.000 el valor apostado a cada número.
-                                </p>
-                            </div>
-                            <div class="col-xs-12 col-md-12">
-                                <table class="full-table mt-3 mb-5">
-                                    <thead>
-                                            <th>Periodicidad</th>
-                                            <th>Diario</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Doble Acierto 4 cifras</td>
-                                            <td>$3.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Valor Apuesta Sin IVA</td>
-                                            <td>$2.521</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Acumulado Inicial</td>
-                                            <td>$400.000.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Valor Aproximación 1 acierto</td>
-                                            <td>$756.303</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="col-xs-12 col-md-12">
-                                <h3 class="title-general">Forma de jugar en la modalidad cuatro (4) cifras:</h3>
-                                <p class="size15 letter-spacing1-01">El apostador selecciona cinco (5) números de cuatro (4) cifras, con la expectativa de que dos (2) de los 5 números elegidos coincidan con el resultado del premio mayor de dos (2) loterías o Sorteos seleccionados y autorizados, que jueguen el mismo día.
-                                    El jugador ganará el PREMIO ACUMULADO vigente del día que se realizó la apuesta.
-                                    <br><br> 
-                                    Cuando en un mismo ciclo diario de juego, varios jugadores seleccionen las combinaciones ganadoras, el premio se distribuirá en partes iguales entre los ganadores. Paramutualidad  de las empresas asociadas.                                    
-                                </p>
-                                <!--
-                                <table class="full-table mt-5 mb-5">
-                                    <thead>
-                                            <th>Modalidad</th>
-                                            <th>4 cifras</th>
-                                            <th>3 cifras</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Periodicidad</td>
-                                            <td>$50.000</td>
-                                            <td>$4.700</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Valor de la apuesta doble acierto</td>
-                                            <td>$100.000</td>
-                                            <td>$6.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Valor de la apuesta sin iva</td>
-                                            <td>$150.000</td>
-                                            <td>$7.500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Acumulado inicial</td>
-                                            <td>$200.000</td>
-                                            <td>$8.300</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Valor aproximación 1 acierto</td>
-                                            <td>$250.000</td>
-                                            <td>$8.900</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                -->
-                            </div>
-                            <div class="col-xs-12 col-md-12">
-                                <p class="size15 letter-spacing1-01 text-justify"><strong>Premios de 1 acierto:</strong>
-                                    <br><br>
-                                    Los premios de un acierto para 3 y 4 cifras serán pagados en las Sedes de Servicio Gane o en la Oficina principal ubicada en la calle 13 No. 4 – 25 Edificio Carvajal.
-                                     <br><br>
-                                   <strong>Premios de 2 aciertos:</strong>
-                                   <br><br>
-                                    Acumulado Millonario será pagado por la Fiducia en la oficina principal de Gane, donde el cliente compró el formulario se le informará el listado de oficinas dispuestos por la Fiducia como puntos de pago donde puede acercarse a reclamar el premio con el documento de Validación. Pago de premio por fiducia y el documento de identidad, así mismo se le informará los tiempos mínimos en los que la fiducia tendrá disponible el premio para su cobro.
-                                    <br><br>
-                                    <strong>Validación para el pago de premios:</strong>
-                                    <br><br>
-                                    Para validar y pagar los premios se debe cumplir con los siguientes requisitos:<br>
-                                </p>
-                                    <ol class="size15 letter-spacing1-01 text-justify">
-                                        <li>Presentar el formulario original.</li>
-                                        <li>El formulario debe estar sin enmendaduras, tachaduras, ni ningún tipo de alteraciones que afecten su lectura y proceso de validación.</li>
-                                        <li>El formulario debe ser validado en línea por el sistema central del juego a través del terminal de la venta.</li>
-                                        <li>Se debe presentar el documento de identidad original del ganador para asegurar la veracidad de los datos consignados en la parte posterior de formulario.</li>
-                                    </ol>
-                                    <br>
-                                    <h3 class="title-general text-center">ACUMULADO</h3>
-                                    <p class="text-center size14">10/Febrero/2021</p>
-                                    <p class="text-gray font-weight-700 text-center size50">$489.516.000</p>
-                                    <br>
-                                    <p class="letter-spacing1-01 text-justify"><i>*Aplican descuentos de ley. Ver en <a href="https://www.gane.com.co/pago-de-premios/">https://www.gane.com.co/pago-de-premios/</a></i>
-                                        <br><br>
-                                        NOTA: El doble chance acumulado esta autorizado en los departamentos de Valle del cauca, Yumbo, Cumbre, Vijes, Jamundí, Cauca y Córdoba.
-                                    </p>        
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                        <img class="w-100 mb-5 border-r5" src="./assets/juegos_page/CHANCEMILLONARIOP1.jpg" alt="Banner Juegos">
-                        <div class="row mb-2">
-                            <div class="col-md-4 my-auto">
-                                <img class="w-100 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/chance-millonarioPNG.png" alt="Chance">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">Como se Juega el Chance Millonario:</h3>
-                                <p class="size15 letter-spacing1-01 text-justify">El CHANCE MILLONARIO es una modalidad de chance de doble acierto en donde el apostador selecciona 5 números de 4 cifras y 2 loterías tradicionales o sorteos autorizados, que jueguen el mismo día con la expectativa de que 2 de los números elegidos coincidan con el resultado.
-                                    El acumulado millonario es un premio paramutual, por lo tanto se dividirá en partes iguales entre los que acertaron.
-                                </p>
-                                <!--
-                                <table class="full-table mt-3 mb-5">
-                                    <thead>
-                                            <th>Periodicidad</th>
-                                            <th>Diario</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Doble Acierto 4 cifras</td>
-                                            <td>$50.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Valor Apuesta Sin IVA</td>
-                                            <td>$100.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Acumulado Inicial</td>
-                                            <td>$150.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Valor Aproximación 1 acierto</td>
-                                            <td>$200.000</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                -->
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-12">
-                                <p class="size15 letter-spacing1-01 text-justify">
-                                    Juégalo por un valor de $5.000 (IVA incluido). En San Andrés el valor de la apuesta es de $5.000 netos puesto que en ese Departamento no hay IVA.
-                                    El acumulado inicial es de mil millones de pesos ($1.000.000.000).
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row mt-5 wow animate__animated animate__fadeInDown">
-                            <div class="col-xs-12 col-md-7 lineaVertical">
-                                <h3 class="title-general">¿Cuándo ganas?</h3>
-                                <img class="w-100 d-block" src="./assets/juegos_page/cifrasPNG.png" alt="Cifras">
-                                <p class="mt-3 text-center color-title font-weight-500">Si 2 de los 5 números coinciden con el premio mayor de las loterías o sorteos</p>
-                                <p class="mt-5 size25 text-center color-title font-weight-700 letter-spacing1-69">¡ERES  MILLONARIO!</p>
-                            </div>
-                            <div class="col-xs-12 col-md-5">
-                                <h3 class="title-general">¿Cuándo ganas?</h3>
-                                <img class="d-block" src="./assets/juegos_page/ganasPNG.png" alt="Aciertos">
-                            </div>
-                        </div>
-                        <div class="row mt-5 mb-5 wow animate__animated animate__fadeInDown">
-                            <div class="col-md-12">
-                                <h3 class="color-title font-weight-700 letter-spacing1-69 line-height30 size25">Cobro de Premios</h3>
-                                <p><span class="color-title font-weight-500">Premios 1 acierto</span><br>
-                                <br>
-                                Premio de $1.260.504. Será pagado en la oficina principal autorizada, para la ciudad de Cali aplica la empresa Redcolsa Red Colombiana de Servicios SA, con su marca comercial Gane, ubicada en la calle 13 No. 4 – 25 Edificio Carvajal. <br>
-                                <br>
-                                <span class="color-title font-weight-500">Premios 2 aciertos</span><br>
-                                <br>Acumulado Millonario. Será pagado por la Fiducia. Para validar y pagar los premios se debe cumplir con los siguientes requisitos: <br>
-                                1. El apostador ganador se debe acercar a un punto de venta, para legalizar su premio.<br>
-                                2. Presentar el tiquete ganador original, debe estar sin enmendaduras ni alteraciones y totalmente diligenciado. <br>
-                                3. Presentar tu documento de identidad original junto con la fotocopia de tu cédula ampliada al 150% y el RUT (1).<br>
-                                4. Verificar el término de caducidad establecido en el artículo 12 de la ley 1393 de 2010 (2).<br>
-                                5. En el punto de venta, se informará al ganador la oficina más cercana según puntos de pago dispuestos por la Fiducia donde puede acercarse a reclamar el premio. Así mismo se les informará los horarios y días de atención de la misma.<br>
-                                6. El pago del premio solo se realizará por una entidad financiera mediante un cheque a primer beneficiario (3)(4).<br>
-                                <br>
-                                <span class="color-title font-weight-500">Descuentos de Ley</span><br>
-                                <br>
-                                Las apuestas tienen por ley un impuesto a las ventas del 19% El pago de premios está sujeto a la retención del impuesto por ganancia ocasional y los demás impuestos que fije la ley. El ganador asumirá el valor comercial del cheque expedido por la entidad financiera al primer beneficiario para cancelar el premio, así como el valor del cuatro por mil que genera la transacción del pago del premio. <br>
-                                <br>
-                                (1) En caso que el ganador no cuente con RUT, en el punto de venta deberá diligenciar el formato en el que se certifica que no poseer el RUT. <br>
-                                <br>
-                                (2) Artículo 12 de la ley 1393 de 2010: En todos los juegos de suerte y azar, el ganador debe presentar el documento de juego al operador para su cobro, en un término máximo de un (1) año contado a partir de la fecha de realización del sorteo; vencido ese término opera la prescripción extintiva del derecho. El término de prescripción se interrumpe con la sola presentación del documento ganador al operador.<br>
-                                <br> 
-                                (3) El pago de premios está sujeto a la retención del impuesto por ganancia ocasional y los demás impuestos que fije la ley. <br>
-                                <br>
-                                (4) El ganador asumirá el valor comercial del cheque expedido por la entidad financiera al primer beneficiario para cancelar el premio, así como el valor del cuatro por mil que genera la transacción del pago del premio.</p>
-                            </div>
-                        </div>
-                        <div class="row sorteos">
-                            <div class="col-md-12">
-                                <h3 class="color-title font-weight-700 letter-spacing1-69 line-height30 size25">SORTEOS DIARIOS</h3>
-                                <p>Juegan según día autorizado</p>
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <img class="w-100 d-block" src="./assets/juegos_page/sorteos1PNG.png" alt="Sorteos">
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <img class="w-100 d-block" src="./assets/juegos_page/sorteos2PNG.png" alt="Sorteos">
-                            </div>
-                        </div>
-                        <div class="row loterias mt-5 mb-5">
-                            <div class="col-md-12">
-                                <h3 class="color-title font-weight-700 letter-spacing1-69 line-height30 size25">LOTERÍAS</h3>
-                                <p>Juegan según día autorizado</p>
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <img class="w-100 d-block" src="./assets/juegos_page/sorteos3PNG.png" alt="Sorteos">
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <img class="w-100 d-block" src="./assets/juegos_page/sorteos4PNG.png" alt="Sorteos">
-                            </div>
-                        </div>
-                        <div class="row oficinas mt-5 mb-2">
-                            <div class="col-md-12">
-                                <h3 class="color-title font-weight-700 letter-spacing1-69 line-height30 size25">Oficinas a nivel nacional fiduciaria Banco de Occidente</h3>
-                                <p class="size15"><span class="color-title font-weight-500">Cali:</span> Calle. 13 No.73-116 – Local 105 C. Comercial Capri Plaza – PBX: 3330505 – FAX: 3300632<br>
-                                    <span class="color-title font-weight-500">Horario:</span> Lunes a Jueves: 8:00 a.m. – 11:30 a.m.; 2:00 p.m. – 4:00 p.m.<br>
-                                    <span class="color-title font-weight-500">Viernes:</span> 8:00 – 11:30 a.m.; 2:00 p.m. – 4:30 p.m.<br>
-                                    <span class="color-title font-weight-500">Fin de mes:</span> 8:00 a.m. – 11:30 a.m.; 2:00 p.m. – 4:00 p.m.</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-12">
-                                <p class="size15"><span class="color-title font-weight-500">Términos y Condiciones</span><br>
-                                    <br>
-                                    <span class="font-weight-600">*Chance Millonario es una modalidad de chance de Doble Acierto<br>
-                                    *Aplican descuentos de ley. Ver en https://www.gane.com.co/pago-de-premios/<br>
-                                    *Aplica únicamente para 4 cifras<br>
-                                    *Valor del formulario $5.000<br>
-                                    *Recuerde validar en su formulario la fecha del sorteo<br>
-                                    *Acumulado inicial $1.000.000.ooo<br>
-                                    *Este juego es paramutual<br>
-                                    *Acumula según decreto 176/17 (Doble Acierto)</span><br>
-                                    <br>
-                                    <i class="text-gray size15">NOTA: El Chance Millonario esta autorizado en los departamentos del Valle, Boyacá, Amazonas, Risaralda,  Quindío, Caldas, Casanare, Arauca, San Andres, Guainia, Guaviare, Bolivar, Atlantico, Nariño, Vaupes, Sucre, Caqueta, Cauca, Cesar, Choco, Vichada, Córdoba, Meta, Norte de Santander, Santander, Tolima, Huila.</i>
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                        <img class="w-100 mb-5" src="./assets/juegos_page/banner_juegos.jpg" alt="Banner Juegos">
-                        <div class="row mb-5">
-                            <div class="col-md-4">
-                                <img class="w-100 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/Super-ChancePNG.png" alt="Chance">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">Súper Chance:</h3>
-                                <p class="text-justify size15 letter-spacing1-01">El apostador escoge un número de 4 cifras (entre el 0000 – 9999), y paga el valor de la apuesta habilitada para el incentivo con la lotería definida para el sorteo, que se encuentra en $3.000, $5.000 y/o $8.000 (IVA incluido), dependiendo del comportamiento del mercado. Al valor pagado por el número jugado se le descuenta el IVA y sobre este valor apostado se calcula el valor del premio.<br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row mb-5">
-                            <div class="col-xs-12 col-md-12">
-                                <p class="text-justify">Si los cuatro números del resultado del sorteo de la lotería del día definida para el sorteo coinciden con los cuatro números (en su orden) escogidos, ganará $5.950 por peso apostado. Paga $1.450 + por $1 apostado.<br>
-                                    <br>
-                                    La periodicidad para entrega del incentivo es diaria.<br>
-                                    <br>
-                                    *Aplican descuentos de ley. Ver en <a href="https://www.gane.com.co/pago-de-premios/">https://www.gane.com.co/pago-de-premios/</a>
-                                </p>
-                            </div>
-                            <!--
-                            <div class="burbuja">
-                                <div class="col-xs-12 col-md-12">
-                                    <p><span class="title-font18">El Súper Chance tiene las siguientes condiciones:</span> <br>
-                                        El valor de la apuesta debe ser de $3.000 o $5.000 y $8.000. <br>
-                                        El valor que paga el acierto a las cuatro (4) cifras equivale a $5.950 por peso apostado. <br><br>
-                                        *Aplican descuentos de ley. <br>
-                                        Ver en <a href="https://www.gane.com.co/pago-de-premios/">https://www.gane.com.co/pago-de-premios/</a></p>
-                                </div>
-                            </div>
-                            -->
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-3-en-linea" role="tabpanel" aria-labelledby="v-pills-3-en-linea-tab">
-                        <img class="w-100 mb-5" src="./assets/juegos_page/banner_juegos.jpg" alt="Banner Juegos">
-                        <div class="row mb-5">
-                            <div class="col-md-4">
-                                <img class="w-100 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/3-en-linea.png" alt="Chance 3">
-                            </div>
-                            <div class="col-md-8 my-auto">
-                                <h3 class="title-general">3 en Línea</h3>
-                                <p class="size15 letter-spacing1-01">Chance en la modalidad de 3 cifras, con 8 oportunidades de ganar por formulario.</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12">
-                                <p><strong>a. Mecánica del incentivo y valor del incentivo a ofrecer:</strong></p>
-                                <p class="size15 letter-spacing1-01 text-justify">El apostador escoge un sorteo o lotería y 3 números de 3 cifras de su preferencia cada uno (entre el 000 y el 999), los cuales serán ordenados en el formulario de manera horizontal, de izquierda a derecha y dispuestos el uno sobre el otro, formando un tablero de 3 líneas con 8 oportunidades de ganar y paga el valor de la apuesta habilitada para el incentivo, que es de $2.400 por formulario (Iva incluido).</p>
-                            </div>
-                            <div class="col-xs-12 col-sm-12">
-                                <img class="w-100 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/3-enlinea-1.png" alt="Chance 3">
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-xs-12 col-sm-12">
-                                <p><strong>b. Premiación</strong></p>
-                                <p class="size15 letter-spacing1-01 text-justify">Si el resultado del sorteo o lotería escogido coincide con alguna de las 8 combinaciones generadas de 3 cifras (en su orden), ganará $100 adicional del valor del Plan de Premios autorizado por Ley para las 3 cifras (Artículo 2.7.2.2.1 del Decreto No. 1068 del 26 de mayo de 2015). Es decir, $500 por peso apostado.</p>
-                            </div>
-                            <div class="col-xs-12 col-sm-12">
-                                <img class="img-fluid d-block mx-auto wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/3-enlinea-2.png" alt="Chance 3">
-                            </div>
-                            <div class="col-xs-12 col-sm-12">
-                                <p><strong>c. Periodicidad:</strong></p>
-                                <p class="size15 letter-spacing1-01 text-justify">La periodicidad para entrega del incentivo es diaria.</p>
-                                <br>
-                                <p><strong>d. Retorno al jugador:</strong></p>
-                                <p class="size15 letter-spacing1-01 text-justify">La premiación ofrecida para el incentivo sin cobro de contrapartida será del 25% adicional del valor del Plan de Premios autorizado por Ley.</p> 
-                            </div>
-                        </div>
-                        <!--
-                        <div class="row mb-5">
-                            <div class="burbuja">
-                                <div class="col-xs-12 col-md-12">
-                                    <p><span class="title-font18">El valor que paga el acierto a las cuatro (4) cifras equivale a $5.950 por peso apostado.</span> <br><br>
-                                        <span class="title-font18">Términos y Condiciones:</span><br></p>
-                                        <ul class="size15 letter-spacing1-01">
-                                            <li>4 en Línea es un incentivo al chance que paga $5.950 por peso apostado</li>
-                                            <li>Aplican descuentos de ley (IVA)</li>
-                                            <li>Valor del formulario $2.000</li>
-                                            <li>Son 10 números de 4 cifras por formulario, valor de apuesta $200.</li>
-                                            <li>Aplica para la ciudad de Cali</li>
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                        -->
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-en-linea" role="tabpanel" aria-labelledby="v-pills-en-linea-tab">
-                        <img class="w-100 mb-5 border-r5" src="./assets/juegos_page/4ENLÍNEAP2.jpg" alt="Banner Juegos">
-                        <div class="row mb-5">
-                            <div class="col-md-4">
-                                <img class="w-100 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/cuatro-en-lineaPNG.png" alt="Chance">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">4 en Línea</h3>
-                                <p class="size15 letter-spacing1-01">Es una modalidad de apuesta diaria en donde por sólo dos mil ($2.000) pesos el apostador podrá ganar un millón ($1.000.000) de pesos, con diez oportunidades en un mismo formulario. Los números son seleccionados por el cliente, el sistema los registra y los combina de derecha a izquierda, de izquierda a derecha y en diagonal descendente tanto izquierda como derecha. Juega de lunes a domingo con la lotería y/o sorteo principal de cada día. Aplica únicamente para cuatro (4) cifras.</p>
-                            </div>
-                        </div>
-                        <div class="row mb-5">
-                            <div class="burbuja">
-                                <div class="col-xs-12 col-md-12">
-                                    <p><span class="title-font18">El valor que paga el acierto a las cuatro (4) cifras equivale a $5.950 por peso apostado.</span> <br><br>
-                                        <span class="title-font18">Términos y Condiciones:</span><br></p>
-                                        <ul class="size15 letter-spacing1-01">
-                                            <li>4 en Línea es un incentivo al chance que paga $5.950 por peso apostado</li>
-                                            <li>Aplican descuentos de ley (IVA)</li>
-                                            <li>Valor del formulario $2.000</li>
-                                            <li>Son 10 números de 4 cifras por formulario, valor de apuesta $200.</li>
-                                            <li>Aplica para la ciudad de Cali</li>
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-choladito" role="tabpanel" aria-labelledby="v-pills-choladito-tab">
-                        <img class="w-100 mb-5" src="./assets/juegos_page/banner_juegos.jpg" alt="Banner Juegos">
-                        <div class="row mb-3">
-                            <div class="col-md-4 my-auto">
-                                <img class="img-fluid d-block mx-auto wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/choladito_millonarioPNG.png" alt="Chance">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">El choladito</h3>
-                                <p class="text-justify size15 letter-spacing1-01">Es un incentivo al Chance donde el apostador escoge un número de 3 Cifras (entre el 000 – 999) o un número de 4 Cifras (entre el 0000 – 9999), para participar en el sorteo del premio en dinero con el resultado del sorteo del Chontico Millonario o de la lotería principal de la noche con el cual juega el incentivo.</p>
-                                <ul class="size15 letter-spacing1-01">
-                                    <li>El valor de la apuesta habilitada para el incentivo en 4 y 3 cifras es de $650 y $1.200.</li>
-                                    <li>El valor del incentivo en premios habilitado corresponde a:</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                                <p class="mb-2 text-center size16 letter-spacing1-01 font-weight-bold">Choladito 4 cifras</p>
-                                <table class="full-table mt-3">
-                                    <thead>
-                                            <th>Valor apuesta</th>
-                                            <th>Modalidad</th>
-                                            <th>Valor Premio</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>$650</td>
-                                            <td>4 cifras (en su orden)</td>
-                                            <td>$2.512.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>$1.200</td>
-                                            <td>4 cifras (en su orden)</td>
-                                            <td>$4.639.000</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <p class="mb-2 text-center size16 letter-spacing1-01 font-weight-bold">Choladito 3 cifras</p>
-                                <table class="full-table mt-3">
-                                    <thead>
-                                            <th>Valor apuesta</th>
-                                            <th>Modalidad</th>
-                                            <th>Valor Premio</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>$650</td>
-                                            <td>3 cifras (en su orden)</td>
-                                            <td>$258.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>$1.200</td>
-                                            <td>3 cifras (en su orden)</td>
-                                            <td>$474.000</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-pagatodo" role="tabpanel" aria-labelledby="v-pills-pagatodo-tab">
-                        <img class="w-100 mb-5" src="./assets/juegos_page/banner_juegos.jpg" alt="Banner Juegos">
-                        <div class="row mb-3">
-                            <div class="col-md-4 my-auto">
-                                <img class="img-fluid d-block mx-auto wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/paga-todoN.png" alt="Pagatodo">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">Paga Todo</h3>
-                                <p class="size15 letter-spacing1-01"><strong>Producto comercializado solamente en la ciudad de Jamundí</strong></p>
-                                <p class="text-justify size15 letter-spacing1-01">Es un incentivo al Chance donde el apostador escoge un número de 4 Cifras (entre el 0000 – 9999) o un número de 3 Cifras (entre el 000 –999), para participar en el sorteo del premio en dinero con el resultado del sorteo del Chontico Millonario o de la lotería principal de la noche con el cual juega el incentivo.</p>
-                                <ul class="size15 letter-spacing1-01">
-                                    <li>El valor de la apuesta habilitada para el incentivo en 4 y 3 cifras es de $750, $1.600 y $2.500.</li>
-                                    <li>El valor del incentivo en premios habilitado corresponde a:</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                                <p class="text-center size16 letter-spacing1-01 font-weight-bold">Paga Todo 4 Cifras</p>
-                                <table class="full-table mt-3">
-                                    <thead>
-                                            <th>Valor apuesta</th>
-                                            <th>Modalidad</th>
-                                            <th>Valor Premio</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td rowspan="5">$750</td>
-                                            <td>4 cifras (en su orden)</td>
-                                            <td>$2.842.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3 Primeras cifras o 3 Ultimas cifras</td>
-                                            <td>$9.454</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2 Ultimas cifras o 2 Primeras cifras</td>
-                                            <td>$750</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1 cifra o última cifra</td>
-                                            <td>$18.900</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4 cifras (en cualquier orden)</td>
-                                            <td>$3.150</td>
-                                        </tr>
-                                        <tr>
-                                            <td rowspan="5">$1.600</td>
-                                            <td>4 cifras (en su orden)</td>
-                                            <td>$6.050.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3 Primeras cifras o 3 Ultimas cifras</td>
-                                            <td>$20.168</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2 Ultimas cifras o 2 Primeras cifras</td>
-                                            <td>$1.600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1 cifra o última cifra</td>
-                                            <td>$40.336</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4 cifras (en cualquier orden)</td>
-                                            <td>$6.723</td>
-                                        </tr>
-                                        <tr>
-                                            <td rowspan="5">$2.500</td>
-                                            <td>4 cifras (en su orden)</td>
-                                            <td>$9.458.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3 Primeras cifras o 3 Ultimas cifras</td>
-                                            <td>$31.500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2 Ultimas cifras o 2 Primeras cifras</td>
-                                            <td>$2.500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1 cifra o última cifra</td>
-                                            <td>$63.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4 cifras (en cualquier orden)</td>
-                                            <td>$10.500</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <p class="text-center size16 letter-spacing1-01 font-weight-bold">Paga Todo 3 Cifras</p>
-                                <table class="full-table mt-3">
-                                    <thead>
-                                            <th>Valor apuesta</th>
-                                            <th>Modalidad</th>
-                                            <th>Valor Premio</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td rowspan="4">$750</td>
-                                            <td>3 cifras en su orden</td>
-                                            <td>$300.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2 últimas cifras o 2 Primeras cifras</td>
-                                            <td>$750</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1 cifra o última cifra</td>
-                                            <td>$6.303</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3 cifras (en cualquier orden)</td>
-                                            <td>$750</td>
-                                        </tr>
-                                        <tr>
-                                            <td rowspan="4">$1.600</td>
-                                            <td>3 cifras (en su orden)</td>
-                                            <td>$650.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2 últimas cifras o 2 primeras cifras</td>
-                                            <td>$1.600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1 cifra o última cifra</td>
-                                            <td>$13.445</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3 cifras (en cualquier orden)</td>
-                                            <td>$1.600</td>
-                                        </tr>
-                                        <tr>
-                                            <td rowspan="4">$2.500</td>
-                                            <td>3 cifras en su orden)</td>
-                                            <td>$1.010.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2 últimas cifras o 2 Primeras cifras</td>
-                                            <td>$2.500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1 cifra o última cifra</td>
-                                            <td>$21.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3 cifras (en cualquier orden)</td>
-                                            <td>$2.500</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-md-12">
-                                <p class="size15 letter-spacing1-01"><strong>Nota:</strong> Producto comercializado únicamente en Yumbo, Vijes, Cumbre y Jamundí.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-paga-mas" role="tabpanel" aria-labelledby="v-pills-paga-mas-tab">
-                        <img class="w-100 mb-5" src="./assets/juegos_page/banner_juegos.jpg" alt="Banner Juegos">
-                        <div class="row mb-3">
-                            <div class="col-md-4 my-auto">
-                                <img class="img-fluid d-block mx-auto wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/paga-masN.png" alt="Pagamas">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">Paga Más</h3>
-                                <p class="size15 letter-spacing1-01 color-title"><strong>Producto comercializado únicamente en Yumbo, vijes, cumbre y Jamundí.</strong></p>
-                                <p class="text-justify size15 letter-spacing1-01">Es un incentivo al Chance donde el apostador escoge un número de 4 Cifras (entre el 0000 – 9999), para participar en el sorteo del premio en dinero con el resultado del sorteo del Chontico Millonario o de la lotería principal de la noche con el cual juega el incentivo.</p>
-                                <ul class="size15 letter-spacing1-01">
-                                    <li>El valor de la apuesta habilitada para el incentivo en 4 cifras es de $350, $750 y $1.600.</li>
-                                    <li>El valor del incentivo en premios habilitado corresponde a:</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-12">
-                                <table class="full-table mt-3">
-                                    <thead>
-                                            <th>Valor apuesta</th>
-                                            <th>Modalidad</th>
-                                            <th>Valor Premio</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>$350</td>
-                                            <td>4 cifras (en su orden)</td>
-                                            <td>$1.363.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>$750</td>
-                                            <td>4 cifras (en su orden)</td>
-                                            <td>$2.921.000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>$1.600</td>
-                                            <td>4 cifras (en su orden)</td>
-                                            <td>$6.251.000</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-md-12">
-                                <p class="size15 letter-spacing1-01"><strong>Nota:</strong> Producto comercializado únicamente en Yumbo, La Cumbre y Vijes.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-gane-suenos" role="tabpanel" aria-labelledby="v-pills-gane-suenos-tab">
-                        <img class="w-100 mb-5" src="./assets/juegos_page/banner_juegos.jpg" alt="Banner Juegos">
-                        <div class="row mb-3">
-                            <div class="col-md-4 my-auto">
-                                <img class="img-fluid d-block mx-auto wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/gane-suenosN.png" alt="Gane">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">Gane Sueños</h3>
-                                    <p class="text-justify size15 letter-spacing1-01">El incentivo incluye premios en dinero y/o especie, la periodicidad para entrega del incentivo es semanal (los días miércoles), con el resultado del premio mayor del sorteo de la Lotería del Valle.</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="size15 letter-spacing1-01">Condiciones:</p>
-                                    <ul class="text-justify size15 letter-spacing1-01">
-                                        <li>El apostador realiza un chance tradicional (1,2,3 o 4 cifras) bajo la modalidad de su preferencia seleccionada (en su orden ó en cualquier orden) con mínimo un sorteo y/o una lotería como apuesta principal y paga el valor que desee apostar., la cual lo habilita y le da la oportunidad de realizar la apuesta con el incentivo con cobro “Gane Sueños”.</li>
-                                    </ul>
-                                <p class="size15 letter-spacing1-01">Mecánica:</p>    
-                                    <ul class="text-justify size15 letter-spacing1-01">
-                                        <li>El apostador escoge un número de 4 cifras (entre el 0000 – 9999), para participar en el sorteo de un premio en especie dinero y/o especie con el resultado del premio mayor del sorteo de la lotería del Valle con el que juega el incentivo. El valor de la apuesta habilitada para el incentivo, que se encuentra entre $8.000 y $50.000, dependiendo del comportamiento del mercado.</li>
-                                        <li>Redcolsa entregará un premio al apostador ganador mediante la modalidad de incentivo</li>
-                                    </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-gane5" role="tabpanel" aria-labelledby="v-pills-gane5-tab">
-                        <img class="w-100 mb-5 border-r5" src="./assets/juegos_page/GANE5P1.jpg" alt="Banner Juegos">
-                        <div class="row mb-5">
-                            <div class="col-md-4">
-                                <img class="img-fluid pb-3 mx-auto d-block wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/Gane-CincoPNG.png" alt="Chance">
-                            </div>
-                            <div class="col-md-8 my-auto">
-                                <h3 class="title-general">Gane 5</h3>
-                                <p class="text-justify size15 letter-spacing1-01">El apostador escoge la modalidad de GANE 5, selecciona cinco números de 4 Cifras (entre el 0000 – 9999), el sorteo y/o la lotería habilitada del día y paga el valor de la apuesta habilitada para el incentivo, que es de $1.000 (IVA incluido). Al valor pagado por el número jugado se le descuenta el IVA y sobre este valor apostado se calcula el valor del premio.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row mb-5">
-                            <div class="col-xs-12 col-md-12">
-                                <p class="text-justify size15 letter-spacing1-01">Si los cuatro (4) números del resultado del sorteo y/o la lotería habilitada del día coinciden con los cuatro números (en su orden) de alguno de los cinco números apostados, ganará $5.950 por peso apostado. Paga $1.450 + por $1 apostado.<br>
-                                   <br> 
-                                La periodicidad para entrega del incentivo es diaria.
-                                </p>
-                                <p class="size15 letter-spacing1-01"><i>*La apuesta puede realizarse en cualquier punto de venta fijo o móvil de la ciudad de Cali, Yumbo, Jamundi, Vijes o la cumbre.</i>
-                                </p>
-                            </div>
-                            <!--
-                            <div class="burbuja">
-                                <div class="col-xs-12 col-md-12">
-                                    <p><span class="title-font18">El valor que paga el acierto a las cuatro (4) cifras equivale a $5.950 por peso apostado.</span> <br><br>
-                                        <span class="title-font18">Términos y Condiciones:</span><br></p>
-                                        <ul class="size15 letter-spacing1-01">
-                                            <li>Gane 5 es un incentivo al chance que paga $5.950 por peso apostado</li>
-                                            <li>Aplican descuentos de ley (IVA)</li>
-                                            <li>Valor del formulario $1.000</li>
-                                            <li>Son 5 números de 4 cifras por formulario, valor de apuesta $200.</li>
-                                            <li>Aplica para la ciudad de Cali</li>
-                                        </ul>
-                                </div>
-                            </div>
-                            -->
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-superastro" role="tabpanel" aria-labelledby="v-pills-superastro-tab">
-                        <img class="w-100 mb-5 border-r5" src="./assets/juegos_page/SUPERASTROP2.jpg" alt="Banner Juegos">
-                        <div class="row mb-5 h-100">
-                            <div class="col-md-6 my-auto">
-                                <img class="w-100 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/Super-AstroPNG.png" alt="Super Astro">
-                            </div>
-                            <div class="col-md-6">
-                                <h3 class="title-general">Súper Astro</h3>
-                                <h4 class="subtitle-general">¿Qué es el Super Astro?</h4>
-                                <p class="size15 letter-spacing1-01">Es un juego de suerte y azar novedoso en el cual el jugador indica el valor de su apuesta y escoge un número de no más de cuatro (4) cifras y uno (1) de los doce (12) signos del zodiaco, de manera que su número y signo coincidan con el resultado obtenido en un sorteo.</p>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-xs-12 col-md-6">
-                                <div class="burbuja card-shadow-hover">
-                                    <p><span class="subtitle-general">Aspectos Legales</span></p>
-                                    <p class="text-justify size15 letter-spacing1-01">El SUPER astro es un juego nacional regulado por Coljuegos y operado por Corredor Empresarial S.A. a partir de contrato de concesión 1277 de 21 de Enero de 2015 y acuerdo 08 del 5 de septiembre de 2014.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <div class="burbuja card-shadow-hover">
-                                    <p><span class="subtitle-general">Estrategias para ganar</span></p>
-                                        <ul class="text-justify size15 letter-spacing1-01">
-                                            <li>Juegue el número con los dos sorteos SUPER astro SOL y SUPER astro LUNA.</li>
-                                            <li>Juegue todos sus números favoritos con su signo zodiacal.</li>
-                                            <li>Con la misma apuesta usted tiene 3 oportunidades de ganar.</li>
-                                            <li>Paga 42.000 veces lo apostado</li>
-                                        </ul>	
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-5 h-100">
-                            <div class="col-xs-12 col-md-12">
-                                <img class="img-fluid mb-3" src="./assets/juegos_page/superastro-sorteo.jpg" alt="Sorteo">
-                            </div>
-                            <div class="col-xs-12 col-md-6 my-auto">
-                                    <h3 class="title-general">El plan de premios es el <br>siguiente:</h3>
-                                    <p class="size15 letter-spacing1-01 text-justify ">El SUPER astro posee un atractivo plan de premios que le permite lograr con una misma apuesta tres oportunidades de ganar:</p>
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <img class="img-fluid"src="./assets/juegos_page/Image_pagos.png" alt="Pagos">
-                            </div>
-                        </div>
-                        <div class="row mb-3 burbuja h-100 wow animate__animated animate__bounceInUp">
-                            <div class="col-xs-12 col-md-6">
-                                <p class="subtitle-general">El Súper Astro tiene las siguientes condiciones:</p>
-                                <p class="text-justify size15 letter-spacing1-01">Para acceder al Plan de Premios es necesario que la apuesta coincida con el resultado del sorteo en estricto orden de izquierda a derecha.</p>
-                            </div>
-                            <div class="col-xs-12 col-md-6 my-auto">
-                                <a href="https://superastro.com.co/" target="_blank"><img class="img-fluid" src="./assets/juegos_page/Image-clickInfo.png" alt="Click Aquí"></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div><p class="size15 letter-spacing1-01">Términos y Condiciones: <br>
-                                *Autoriza Coljuegos - *Aplican descuentos de ley</p></div>
-                        </div>
-                    </div>
-                    <!--
-                    <div class="tab-pane fade" id="v-pills-ganemania" role="tabpanel" aria-labelledby="v-pills-ganemania-tab">
-                        <img class="w-100 mb-5" src="./assets/juegos_page/banner_juegos.jpg" alt="Banner Juegos">
-                        <div class="row mb-5">
-                            <div class="col-md-6">
-                                <img class="img-fluid pb-3 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/Gane-maniaPNG.png" alt="Ganemanía">
-                            </div>
-                            <div class="col-md-6">
-                                <h3 class="title-general">Ganemanía</h3>
-                                <h4 class="subtitle-general">¿Qué es el Super Astro?</h4>
-                                <p class="size15 letter-spacing1-01">Este juego da la posibilidad de ganar fácilmente en una sola apuesta de mínimo $2.000. Gana el apostador que acierte el número de tres cifras en orden, con la lotería o sorteo jugado. El valor que paga el acierto a las tres (3) cifras equivale a $500 por peso apostado. Ganemanía permite una apuesta mínima de $200 por número y máximo 10 sorteos por formulario.</p>
-                            </div>
-                        </div>
-                        <div class="row mb-5">
-                            <div class="burbuja">
-                                <div class="col-xs-12 col-md-12">
-                                    <p><span class="title-font18">Términos y condiciones</span></p>
-                                        <ul class="size15 letter-spacing1-01">
-                                            <li>Ganemanía es un incentivo al chance que paga $500 por peso apostado</li>
-                                            <li>Aplica únicamente para chance 3 cifras</li>
-                                            <li>Aplica para la ciudad de Cali</li>
-                                            <li>El valor de la apuesta debe ser mínimo de $200 por número y máximo 10 sorteos por formulario</li>
-                                            <li>Aplican descuentos de ley. Ver en <a href="#">https://www.gane.com.co/pago-de-premios/</a></li>
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-                    <div class="tab-pane fade" id="v-pills-loteria" role="tabpanel" aria-labelledby="v-pills-loteria-tab">
-                        <img class="w-100 mb-5 border-r5" src="./assets/juegos_page/LOTERIAP1.jpg" alt="Banner Juegos">
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                <img class="img-fluid pb-3 wow animate__animated animate__fadeInLeft" src="./assets/juegos_page/BitmapPNG.png" alt="Lotería">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">Lotería</h3>
-                                <p class="text-justify size15 letter-spacing1-01">Es un juego de azar donde hay una emisión de billetes con números y series, el cual se comercializa al público en general, a través de billetes y fracciones las cuales tienen un valor nominal. Juega en horario nocturno con un sistema de baloteras electrónicas, donde de manera simultánea juega el número y la serie. Cada beneficencia emite los billetes de loterías. Los billetes lo conforman dos, tres, cuatro o hasta cinco fracciones. Cada ente departamental estipula el precio económico del billete o fracción. Cada lotería tiene un Plan de Premios diferente que incluye aciertos al premio mayor, aciertos a los secos, aciertos a las series y combinaciones entre estos.</p>
-                            </div>
-                        </div>
-                        <div class="row mb-5">
-                            <div class="col-xs-12 col-md-12">
-                                <p class="title-general">Lotería virtual</p>
-                                <p class="size15 letter-spacing1-01 text-justify ">Se juega de la misma forma que la lotería física, con la diferencia de que la lotería virtual se comercializa por vía electrónica, donde el cliente tiene la posibilidad de verificar los números y series disponibles, seleccionando los de su preferencia. La compra se hace por fracción en los puntos de venta fijos y móviles.</p>
-                            </div>
-                        </div>
-                        <!--
-                        <div class="row">
-                            <div class="burbuja wow animate__animated animate__fadeInUp">
-                                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                      <a class="nav-link active d-flex align-content-stretch align-items-stretch" id="incentivo-tab" data-toggle="tab" href="#incentivo" role="tab" aria-controls="incentivo" aria-selected="true"><img class="mx-auto" src="./assets/juegos_page/Image-1PNG.png" alt="Incentivo"></a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link d-flex align-content-stretch align-items-stretch" id="choladito-tab" data-toggle="tab" href="#choladito" role="tab" aria-controls="choladito" aria-selected="false"><img class="mx-auto" src="./assets/juegos_page/choladito_millonarioPNG.png" alt="Choladito Millonario"></a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link d-flex align-content-stretch align-items-stretch" id="pagatodo-tab" data-toggle="tab" href="#pagatodo" role="tab" aria-controls="pagatodo" aria-selected="false"><img class="mx-auto" src="./assets/juegos_page/paga-todoPNG.png" alt="Pagatodo"></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link d-flex align-content-stretch align-items-stretch" id="pagamas-tab" data-toggle="tab" href="#pagamas" role="tab" aria-controls="pagamas" aria-selected="false"><img class="mx-auto" src="./assets/juegos_page/paga-masPNG.png" alt="Pagamas"></a>
-                                      </li>
-                                  </ul>
-                                  <div class="tab-content p-3" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="incentivo" role="tabpanel" aria-labelledby="incentivo-tab">
-                                        <p class="size15 letter-spacing1-01">El incentivo incluye premios en dinero y/o especie, la periodicidad para entrega del incentivo es semanal (los días miércoles), con el resultado del premio mayor del sorteo de la Lotería del Valle.<br>
-                                            Condiciones:</p>
-                                            <ul class="size15 letter-spacing1-01">
-                                                <li>El apostador realiza un chance tradicional (1,2,3 o 4 cifras) bajo la modalidad de su preferencia seleccionada (en su orden ó en cualquier orden) con mínimo un sorteo y/o una lotería como apuesta principal y paga el valor que desee apostar., la cual lo habilita y le da la oportunidad de realizar la apuesta con el incentivo con cobro “Gane Sueños”.</li>
-                                            </ul>
-                                        <p class="size15 letter-spacing1-01">Mecánica:</p>    
-                                            <ul class="size15 letter-spacing1-01">
-                                                <li>El apostador escoge un número de 4 cifras (entre el 0000 – 9999), para participar en el sorteo de un premio en especie dinero y/o especie con el resultado del premio mayor del sorteo de la lotería del Valle con el que juega el incentivo. El valor de la apuesta habilitada para el incentivo, que se encuentra entre $8.000 y $50.000, dependiendo del comportamiento del mercado.</li>
-                                                <li>Redcolsa entregará un premio al apostador ganador mediante la modalidad de incentivo</li>
-                                            </ul>
-                                    </div>
-                                    <div class="tab-pane fade" id="choladito" role="tabpanel" aria-labelledby="choladito-tab">
-                                            <p class="size15 letter-spacing1-01">Es un incentivo al Chance donde el apostador escoge un número de 3 Cifras (entre el 000 – 999) o un número de 4 Cifras (entre el 0000 – 9999), para participar en el sorteo del premio en dinero con el resultado del sorteo del Chontico Millonario o de la lotería principal de la noche con el cual juega el incentivo.</p>
-                                            <ul class="size15 letter-spacing1-01">
-                                                <li>El valor de la apuesta habilitada para el incentivo en 4 y 3 cifras es de $650 y $1.200.</li>
-                                                <li>El valor del incentivo en premios habilitado corresponde a:</li>
-                                            </ul>
-                                            <div class="row">
-                                                <div class="col-xs-12 col-md-6">
-                                                    <p class="mb-2">Choladito 4 cifras</p>
-                                                    <table class="full-table mt-3">
-                                                        <thead>
-                                                                <th>Valor apuesta</th>
-                                                                <th>Modalidad</th>
-                                                                <th>Valor Premio</th>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>$650</td>
-                                                                <td>4 cifras (en su orden)</td>
-                                                                <td>$2.512.000</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>$1.200</td>
-                                                                <td>4 cifras (en su orden)</td>
-                                                                <td>$4.639.000</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <div class="col-xs-12 col-md-6">
-                                                    <p class="mb-2">Choladito 3 cifras</p>
-                                                    <table class="full-table mt-3">
-                                                        <thead>
-                                                                <th>Valor apuesta</th>
-                                                                <th>Modalidad</th>
-                                                                <th>Valor Premio</th>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>$650</td>
-                                                                <td>3 cifras (en su orden)</td>
-                                                                <td>$258.000</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>$1.200</td>
-                                                                <td>3 cifras (en su orden)</td>
-                                                                <td>$474.000</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="pagatodo" role="tabpanel" aria-labelledby="pagatodo-tab">
-                                            <p><span class="font-weight-600 color-title">Producto comercializado solamente en la ciudad de Jamundí</span><br>
-                                                <br>
-                                                Es un incentivo al Chance donde el apostador escoge un número de 4 Cifras (entre el 0000 – 9999) o un número de 3 Cifras (entre el 000 –999), para participar en el sorteo del premio en dinero con el resultado del sorteo del Chontico Millonario o de la lotería principal de la noche con el cual juega el incentivo.<br>
-                                                 <br>
-                                                •	El valor de la apuesta habilitada para el incentivo en 4 y 3 cifras es de $750, $1.600 y $2.500.<br>
-                                                •	El valor del incentivo en premios habilitado corresponde a:</p>
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-md-6">
-                                                        <table class="full-table mt-3">
-                                                            <thead>
-                                                                    <th>Valor apuesta</th>
-                                                                    <th>Modalidad</th>
-                                                                    <th>Valor Premio</th>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td rowspan="5">$750</td>
-                                                                    <td>4 cifras (en su orden)</td>
-                                                                    <td>$2.842.000</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3 Primeras cifras o 3 Ultimas cifras</td>
-                                                                    <td>$9.454</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2 Ultimas cifras o 2 Primeras cifras</td>
-                                                                    <td>$750</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1 cifra o última cifra</td>
-                                                                    <td>$18.900</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>4 cifras (en cualquier orden)</td>
-                                                                    <td>$3.150</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td rowspan="5">$1.600</td>
-                                                                    <td>4 cifras (en su orden)</td>
-                                                                    <td>$6.050.000</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3 Primeras cifras o 3 Ultimas cifras</td>
-                                                                    <td>$20.168</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2 Ultimas cifras o 2 Primeras cifras</td>
-                                                                    <td>$1.600</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1 cifra o última cifra</td>
-                                                                    <td>$40.336</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>4 cifras (en cualquier orden)</td>
-                                                                    <td>$6.723</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td rowspan="5">$2.500</td>
-                                                                    <td>4 cifras (en su orden)</td>
-                                                                    <td>$9.458.000</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3 Primeras cifras o 3 Ultimas cifras</td>
-                                                                    <td>$31.500</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2 Ultimas cifras o 2 Primeras cifras</td>
-                                                                    <td>$2.500</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1 cifra o última cifra</td>
-                                                                    <td>$63.000</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>4 cifras (en cualquier orden)</td>
-                                                                    <td>$10.500</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="col-xs-12 col-md-6">
-                                                        <table class="full-table mt-3">
-                                                            <thead>
-                                                                    <th>Valor apuesta</th>
-                                                                    <th>Modalidad</th>
-                                                                    <th>Valor Premio</th>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td rowspan="4">$750</td>
-                                                                    <td>3 cifras en su orden</td>
-                                                                    <td>$300.000</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2 últimas cifras o 2 Primeras cifras</td>
-                                                                    <td>$750</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1 cifra o última cifra</td>
-                                                                    <td>$6.303</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3 cifras (en cualquier orden)</td>
-                                                                    <td>$750</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td rowspan="4">$1.600</td>
-                                                                    <td>3 cifras (en su orden)</td>
-                                                                    <td>$650.000</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2 últimas cifras o 2 primeras cifras</td>
-                                                                    <td>$1.600</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1 cifra o última cifra</td>
-                                                                    <td>$13.445</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3 cifras (en cualquier orden)</td>
-                                                                    <td>$1.600</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td rowspan="4">$2.500</td>
-                                                                    <td>3 cifras en su orden)</td>
-                                                                    <td>$1.010.00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2 últimas cifras o 2 Primeras cifras</td>
-                                                                    <td>$2.500</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1 cifra o última cifra</td>
-                                                                    <td>$21.000</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3 cifras (en cualquier orden)</td>
-                                                                    <td>$2.500</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="pagamas" role="tabpanel" aria-labelledby="pagamas-tab">
-                                        <p class="size15 letter-spacing1-01"><span class="font-weight-600 color-title">Producto comercializado únicamente en Yumbo, vijes, cumbre y Jamundí.</span><br>
-                                            <br>
-                                            Es un incentivo al Chance donde el apostador escoge un número de 4 Cifras (entre el 0000 – 9999), para participar en el sorteo del premio en dinero con el resultado del sorteo del Chontico Millonario o de la lotería principal de la noche con el cual juega el incentivo.<br>
-                                            <br>
-                                            •	El valor de la apuesta habilitada para el incentivo en 4 cifras es de $350, $750 y $1.600.<br>
-                                            •	El valor del incentivo en premios habilitado corresponde a:
-                                            </p>
-                                            <table class="full-table mt-3">
-                                                <thead>
-                                                        <th>Valor apuesta</th>
-                                                        <th>Modalidad</th>
-                                                        <th>Valor Premio</th>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>$350</td>
-                                                        <td>4 cifras (en su orden)</td>
-                                                        <td>$1.363.000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>$750</td>
-                                                        <td>4 cifras (en su orden)</td>
-                                                        <td>$2.921.000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>$1.600</td>
-                                                        <td>4 cifras (en su orden)</td>
-                                                        <td>$6.251.000</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-supergordo" role="tabpanel" aria-labelledby="v-pills-supergordo-tab">
-                        <img class="w-100 mb-5 border-r5" src="./assets/juegos_page/SUPERGORDOP1.jpg" alt="Banner Juegos">
-                        <div class="row mb-5 h-100">
-                            <div class="col-md-4 my-auto">
-                                <img class="img-fluid pb-3 wow animate__animated animate__slideInLeft" src="./assets/juegos_page/Super-GordoPNG.png" alt="Super Gordo">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="title-general">Súper Gordo</h3>
-                                <p class="text-justify size15 letter-spacing1-01">El apostador escoge un número de 4 Cifras (entre el 0000 – 9999), y paga el valor de la apuesta habilitada para el incentivo con la lotería definida para el sorteo, que se encuentra en $10.000, $20.000 y/o $50.000 (IVA incluido), dependiendo del comportamiento del mercado. Al valor pagado por el número jugado se le descuenta el IVA y sobre este valor apostado se calcula el valor del premio.</p>
-                                <p class="text-justify size15 letter-spacing1-01">Si los cuatro números del resultado del sorteo de la lotería del día definida para el sorteo coinciden con los cuatro números (en su orden) escogidos, ganará $5.950 por peso apostado. Paga $1.450 + por $1 apostado.</p>
-                                <p class="text-justify size15 letter-spacing1-01">La periodicidad para entrega del incentivo es semanal, con el resultado del premio mayor del sorteo de la Lotería habilitada.<br><br>Ver en <a href="/#/pago-premios">https://www.gane.com.co/pago-de-premios/</a></p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

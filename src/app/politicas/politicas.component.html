@@ -2,41 +2,21 @@
     <div class="container">
         <div class="row h-100">
             <div class="col-xs-12 col-md-7 my-auto wow animate__animated animate__fadeInLeft">
-                <h2 class="montserrat font-weight-700 size35 line-height42 color-title">Políticas</h2>
-                <h2 class="montserrat size35 line-height42 color-title">Fundación Social</h2>
-                <p class="text-justify text-gray-dark size19 line-height23">LA FUNDACIÓN SOCIAL GANE con domicilio en la ciudad de Cali, como responsable y/o encargada del tratamiento de datos personales en los términos establecidos en la Ley 1581 de 2012 y el Decreto 1377 de 2013, tiene establecidas sus POLITICAS Y PROCEDIMIENTOS DE PROTECCION DE DATOS PERSONALES.</p>
+                <h2 class="montserrat font-weight-700 size35 line-height42 color-title">{{ seccion1_data.titulo_general }}</h2>
+                <h2 class="montserrat size35 line-height42 color-title">{{ seccion1_data.subtitulo_general }}</h2>
+                <p class="text-justify text-gray-dark size19 line-height23" [innerHTML]="seccion1_data.texto_general"></p>
             </div>
             <div class="col-xs-12 col-md-5">
-                <img class="d-block w-100 wow animate__animated animate__fadeInRight" src="./assets/home/FOOTER/GroupPNG.png" alt="Grupo">
+                <img class="d-block w-100 wow animate__animated animate__fadeInRight" src="{{ seccion1_data.imagen_derecha }}" alt="Grupo">
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-md-12 wow animate__animated animate__fadeInUp">
-                <h4 class="color-title letter-spacing1-4 size19 opensans font-weight-700">1. Tratamiento y Finalidad</h4><br>
-                <p class="text-justify text-gray-dark"><strong>LA FUNDACIÓN SOCIAL GANE</strong> utilizará sus datos personales para: <br>
-                    (A) Individualizar al titular del dato personal; <br>
-                    (B) Tener contacto permanente con el titular de los datos personales; <br>
-                    (C) Informar sobre cambios de nuestros servicios; <br>
-                    (D) Dar cumplimiento a obligaciones contraídas; <br>
-                    (E) Evaluar la calidad de nuestros servicios; <br>
-                    (F) Proveer servicios requeridos; <br>
-                    (G) Garantizar el ejercicio de los derechos como beneficiario de los servicios ofrecidos por la Fundación; <br>
-                    (H) Suministrar información sobre eventos, comunicación y publicidad relacionada con la Fundación, en el desarrollo de sus programas;<br> 
-                    (I) Búsqueda de un conocimiento más cercano con todos sus beneficiarios, proveedores, empleados y terceros vinculados; <br>
-                    (J) Compartir, incluyendo la transferencia y transmisión de sus datos personales a terceros para los fines relacionados con la operación de nuestra Fundación; <br>
-                    (K) Uso impreso de imágenes del titular en material impreso de la Fundación, así como volantes, panfletos, videos, página web, redes sociales, medios de comunicación y publicaciones de la Fundación; <br>
-                    (L) enviarle notificaciones de cambios a este aviso de privacidad; <br>
-                    (M) Elaboración de informes de gestión, análisis estadísticos; <br>
-                    (Ñ) cumplir con la legislación colombiana; <br>
-                    (O) Las demás estipuladas en el Manual de Políticas de Protección de Datos de la Fundación.</p>
-                <br>
-                <h4 class="color-title letter-spacing1-4 size19 opensans font-weight-700">2. Derechos de los Titulares</h4><br>
-                <p class="text-justify text-gray-dark">LA FUNDACIÓN SOCIAL GANE, manifiesta que los Titulares del Dato Personal cuentan con los siguientes derechos: acceso, actualización, rectificación, supresión y/o a revocar la autorización otorgada para el tratamiento de los datos personales. La solicitud de revocación no procederá cuando el titular tenga un deber legal o contractual de permanecer en la base de datos.<br><br>
-                    LA FUNDACIÓN SOCIAL GANE ha establecido los siguientes canales, para que estos derechos puedan ser ejercidos: A) Presencial: De manera verbal en nuestros puntos de atención. B) Escrita: presentando una consulta o reclamo plasmado en un documento escrito, enviado a la Calle 9 No. 4-50 Edificio de la Beneficencia del Valle, Oficina 210, Santiago de Cali, Valle del Cauca. C) Telefónico: A través de la línea (032) 8812000. D) Virtual: Mediante un correo electrónico a la dirección fundaciongane@gane.com.co</p>
-                <br>
-                <h4 class="color-title letter-spacing1-4 size19 opensans font-weight-700">3. Mecanismos para conocer el Manual de políticas para el tratamiento.</h4><br>
-                <p class="text-justify text-gray-dark">Igualmente informa a los titulares de la información personal que en cualquier momento pueden consultar nuestro Manual Interno de Políticas y Procedimientos de Datos Personales, el cual se encuentra disponible en el siguiente link <a href="#"><span class="text-blue">https://www.gane.com.co/index.php/2014-05-13-04-18-55/politica</span></a> Cualquier cambio sustancial en los términos del presente aviso de privacidad, así como de la Política de Tratamiento de Datos, serán informados a través del link.</p>
-            </div>
+            <ng-container *ngFor="let data of seccion_2_data">
+                <div class="mb-4 col-xs-12 col-md-12 wow animate__animated animate__fadeInUp">
+                    <h4 class="color-title letter-spacing1-4 size19 opensans font-weight-700">{{ data.titulo }}</h4>
+                    <p class="text-justify text-gray-dark" [innerHTML]="data.texto"></p>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>

@@ -2,50 +2,29 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <img class="d-block w-100 mb-5 wow animate__animated animate__fadeInUp" src="./assets/home/FOOTER/banner_saludPNG.jpg" alt="Banner Principal Salud">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">Salud</h3>
-                <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp">Estamos para contribuir al bienestar de la salud de nuestros Colocadores Independientes de Servicios Gane y sus familias, mediante consultas en:</p>
-                <ul class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp">
-                    <li>Odontología</li>
-                    <li>Medicina General</li>
-                    <li>Psicología</li>
-                    <li>Fonoaudiología</li>
-                </ul>
-                <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp">Realizamos campañas de promoción y prevención exclusivas para nuestros Colocadores Independientes de Servicios Gane como: </p>
-                <ul class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp">
-                    <li>Salud visual y auditiva</li>
-                    <li>Citologías</li>
-                    <li>Antígeno prostático</li>
-                    <li>Mamografías</li>
-                    <li>Perfil lipídico</li>
-                    <li>TSH</li>
-                    <li>Glicemia</li>
-                    <li>Desparasitación</li>
-                </ul>
+                <img class="d-block w-100 mb-5 wow animate__animated animate__fadeInUp" *ngIf="banner_data != false" src="{{banner_data}}" alt="Banner Principal Salud">
+                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo_data }}</h3>
+                <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_data"></p>
             </div>
         </div>
         <div class="row mt-5 mb-5 wow animate__animated animate__fadeInUp">
             <div class="col-xs-12 col-md-6">
                 <table class="full-table">
                     <thead>
-                            <th colspan="2">Permanentes</th>
+                            <th colspan="2">{{ seccion2_tabla1_data.titulo_interno_tabla }}</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Citología y Mamografía</td>
-                            <td>1er y 3er Viernes de cada mes (2:00 a 5:00pm)</td>
-                        </tr>
-                        <tr>
-                            <td>Riesgo Cardiovascular:
-                                Electrocardiogramas–Perfil lipídico
-                                </td>
-                            <td>Todos los jueves (2:00 a 4:00pm)</td>
-                        </tr>
+                        <ng-container *ngFor="let data of seccion2_tabla1_data.info_tabla">
+                            <tr>
+                                <td>{{ data.item1 }}</td>
+                                <td>{{ data.item2 }}</td>
+                            </tr>
+                        </ng-container>
                     </tbody>
                 </table>
                 <table class="full-table mt-5 mb-5">
                     <thead>
-                            <th colspan="2">Programadas</th>
+                        <th colspan="2">{{ seccion2_tabla2_data.titulo_interno_tabla }}</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -66,42 +45,8 @@
                 </table>
             </div>
             <div class="col-xs-12 col-md-6">
-                <p class="letter-spacing0-93 text-gray-dark font-weight-500">Contamos con grupos terapéuticos:</p>
-                    <ul class="letter-spacing0-93 text-gray-dark font-weight-500 text-justify">
-                        <li>Mentalizados: Grupo para hijos o CIS, con adicciones a sustancias psicoactivas o bebidas alcohólicas.</li>
-                        <li>Años dorados: Para Colocadores Independientes de Servicios Mayores de 60 años, para el esparcimiento y control de su salud.</li>
-                        <li>Salud mental, dirigida a nuestros colocadores y sus familias con el objetivo de brindar bienestar, en la relación con su entorno mediante talleres de relajación.</li>
-                        <li>Grupo de obesidad: Apoyando en los buenos hábitos alimenticios y de actividad física.</li>
-                    </ul>
-                    <p class="letter-spacing0-93 text-gray-dark font-weight-700 mt-3 mb-3">
-                        Informes al: 310 400 92 53
-                    </p>
-                    <!--
-                    <p class="letter-spacing0-93 text-gray-dark font-weight-500">Sigue los consejos de Buenas Prácticas de Salud</p>
-                    <ul class="size17 letter-spacing1-1 line-height23 text-gray-dark opensans">
-                        <li>Realiza periódicamente tu autoexamen de seno</li>
-                        <li>Asisten semestralmente a valoración médica</li>
-                        <li>Lleva un registro escrito de los autoexámenes y fechas de 	atención médica.</li>
-                    </ul>
-                    <p class="size17 letter-spacing1-1 line-height23 text-gray-dark opensans">
-                        * Realiza los exámenes de chequeo y reclama el resultado. <br><br>
-                        El cáncer de mama se puede prevenir, la detección temprana es la mejor alternativa.
-                    </p>
-                    -->
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="text-gray-dark size14"><span class="font-weight-700">Citas Médicas y Odontológicas:</span><br>
-                                Calle 9 No. 4-50 2do piso Edificio de la Beneficencia del Valle<br>
-                                P.B.X. 682 34 34 ext. 58
-                                </p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <p class="text-gray-dark size14"><span class="font-weight-700">Sede de la Fundación:</span><br>
-                                Calle 9 #4 - Oficina 213<br>
-                                Santiago de Cali.<br>
-                                (57) (2) 881 20 00</p>
-                        </div>
-                    </div>
+                    <p class="letter-spacing0-93 text-gray-dark font-weight-500" [innerHTML]="seccion2_data.texto_general"></p>
+                    <p class="letter-spacing0-93 text-gray-dark font-weight-500" [innerHTML]="seccion2_data.texto_informes"></p>
             </div>
         </div>
     </div>

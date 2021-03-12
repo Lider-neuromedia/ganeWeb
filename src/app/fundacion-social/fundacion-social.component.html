@@ -2,20 +2,17 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-md-6 pl-100 pt-5">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">Fundación Social Gane</h3>
-                <div class="mb-3">
-                    <img class="pr-4" src="./assets/quienes_somos_page/mision 2PNG.png" alt="Misión">
-                    <h4 class="title-mision">Misión</h4>
-                </div>
-                <p class="text-justify letter-spacing1-4 size19 line-height23 text-gray-dark">“Somos una organización de carácter privado sin ánimo de lucro que propende por el mejoramiento de la calidad de vida de las personas vinculadas a la Red Colombiana de Servicios S.A., y a la comunidad en general del Valle del Cauca, a través de la gestión y el desarrollo de programas sociales y comunitarios”</p>
-                <div class="mt-3 mb-3">
-                    <img class="pr-4" src="./assets/quienes_somos_page/telescopioPNG.png" alt="Visión">
-                    <h4 class="title-mision">Visión</h4>
-                </div>
-                <p class="text-justify letter-spacing1-4 size19 line-height23 text-gray-dark">“Para el año 2018 seremos reconocidos como líderes en la prestación de servicios de bienestar social dirigidos a la fuerza de venta de Redcolsa y comunidades vulnerables del Valle del Cauca, a través de la consolidación de alianzas estratégicas con entidades públicas y privadas.”</p>
+                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo }}</h3>
+                <ng-container *ngFor="let data of primer_grupo_repeater">
+                    <div class="mb-3">
+                        <img class="pr-4" *ngIf="data.imagen_subtitulo != false" src="{{ data.imagen_subtitulo }}" alt="Datos empresa">
+                        <h4 class="title-mision">{{ data.subtitulo }}</h4>
+                        <p class="text-justify letter-spacing1-4 size19 line-height23 text-gray-dark">{{ data.texto }}</p>
+                    </div>
+                </ng-container>
             </div>
             <div class="col-xs-12 col-md-6 pr-0">
-                <img class="w-100 d-inline-block wow animate__animated animate__fadeInRight" src="./assets/home/FOOTER/fundacion_socialPNG.png" alt="Fundacion">
+                <img class="w-100 d-inline-block wow animate__animated animate__fadeInRight" *ngIf="imagen_fondo != false" src="{{ imagen_fondo }}" alt="Fundacion">
             </div>
         </div>
     </div>
@@ -23,10 +20,10 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="mb-3 text-center">
-                    <img class="pr-4" src="./assets/quienes_somos_page/telescopioPNG.png" alt="Visión">
-                    <h4 class="title-mision">Política de calidad</h4>
+                    <img class="pr-4" *ngIf="segundo_grupo_texto_data.imagen_subtitulo != false" src="{{ segundo_grupo_texto_data.imagen_subtitulo }}" alt="Visión">
+                    <h4 class="title-mision">{{ segundo_grupo_texto_data.subtitulo }}</h4>
                 </div>
-                <p class="text-justify letter-spacing1-4 size19 line-height23 text-gray-dark wow animate__animated animate__fadeInUp">Gane Fundación Social se compromete a satisfacer las necesidades y expectativas de sus beneficiarios mediante el ofrecimiento de programas y servicios, caracterizados por su amplia cobertura, el mejoramiento continuo de los procesos, el desarrollo personal de los colaboradores y un excelente clima laboral, contribuyendo al desarrollo social de la región.
+                <p class="text-justify letter-spacing1-4 size19 line-height23 text-gray-dark wow animate__animated animate__fadeInUp">{{ segundo_grupo_texto_data.texto }}
                 </p>
             </div>
         </div>

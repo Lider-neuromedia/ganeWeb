@@ -43,4 +43,19 @@ export class PagesService {
   getPagos(): Observable<any>{
     return this._http.get(`${this.url}/pages/235/`);
   }
+  getQuienesSomosFundacion(): Observable<any>{
+    return this._http.get(`${this.url}/pages/660/`);
+  }
+  getAyudasSociales(): Observable<any>{
+    return this._http.get(`${this.url}/pages/681/`);
+  }
+  getPoliticasFundacion(): Observable<any>{
+    return this._http.get(`${this.url}/pages/687/`);
+  }
+  getEducacionContinuaFundacion(): Observable<any>{
+    return this._http.get(`${this.url}/pages/701/`);
+  }
+  getSalud(): Observable<any>{
+    return this._http.get(`${this.url}/pages/714/`);
+  }
 }
