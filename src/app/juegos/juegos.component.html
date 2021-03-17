@@ -90,19 +90,15 @@
                                                 <th>{{ datostabla3camposvariasfilas.titulo_item_3 }}</th>
                                             </thead>
                                             <tbody>
-                                                <ng-container *ngFor="let data of datostabla3camposvariasfilas.info_items_tabla">
-                                                    <tr>
-                                                        <td rowspan="data.info_2_y_3?.length">{{ data.info_1 }}</td>
-                                                        <td>
-                                                            <ng-container *ngFor="let segundodato of data.info_2_y_3">
-                                                                <tr>{{ segundodato.texto_item_2 }}</tr>
-                                                            </ng-container>
-                                                        </td>
-                                                        <td>
-                                                            <tr *ngFor="let tercerdato of data.info_2_y_3">{{ tercerdato.texto_item_3 }}</tr>
-                                                        </td>
-                                                    </tr>
-                                                </ng-container>
+                                                <tr *ngFor="let data of datostabla3camposvariasfilas.info_items_tabla">
+                                                    <td [attr.rowspan]="data.valor_apuesta.length" *ngIf="data.valor_apuesta">{{ data.valor_apuesta }}</td>
+                                                    <td>
+                                                        {{ data.modalidad }}
+                                                    </td>
+                                                    <td>
+                                                        {{ data.valor_premio }}
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
