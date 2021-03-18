@@ -9,7 +9,7 @@ import { PagesService } from './../services/pages.service';
 })
 export class EducacionComponent implements OnInit {
 
-  banner_data: any = {};
+  banner_data: any;
   titulo_data: any = {};
   texto_data: any = {};
   seccion2_data:any[] = [];

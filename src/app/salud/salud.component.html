@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <img class="d-block w-100 mb-5 wow animate__animated animate__fadeInUp" *ngIf="banner_data != false" src="{{banner_data}}" alt="Banner Principal Salud">
+                <img class="d-block w-100 mb-5 wow animate__animated animate__fadeInUp" *ngIf="banner_data" src="{{banner_data}}" alt="Banner Principal Salud">
                 <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo_data }}</h3>
                 <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_data"></p>
             </div>
@@ -27,21 +27,13 @@
                         <th colspan="2">{{ seccion2_tabla2_data.titulo_interno_tabla }}</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Prevención cáncer de próstata</td>
-                            <td rowspan="4">Las campañas permanentes y programadas son EXCLUSIVAS para los asesores de venta. Para acceder a las campañas los vendedores deben tener 3 meses de antigüedad.</td>
-                        </tr>
-                        <tr>
-                            <td>Tiroides</td>
-                        </tr>
-                        <tr>
-                            <td>Prevención cáncer de estómago</td>
-                        </tr>
-                        <tr>
-                            <td>Salud Visual<br>
-                                (*6 meses consecutivos en la venta)</td>
-                        </tr>
-                    </tbody>
+                        <ng-container *ngFor="let data of seccion2_tabla2_data.textos_tabla">
+                            <tr *ngFor="let itemdata of data.items_tabla">
+                                <td>{{ itemdata.item1 }}</td>
+                                <td [attr.rowspan]="data.items_tabla.length" *ngIf="itemdata.item2">{{ itemdata.item2 }}</td>
+                            </tr>
+                        </ng-container>
+                    </tbody>                    
                 </table>
             </div>
             <div class="col-xs-12 col-md-6">

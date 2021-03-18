@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { PagesService } from './../services/pages.service';
 
 @Component({
   selector: 'app-restaurante',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestauranteComponent implements OnInit {
 
-  constructor() { }
+  titulo_data:any = {};
+  texto_general_data: any = {};
+  texto_final_data: any = {};
+
+  constructor(private httpClient:HttpClient, private _restaurante:PagesService) { }
 
   ngOnInit(): void {
+    this._restaurante.getRestaurante()
+      .subscribe((res:any) => {
+        this.titulo_data = res.acf.titulo;
+        this.texto_general_data = res.acf.texto_general;
+        this.texto_final_data = res.acf.texto_final;
+      });
   }
 
 }

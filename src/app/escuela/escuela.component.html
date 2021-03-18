@@ -2,24 +2,28 @@
     <div class="container">
         <div class="row h-100">
             <div class="col-xs-12 col-md-6 my-auto">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">Escuela de<br>
-                    iniciación deportiva
-                </h3><br>
-                <h4 class="text-gray-dark opensans size19 letter-spacing1-4 line-height23 font-weight-700">REQUISITOS</h4>
-                <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft">Para hijos de vendedores entre los 3 y 18 años / Estar activo en la venta. / Presentar registro civil y carné de Gane. / Realizar un pago anual de $ 10.000 mil pesos directamente en la Fundación. / La inscripción se hace en la Fundación para diligenciar los formatos y recibir la carta para ingresar a las sedes donde se practican los deportes.
-                </p>
+                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo_principal_data }}</h3><br>
+                <p [innerHTML]="texto_general_data"></p>
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="d-block w-100 wow animate__animated animate__fadeInRight" src="./assets/home/FOOTER/banner_escuelaPNG.png" alt="Escuela">
+                <img class="d-block w-100 wow animate__animated animate__fadeInRight" src="{{imagen_general_data}}" alt="Escuela">
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-12">
                 <table class="full-table wow animate__animated animate__fadeInUp">
                     <thead>
-                            <th colspan="3">Sedes</th>
+                            <th colspan="3">{{tabla_data.titulo_tabla}}</th>
                     </thead>
                     <tbody>
+                        <ng-container *ngFor="let data of tabla_data.datos_tabla">
+                            <tr *ngFor="let dataItem of data.datos_items">
+                                <td [attr.rowspan]="data.datos_items.length" *ngIf="dataItem.item1">{{ dataItem.item1}}</td>
+                                <td>{{ dataItem.item2}}</td>
+                                <td>{{ dataItem.item3}}</td>
+                            </tr>
+                        </ng-container>
+                        <!--
                         <tr>
                             <td rowspan="7">NATACIÓN</td>
                             <td>Parque de la Caña</td>
@@ -111,6 +115,7 @@
                             <td>lunes, jueves y sábado para niños de 7 a 12 años de 5 a 6:30 p.m.<br>
                                 lunes, martes y jueves para mayores de 13 años de 5 a 6:30 p.m.</td>
                         </tr>
+                        -->
                     </tbody>
                 </table>
             </div>

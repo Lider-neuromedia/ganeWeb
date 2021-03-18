@@ -2,26 +2,29 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">Cultura Antilavado</h3>
+                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo_data }}</h3>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-5">
                 <div class="nav flex-column nav-pills wow animate__animated animate__fadeInLeft" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Los sistemas de prevención y administración de riesgos</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Junio mes de la protección de datos personales</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">¿Para qué un sistema de administración de riesgos?</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Hablemos de datos personales</a>
-                    <a class="nav-link" id="v-pills-en-linea-tab" data-toggle="pill" href="#v-pills-en-linea" role="tab" aria-controls="v-pills-en-linea" aria-selected="false">Personas expuestas políticamente</a>
-                    <a class="nav-link" id="v-pills-denuncio-tab" data-toggle="pill" href="#v-pills-denuncio" role="tab" aria-controls="v-pills-denuncio" aria-selected="false">Yo no pago, yo denuncio / gaula policía nacional</a>
-                    <a class="nav-link" id="v-pills-proteccion-tab" data-toggle="pill" href="#v-pills-proteccion" role="tab" aria-controls="v-pills-proteccion" aria-selected="false">Día Internacional de Protección de Datos Personales</a>
-                    <a class="nav-link" id="v-pills-prevencion-tab" data-toggle="pill" href="#v-pills-prevencion" role="tab" aria-controls="v-pills-prevencion" aria-selected="false">Día Nacional de la Prevención de Lavado de Activos</a>
-                    <a class="nav-link" id="v-pills-lavado-tab" data-toggle="pill" href="#v-pills-lavado" role="tab" aria-controls="v-pills-lavado" aria-selected="false">¿Qué es el Lavado de Activos?</a>
-                    <a class="nav-link" id="v-pills-prevencion2-tab" data-toggle="pill" href="#v-pills-prevencion2" role="tab" aria-controls="v-pills-prevencion2" aria-selected="false">Día Nacional de la Prevención de Lavado de Activos II</a>
+                    <ng-container *ngFor="let item of item_menu_data; let index = index">
+                        <a class="nav-link" [attr.id]="'v-tab-'+index" [ngClass]="{'active': index === activePillIndex}" data-toggle="pill" [attr.href]="'#'+'v-'+index" role="tab" aria-selected="true" (click)="selectPill(index)">{{ item.titulo_item }}</a>
+                    </ng-container>
                 </div>
             </div>
             <div class="col-xs-12 col-md-7">
-                <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-content" id="v-tabContent">
+                    <ng-container *ngFor="let data of item_menu_data; let index = index">
+                        <div class="tab-pane fade show" [ngClass]="{'active': index === activePillIndex}" [attr.id]="'#'+'v-'+index" role="tabpanel">
+                            <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen1" src="{{ data.imagen1 }}" alt="Antilavado 1">
+                            <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen2" src="{{ data.imagen2 }}" alt="Antilavado 2">
+                            <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen3" src="{{ data.imagen3 }}" alt="Antilavado 3">
+                            <iframe width="100%" height="315" *ngIf="data.link_video" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </ng-container>
+
+                    <!--
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <img class="w-100 mb-5 wow animate__animated animate__fadeInRight" src="./assets/anticorrupcion_page/antilavado-1.png" alt="Corrupción">
                     </div>
@@ -61,6 +64,7 @@
                     <div class="tab-pane fade" id="v-pills-prevencion2" role="tabpanel" aria-labelledby="v-pills-prevencion2-tab">
                         <img class="w-100 mb-5 wow animate__animated animate__fadeInRight" src="./assets/anticorrupcion_page/antilavado-9.jpg" alt="Corrupción">
                     </div>
+                    -->
                 </div>
             </div>
         </div>

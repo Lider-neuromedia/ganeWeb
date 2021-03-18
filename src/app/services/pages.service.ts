@@ -58,4 +58,46 @@ export class PagesService {
   getSalud(): Observable<any>{
     return this._http.get(`${this.url}/pages/714/`);
   }
+  getVivienda(): Observable<any>{
+    return this._http.get(`${this.url}/pages/763/`);
+  }
+  getRecreacion(): Observable<any>{
+    return this._http.get(`${this.url}/pages/781/`);
+  }
+  getPrimeraInfancia(): Observable<any>{
+    return this._http.get(`${this.url}/pages/797/`);
+  }
+  getCuidarte(): Observable<any>{
+    return this._http.get(`${this.url}/pages/811/`);
+  }
+  getEscuelaIniciacionDeportiva(): Observable<any>{
+    return this._http.get(`${this.url}/pages/831/`);
+  }
+  getRestaurante(): Observable<any>{
+    return this._http.get(`${this.url}/pages/851/`);
+  }
+  getAmericaCali(): Observable<any>{
+    return this._http.get(`${this.url}/pages/859/`);
+  }
+  getInformesFundacion(): Observable<any>{
+    return this._http.get(`${this.url}/pages/875/`);
+  }
+  getPreguntasFrecuentes(): Observable<any>{
+    return this._http.get(`${this.url}/pages/894/`);
+  }
+  getPagoPremios(): Observable<any>{
+    return this._http.get(`${this.url}/pages/917/`);
+  }
+  getSistemaGestionCalidad(): Observable<any>{
+    return this._http.get(`${this.url}/pages/934/`);
+  }
+  getCulturaAnticorrupcion(): Observable<any>{
+    return this._http.get(`${this.url}/pages/943/`);
+  }
+  getCulturaAntilavado(): Observable<any>{
+    return this._http.get(`${this.url}/pages/968/`);
+  }
+  getLineaEtica(): Observable<any>{
+    return this._http.get(`${this.url}/pages/993/`);
+  }
 }

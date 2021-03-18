@@ -2,68 +2,25 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-6">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">Cuidarte</h3>
-                <p class="text-justify letter-spacing0-93 text-gray-dark size16 wow animate__animated animate__fadeInLeft">Es el programa bandera de la Fundación Gane, donde el objetivo es el aprovechamiento del tiempo libre a través de las actividades lúdicas y pedagógicas. Se desarrolla los días sábados de 8:00 a 5:00pm, en diversos espacios de la ciudad de Cali. A los niños vinculados hijos de asesores Gane entre los 5 y los 12 años se les garantiza refrigerios AM/PM, almuerzo y los implementos para el desarrollo de actividades. Contamos con excelentes profesionales, entre estos los psicólogos quienes realizan un acompañamiento individual y familiar.</p><br>
-                <h4 class="color-title opensans size19 letter-spacing1-4 line-height23 font-weight-700">Requisitos</h4>
-                        <ul class="text-justify letter-spacing0-93 text-gray-dark size16 wow animate__animated animate__fadeInLeft">
-                            <li>La asesora debe estar activa en la venta 3 meses consecutivos.</li>
-                            <li>Copia de cedula de la asesor.</li>
-                            <li>Copia del registro civil.</li>
-                            <li>Pago $11.000 póliza contra accidentes (Único pago- Vigencia de 	la póliza un año).</li>
-                        </ul><br>
-                        <br>
-                        <p class="letter-spacing0-93 text-gray-dark"><strong>Sede de la Fundación:</strong><br>
-                            Calle 9 #4 - Oficina 213<br>
-                            Santiago de Cali.<br>
-                            (57) (2) 881 20 00
-                            </p>
+                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo_principal_data }}</h3>
+                <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_principal_data"></p>
+                <h4 class="color-title opensans size19 letter-spacing1-4 line-height23 font-weight-700">{{ titulo_complementario_data }}</h4>
+                <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_complementario_data"></p>
+                <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_final_data"></p>
+                        
             </div>
             <div class="col-xs-12 col-md-6">
                 <table class="full-table mt-5 mb-5 wow animate__animated animate__fadeInRight">
                     <thead>
-                            <th colspan="2">Sedes</th>
+                            <th colspan="2">{{tabla_data.titulo_tabla}}</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Unidad Recreativa El Vallado</td>
-                            <td>Cra 41B Cl 54 – 55 – Vallado</td>
-                        </tr>
-                        <tr>
-                            <td>Unidad Recreativa San Luis</td>
-                            <td>Cl 70 # 1A-12.- San Luis</td>
-                        </tr>
-                        <tr>
-                            <td>Unidad Recreativa Las Tortugas</td>
-                            <td>Calle 44 Cra 24C Nueva Floresta</td>
-                        </tr>
-                        <tr>
-                            <td>Unidad Recreativa Lourdes</td>
-                            <td>Cra 70 # 1A-30 Lourdes</td>
-                        </tr>
-                        <tr>
-                            <td>Colegio Santa I. Hungría Calimio Desepaz</td>
-                            <td>Cra 26m3 #121-97 Calimio Desepaz</td>
-                        </tr>
-                        <tr>
-                            <td>Hospitalito- Casona</td>
-                            <td>Cll 78a # 27b-10 Alfonso Bonilla Aragón</td>
-                        </tr>
-                        <tr>
-                            <td>Fundación Social Gane</td>
-                            <td>Cll 9 # 4- 50 Centro</td>
-                        </tr>
-                        <tr>
-                            <td>Unidad Recreativa Ciudad Modelo</td>
-                            <td>Cl 26B Cra 43 Esquina Ciudad Modelo</td>
-                        </tr>
-                        <tr>
-                            <td>Unidad Recreativa Tory Castro</td>
-                            <td>Av. 4a Oeste Calle 19 Terrón Colorado</td>
-                        </tr>
-                        <tr>
-                            <td>Unidad Recreativa Parque del Avión</td>
-                            <td>Av. 2a Nte. #35 Prados del Norte</td>
-                        </tr>
+                        <ng-container *ngFor="let data of tabla_data.datos_items">
+                            <tr>
+                                <td>{{ data.item_1 }}</td>
+                                <td>{{ data.item_2 }}</td>
+                            </tr>
+                        </ng-container>
                     </tbody>
                 </table>
             </div>

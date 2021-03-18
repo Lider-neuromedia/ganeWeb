@@ -7,13 +7,15 @@ import { PagesService } from './../services/pages.service';
   templateUrl: './salud.component.html',
   styleUrls: ['./salud.component.css']
 })
+
 export class SaludComponent implements OnInit {
-  banner_data: any = {};
+  banner_data: any;
   titulo_data: any = {};
   texto_data:any = {};
   seccion2_data:any = {};
   seccion2_tabla1_data:any = {};
   seccion2_tabla2_data:any = {};
+  textos_tabla_data:any = {};
 
   constructor(private httpClient:HttpClient, private _salud:PagesService) { }
 
@@ -26,7 +28,7 @@ export class SaludComponent implements OnInit {
         this.seccion2_data = res.acf.seccion_2_con_tablas;
         this.seccion2_tabla1_data = res.acf.seccion_2_con_tablas.tabla1;
         this.seccion2_tabla2_data = res.acf.seccion_2_con_tablas.tabla2;
+        this.textos_tabla_data = res.acf.seccion_2_con_tablas.tabla2.textos_tabla;
       });
   }
-  getSalud
 }

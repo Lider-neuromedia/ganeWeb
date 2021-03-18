@@ -94,9 +94,7 @@
                                                     <tr>
                                                         <td rowspan="data.info_2_y_3?.length">{{ data.info_1 }}</td>
                                                         <td>
-                                                            <ng-container *ngFor="let segundodato of data.info_2_y_3">
-                                                                <tr>{{ segundodato.texto_item_2 }}</tr>
-                                                            </ng-container>
+                                                            <tr *ngFor="let segundodato of data.info_2_y_3">{{ segundodato.texto_item_2 }}</tr>
                                                         </td>
                                                         <td>
                                                             <tr *ngFor="let tercerdato of data.info_2_y_3">{{ tercerdato.texto_item_3 }}</tr>
