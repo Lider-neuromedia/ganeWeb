@@ -2,35 +2,16 @@
     <div class="container">
         <div class="row h-100">
             <div class="col-xs-12 col-md-6 my-auto">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title ">Recreación y deporte</h3>
-                <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft">Velamos por el bienestar en recreación y deportes de nuestros CIS y sus familias.
-                </p>
-                <ul class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft">
-                    <li><strong>Cumpleaños Colocadores Independientes de Servicios: </strong>Trimestralmente celebramos los cumpleaños en un formato enfocado al esparcimiento y diversión de los CIS.</li><br>
-                    <li><strong>Talleres de bienestar para la Familia: </strong>Espacios para nuestro Colocador Independiente de Servicios y su grupo familiar, en los cuales aprovecha el tiempo libre con talleres de yoga, baile, Aero rumba, aeróbicos, entre otros.</li> <br>
-                    <li><strong>Vacaciones recreativas:</strong> Para los hijos de CIS entre los 6 y 12 años, realizadas durante el espacio de receso escolar y/o vacaciones de final de calendario. </li><br>
-                    <li><strong>Día Dulce: </strong>Para celebrar este día, invitamos a  los hijos de los CIS entre 0 y 12 años, a participar de nuestra fiesta dulce en el mes de octubre. </li><br>
-                    <li><strong>Fiesta de Navidad: </strong>Una gran fiesta para los hijos de nuestros CIS entre los 0 y 12 años, en la cual participan de diferentes actividades lúdicas, en la cual Gane a través de su Fundación, entrega más de 1.000 regalos para estos niños.</li><br>
-                </ul>
+                <h3 class="montserrat font-weight-700 size35 line-height42 color-title ">{{ titulo_data }}</h3>
+                <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft" [innerHTML]="texto_1_data"></p>
             </div>
             <div class="col-xs-12 col-md-6 my-auto">
-                <img class="d-block w-100 wow animate__animated animate__fadeInRight" src="./assets/home/FOOTER/banner_culturaPNG.png" alt="Recreación">
+                <img class="d-block w-100 wow animate__animated animate__fadeInRight" *ngIf="imagen_derecha_data != false" src="{{ imagen_derecha_data }}" alt="Recreación Gane">
             </div>
             <div class="col-md-12">
-                <h4 class="montserrat font-weight-700 size23 line-height42 color-title">Escuelas Deportivas</h4>
-                <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft">En convenio con instituciones los CIS y sus hijos entre los 3 y 17 años, podrán practicar los siguientes deportes:</p>
-                <ul class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft">
-                    <li>Futbol</li>
-                    <li>Natación</li>
-                    <li>Patinaje</li>
-                </ul>  
-                <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft"><i>*El CIS debe realizar un único pago correspondiente a la póliza contra accidentes.</i></p>  
-                <p class="letter-spacing0-93 text-gray-dark"><strong>Informes:</strong> 317 668 95 14</p>
-                <p class="letter-spacing0-93 text-gray-dark"><strong>Sede de la Fundación:</strong><br>
-                    Calle 9 #4 - Oficina 213<br>
-                    Santiago de Cali.<br>
-                    (57) (2) 881 20 00
-                </p>
+                <h4 class="montserrat font-weight-700 size23 line-height42 color-title">{{ titulo2_data }}</h4>
+                <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft" [innerHTML]="texto_2_data"></p>
+                <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft" [innerHTML]="texto_final_data"></p>
             </div>
         </div>
     </div>

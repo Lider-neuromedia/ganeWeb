@@ -2,21 +2,29 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">Cultura anticorrupción</h3>
+                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo_data }}</h3>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-5">
                 <div class="nav flex-column nav-pills wow animate__animated animate__fadeInLeft" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Día internacional contra la corrupción</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">¿Qué es la anticorrupción?</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Redcolsa Comprometida con la iniciativa anticorrupción</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Día internacional contra la corrupción</a>
-                    <a class="nav-link" id="v-pills-en-linea-tab" data-toggle="pill" href="#v-pills-en-linea" role="tab" aria-controls="v-pills-en-linea" aria-selected="false">Cultura anticorrupción</a>
+                    <ng-container *ngFor="let item of item_menu_data; let index = index">
+                        <a class="nav-link" [attr.id]="'v-tab-'+index" [ngClass]="{'active': index === activePillIndex}" data-toggle="pill" [attr.href]="'#'+'v-'+index" role="tab" aria-selected="true" (click)="selectPill(index)">{{ item.titulo_item }}</a>
+                    </ng-container>
                 </div>
             </div>
             <div class="col-xs-12 col-md-7">
                 <div class="tab-content" id="v-pills-tabContent">
+                    <ng-container *ngFor="let data of item_menu_data; let index = index">
+                        <div class="tab-pane fade show" [ngClass]="{'active': index === activePillIndex}" [attr.id]="'#'+'v-'+index" role="tabpanel">
+                            <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen1" src="{{ data.imagen1 }}" alt="Corrupción">
+                            <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen2" src="{{ data.imagen2 }}" alt="Corrupción">
+                            <p [innerHTML]="data.texto"></p>
+                            <a class="color-title" target="_blank" href="{{ data.link_politica_anticorrupcion }}">{{ data.texto_politica_anticorrupcion }}</a>
+                        </div>
+                    </ng-container>
+                </div>
+            <!--
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <img class="w-100 mb-5 wow animate__animated animate__fadeInRight" src="./assets/anticorrupcion_page/anticorrupcion-1.jpg" alt="Corrupción">
                     </div>
@@ -46,6 +54,7 @@
                         </div>
                     </div>
                 </div>
+            -->
             </div>
         </div>
     </div>

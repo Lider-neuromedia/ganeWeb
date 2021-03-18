@@ -9,7 +9,7 @@ import { PagesService } from './../services/pages.service';
 })
 export class FundacionSocialComponent implements OnInit {
   titulo: any = {};
-  imagen_fondo: any = {};
+  imagen_fondo: any;
   primer_grupo_repeater: any[] = [];
   segundo_grupo_texto_data: any = {};
 

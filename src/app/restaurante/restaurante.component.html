@@ -2,20 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12 mb-3">
-                <h2 class="size35 font-weight-700 line-height42 color-title montserrat text-center">Restaurante Ganedelicias</h2>
-                <p class="text-gray-dark opensans line-height23 letter-spacing1-4 size19 text-justify">Contamos con Ganedelicias, en donde brindamos alimentación a nuestros empleados, Colocadores Independientes de Servicios y comunidad caleña.<br>
-                    Ubicado en el centro de Cali, ofrece desayunos, almuerzos y refrigerios con la deliciosa sazón casera. 
-                </p>
-                <p class="text-gray-dark opensans line-height23 letter-spacing1-4 size19 text-justify"><strong>Nuestra atención es el restaurante </strong><br>
-                    Cra. 4 #10-67 Sótano Edf. Ardila <br>
-                    Domicilios al: 318 735 53 13
-                </p>
-                <p class="letter-spacing0-93 text-gray-dark"><strong>Sede de la Fundación:</strong><br>
-                    Calle 9 #4 - Oficina 213<br>
-                    Santiago de Cali.<br>
-                    (57) (2) 881 20 00
-                </p>
-                <p class="letter-spacing0-93 text-gray-dark"><strong>Síguenos en Facebook: </strong>@ganefundacionsocial</p>
+                <h2 class="size35 font-weight-700 line-height42 color-title montserrat text-center">{{titulo_data}}</h2>
+                <p [innerHTML]="texto_general_data"></p>
+                <p [innerHTML]="texto_final_data"></p>
             </div>
         </div>
     </div>

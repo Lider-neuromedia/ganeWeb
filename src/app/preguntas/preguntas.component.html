@@ -2,41 +2,24 @@
     <div class="container">
         <div class="row h-100">
             <div class="col-xs-12 col-md-6 my-auto">
-                <h2 class="montserrat font-weight-700 size35 color-title line-height35">Preguntas frecuentes</h2><br>
-                <h3 class="text-uppercase montserrat color-title size19 font-weight-700">¿Cómo gane me facilita la vida?</h3><br>
-                <p class="text-justify text-gray-dark">Con más de 1.200 puntos de venta ubicados de Norte a Sur, de Oriente a Occidente, y en el Centro de la Ciudad de Cali. ¡Siempre a la mano!<br>
-                    Con horario extendido de domingo a domingo ¡Realiza tus transacciones sin inconvenientes!</p>
-                    <img class="d-block wow animate__animated animate__fadeInLeft" src="./assets/preguntas_page/HORARIOPNG.png" alt="horario">
+                <h2 class="montserrat font-weight-700 size35 color-title line-height35">{{ titulo_data }}</h2><br>
+                <h3 class="text-uppercase montserrat color-title size19 font-weight-700">{{ subtitulo_data }}</h3><br>
+                <p class="text-justify text-gray-dark" [innerHTML]="texto_general_data"></p>
+                    <img class="d-block wow animate__animated animate__fadeInLeft" *ngIf="horario_atencion_imagen_data" src="{{horario_atencion_imagen_data}}" alt="horario">
             </div>
             <div class="col-xs-12 col-md-6 my-auto videoPreguntas wow animate__animated animate__fadeInRight">
-                <iframe class="align-middle" width="100%" height="315" src="https://www.youtube.com/embed/YKjUf21fl9I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="align-middle" width="100%" height="315" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="row bk-blue border-r13 p-5 mt-5 mb-5 iconos d-flex justify-content-center wow animate__animated animate__fadeInUp">
             <div class="col-md-12">
-                <p class="text-white text-center line-height23 font-weight-700">Con un amplio portafolio de productos y servicios a través del cual los habitantes de Cali <br>encuentran soluciones oportunas a sus necesidades diarias.</p>
+                <p class="text-white text-center line-height23 font-weight-700">{{ texto_descriptivo_seccion_2_data }}</p>
             </div>
-            <div class="col-xs-12">
-                <img class="d-block wm-100 scale" src="./assets/preguntas_page/APUESTASPNG.png" alt="Apuestas">
-            </div>
-            <div class="col-xs-12">
-                <img class="d-block wm-100 scale" src="./assets/preguntas_page/GIROSPNG.png" alt="Giros">
-            </div>
-            <div class="col-xs-12">
-                <img class="d-block wm-100 scale" src="./assets/preguntas_page/BETPLAYPNG.png" alt="Betplay">
-            </div>
-            <div class="col-xs-12">
-                <img class="d-block wm-100 scale" src="./assets/preguntas_page/LOTERIAPNG.png" alt="Lotería">
-            </div>
-            <div class="col-xs-12">
-                <img class="d-block wm-100 scale" src="./assets/preguntas_page/RECARGASPNG.png" alt="Recargas">
-            </div>
-            <div class="col-xs-12">
-                <img class="d-block wm-100 scale" src="./assets/preguntas_page/SOATPNG.png" alt="Soat">
-            </div>
-            <div class="col-xs-12">
-                <img class="d-block wm-100 scale" src="./assets/preguntas_page/RECAUDOSPNG.png" alt="Recaudos">
-            </div>
+            <ng-container *ngFor="let data of imagen_data">
+                <div class="col-xs-12">
+                    <img class="d-block wm-100 scale" src="{{ data.imagen_sorteo }}" alt="Apuestas">
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>

@@ -2,48 +2,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <img class="d-block w-100 mb-5 wow animate__animated animate__fadeInUp" src="./assets/home/FOOTER/banner_viviendaPNG.jpg" alt="Banner Principal Vivienda">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title wow animate__animated animate__fadeInUp">Vivienda</h3>
-                <p class="letter-spacing0-93 text-gray-dark size16 wow animate__animated animate__fadeInUp"><strong>Requisitos Gane:</strong><br>
-                    No ser propietario de bien inmueble (sólo aplica para la adquisición de vivienda)<br>
-                    Tener un (1) año de vigencia continua con Gane.<br>
-                    Cumplir los requisitos de ley.<br>
-                    *Aplica para Colocadores Independientes de Servicios y empleados Gane. <br>
-                    </p>
-                <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp"><strong>¿En qué Consiste?</strong><br>
-                    Gane otorga a través de su Fundación Social un subsidio de $2´000.000 (dos millones de pesos) para compra de vivienda nueva o usada de interés social (VIS, menor a 150 smlmv), construcción en lote propio o terraza y mejoramiento de vivienda. Estas son las opciones a las cuales puedes acceder:                    
-                </p>
-                <h4 class="color-title opensans size19 letter-spacing1-4 line-height23 font-weight-700">Vivienda Nueva (VIS) con Subsidio Nacional:</h4>
-                <ul class="letter-spacing0-93 text-gray-dark size16 wow animate__animated animate__fadeInUp">
-                    <li>No haber recibido subsidio de vivienda por parte del gobierno.</li>
-                    <li>No reporte en Centrales de Riesgo (Datacrédito-Cifin).</li>
-                    <li>Ingresos mayores a 1 smlmv. Capacidad de pago es máximo 30% del ingreso destinado a vivienda.</li>
-                </ul><br>
-                <h4 class="color-title opensans size19 letter-spacing1-4 line-height23 font-weight-700">Vivienda Usada de interés social:</h4>
-                <ul class="letter-spacing0-93 text-gray-dark size16 wow animate__animated animate__fadeInUp">
-                    <li>Tener como mínimo el 30% del valor de la vivienda a comprar. No reporte en Centrales de riesgo. </li>  
-                    <li>No reporte en Centrales de Riesgo.</li>
-                    <li>Ingresos mayores a 1 SMMLV. Capacidad de pago es máximo 30% del ingreso destinado a vivienda.</li>
-                </ul><br>
-                <h4 class="color-title opensans size19 letter-spacing1-4 line-height23 font-weight-700">Construcción en Lote o Terraza:</h4>
-                <ul class="letter-spacing0-93 text-gray-dark size16 wow animate__animated animate__fadeInUp">
-                    <li>Acreditar la propiedad (certificado de Tradición).</li>
-                    <li>Presentar proyecto de construcción.</li>
-                    <li>Visita al proyecto</li>
-                </ul><br>
-                <h4 class="color-title opensans size19 letter-spacing1-4 line-height23 font-weight-700">Mejoramiento de Vivienda:</h4>
-                <ul class="letter-spacing0-93 text-gray-dark size16 wow animate__animated animate__fadeInUp">
-                    <li>Acreditar la propiedad (certificado de Tradición) o protocolización.</li>
-                    <li>Se hace visita, se toman fotos, se lleva a comité para aprobación.</li>
-                    <li>La vivienda debe estar en situación crítica.</li>
-                </ul>
+                <img class="d-block w-100 mb-5 wow animate__animated animate__fadeInUp" *ngIf="banner_data != false" src="{{banner_data}}" alt="Banner Principal Vivienda">
+                <h3 class="montserrat font-weight-700 size35 line-height42 color-title wow animate__animated animate__fadeInUp">{{ titulo_data }}</h3>
+                <p class="letter-spacing0-93 text-gray-dark size16 wow animate__animated animate__fadeInUp" [innerHTML]="texto1_data"></p>
+                <ng-container *ngFor="let data of texto_con_titulo_data">
+                    <h4 class="color-title opensans size19 letter-spacing1-4 line-height23 font-weight-700">{{ data.titulo }}</h4>
+                    <p class="letter-spacing0-93 text-gray-dark size16 wow animate__animated animate__fadeInUp" [innerHTML]="data.texto"></p>
+                </ng-container>
                 <br>
-                <p class="letter-spacing0-93 text-gray-dark"><strong>Informes:</strong> 317 668 95 14</p><br>
-                <p class="letter-spacing0-93 text-gray-dark"><strong>Sede de la Fundación:</strong><br>
-                    Calle 9 #4 - Oficina 213<br>
-                    Santiago de Cali.<br>
-                    (57) (2) 881 20 00
-                    </p>
+                <p class="letter-spacing0-93 text-gray-dark" [innerHTML]="texto_final_data"></p>
             </div>
         </div>
     </div>
