@@ -60,6 +60,7 @@ import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-t
 import { RestauranteComponent } from './restaurante/restaurante.component';
 import { CampanaComponent } from './campana/campana.component';
 import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,8 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     CulturaTransparenciaComponent,
     RestauranteComponent,
     CampanaComponent,
-    CalculatugiroComponent
+    CalculatugiroComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

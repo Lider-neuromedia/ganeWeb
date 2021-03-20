@@ -41,6 +41,7 @@ import { ImportanteComponent } from './importante/importante.component';
 import { CulturaTransparenciaComponent } from './cultura-transparencia/cultura-transparencia.component';
 import { RestauranteComponent } from './restaurante/restaurante.component';
 import { CampanaComponent } from './campana/campana.component';
+import { Error404Component } from './error404/error404.component';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -87,6 +88,7 @@ const APP_ROUTES: Routes = [
     {path: 'importante', component: ImportanteComponent},
     {path: 'cultura-transparencia', component: CulturaTransparenciaComponent},
     {path: 'restaurante', component: RestauranteComponent},
+    {path: 'error', component: Error404Component},
     {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
 ];
 
