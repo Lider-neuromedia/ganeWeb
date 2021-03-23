@@ -5,37 +5,10 @@
                 <h3 class="title-h3 pt-3 pb-3">Comunicados de prensa</h3>
             </div>
             <div class="col-xs-12 col-sm-7 col-md-7">
-                <!-- <form class="wow animate__animated animate__fadeInRight">
-                    <div class="form-group">
-                      <select class="form-control" id="year">
-                        <option>2020</option>
-                        <option>2019</option>
-                        <option>2018</option>
-                        <option>2017</option>
-                        <option>2016</option>
-                        <option>2015</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" id="month">
-                          <option>Enero</option>
-                          <option>Febrero</option>
-                          <option>Marzo</option>
-                          <option>Abril</option>
-                          <option>Mayo</option>
-                          <option>Junio</option>
-                          <option>Julio</option>
-                          <option>Agosto</option>
-                          <option>Septiembre</option>
-                          <option>Octubre</option>
-                          <option>Noviembre</option>
-                          <option>Diciembre</option>
-                        </select>
-                      </div>
-                  </form> -->
                   <form action="" class="d-flex pt-3 align-items-center">
-                      <input type="text" class="w-50 form-control mr-sm-2" placeholder="Buscar comunicado" (keyup.enter)="buscarComunicado($event)">
-                      <button (click)="buscarComunicado($event)" class="btn btn-outline-primary" type="button">Buscar</button>
+                      <!-- <input type="text" class="w-50 form-control mr-sm-2" placeholder="Buscar comunicado" (keyup.enter)="buscarComunicado(buscar.value)" #buscar>
+                      <button (click)="buscarComunicado(buscar.value)" class="btn btn-outline-primary" type="button">Buscar</button> -->
+                      <input type="text" class="w-50 form-control mr-sm-2" #text placeholder="Buscar comunicado" [(ngModel)]="texto" (input)="search()" [ngModelOptions]="{standalone: true}">
                   </form>
             </div>
             <div class="col-xs-12 col-sm-3 col-md-3"></div>

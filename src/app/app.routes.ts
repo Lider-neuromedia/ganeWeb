@@ -7,6 +7,7 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { JuegosComponent } from './juegos/juegos.component';
 import { PagosComponent } from './pagos/pagos.component';
 import { ComunicadosComponent } from './comunicados/comunicados.component';
+import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
 import { PeriodicoComponent } from './periodico/periodico.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { FinancierosComponent } from './financieros/financieros.component';
@@ -34,7 +35,6 @@ import { CulturaAnticorrupcionComponent } from './cultura-anticorrupcion/cultura
 import { LineaEticaComponent } from './linea-etica/linea-etica.component';
 import { CulturaAntilavadoComponent } from './cultura-antilavado/cultura-antilavado.component';
 import { PuntosVentaComponent } from './puntos-venta/puntos-venta.component';
-import { ComunicadoInternaComponent } from './comunicado-interna/comunicado-interna.component';
 import { BlogInternaComponent } from './blog-interna/blog-interna.component';
 import { PrevenirComponent } from './prevenir/prevenir.component';
 import { ImportanteComponent } from './importante/importante.component';
@@ -44,6 +44,8 @@ import { CampanaComponent } from './campana/campana.component';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 const APP_ROUTES: Routes = [
     {path: '', component: InicioComponent},

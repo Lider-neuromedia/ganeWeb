@@ -107,7 +107,7 @@ import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component'
     CulturaTransparenciaComponent,
     RestauranteComponent,
     CampanaComponent,
-    CalculatugiroComponent
+    CalculatugiroComponent,
   ],
   imports: [
     BrowserModule,
