@@ -463,7 +463,9 @@ table th, table td{
 .font-weight-bold{
     font-weight:bold;
 }
-
+.font-weight-900{
+    font-weight:900;
+}
 .pl-100{
     padding-left: 100px;
 }
@@ -683,7 +685,7 @@ a:hover {
 /*SECTION3*/
 .bk-gane-virtual{
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover!important;
     padding-left: 0;
 }
 

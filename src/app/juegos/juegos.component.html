@@ -79,7 +79,7 @@
                                     </ng-container>
                                 </div>
                             </div>
-                            <div class="row wow animate__animated animate__fadeInUp" *ngIf="datos.tabla_3_campos_varias_filas_intermedias != false">
+                            <div class="row wow animate__animated animate__fadeInUp" *ngIf="datos.tabla_3_campos_varias_filas_intermedias">
                                 <ng-container *ngFor="let datostabla3camposvariasfilas of datos.tabla_3_campos_varias_filas_intermedias">
                                     <div class="col-md-6">
                                         <p class="mb-2 text-center size16 letter-spacing1-01 font-weight-bold">{{ datostabla3camposvariasfilas.titulo_general_tabla }}</p> 
@@ -90,15 +90,13 @@
                                                 <th>{{ datostabla3camposvariasfilas.titulo_item_3 }}</th>
                                             </thead>
                                             <tbody>
-                                                <tr *ngFor="let data of datostabla3camposvariasfilas.info_items_tabla">
-                                                    <td [attr.rowspan]="data.valor_apuesta.length" *ngIf="data.valor_apuesta">{{ data.valor_apuesta }}</td>
-                                                    <td>
-                                                        {{ data.modalidad }}
-                                                    </td>
-                                                    <td>
-                                                        {{ data.valor_premio }}
-                                                    </td>
-                                                </tr>
+                                                <ng-container *ngFor="let datanueva of datostabla3camposvariasfilas.info_items_tabla">
+                                                    <tr *ngFor="let dataitem of datanueva.apuestas">
+                                                        <td [attr.rowspan]="datanueva.apuestas.length" *ngIf="dataitem.valor_apuesta">{{ dataitem.valor_apuesta }}</td>
+                                                        <td>{{ dataitem.modalidad }}</td>
+                                                        <td>{{ dataitem.valor_premio }}</td>
+                                                    </tr>
+                                                </ng-container>
                                             </tbody>
                                         </table>
                                     </div>

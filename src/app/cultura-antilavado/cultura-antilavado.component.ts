@@ -12,7 +12,6 @@ export class CulturaAntilavadoComponent implements OnInit {
   titulo_data:any = {};
   item_menu_data: any[] = [];
   public activePillIndex:number = 0;
-  video_gane_url:any = {};
   urlSafe: SafeResourceUrl;
 
   constructor(private httpClient:HttpClient, private _culturaantilavado:PagesService, public _sanitizer: DomSanitizer) { }
@@ -23,15 +22,35 @@ export class CulturaAntilavadoComponent implements OnInit {
     .subscribe((res:any) => {
       this.titulo_data = res.acf.titulo_principal;
       this.item_menu_data = res.acf.item_menu;
-      this.video_gane_url = res.acf.item_menu.link_video;
+    
 
-      if(this.video_gane_url === null || this.video_gane_url === ''){
-        return '';
-      }
-      results = this.video_gane_url.match('[\\?&]v=([^&#]*)');
-      video   = (results === null) ? this.video_gane_url : results[1];
-      this.urlSafe = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);
+      // for(let element of this.item_menu_data){
+      //   if(element.link_video === null || element.link_video === ''){
+      //     return '';
+      //   }
+        
+      //   results = element.link_video.match('[\\?&]v=([^&#]*)');
+      //   //video   = element.link_video;
+      //   video   = (results === null) ? element.link_video : results[0];
+      //   this.urlSafe = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);
+      //   console.log(video);
+      // }
+
+      
+      this.item_menu_data.forEach(element => {
+        if(element.link_video === null || element.link_video === ''){
+          return '';
+        }
+        
+        results = element.link_video.match('[\\?&]v=([^&#]*)');
+        video   = element.link_video;
+        //video   = (results === null) ? element.link_video : results[0];
+        this.urlSafe = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);
+        console.log(video);
+      });
     });
+
+    
 }
 public selectPill(index:number) {
   this.activePillIndex = index;

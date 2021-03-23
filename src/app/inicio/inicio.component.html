@@ -203,35 +203,11 @@
                 </ul>
                 <div class="tab-content border-top" id="myTabContent">
                     <div class="tab-pane fade show active" id="calcula" role="tabpanel" aria-labelledby="calcula-tab">
-                        <div class="container contenedor-calculo">
+                        <div class="container">
                             <div class="row">
-                                <form>
-                                    <div class="form-group">
-                                        <label class="nunito size14 letter-spacing0-4" for="exampleFormControlSelect1">Origen</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>Cali - Valle del Cauca</option>
-                                        <option>Bogotá - Cundinamarca</option>
-                                        <option>Popayán - Cauca</option>
-                                        <option>Pereira - Risaralda</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="nunito size14 letter-spacing0-4" for="exampleFormControlSelect2">Destino</label>
-                                        <select class="form-control" id="exampleFormControlSelect2">
-                                        <option>Cali - Valle del Cauca</option>
-                                        <option>Bogotá - Cundinamarca</option>
-                                        <option>Popayán - Cauca</option>
-                                        <option>Pereira - Risaralda</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                    <label class="nunito size14 letter-spacing0-4" for="exampleFormControlInput1">Monto</label>
-                                    <input type="number" class="form-control monto-enviar" id="exampleFormControlInput1" placeholder="$100000">
-                                    </div>
-
-                                    <img class="img-supergiros" src="./assets/home/SECCION-4/CALCULA/super_giros copyPNG.png" alt="super giros">
-                                    <button type="button" class="btn btn-yellow font-weight-bold size18 pr-5 pl-5 w-100 mt-4">Consultar</button>
-                                </form>
+                                <div class="formulario-giro wow animate__animated animate__backInRight">
+                                    <app-calculatugiro></app-calculatugiro>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -407,7 +383,7 @@
     </div>
 </section>
 <section class="section7">
-    <div class="jumbotron suscribe border-0 rounded-0 pt-5 mb-0" style="background:url(./assets/home/SECCION-7/newsletter_bg.png);background-size: auto;background-position: center;">
+    <div class="jumbotron suscribe border-0 rounded-0 pt-5 mb-0" style="background:url(./assets/home/SECCION-7/newsletter_bg.png);background-size: auto;background-position: bottom center;">
         <div class="container h-100">
             <h2 class="text-center text-blue text-white mb-4">Suscríbete para recibir los resultados</h2>
             <form>
@@ -424,7 +400,7 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="text-white size14 form-check-label" for="exampleCheck1">Conozco y acepto la política de datos de <STRONG><a class="text-white" href="/assets/tratamiento-datos/M-DM-05-Politicas-de-Tratamiento-de-Datos-Personales-v5.pdf" target="_blank">REDCOLSA.</a></STRONG></label>
                       </div>
-                    <div class="col-sm-12 text-center mt-4">
+                    <div class="col-sm-12 text-center mt-4 mb-4">
                         <button type="submit" class="btn btn-yellow font-weight-bold size18 pr-5 pl-5">Enviar</button>
                     </div>
                 </div>

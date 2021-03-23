@@ -100,4 +100,7 @@ export class PagesService {
   getLineaEtica(): Observable<any>{
     return this._http.get(`${this.url}/pages/993/`);
   }
+  getGeneralFooter(): Observable<any>{
+    return this._http.get(`${this.url}/pages/1031/`);
+  }
 }

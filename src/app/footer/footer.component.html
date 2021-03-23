@@ -5,6 +5,13 @@
                 <div class="col">
                     <h6 class="size13 text-white">GENERAL</h6>
                     <hr class="m-0 mt-2 mb-2 w-50 border-white">
+                    <ng-container *ngFor="let data of grupo_datos_data">
+                        <div class="direccion mb-2">
+                            <p class="size13 text-white font-weight-normal m-0"><img style="width: 12px;margin-top: -3px;" src="{{ data.icono }}"> {{ data.titulo }}</p>
+                            <p class="size13 text-gray-light font-weight-light m-0" [innerHTML]="data.texto_general"></p>
+                        </div>
+                    </ng-container>
+                    <!--
                     <div class="direccion mb-2">
                         <p class="size13 text-white font-weight-normal m-0"><i class="fas fa-home"></i> Dirección principal</p>
                         <p class="size13 text-gray-light font-weight-light m-0">Calle 13 No.4-25</p>
@@ -20,35 +27,21 @@
                         <p class="size13 text-gray-light font-weight-light m-0">info@gane.com.co</p>
                         <p class="size13 text-gray-light font-weight-light m-0">pqrs@gane.com.co</p>
                     </div>
+                    -->
                     <div class="ciudad mb-3">
-                        <p class="size13 text-white font-weight-normal m-0">Cali, Valle del Cauca.</p>
+                        <p class="size13 text-white font-weight-normal m-0">{{ texto_ciudad_data }}</p>
                     </div>
                     <div class="contacto mb-3">
-                        <a href="#/contactenos" class="btn btn-yellow-outline size13 box-shadow-none">CONTÁCTANOS</a>
+                        <a href="#/contactenos" class="btn btn-yellow-outline size13 box-shadow-none">{{ texto_boton_data }}</a>
                     </div>
                     <div class="redes1">
-                        <p class="size13 text-white font-weight-light m-1">Siguenos:</p>
+                        <p class="size13 text-white font-weight-light m-1">{{ titulo_redes_data }}</p>
                         <ul class="list-unstyled d-flex">
-                            <li class="pr-2">
-                                <a href="https://www.facebook.com/REDCOLSA" class="size15 text-white font-weight-light"><i class="fab fa-facebook"></i></a>
-                            </li>
-                            <li class="pr-2 pl-2">
-                                <a href="https://www.instagram.com/ganecali/" class="size15 text-white font-weight-light"><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li class="pr-2 pl-2">
-                                <a href="https://twitter.com/GaneCali" class="size15 text-white font-weight-light"><i class="fab fa-twitter"></i></a>
-                            </li>
-                        </ul>
-                        <ul class="list-unstyled d-flex">
-                            <li class="pr-2">
-                                <a href="https://www.youtube.com/user/ApuestasGane" class="size15 text-white font-weight-light"><i class="fab fa-youtube"></i></a>
-                            </li>
-                            <li class="pr-2 pl-1">
-                                <a href="https://www.tiktok.com/@ganecali?lang=es" class="size15 text-white font-weight-light"><img style="width: 15px;margin-top: -5px;" src="./assets/home/FOOTER/tik-footerPNG.png" alt="TikTok"></a>
-                            </li>
-                            <li class="pr-2 pl-1">
-                                <a href="https://www.linkedin.com/company/gane-cali/" class="size15 text-white font-weight-light"><i class="fab fa-linkedin"></i></a>
-                            </li>
+                            <ng-container *ngFor="let data of repetidor_de_redes_data">
+                                <li class="pr-2 pl-2">
+                                    <a href="{{data.link_red}}" target="_blank" class="size15 text-white font-weight-light"><img style="width:15px" src="{{data.icono_imagen}}"></a>
+                                </li>
+                            </ng-container>
                         </ul>
                     </div>
                 </div>
