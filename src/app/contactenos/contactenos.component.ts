@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactenos.component.css']
 })
 export class ContactenosComponent implements OnInit {
+  public user: any;
 
-  constructor() { }
+  constructor() { 
+    this.user = {
+      nombre_completo: '',
+      correo_electronico: '',
+      telefono: '',
+      tipo_consulta: '',
+      asunto: ''
+    };
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    alert("Formulario enviado!!");
+    console.log(this.user);
   }
 
 }
