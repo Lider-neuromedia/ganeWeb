@@ -7,18 +7,18 @@
                     <div class="grid-item">
                         <div class="tarjetaNoticiaMayor">
                             <div class="col-md-8 col-xs-12 sinEspacio">
-                                <a (click)="verArticle(post.id)">
+                                <a (click)="verArticle(post.slug)">
                                     <img class="w-100 d-block" src="{{ post.featured_image }}" alt="Noticia Principal">
                                 </a>
                             </div>
                             <div class="caption col-md-4 col-xs-12">
                                     <h3 class="tituloNoticiaMayor pt-3">
-                                        <a class="text-black" (click)="verArticle(post.id)">{{ post.title.rendered }}</a>
+                                        <a class="text-black" (click)="verArticle(post.slug)">{{ post.title.rendered }}</a>
                                     </h3>
                                     <p class="fechaNoticias">{{ post.date | date:'fullDate' | titlecase }}</p>
                                     <p class="text-gray">{{ post.excerpt.rendered }}</p>
                                     <div class="campoBotonNoticia">
-                                        <a class="verNoticiaMayor" (click)="verArticle(post.id)">Seguir leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
+                                        <a class="verNoticiaMayor" (click)="verArticle(post.slug)">Seguir leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
                                     </div>
                             </div>
                         </div>
@@ -30,18 +30,18 @@
             <ng-container *ngFor="let post of articles_data | slice:1:1000000">
                 <div class="card">
                     <div class="sinEspacio">
-                        <a (click)="verArticle(post.id)">
+                        <a (click)="verArticle(post.slug)">
                             <img class="card-img-top" src="{{ post.featured_image }}" alt="Noticia">
                         </a>
                     </div>
                     <div class="caption">
                         <h3 class="tituloPublicacionSingular pt-2">
-                            <a class="text-black" (click)="verArticle(post.id)">{{ post.title.rendered }}</a>
+                            <a class="text-black" (click)="verArticle(post.slug)">{{ post.title.rendered }}</a>
                         </h3>
                         <p class="fechaNoticias">{{ post.date | date:'fullDate' | titlecase }}</p>
                         <p class="text-gray" *ngIf="post.excerpt.rendered != ''">{{ post.excerpt.rendered }}</p>
                         <div class="campoBotonNoticia pt-1 pb-3">
-                            <a class="verNoticia" (click)="verArticle(post.id)">Seguir leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
+                            <a class="verNoticia" (click)="verArticle(post.slug)">Seguir leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
                         </div>
                     </div>
                 </div>

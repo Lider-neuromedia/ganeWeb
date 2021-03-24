@@ -49,4 +49,8 @@ export class ComunicadosComponent implements OnInit {
     })
   }
 
+  verComunicado(slug:string){
+    this._router.navigate(['/comunicado/', slug]);
+  }
+
 }

@@ -56,17 +56,17 @@ const APP_ROUTES: Routes = [
     {path: 'juegos', component: JuegosComponent},
     {path: 'pagos', component: PagosComponent},
     {path: 'comunicados', component: ComunicadosComponent},
-    {path: 'comunicado/:id', component: ComunicadoInternaComponent},
+    {path: 'comunicado/:slug', component: ComunicadoInternaComponent},
     {path: 'periodico', component: PeriodicoComponent},
     {path: 'privacidad', component: PrivacidadComponent},
     {path: 'financieros', component: FinancierosComponent},
     {path: 'recargas', component: RecargasComponent},
     {path: 'soat', component: SoatComponent},
     {path: 'campanas', component: CampanasComponent},
-    {path: 'campana/:id', component: CampanaComponent},
+    {path: 'campana/:slug', component: CampanaComponent},
     {path: 'contactenos', component: ContactenosComponent},
     {path: 'blog', component: BlogComponent},
-    {path: 'articulo/:id', component: BlogInternaComponent},
+    {path: 'articulo/:slug', component: BlogInternaComponent},
     {path: 'gestion', component: GestionCalidadComponent},
     {path: 'pago-premios', component: PagoPremiosComponent},
     {path: 'preguntas', component: PreguntasComponent},
@@ -90,8 +90,9 @@ const APP_ROUTES: Routes = [
     {path: 'importante', component: ImportanteComponent},
     {path: 'cultura-transparencia', component: CulturaTransparenciaComponent},
     {path: 'restaurante', component: RestauranteComponent},
-    {path: 'error', component: Error404Component},
-    {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
+    // {path: 'error', component: Error404Component},
+    // {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
+    {path: '**', pathMatch: 'full', component: Error404Component}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {

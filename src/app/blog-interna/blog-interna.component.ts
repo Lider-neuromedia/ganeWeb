@@ -14,10 +14,13 @@ export class BlogInternaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private _articleservice:ArticlesService) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this._articleservice.getArticle(id)
+    const slug = this.route.snapshot.paramMap.get('slug');
+    this._articleservice.getArticle(slug)
       .subscribe(res => {
         this.article_data = res;
+        for(let article of res){
+          this.article_data = article;
+        }
       })
   }
 

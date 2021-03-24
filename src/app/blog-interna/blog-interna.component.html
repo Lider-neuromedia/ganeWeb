@@ -6,9 +6,9 @@
                     <p class="text-center">
                         <img class="img-fluid mt-3 mb-3" src="{{ article_data.featured_image }}" alt="Banner Interna Blog">
                     </p>
-                    <h2 class="title35 wow animate__animated animate__fadeInUp">{{ article_data.title.rendered }}</h2>
+                    <h2 class="title35 wow animate__animated animate__fadeInUp" *ngIf="article_data.title">{{ article_data.title.rendered }}</h2>
                     <p class="text-blue wow animate__animated animate__fadeInUp">{{ article_data.date | date:'fullDate' | titlecase }}</p>
-                    <p class="wow animate__animated animate__fadeInUp" [innerHTML]="article_data.content.rendered"></p>
+                    <p class="wow animate__animated animate__fadeInUp" *ngIf="article_data.content" [innerHTML]="article_data.content.rendered"></p>
                 </div>
             </div>
         </div>

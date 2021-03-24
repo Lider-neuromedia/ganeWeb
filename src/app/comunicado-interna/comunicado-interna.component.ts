@@ -14,10 +14,13 @@ export class ComunicadoInternaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private _comunicadoservice:PostsService) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('slug');
     this._comunicadoservice.getComunicado(id)
       .subscribe(res => {
         this.comunicado_data = res;
+        for(let comunicado of res){
+          this.comunicado_data = comunicado;
+        }
       })
   }
 

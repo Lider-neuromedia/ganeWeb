@@ -14,10 +14,13 @@ export class CampanaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private _campanaservice:CampanaService) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this._campanaservice.getCampana(id)
+    const slug = this.route.snapshot.paramMap.get('slug');
+    this._campanaservice.getCampana(slug)
       .subscribe(res => {
         this.campana_data = res;
+        for(let campana of res){
+          this.campana_data = campana;
+        }
       })
   }
 

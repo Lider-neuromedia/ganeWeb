@@ -18,19 +18,19 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 p-3">
                     <div class="p-2 bg-white d-flex align-content-center">
                         <div class="col-md-6 sin-espacios float-md-left">
-                            <a (click)="verComunicado(comunicado.id)">
+                            <a (click)="verComunicado(comunicado.slug)">
                                 <img class="w-100 d-block" src="{{ comunicado.acf.imagen_destacada }}" alt="Imagen Comunicado" *ngIf="comunicado.acf.imagen_destacada != null">
                             </a>
                         </div>
                         <div class="col-md-6 caption float-md-left">
                             <h3 class="title-comunicado" *ngIf="comunicado.title != null">
-                                <a (click)="verComunicado(comunicado.id)">{{ comunicado.title.rendered }}</a>
+                                <a (click)="verComunicado(comunicado.slug)">{{ comunicado.title.rendered }}</a>
                             </h3>
                             <p class="date-comunicado pt-2 pb-2 m-0" *ngIf="comunicado.date != null">{{ comunicado.date | date:'fullDate' | titlecase }}</p>
                             <div class="excerpt-comunicado" *ngIf="comunicado.excerpt">
                                 <p>{{ comunicado.excerpt.rendered }}</p>
                             </div>
-                            <a class="ver-comunicado" (click)="verComunicado(comunicado.id)">Seguir Leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
+                            <a class="ver-comunicado" (click)="verComunicado(comunicado.slug)">Seguir Leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
                         </div>
                     </div>
                 </div>

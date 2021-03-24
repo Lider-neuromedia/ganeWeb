@@ -18,7 +18,7 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this._articlesService.getArticles()
     .subscribe((res:any) => {
-      this.articles_data = res;
+        this.articles_data = res;
     });
   }
 
