@@ -1,24 +1,35 @@
 <div class="periodico_pagina bk-gray pt-5 pb-5">
     <div class="container">
         <div class="row pb-4">
-            <div class="col-md-12" *ngIf="periodicos_data.acf">
-                <img class="d-inline-block pr-4 mt-10n" src="{{ periodicos_data.acf.icono_titulo }}" alt="">
-                <h2 class="title35 d-inline-block">{{ periodicos_data.title.rendered }}</h2>
+            <div class="col-md-12">
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+            </div>
+            <div *ngIf="!loader">
+                <div class="col-md-12" *ngIf="periodicos_data.acf">
+                    <img class="d-inline-block pr-4 mt-10n" src="{{ periodicos_data.acf.icono_titulo }}" alt="">
+                    <h2 class="title35 d-inline-block">{{ periodicos_data.title.rendered }}</h2>
+                </div>
             </div>
         </div>
-        <div class="row wow animate__animated animate__fadeInUp" *ngIf="periodicos_data.acf">
-            <ng-container *ngFor="let periodico of periodicos_data.acf.periodico">
-                <div class="col-xs-12 col-md-3">
-                    <div class="card-periodico mt-4 mb-4">
-                        <img class="w-100 d-block" src="{{ periodico.imagen_de_portada }}" alt="Periódico">
-                        <h3 class="size18 line-height22 montserrat color-title font-weight-bold pt-2 pb-2 mb-0">{{ periodico.titulo }}</h3>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a class="ver-periodico pr-1" href="{{ periodico.pdf }}" target="blank_" *ngIf="periodico.pdf != false">Ver periódico <i class="fas fa-long-arrow-alt-right"></i></a>
-                            <a class="ver-periodico pr-1" href="{{ periodico.url }}" target="blank_" *ngIf="periodico.url != false">Ir al periódico <i class="fas fa-long-arrow-alt-right"></i></a>
+        <div>
+            <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{'width':'100%', 'height':'235px', 'border-radius':'12px' }"></ngx-skeleton-loader>
+            <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{'width':'100%', 'height':'235px', 'border-radius':'12px' }"></ngx-skeleton-loader>
+        </div>
+        <div *ngIf="!loader">
+            <div class="row wow animate__animated animate__fadeInUp" *ngIf="periodicos_data.acf">
+                <ng-container *ngFor="let periodico of periodicos_data.acf.periodico">
+                    <div class="col-xs-12 col-md-3">
+                        <div class="card-periodico mt-4 mb-4">
+                            <img class="w-100 d-block" src="{{ periodico.imagen_de_portada }}" alt="Periódico">
+                            <h3 class="size18 line-height22 montserrat color-title font-weight-bold pt-2 pb-2 mb-0">{{ periodico.titulo }}</h3>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a class="ver-periodico pr-1" href="{{ periodico.pdf }}" target="blank_" *ngIf="periodico.pdf != false">Ver periódico <i class="fas fa-long-arrow-alt-right"></i></a>
+                                <a class="ver-periodico pr-1" href="{{ periodico.url }}" target="blank_" *ngIf="periodico.url != false">Ir al periódico <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </ng-container>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>

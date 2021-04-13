@@ -16,11 +16,14 @@ export class PagoPremiosComponent implements OnInit {
   titulo_final_data: any = {};
   texto_final_data: any = {};
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _pagopremios:PagesService) { }
 
   ngOnInit(): void {
     this._pagopremios.getPagoPremios()
       .subscribe((res:any) => {
+        this.loader = false;
         this.titulo_data = res.acf.titulo_principal;
         this.texto_descriptivo_principal_data = res.acf.texto_descriptivo_principal;
         this.imagen_principal_data = res.acf.imagen_principal;

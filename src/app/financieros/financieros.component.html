@@ -2,8 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="title35 text-center d-block mb-3" *ngIf="financieros_data.title">{{ financieros_data.title.rendered }}</h3>
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader"> 
+                    <h3 class="title35 text-center d-block mb-3" *ngIf="financieros_data.title">{{ financieros_data.title.rendered }}</h3>
+                </div>
             </div>
+        </div>
+        <div>
+            <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{'width':'100%', 'height':'235px', 'border-radius':'12px' }"></ngx-skeleton-loader>
         </div>
         <div class="row" *ngIf="financieros_data.acf">
             <ng-container *ngFor="let fina of financieros_data.acf.financieros">

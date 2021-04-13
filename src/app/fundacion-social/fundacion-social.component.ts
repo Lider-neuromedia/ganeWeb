@@ -13,11 +13,14 @@ export class FundacionSocialComponent implements OnInit {
   primer_grupo_repeater: any[] = [];
   segundo_grupo_texto_data: any = {};
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _quienessomosfundacionservice:PagesService) { }
 
   ngOnInit(): void {
     this._quienessomosfundacionservice.getQuienesSomosFundacion()
       .subscribe((res:any) => {
+        this.loader = false;
         this.titulo = res.acf.titulo_pagina;
         this.primer_grupo_repeater = res.acf.primer_grupo_texto;
         this.imagen_fondo = res.acf.imagen_fondo_derecha;

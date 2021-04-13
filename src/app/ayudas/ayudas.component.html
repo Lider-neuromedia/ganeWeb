@@ -2,8 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12 mb-3">
-                <h2 class="size35 font-weight-700 line-height42 color-title montserrat text-center">{{ titulo_data }}</h2>
-                <p class="text-gray-dark opensans line-height23 letter-spacing1-4 size19 text-justify" [innerHTML]="texto_data"></p>
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
+                <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader"> 
+                    <h2 class="size35 font-weight-700 line-height42 color-title montserrat text-center">{{ titulo_data }}</h2>
+                    <p class="text-gray-dark opensans line-height23 letter-spacing1-4 size19 text-justify" [innerHTML]="texto_data"></p>
+                </div>
             </div>
         </div>
         <!--

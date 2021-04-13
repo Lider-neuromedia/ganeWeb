@@ -9,12 +9,14 @@ import { PagesService } from './../services/pages.service';
 export class PeriodicoComponent implements OnInit {
 
   periodicos_data:any = {};
+  loader = true;
 
   constructor(private _periodico_service:PagesService){}
 
   ngOnInit(): void {
     this._periodico_service.getPeriodicos()
     .subscribe((res:any) => {
+      this.loader = false;
       this.periodicos_data = res;
     });
   }

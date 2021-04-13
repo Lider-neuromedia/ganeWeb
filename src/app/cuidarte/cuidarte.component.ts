@@ -16,11 +16,14 @@ export class CuidarteComponent implements OnInit {
   tabla_data:any = {};
   datos_tabla_items_data: any[] = [];
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _cuidarte:PagesService) { }
 
   ngOnInit(): void {
     this._cuidarte.getCuidarte()
       .subscribe((res:any) => {
+        this.loader = false;
         this.titulo_principal_data = res.acf.titulo_principal;
         this.texto_principal_data = res.acf.texto_principal;
         this.titulo_complementario_data = res.acf.titulo_complementario;

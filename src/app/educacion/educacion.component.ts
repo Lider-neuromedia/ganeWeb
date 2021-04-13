@@ -15,12 +15,15 @@ export class EducacionComponent implements OnInit {
   seccion2_data:any[] = [];
   texto_final_data:any = {};
 
+  loader = true;
+
 
   constructor(private httpClient:HttpClient, private _educacioncontinua:PagesService) { }
 
   ngOnInit(): void {
     this._educacioncontinua.getEducacionContinuaFundacion()
       .subscribe((res:any) => {
+        this.loader = false;
         this.banner_data = res.acf.banner_principal;
         this.titulo_data = res.acf.titulo_general;
         this.texto_data = res.acf.texto_general;

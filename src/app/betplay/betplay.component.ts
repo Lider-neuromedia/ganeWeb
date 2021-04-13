@@ -26,13 +26,12 @@ export class BetplayComponent implements OnInit {
     var video, results;
     this._betplayservice.getBetplay()
     .subscribe((res:any) => {
-      console.log(res);
       this.loader = false;
-      this.seccion_1_data = res.seccion_1;
-      this.seccion_1_video = res.seccion_1.link_video;
-      this.seccion_2_data = res.seccion_2_img;
-      this.seccion_3_data = res.seccion_3;
-      this.seccion_tabla_data = res.seccion_tabla;
+      this.seccion_1_data = res.acf.seccion_1;
+      this.seccion_1_video = res.acf.seccion_1.link_video;
+      this.seccion_2_data = res.acf.seccion_2_img;
+      this.seccion_3_data = res.acf.seccion_3;
+      this.seccion_tabla_data = res.acf.seccion_tabla;
       if(this.seccion_1_video === null || this.seccion_1_video === ''){
         return '';
       }

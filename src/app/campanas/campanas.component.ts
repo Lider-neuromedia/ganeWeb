@@ -11,12 +11,14 @@ import { Router } from '@angular/router';
 export class CampanasComponent implements OnInit {
 
   campanas_data:any[] = [];
+  loader = true;
 
   constructor(private _router:Router, private _campanaservice:CampanaService) { }
 
   ngOnInit(): void {
     this._campanaservice.getCampanas()
     .subscribe((res:any) => {
+      this.loader = false;
       this.campanas_data = res;
     });
   }

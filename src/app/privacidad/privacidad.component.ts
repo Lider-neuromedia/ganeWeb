@@ -8,6 +8,7 @@ import { PagesService } from './../services/pages.service';
 })
 export class PrivacidadComponent implements OnInit {
   privacidad_data:any = {};
+  loader = true;
 
   constructor(private _privacidad_service:PagesService){}
 
@@ -15,6 +16,7 @@ export class PrivacidadComponent implements OnInit {
     this._privacidad_service.getPrivacidad()
     .subscribe((res:any) => {
       this.privacidad_data = res;
+      this.loader = false;
     });
   }
 

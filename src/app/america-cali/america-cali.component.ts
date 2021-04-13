@@ -11,11 +11,14 @@ export class AmericaCaliComponent implements OnInit {
   img_principal_data: any;
   tabla_data: any = {};
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _americaycali:PagesService) { }
 
   ngOnInit(): void {
     this._americaycali.getAmericaCali()
       .subscribe((res:any) => {
+        this.loader = false;
         this.img_principal_data = res.acf.imagen_principal;
         this.tabla_data = res.acf.tabla;
       });

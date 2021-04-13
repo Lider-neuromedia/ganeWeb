@@ -8,6 +8,7 @@ import { PagesService } from './../services/pages.service';
 })
 export class FinancierosComponent implements OnInit {
   financieros_data:any = {};
+  loader = true;
 
   constructor(private _financieros_service:PagesService){}
 
@@ -15,6 +16,7 @@ export class FinancierosComponent implements OnInit {
     this._financieros_service.getFinancieros()
     .subscribe((res:any) => {
       this.financieros_data = res;
+      this.loader = false;
     });
   }
 

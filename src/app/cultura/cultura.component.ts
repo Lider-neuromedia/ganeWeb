@@ -16,13 +16,14 @@ export class CulturaComponent implements OnInit {
   texto_2_data: any = {};
   texto_final_data: any = {};
 
-
+  loader = true;
 
   constructor(private httpClient:HttpClient, private _recreacion:PagesService) { }
 
   ngOnInit(): void {
     this._recreacion.getRecreacion()
       .subscribe((res:any) => {
+        this.loader = false;
         this.titulo_data = res.acf.titulo;
         this.imagen_derecha_data = res.acf.imagen_derecha;
         this.texto_1_data = res.acf.texto_1;

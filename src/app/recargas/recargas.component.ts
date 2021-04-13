@@ -10,12 +10,15 @@ import { Router } from '@angular/router';
 })
 export class RecargasComponent implements OnInit {
   recargas_data:any = {};
+  loader = true;
+  totalCount = 7;
 
   constructor(private _router:Router, private _pagesservice:PagesService) { }
 
   ngOnInit(): void {
     this._pagesservice.getRecargas()
     .subscribe((res:any) => {
+      this.loader = false;
       this.recargas_data = res;
     });
   }

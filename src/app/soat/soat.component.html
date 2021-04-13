@@ -2,16 +2,43 @@
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-xs-12 col-md-7 pt-3 pl-100">
-                <div class="title-w-image">
-                    <img class="mr-3 mt-n70" src="{{ soat_data.acf.icono }}" alt="Soat">
-                    <h3 class="title35 mt-3 mb-3 d-inline-block pb-3" [innerHTML]="soat_data.acf.titulo"></h3>
+                <div class="first-section-wrapper">
+                    <div class="gravatar">
+                        <ngx-skeleton-loader appearance="circle" *ngIf="loader" animation="progress" [theme]="{ width: '80px', height: '80px' }">
+                        </ngx-skeleton-loader>
+                    </div>
+                    <div class="gravatar-title">
+                        <div>
+                            <ngx-skeleton-loader *ngIf="loader" animation="progress" [theme]="{
+                            width: '200px',
+                            'border-radius': '0',
+                            height: '15px',
+                            'margin-bottom': '10px'
+                            }"></ngx-skeleton-loader>
+                        </div>
+                        <div>
+                            <ngx-skeleton-loader *ngIf="loader" animation="progress" [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }">
+                            </ngx-skeleton-loader>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-justify mb-5" [innerHTML]="soat_data.acf.contenido"></p>
-                <p class="font-weight-700 text-uppercase">{{ soat_data.acf.subtitulo }}</p>
-                <a class="text-uppercase color-title pb-3 d-block" href="{{ soat_data.acf.archivo.url }}" target="blank_"><u>{{ soat_data.acf.texto_boton }}</u></a>
+                <div *ngIf="!loader" class="title-w-image">
+                    <img *ngIf="soat_data.acf" class="mr-3 mt-n70" src="{{ soat_data.acf.icono }}" alt="Soat">
+                    <h3 *ngIf="soat_data.acf" class="title35 mt-3 mb-3 d-inline-block pb-3" [innerHTML]="soat_data.acf.titulo"></h3>
+                </div>
+                <ngx-skeleton-loader *ngIf="loader" count="5" animation="progress"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <p *ngIf="soat_data.acf" class="text-justify mb-5" [innerHTML]="soat_data.acf.contenido"></p>
+                    <p *ngIf="soat_data.acf" class="font-weight-700 text-uppercase">{{ soat_data.acf.subtitulo }}</p>
+                    <a *ngIf="soat_data.acf" class="text-uppercase color-title pb-3 d-block" href="{{ soat_data.acf.archivo.url }}" target="blank_"><u>{{ soat_data.acf.texto_boton }}</u></a>
+                </div>
             </div>
             <div class="col-xs-12 col-md-5 pr-0">
-                <img class="w-100 d-inline-block wow animate__animated animate__fadeInRight" src="{{ soat_data.acf.imagen }}" alt="SoatMain">
+                <ngx-skeleton-loader appearance="circle" *ngIf="loader" animation="progress" [theme]="{ 'width': '200px', height: '200px', 'border-radius': '10px'}">
+                </ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <img *ngIf="soat_data.acf" class="w-100 d-inline-block wow animate__animated animate__fadeInRight" src="{{ soat_data.acf.imagen }}" alt="SoatMain">
+                </div>
             </div>
         </div>
     </div>

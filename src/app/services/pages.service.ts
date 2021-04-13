@@ -39,9 +39,7 @@ export class PagesService {
     return this._http.get(`${this.url}/pages/317/`);
   }
   getBetplay(): Observable<any>{
-    return this._http.get(`${this.url}/pages/157/`).pipe( map( resp => {
-      return resp['acf'];
-    }))
+    return this._http.get(`${this.url}/pages/157/`);
   }
   getPagos(): Observable<any>{
     return this._http.get(`${this.url}/pages/235/`);

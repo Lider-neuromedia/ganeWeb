@@ -2,19 +2,25 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <img class="d-block w-100 mb-5 wow animate__animated animate__fadeInUp" *ngIf="banner_data != false" src="{{banner_data}}" alt="Primera Infancia con Gane">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title wow animate__animated animate__fadeInUp">{{ titulo_data }}</h3>
-                <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_general_data"></p>
-                <div class="row wow animate__animated animate__fadeInUp">
-                    <div class="col-xs-12 col-sm-6 col-md-6">
-                        <p class="letter-spacing0-93 text-black" [innerHTML]="texto_columna_izquierda_data"></p>
-                        <br>
-                        <p class="letter-spacing0-93 text-black" [innerHTML]="texto_final_data"></p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6">
-                        <img class="d-block img-fluid mt-2" *ngIf="imagen_columna_derecha_data != false" src="{{imagen_columna_derecha_data}}" alt="Primera Infancia Gane">
-                    </div>
+                <div>
+                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'235px' }"></ngx-skeleton-loader>
+                    <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
                 </div>
+                <div *ngIf="!loader">
+                    <img class="d-block w-100 mb-5 wow animate__animated animate__fadeInUp" *ngIf="banner_data != false" src="{{banner_data}}" alt="Primera Infancia con Gane">
+                    <h3 class="montserrat font-weight-700 size35 line-height42 color-title wow animate__animated animate__fadeInUp">{{ titulo_data }}</h3>
+                    <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_general_data"></p>
+                    <div class="row wow animate__animated animate__fadeInUp">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <p class="letter-spacing0-93 text-black" [innerHTML]="texto_columna_izquierda_data"></p>
+                            <br>
+                            <p class="letter-spacing0-93 text-black" [innerHTML]="texto_final_data"></p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <img class="d-block img-fluid mt-2" *ngIf="imagen_columna_derecha_data != false" src="{{imagen_columna_derecha_data}}" alt="Primera Infancia Gane">
+                        </div>
+                    </div>
+                    </div>
             </div>
         </div>
     </div>

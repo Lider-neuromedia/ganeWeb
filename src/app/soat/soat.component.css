@@ -1,0 +1,15 @@
+.gravatar {
+  width: 100px;
+  height: 90px;
+}
+.gravatar-title {
+  width: 100%;
+  padding: 10px;
+}
+
+.first-section-wrapper {
+  width: 100%;
+  height: auto;
+  flex: 1;
+  display: inline-flex;
+}

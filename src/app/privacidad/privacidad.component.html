@@ -1,10 +1,17 @@
 <div class="privacidad_pagina bk-gray pt-5 pb-5">
     <div class="container">
+        <div>
+            <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'180px' }"></ngx-skeleton-loader>
+            <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ 'width':'180px', 'height':'30px' }"></ngx-skeleton-loader>
+        </div>
+        <ngx-skeleton-loader count="8" *ngIf="loader" animation="progress" [theme]="{'width':'100%',height:'30px' }"></ngx-skeleton-loader>
         <div class="row">
-            <img class="w-100 d-block mb-5" src="{{ privacidad_data.acf.banner }}" alt="Banner Politicas" *ngIf="privacidad_data.acf != null">
-            <div class="col-md-12">
-                <h3 class="montserrat size25 line-height30 text-blue font-weight-bold mb-3" *ngIf="privacidad_data.title">{{ privacidad_data.title.rendered }}</h3>
-                <p class="text-justify text-gray-dark opensans size19 line-height23 letter-spacing1-4 wow animate__animated animate__fadeInRight" *ngIf="privacidad_data.content" [innerHTML]="privacidad_data.content.rendered"></p>
+            <div *ngIf="!loader">
+                <img class="w-100 d-block mb-5" src="{{ privacidad_data.acf.banner }}" alt="Banner Politicas" *ngIf="privacidad_data.acf != null">
+                <div class="col-md-12">
+                    <h3 class="montserrat size25 line-height30 text-blue font-weight-bold mb-3" *ngIf="privacidad_data.title">{{ privacidad_data.title.rendered }}</h3>
+                    <p class="text-justify text-gray-dark opensans size19 line-height23 letter-spacing1-4 wow animate__animated animate__fadeInRight" *ngIf="privacidad_data.content" [innerHTML]="privacidad_data.content.rendered"></p>
+                </div>
             </div>
         </div>
         <div class="row wow animate__animated animate__fadeInUp">

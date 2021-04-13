@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class BlogComponent implements OnInit {
 
   articles_data:any[] = [];
+  loader = true;
   
   constructor(private _router:Router, private _articlesService:ArticlesService) { 
   }
@@ -19,6 +20,7 @@ export class BlogComponent implements OnInit {
     this._articlesService.getArticles()
     .subscribe((res:any) => {
         this.articles_data = res;
+        this.loader = false;
     });
   }
 

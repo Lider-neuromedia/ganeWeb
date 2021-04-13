@@ -2,27 +2,43 @@
     <div class="container">
         <div class="row h-100 mb-5">
             <div class="col-xs-12 col-sm-6 col-md-6 my-auto">
-                <h2 class="montserrat font-weight-700 size35 color-title line-height35">{{ titulo_data }}</h2>
-                <P class="text-justify text-gray-dark size19 line-height23 letter-spacing1-4 wow animate__animated animate__fadeInLeft" [innerHTML]="texto_descriptivo_principal_data"></P>
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'45px' }"></ngx-skeleton-loader>
+                <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'30px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <h2 class="montserrat font-weight-700 size35 color-title line-height35">{{ titulo_data }}</h2>
+                    <p class="text-justify text-gray-dark size19 line-height23 letter-spacing1-4 wow animate__animated animate__fadeInLeft" [innerHTML]="texto_descriptivo_principal_data"></p>
+                </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <img class="w-100 d-block wow animate__animated animate__fadeInRight" src="{{ imagen_principal_data }}" alt="Gestion">
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{width: '100%','height': '300px','border-radius': '10px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <img class="w-100 d-block wow animate__animated animate__fadeInRight" src="{{ imagen_principal_data }}" alt="Gestion">
+                </div>
             </div>
         </div>
         <div class="row sombraRecuadro wow animate__animated animate__fadeInUp">
             <div class="col-sm-6 col-md-6 lineaVertical p-5">
-                <h4 class="size19 opensans font-weight-700 letter-spacing1-4 line-height23 text-blue">{{ columna_izquierda_data.titulo }}</h4>
-                <p [innerHTML]="columna_izquierda_data.texto"></p>
+                <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'30px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <h4 class="size19 opensans font-weight-700 letter-spacing1-4 line-height23 text-blue">{{ columna_izquierda_data.titulo }}</h4>
+                    <p [innerHTML]="columna_izquierda_data.texto"></p>
+                </div>
             </div>
             <div class="col-sm-6 col-md-6 p-5">
-                <h4 class="size19 opensans font-weight-700 letter-spacing1-4 line-height23 text-blue">{{ columna_derecha_data.titulo }}</h4>
-                <p [innerHTML]="columna_derecha_data.texto"></p>
+                <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'30px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <h4 class="size19 opensans font-weight-700 letter-spacing1-4 line-height23 text-blue">{{ columna_derecha_data.titulo }}</h4>
+                    <p [innerHTML]="columna_derecha_data.texto"></p>
+                </div>
             </div>
         </div>
         <div class="row mt-5">
             <div class="col-xs-12 col-md-12">
-                <h3 class="opensans font-weight-700 letter-spacing1-4 line-height23 text-blue text-center">{{titulo_final_data}}</h3>
-                <p [innerHTML]="texto_final_data"></p>
+                <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'30px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <h3 class="opensans font-weight-700 letter-spacing1-4 line-height23 text-blue text-center">{{titulo_final_data}}</h3>
+                    <p [innerHTML]="texto_final_data"></p>
+                </div>
             </div>
         </div>
     </div>

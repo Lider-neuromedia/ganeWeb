@@ -1,6 +1,12 @@
 <div class="campana_pagina pb-5">
-    <div class="container">
-            <h3 class="title44 text-center d-block mb-5 mt-5 wow animate__animated animate__fadeInUp">Campañas</h3>
+    <div class="container mt-5">
+        <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+        <h3 *ngIf="!loader" class="title44 text-center d-block mb-5 wow animate__animated animate__fadeInUp">Campañas</h3>
+        <div>
+            <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{'width':'100%', 'height':'235px', 'border-radius':'12px' }"></ngx-skeleton-loader>
+            <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{'width':'100%', 'height':'235px', 'border-radius':'12px' }"></ngx-skeleton-loader>
+        </div>
+        <div *ngIf="!loader">
             <div class="row">
                 <ng-container *ngFor="let campanas of campanas_data">
                     <div class="col-sm-3">
@@ -31,5 +37,6 @@
                     </div>
                 </ng-container>
             </div>
+        </div>
     </div>
 </div>

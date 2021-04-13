@@ -2,12 +2,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="montserrat size25 font-weight-700 line-height30 text-blue">{{ titulo_data }}</h3>
-                <br>
-                <p class="text-justify text-gray-dark size19 letter-spacing1-4 line-height23" [innerHTML]="texto_principal_data" ></p>
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'45px' }"></ngx-skeleton-loader>
+                <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'30px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <h3 class="montserrat size25 font-weight-700 line-height30 text-blue">{{ titulo_data }}</h3>
+                    <br>
+                    <p class="text-justify text-gray-dark size19 letter-spacing1-4 line-height23" [innerHTML]="texto_principal_data" ></p>
+                </div>
             </div>
             <div class="col-md-4"></div>
-            <div class="col-md-4"><img class="w-100 d-block" *ngIf="imagen_principal_data" src="{{ imagen_principal_data }}" alt="Gestion"></div>
+            <div class="col-md-4">
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px', 'border-radius':'10px' }"></ngx-skeleton-loader>
+                <img class="w-100 d-block" *ngIf="imagen_principal_data" src="{{ imagen_principal_data }}" alt="Gestion"></div>
             <div class="col-md-4"></div>
         </div>
     </div>

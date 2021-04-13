@@ -2,14 +2,17 @@
     <div class="container pt-3">
         <div class="row">
             <div class="col-xs-12 col-md-3 mb-3 wow animate__animated animate__fadeInLeft">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <ng-container *ngFor="let item of item_tab_data; let index = index">
                         <a class="nav-link" [attr.id]="'v-pills-tab-'+index" [ngClass]="{'active': index === activePillIndex}" data-toggle="pill" [attr.href]="'#'+'v-pills-'+index" role="tab" aria-selected="true" (click)="selectPill(index)">{{ item.nombre_item_tab }}</a>
                     </ng-container>
                 </div>
             </div>
             <div class="col-xs-12 col-md-9">
-                <div class="tab-content" id="v-pills-tabContent">
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'230px' }"></ngx-skeleton-loader>
+                <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader" class="tab-content" id="v-pills-tabContent">
                     <ng-container *ngFor="let datos of item_tab_data; let index = index">
                         <div class="tab-pane fade show" [ngClass]="{'active': index === activePillIndex}" [attr.id]="'#'+'v-pills-'+index" role="tabpanel">
                             <img class="w-100 mb-5 border-r5" *ngIf="datos.img_principal_tab != undefined" src="{{ datos.img_principal_tab }}" alt="Banner Juegos">

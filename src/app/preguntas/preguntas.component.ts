@@ -19,12 +19,15 @@ export class PreguntasComponent implements OnInit {
   video_gane_url:any = {};
   urlSafe: SafeResourceUrl;
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _preguntas:PagesService, private _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     var video, results;
     this._preguntas.getPreguntasFrecuentes()
       .subscribe((res:any) => {
+        this.loader = false;
         this.titulo_data = res.acf.titulo;
         this.subtitulo_data = res.acf.subtitulo;
         this.texto_general_data = res.acf.texto_general;

@@ -13,11 +13,14 @@ export class JuegosComponent implements OnInit {
   info_cobros: any = {}; 
   public activePillIndex:number = 0;
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _juegosservice:PagesService) { }
 
   ngOnInit(): void {
       this._juegosservice.getJuegos()
       .subscribe((res:any) => {
+        this.loader = false;
         this.item_tab_data          = res.acf.item_tab;
         this.info_tabla_de_2_campos = res.acf.item_tab.tabla_de_2_campos;
         this.info_cobros            = res.acf.item_tab.seccion_cobros;
