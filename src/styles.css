@@ -1249,6 +1249,9 @@ tr td:hover{
 }
 
 /****Página de Comunicados de prensa*****/
+.tarjetaComunicado{
+    display:flex;
+}
 .ver-comunicado{
     margin-bottom: 0;
 }
@@ -1425,6 +1428,10 @@ tr td:hover{
 }
 
 @media screen and (max-width: 767px) {
+    .tarjetaComunicado{
+        display:block;
+    }
+
     .tarjetaNoticiaMayor .caption {
 		min-height: 270px;
 	}

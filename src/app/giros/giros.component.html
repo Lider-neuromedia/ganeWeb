@@ -2,22 +2,28 @@
     <div class="container bk-puntos section1">
         <div class="row">
             <div class="col-xs-12 col-md-6 my-auto">
-                <img class="mb-5 mt-5 img-60" src="{{ seccion1_supergiros_data.giros_img }}" alt="Supergiros">
-                <p class="text-justify txt-giros">{{ seccion1_supergiros_data.textos_giros }}</p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <a class="btn btn-supergiros txt-center" href="{{ seccion1_supergiros_data.btn_giros_inter }}" target="_blank">{{ seccion1_supergiros_data.texto_btn_giros_inter }}</a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="btn btn-supergiros txt-center" href="{{ seccion1_supergiros_data.btn_protegiro }}" target="_blank">{{ seccion1_supergiros_data.texto_btn_protegiro }}</a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="btn btn-supergiros txt-center" href="{{ seccion1_supergiros_data.btn_supertoken }}" target="_blank">{{ seccion1_supergiros_data.texto_btn_supertoken }}</a>
+                <ngx-skeleton-loader count="{{totalCount}}" *ngIf="loader" animation="progress" [theme]="{height:'85px' }"></ngx-skeleton-loader>
+                <img *ngIf="!loader" class="mb-5 mt-5 img-60" src="{{ seccion1_supergiros_data.giros_img }}" alt="Supergiros">
+                <ngx-skeleton-loader count="4" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                <p *ngIf="!loader" class="text-justify txt-giros">{{ seccion1_supergiros_data.textos_giros }}</p>
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ height:'35px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a class="btn btn-supergiros txt-center" href="{{ seccion1_supergiros_data.btn_giros_inter }}" target="_blank">{{ seccion1_supergiros_data.texto_btn_giros_inter }}</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="btn btn-supergiros txt-center" href="{{ seccion1_supergiros_data.btn_protegiro }}" target="_blank">{{ seccion1_supergiros_data.texto_btn_protegiro }}</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="btn btn-supergiros txt-center" href="{{ seccion1_supergiros_data.btn_supertoken }}" target="_blank">{{ seccion1_supergiros_data.texto_btn_supertoken }}</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
-                <div class="container contenedor-calculo">
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ 'margin-top':'3rem', 'height':'385px', 'border-radius': '8px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader" class="container contenedor-calculo">
                     <div class="row">
                         <div class="formulario-giro mt-5 wow animate__animated animate__backInRight">
                             <div class="title-giro"><h3>Calcula tu giro</h3></div>
@@ -32,7 +38,8 @@
     <div class="container section2">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <table class="full-table mt-5 wow animate__animated animate__fadeInUp">
+                <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{ 'margin-top':'10px', 'height':'25px'}"></ngx-skeleton-loader>
+                <table *ngIf="!loader" class="full-table mt-5 wow animate__animated animate__fadeInUp">
                     <thead>
                         <th>Desde</th>
                         <th>Hasta</th>

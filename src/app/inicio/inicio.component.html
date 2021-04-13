@@ -39,8 +39,9 @@
 <section class="section2 pt-5 pb-5 bg-gray">
     <div class="container">
         <div class="row">
+            <div><ngx-skeleton-loader count="{{totalCount}}" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ height: '290px','border-radius': '10px' }"></ngx-skeleton-loader></div>
             <ng-container *ngFor="let recuadro of recuadros_data">
-                <div class="col-xs-12 col-sm p-3 align-items-stretch wow animate__animated animate__bounceInLeft">
+                <div *ngIf="!loader" class="col-xs-12 col-sm p-3 align-items-stretch">
                     <a href="{{ recuadro.url }}">
                         <div class="card d-flex justify-content-center p-4 border-radius border-0 box-shadow card-shadow-hover">
                             <p class="text-center mb-2">

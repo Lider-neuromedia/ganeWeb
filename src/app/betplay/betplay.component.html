@@ -2,54 +2,66 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <img class="d-block mx-auto mt-5 mb-5 img-fluid wow animate__animated animate__backInDown" src="{{seccion_1_data.img_principal}}" alt="Betplay">
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ 'margin-top': '3rem', 'height':'135px' }"></ngx-skeleton-loader>
+                <img *ngIf="!loader" class="d-block mx-auto mt-5 mb-5 img-fluid wow animate__animated animate__backInDown" src="{{seccion_1_data.img_principal}}" alt="Betplay">
             </div>
         </div>
         <div class="row section2 mb-5">
             <div class="col-xs-12 col-md-6">
-                <h3>{{seccion_1_data.recarga_titulo}}</h3>
-                <p>{{seccion_1_data.recarga_texto}}
-                </p>
-
-                <h3>{{seccion_1_data.retira_dinero_titulo}}</h3>
-                <ul>
-                    <ng-container *ngFor="let item of seccion_1_data.retira_dinero_texto">
-                        <li>{{ item.texto }}</li>
-                    </ng-container>
-                </ul>
+                <ngx-skeleton-loader count="{{totalCount}}" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <h3>{{seccion_1_data.recarga_titulo}}</h3>
+                    <p>{{seccion_1_data.recarga_texto}}
+                    </p>
+    
+                    <h3>{{seccion_1_data.retira_dinero_titulo}}</h3>
+                    <ul>
+                        <ng-container *ngFor="let item of seccion_1_data.retira_dinero_texto">
+                            <li>{{ item.texto }}</li>
+                        </ng-container>
+                    </ul>
+                </div>
             </div>
             <div class="col-xs-12 col-md-6">
-                <iframe class="align-middle" width="560" height="315" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ 'height':'230px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <iframe class="align-middle" width="560" height="315" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
         <div class="row section3">
             <div class="col-xs-12 col-md-12">
-                <img class="w-100 d-block" src="{{seccion_2_data}}" alt="seguridad">
-                <h4 class="text-center mt-5 mb-3 title35"><strong>{{seccion_3_data.seccion_3_titulo}}</strong></h4>
-                <p class="text-justify">
-                    {{seccion_3_data.seccion_3_texto}}
-                </p>
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ 'height':'235px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <img *ngIf="seccion_2_data" class="w-100 d-block" src="{{seccion_2_data}}" alt="seguridad">
+                    <h4 class="text-center mt-5 mb-3 title35"><strong>{{seccion_3_data.seccion_3_titulo}}</strong></h4>
+                    <p class="text-justify">
+                        {{seccion_3_data.seccion_3_texto}}
+                    </p>
+                </div>
             </div>
         </div>
         <div class="row section4">
             <div class="col-xs-12 col-md-12">
-                <table class="full-table mt-5 wow animate__animated animate__fadeInUp">
-                    <thead>
-                        <th>Barrio</th>
-                        <th>Puntos de servicio</th>
-                        <th>Dirección</th>
-                    </thead>
-                    <tbody>
-                        <ng-container *ngFor="let item of seccion_tabla_data">
-                            <tr>
-                                <td>{{ item.barrio }}</td>
-                                <td>{{ item.puntos_servicio }}</td>
-                                <td>{{ item.direccion }}</td>
-                            </tr>
-                        </ng-container>
-                    </tbody>
+                <ngx-skeleton-loader count="{{totalCount}}" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <table class="full-table mt-5 wow animate__animated animate__fadeInUp">
+                        <thead>
+                            <th>Barrio</th>
+                            <th>Puntos de servicio</th>
+                            <th>Dirección</th>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let item of seccion_tabla_data">
+                                <tr>
+                                    <td>{{ item.barrio }}</td>
+                                    <td>{{ item.puntos_servicio }}</td>
+                                    <td>{{ item.direccion }}</td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
                     </table>
-                    <!-- DivTable.com -->
+                </div>
             </div>
         </div>
     </div>

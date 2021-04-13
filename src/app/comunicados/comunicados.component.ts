@@ -11,12 +11,16 @@ import { Router } from '@angular/router';
 export class ComunicadosComponent implements OnInit {
 
   comunicados_data:any[] = [];
+  
+  loader = true;
+  totalCount = 4;
 
   constructor(private _router:Router, private _comunicadosservice:PostsService) { }
 
   ngOnInit(): void {
     this._comunicadosservice.getComunicados()
     .subscribe((res:any) => {
+      this.loader = false;
       this.comunicados_data = res;
     });
   }

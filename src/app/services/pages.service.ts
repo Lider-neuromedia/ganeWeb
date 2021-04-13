@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { GLOBAL } from './global';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +39,9 @@ export class PagesService {
     return this._http.get(`${this.url}/pages/317/`);
   }
   getBetplay(): Observable<any>{
-    return this._http.get(`${this.url}/pages/157/`);
+    return this._http.get(`${this.url}/pages/157/`).pipe( map( resp => {
+      return resp['acf'];
+    }))
   }
   getPagos(): Observable<any>{
     return this._http.get(`${this.url}/pages/235/`);
