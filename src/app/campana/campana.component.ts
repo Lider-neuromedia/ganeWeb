@@ -10,6 +10,7 @@ import { CampanaService } from './../services/campana.service';
 export class CampanaComponent implements OnInit {
 
   campana_data:any = {};
+  loader = true;
 
   constructor(private route: ActivatedRoute, private _campanaservice:CampanaService) { }
 
@@ -17,6 +18,7 @@ export class CampanaComponent implements OnInit {
     const slug = this.route.snapshot.paramMap.get('slug');
     this._campanaservice.getCampana(slug)
       .subscribe(res => {
+        this.loader = false;
         this.campana_data = res;
         for(let campana of res){
           this.campana_data = campana;

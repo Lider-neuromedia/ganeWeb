@@ -12,11 +12,14 @@ export class GestionCalidadComponent implements OnInit {
   texto_principal_data: any;
   imagen_principal_data: any;
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _gestioncalidad:PagesService) { }
 
   ngOnInit(): void {
     this._gestioncalidad.getSistemaGestionCalidad()
       .subscribe((res:any) => {
+        this.loader = false;
         this.titulo_data = res.acf.titulo;
         this.texto_principal_data = res.acf.texto_principal;
         this.imagen_principal_data = res.acf.imagen_principal;

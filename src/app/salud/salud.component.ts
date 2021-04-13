@@ -17,11 +17,14 @@ export class SaludComponent implements OnInit {
   seccion2_tabla2_data:any = {};
   textos_tabla_data:any = {};
 
+  loader = true;
+  
   constructor(private httpClient:HttpClient, private _salud:PagesService) { }
 
   ngOnInit(): void {
     this._salud.getSalud()
       .subscribe((res:any) => {
+        this.loader = false;
         this.banner_data = res.acf.banner;
         this.titulo_data = res.acf.titulo;
         this.texto_data = res.acf.texto;

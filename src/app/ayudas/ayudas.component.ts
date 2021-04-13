@@ -10,12 +10,14 @@ import { PagesService } from './../services/pages.service';
 export class AyudasComponent implements OnInit {
   titulo_data:any = {};
   texto_data:any = {};
+  loader = true;
 
   constructor(private httpClient:HttpClient, private _ayudassociales:PagesService) { }
 
   ngOnInit(): void {
     this._ayudassociales.getAyudasSociales()
       .subscribe((res:any) => {
+        this.loader = false;
         this.titulo_data = res.acf.titulo_general;
         this.texto_data = res.acf.texto_general;
       });

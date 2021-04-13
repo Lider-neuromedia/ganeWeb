@@ -1774,7 +1774,7 @@ line-height: 30px;
 .comunicado-interna_pagina .ruleta{
     position: absolute;
     left: 50%;
-    top: 26%;
+    top: 30%;
     transform: translate(-50%,-50%);
 }
 

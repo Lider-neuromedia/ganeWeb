@@ -11,6 +11,7 @@ import { PostsService } from './../services/posts.service';
 export class ComunicadoInternaComponent implements OnInit {
 
   comunicado_data:any = {};
+  loader = true;
 
   constructor(private route: ActivatedRoute, private _comunicadoservice:PostsService) { }
 
@@ -20,6 +21,7 @@ export class ComunicadoInternaComponent implements OnInit {
       .subscribe(res => {
         this.comunicado_data = res;
         for(let comunicado of res){
+          this.loader = false;
           this.comunicado_data = comunicado;
         }
       })

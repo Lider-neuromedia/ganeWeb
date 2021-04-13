@@ -1,32 +1,42 @@
 <div class="recargas_paginas pt-3 pb-5">
-    <div class="container" *ngIf="recargas_data.acf">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h3 class="title35 mt-4" *ngIf="recargas_data.title">{{ recargas_data.title.rendered }}</h3>
-                <p [innerHTML]="recargas_data.acf.extracto"></p>
-                <ng-container *ngFor="let recarga of recargas_data.acf.tipo_de_recargas">
-                    <div class="row w-100 border-radius border-1 box-shadow p-3 mt-3 mb-3 mx-auto card-shadow-hover wow animate__animated animate__fadeInLeft">
-                        <div class="col-xs-12 col-md-4">
-                            <img src="{{ recarga.logo }}" alt="Flash">
+            <div class="col-xs-12 col-sm-6 col-md-6 mt-4">
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ width: '200px',height: '50px' }"></ngx-skeleton-loader>
+                <ngx-skeleton-loader count="{{totalCount}}" *ngIf="loader" animation="progress" [theme]="{ height: '30px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <h3 class="title35" *ngIf="recargas_data.title">{{ recargas_data.title.rendered }}</h3>
+                    <p [innerHTML]="recargas_data.acf.extracto"></p>
+                    <ng-container *ngFor="let recarga of recargas_data.acf.tipo_de_recargas">
+                        <div class="row w-100 border-radius border-1 box-shadow p-3 mt-3 mb-3 mx-auto card-shadow-hover wow animate__animated animate__fadeInLeft">
+                            <div class="col-xs-12 col-md-4">
+                                <img src="{{ recarga.logo }}" alt="Flash">
+                            </div>
+                            <div class="col-xs-12 col-md-8">
+                                <p class="text-gray size13" [innerHTML]="recarga.descripcion"></p>
+                            </div>
                         </div>
-                        <div class="col-xs-12 col-md-8">
-                            <p class="text-gray size13" [innerHTML]="recarga.descripcion"></p>
-                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 my-auto">
+                <ngx-skeleton-loader count="1" *ngIf="loader" appearance="circle" [theme]="{ width: '60%', height: '350px'}"></ngx-skeleton-loader>
+                <img *ngIf="!loader" class="d-block img-fluid wow animate__animated animate__fadeInRight" src="{{ recargas_data.acf.imagen }}" alt="Recarga">
+            </div>
+        </div>
+        <div class="row mt-5">
+            <ngx-skeleton-loader count="12" *ngIf="loader" appearance="circle" [theme]="{ 'width' : '180px', 'height': '180px', 'border-radius' :'10px'}"></ngx-skeleton-loader>
+        </div>
+        <div *ngIf="!loader">
+            <div class="row mt-5" *ngIf="recargas_data.acf">
+                <ng-container *ngFor="let recarga of recargas_data.acf.otros_tipos_de_recargas">                
+                    <div class="col-xs-12 col-md-2">
+                        <img class="mx-auto d-block img-fluid scale" src="{{ recarga.logo }}" alt="Logo">
                     </div>
                 </ng-container>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 my-auto">
-                <img class="d-block img-fluid wow animate__animated animate__fadeInRight" src="{{ recargas_data.acf.imagen }}" alt="Recarga">
-            </div>
         </div>
-        <div class="row mt-5">
-            <ng-container *ngFor="let recarga of recargas_data.acf.otros_tipos_de_recargas">                
-                <div class="col-xs-12 col-md-2">
-                    <img class="mx-auto d-block img-fluid scale" src="{{ recarga.logo }}" alt="Logo">
-                </div>
-            </ng-container>
-        </div>
-        <div class="row mt-5">
+        <div class="row mt-5" *ngIf="recargas_data.acf">
             <div class="col-xs-12 col-md-6">
                 <img class="mx-auto d-block img-fluid wow animate__animated animate__backInLeft" src="{{ recargas_data.acf.imagen_servicio }}" alt="Banner2">
             </div>

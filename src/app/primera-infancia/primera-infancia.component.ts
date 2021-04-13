@@ -16,11 +16,14 @@ export class PrimeraInfanciaComponent implements OnInit {
   imagen_columna_derecha_data: any;
   texto_final_data: any = {};
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _salud:PagesService) { }
 
   ngOnInit(): void {
     this._salud.getPrimeraInfancia()
       .subscribe((res:any) => {
+        this.loader = false;
         this.banner_data = res.acf.banner;
         this.titulo_data = res.acf.titulo_principal;
         this.texto_general_data = res.acf.texto_general;

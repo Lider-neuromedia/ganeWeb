@@ -24,10 +24,11 @@
                 <div class="col-xs-12 col-md-6 wow animate__animated animate__fadeInLeft">
                     <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'335px' }"></ngx-skeleton-loader>
                     <div *ngIf="!loader">
-                        <iframe width="560" height="315" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6 pl-5">
+                    <div id="video-institucional"></div>
                     <ngx-skeleton-loader count="8" *ngIf="loader" animation="progress" [theme]="{height:'28px' }"></ngx-skeleton-loader>
                     <div *ngIf="!loader">
                         <div>

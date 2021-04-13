@@ -15,12 +15,15 @@ export class CulturaAntilavadoComponent implements OnInit {
   urlSafe: SafeResourceUrl;
   arreglo_video : any[] = [];
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _culturaantilavado:PagesService, public _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     var video, results;
     this._culturaantilavado.getCulturaAntilavado()
     .subscribe((res:any) => {
+      this.loader = false;
       this.titulo_data = res.acf.titulo_principal;
       this.item_menu_data = res.acf.item_menu;
     

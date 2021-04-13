@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactenosComponent implements OnInit {
   public user: any;
-
+  loader = true;
+  
   constructor() { 
     this.user = {
       nombre_completo: '',
@@ -19,11 +20,13 @@ export class ContactenosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loader = false;
   }
 
+  /*
   onSubmit(){
     alert("Formulario enviado!!");
     console.log(this.user);
-  }
+  }*/
 
 }

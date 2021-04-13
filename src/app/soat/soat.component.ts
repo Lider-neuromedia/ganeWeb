@@ -8,12 +8,14 @@ import { PagesService } from './../services/pages.service';
 })
 export class SoatComponent implements OnInit {
   soat_data:any = {};
+  loader = true;
 
   constructor(private _soatservice:PagesService){}
 
   ngOnInit(): void {
     this._soatservice.getSoat()
     .subscribe((res:any) => {
+      this.loader = false;
       this.soat_data = res;
     });
   }

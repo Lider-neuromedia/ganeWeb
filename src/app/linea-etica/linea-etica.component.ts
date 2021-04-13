@@ -12,11 +12,14 @@ export class LineaEticaComponent implements OnInit {
   item_menu_data: any[] = [];
   public activePillIndex:number = 0;
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _lineaetica:PagesService) { }
 
   ngOnInit(): void {
     this._lineaetica.getLineaEtica()
       .subscribe((res:any) => {
+        this.loader = false;
         this.titulo_data = res.acf.titulo_principal;
         this.item_menu_data = res.acf.item_menu;
       });

@@ -14,11 +14,14 @@ export class ViviendaComponent implements OnInit {
   texto_con_titulo_data: any[] = [];
   texto_final_data: any = {};
 
+  loader = true;
+
   constructor(private httpClient:HttpClient, private _vivienda:PagesService) { }
 
   ngOnInit(): void {
     this._vivienda.getVivienda()
       .subscribe((res:any) => {
+        this.loader = false;
         this.banner_data = res.acf.banner;
         this.titulo_data = res.acf.titulo;
         this.texto1_data = res.acf.texto1;

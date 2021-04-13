@@ -3,25 +3,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-6">
-                    <img class="w-100" src="{{ campana_data.acf.imagen_interna }}" alt="Campana Banner">
+                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ 'width':'100%',height:'300px' }"></ngx-skeleton-loader>
+                    <div *ngIf="!loader">
+                        <img *ngIf="campana_data.acf" class="w-100" src="{{ campana_data.acf.imagen_interna }}" alt="Campana Banner">
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
-                    <h2 class="size35 color-title font-weight-700">{{ campana_data.title.rendered }}</h2>
-                    <p class="color-title"><span class="font-weight-700"><i class="far fa-clock"></i> Inicia:</span> {{ campana_data.acf.fecha_de_inicio | date:'fullDate' | titlecase }}<br>
-                    <span class="font-weight-700"><i class="far fa-clock"></i> Finaliza:</span> {{ campana_data.acf.fecha_fin | date:'fullDate' | titlecase }}</p>
-                    <h5 *ngIf="campana_data.acf.estado === 'Vigente'">
-                        <span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">{{ campana_data.acf.estado }}</span>
-                    </h5>
-                    <h5 *ngIf="campana_data.acf.estado === 'Terminada'">
-                        <span class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1">{{ campana_data.acf.estado }}</span>
-                    </h5>
-                    <p class="text-gray-dark" [innerHTML]="campana_data.acf.descripcion_larga"></p>
-                    <br>
-                    <a class="btn-yellow-outline font-weight-bold size18 p-2 mt-3" href="{{ campana_data.acf.url_de_la_campana }}">Ir a la campaña</a>
+                    <ngx-skeleton-loader count="7" *ngIf="loader" animation="progress" [theme]="{ 'width':'100%',height:'30px' }"></ngx-skeleton-loader>
+                    <div *ngIf="!loader">
+                        <h2 *ngIf="campana_data.title" class="size35 color-title font-weight-700">{{ campana_data.title.rendered }}</h2>
+                        <p *ngIf="campana_data.acf" class="color-title"><span class="font-weight-700"><i class="far fa-clock"></i> Inicia:</span> {{ campana_data.acf.fecha_de_inicio | date:'fullDate' | titlecase }}<br>
+                        <span class="font-weight-700"><i class="far fa-clock"></i> Finaliza:</span> {{ campana_data.acf.fecha_fin | date:'fullDate' | titlecase }}</p>
+                        <div *ngIf="campana_data.acf">
+                            <h5 *ngIf="campana_data.acf.estado === 'Vigente'">
+                                <span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">{{ campana_data.acf.estado }}</span>
+                            </h5>
+                            <h5 *ngIf="campana_data.acf.estado === 'Terminada'">
+                                <span class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1">{{ campana_data.acf.estado }}</span>
+                            </h5>
+                            <p class="text-gray-dark" [innerHTML]="campana_data.acf.descripcion_larga"></p>
+                            <br>
+                            <a class="btn-yellow-outline font-weight-bold size18 p-2 mt-3" href="{{ campana_data.acf.url_de_la_campana }}">Ir a la campaña</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <ngx-skeleton-loader class="mt-5" count="5" *ngIf="loader" animation="progress" [theme]="{ 'width':'100%',height:'30px' }"></ngx-skeleton-loader>
             <div class="row mt-5">
-                <div class="">
+                <div *ngIf="!loader" class="">
                     <ul class="nav nav-tabs tabs-campana" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active d-flex align-content-stretch align-items-stretch" id="terminos-tab" data-toggle="tab" href="#terminos" role="tab" aria-controls="terminos" aria-selected="true">Términos y condiciones</a>
@@ -32,9 +41,9 @@
                         </ul>
                         <div class="tab-content p-3 bk-white" id="myTabContent">
                         <div class="tab-pane fade show active" id="terminos" role="tabpanel" aria-labelledby="terminos-tab">
-                            <div class="size15 letter-spacing1-01" [innerHTML]="campana_data.acf.terminos_y_condiciones"></div>
+                            <div *ngIf="campana_data.acf" class="size15 letter-spacing1-01" [innerHTML]="campana_data.acf.terminos_y_condiciones"></div>
                         </div>
-                        <div class="tab-pane fade" id="ganadores" role="tabpanel" aria-labelledby="ganadores-tab">
+                        <div *ngIf="campana_data.acf" class="tab-pane fade" id="ganadores" role="tabpanel" aria-labelledby="ganadores-tab">
                             <div class="size15 letter-spacing1-01" [innerHTML]="campana_data.acf.ganadores_descripcion"></div>
                                 <div class="row">
                                     <ng-container *ngIf="campana_data.acf.ganadores_4_cifras != false">
@@ -88,11 +97,14 @@
     </div>
     <div class="bk-white pt-5 pb-5">
         <div class="container">
+            <div>
+                <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{'width':'100%', 'height':'235px', 'border-radius':'12px' }"></ngx-skeleton-loader>
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="color-title font-weight-700 text-center pb-4">Otras Campañas</h2>
                 </div>
-                <div class="col-sm-3">
+                <div *ngIf="!loader" class="col-sm-3">
                     <div class="card border-0 card-shadow-hover">
                         <a href="#/campana-interna"><img class="card-img-top" src="./assets/home/SECCION-6/campana4PNG.png" alt="Card image cap"></a>
                         <div class="card-body p-2">

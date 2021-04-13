@@ -2,24 +2,31 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-md-6 pl-100 pt-5">
-                <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo }}</h3>
-                <ng-container *ngFor="let data of primer_grupo_repeater">
-                    <div class="mb-3">
-                        <img class="pr-4" *ngIf="data.imagen_subtitulo != false" src="{{ data.imagen_subtitulo }}" alt="Datos empresa">
-                        <h4 class="title-mision">{{ data.subtitulo }}</h4>
-                        <p class="text-justify letter-spacing1-4 size19 line-height23 text-gray-dark">{{ data.texto }}</p>
-                    </div>
-                </ng-container>
+                <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo }}</h3>
+                    <ng-container *ngFor="let data of primer_grupo_repeater">
+                        <div class="mb-3">
+                            <img class="pr-4" *ngIf="data.imagen_subtitulo != false" src="{{ data.imagen_subtitulo }}" alt="Datos empresa">
+                            <h4 class="title-mision">{{ data.subtitulo }}</h4>
+                            <p class="text-justify letter-spacing1-4 size19 line-height23 text-gray-dark">{{ data.texto }}</p>
+                        </div>
+                    </ng-container>
+                </div>
             </div>
             <div class="col-xs-12 col-md-6 pr-0">
-                <img class="w-100 d-inline-block wow animate__animated animate__fadeInRight" *ngIf="imagen_fondo != false" src="{{ imagen_fondo }}" alt="Fundacion">
+                <ngx-skeleton-loader *ngIf="loader" animation="progress" appearance="circle" [theme]="{width: '100%',height: '290px','border-radius': '10px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <img class="w-100 d-inline-block wow animate__animated animate__fadeInRight" *ngIf="imagen_fondo != false" src="{{ imagen_fondo }}" alt="Fundacion">
+                </div>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-12">
-                <div class="mb-3 text-center">
+                <ngx-skeleton-loader count="3" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader" class="mb-3 text-center">
                     <img class="pr-4" *ngIf="segundo_grupo_texto_data.imagen_subtitulo != false" src="{{ segundo_grupo_texto_data.imagen_subtitulo }}" alt="Visión">
                     <h4 class="title-mision">{{ segundo_grupo_texto_data.subtitulo }}</h4>
                 </div>
