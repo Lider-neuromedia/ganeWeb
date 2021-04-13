@@ -15,12 +15,17 @@ export class PagosComponent implements OnInit {
   texto_principal_data:any = {};
   tarjeta_convenio_data:any[] = [];
   tabla_convenio_popup_data:any[] = [];
+
+  loader = true;
+  totalCount = 1;
+  totalCountPagos = 4;
   
   constructor(private httpClient:HttpClient, private _pagosservice:PagesService) { }
 
   ngOnInit(): void {
     this._pagosservice.getPagos()
     .subscribe((res:any) => {
+      this.loader = false;
       this.titulo_principal_data = res.acf.titulo_pagina;
       this.titulo_convenios_data = res.acf.titulo_convenios;
       this.convenios_logos_data = res.acf.convenios_pago;

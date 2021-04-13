@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
 import { HomeService } from './services/home.service';
@@ -115,6 +117,7 @@ import { Error404Component } from './error404/error404.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    NgxSkeletonLoaderModule,
     ReactiveFormsModule,
     APP_ROUTING
   ],

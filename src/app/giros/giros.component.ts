@@ -16,11 +16,15 @@ export class GirosComponent implements OnInit {
 
   montoSelected:any = "";
 
+  loader = true;
+  totalCount = 1;
+
   constructor(private httpClient:HttpClient, private _girosservice:PagesService) { }
 
   ngOnInit(): void {
     this._girosservice.getGiros()
     .subscribe((res:any) => {
+      this.loader = false;
       this.seccion1_supergiros_data = res.acf.seccion_1;
       this.seccion2_datostabla = res.acf.seccion_2;
       this.seccion3_supergiros_data = res.acf.seccion_3;

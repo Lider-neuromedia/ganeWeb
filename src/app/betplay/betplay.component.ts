@@ -12,10 +12,13 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class BetplayComponent implements OnInit {
   seccion_1_data:any = {};
   seccion_1_video:any = {};
-  seccion_2_data:any = {};
+  seccion_2_data: {};
   seccion_3_data:any = {};
   seccion_tabla_data:any[] = [];
   urlSafe: SafeResourceUrl;
+
+  loader = true;
+  totalCount = 5;
 
   constructor(private httpClient:HttpClient, private _betplayservice:PagesService, public sanitizer: DomSanitizer) { }
 
@@ -23,11 +26,13 @@ export class BetplayComponent implements OnInit {
     var video, results;
     this._betplayservice.getBetplay()
     .subscribe((res:any) => {
-      this.seccion_1_data = res.acf.seccion_1;
-      this.seccion_1_video = res.acf.seccion_1.link_video;
-      this.seccion_2_data = res.acf.seccion_2_img;
-      this.seccion_3_data = res.acf.seccion_3;
-      this.seccion_tabla_data = res.acf.seccion_tabla;
+      console.log(res);
+      this.loader = false;
+      this.seccion_1_data = res.seccion_1;
+      this.seccion_1_video = res.seccion_1.link_video;
+      this.seccion_2_data = res.seccion_2_img;
+      this.seccion_3_data = res.seccion_3;
+      this.seccion_tabla_data = res.seccion_tabla;
       if(this.seccion_1_video === null || this.seccion_1_video === ''){
         return '';
       }

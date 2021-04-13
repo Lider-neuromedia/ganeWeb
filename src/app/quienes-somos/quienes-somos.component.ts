@@ -16,12 +16,16 @@ export class QuienesSomosComponent implements OnInit {
   quienesSomos_data_url:any = {};
   urlSafe: SafeResourceUrl;
 
+  loader = true;
+  totalCount = 4;
+
   constructor(private _router:Router, private _quienesSomoservice:PagesService, public sanitizer: DomSanitizer){}
 
   ngOnInit(): void {
     var video, results;
     this._quienesSomoservice.getQuienesSomos()
     .subscribe((res:any) => {
+      this.loader = false;
       this.quienesSomos_data = res;
       this.quienesSomos_data_url = res.acf.url_video;
       if(this.quienesSomos_data_url === null || this.quienesSomos_data_url === ''){

@@ -13,6 +13,7 @@ export class CulturaAntilavadoComponent implements OnInit {
   item_menu_data: any[] = [];
   public activePillIndex:number = 0;
   urlSafe: SafeResourceUrl;
+  arreglo_video : any[] = [];
 
   constructor(private httpClient:HttpClient, private _culturaantilavado:PagesService, public _sanitizer: DomSanitizer) { }
 
@@ -43,8 +44,8 @@ export class CulturaAntilavadoComponent implements OnInit {
         }
         
         results = element.link_video.match('[\\?&]v=([^&#]*)');
-        video   = element.link_video;
-        //video   = (results === null) ? element.link_video : results[0];
+        //video   = element.link_video;
+        video   = (results === null) ? element.link_video : results[1];
         this.urlSafe = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);
         console.log(video);
       });

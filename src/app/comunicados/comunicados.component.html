@@ -13,17 +13,18 @@
             </div>
             <div class="col-xs-12 col-sm-3 col-md-3"></div>
         </div>
-        <div class="row pb-5 wow animate__animated animate__fadeInUp">
+        <div class="row pb-5">
             <ng-container *ngFor="let comunicado of comunicados_data">
                 <div class="col-xs-12 col-sm-6 col-md-6 p-3">
-                    <div class="p-2 bg-white d-flex align-content-center">
-                        <div class="col-md-6 sin-espacios float-md-left">
+                    <div><ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '10px' }"></ngx-skeleton-loader></div>
+                    <div *ngIf="!loader" class="bg-white tarjetaComunicado align-content-center">
+                        <div class="col-xs-12 col-md-6 sin-espacios float-md-left">
                             <a (click)="verComunicado(comunicado.slug)">
                                 <img class="w-100 d-block" src="{{ comunicado.acf.imagen_destacada }}" alt="Imagen Comunicado" *ngIf="comunicado.acf.imagen_destacada != null">
                             </a>
                         </div>
-                        <div class="col-md-6 caption float-md-left">
-                            <h3 class="title-comunicado" *ngIf="comunicado.title != null">
+                        <div class="col-xs-12 col-md-6 caption float-md-left">
+                            <h3 class="title-comunicado pt-1" *ngIf="comunicado.title != null">
                                 <a (click)="verComunicado(comunicado.slug)">{{ comunicado.title.rendered }}</a>
                             </h3>
                             <p class="date-comunicado pt-2 pb-2 m-0" *ngIf="comunicado.date != null">{{ comunicado.date | date:'fullDate' | titlecase }}</p>

@@ -14,6 +14,9 @@ export class ComunicadosComponent implements OnInit {
   comunicados_data:any[] = [];
   filterComunicado = '';
   texto:string;
+  
+  loader = true;
+  totalCount = 4;
 
   constructor(private _router:Router, private _comunicadosservice:PostsService) { }
 
@@ -22,10 +25,13 @@ export class ComunicadosComponent implements OnInit {
   this._comunicadosservice.getComunicados()
     .subscribe((res:any) => {
       if(this.texto != ""){
+        this.loader = false;
         this.comunicados_data = res;
       }else if(this.texto == ""){
+        this.loader = false;
         this.comunicados_data = res;
       }else{
+        this.loader = false;
         this.comunicados_data = [];
       }
     });
