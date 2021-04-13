@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostsService } from './../services/posts.service';
 
 @Component({
   selector: 'app-comunicado-interna',
   templateUrl: './comunicado-interna.component.html',
-  styleUrls: ['./comunicado-interna.component.css']
+  styleUrls: ['./comunicado-interna.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ComunicadoInternaComponent implements OnInit {
 
