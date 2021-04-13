@@ -5,9 +5,10 @@
         </ng-container>
     </ol>
     <div class="carousel-inner">
+        <div><ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'430px','border-radius': '10px','padding':'15px' }"></ngx-skeleton-loader></div>
         <ng-container *ngFor="let home of sliderprincipal_data; first as isFirst">
             <div class="carousel-item"  *ngIf="home.fondo != undefined" [ngClass]="(isFirst) ? 'active' : ''">
-                <div class="" style="background:url( '{{ home.fondo }}' )">
+                <div *ngIf="!loader" class="" style="background:url( '{{ home.fondo }}' )">
                     <div class="container pt-4 pb-4">
                         <div class="row align-items-center">
                             <div class="col">
@@ -38,46 +39,22 @@
 
 <section class="section2 pt-5 pb-5 bg-gray">
     <div class="container">
+        <ngx-skeleton-loader class="d-flex pt-5" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '10px' }"></ngx-skeleton-loader>
         <div class="row">
-            <div><ngx-skeleton-loader count="{{totalCount}}" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ height: '290px','border-radius': '10px' }"></ngx-skeleton-loader></div>
             <ng-container *ngFor="let recuadro of recuadros_data">
-                <div *ngIf="!loader" class="col-xs-12 col-sm p-3 align-items-stretch">
-                    <a href="{{ recuadro.url }}">
-                        <div class="card d-flex justify-content-center p-4 border-radius border-0 box-shadow card-shadow-hover">
-                            <p class="text-center mb-2">
-                                <img class="img-fluid" src="{{ recuadro.imagen}}" alt="Card image cap">
-                            </p>
-                            <h3 class="text-center text-blue font-weight-bold">{{ recuadro.titulo }}</h3>
-                            <p class="text-center text-gray m-0" [innerHTML]="recuadro.texto"></p>
-                        </div>
-                    </a>
-                </div>
+                <a *ngIf="!loader" href="{{ recuadro.url }}" class="col-xs-12 col-sm d-flex justify-content-center p-3 m-3 card p-4 border-radius box-shadow-big card-shadow-hover" style="border: 3px solid #29448b;">
+                    <p class="text-center mb-2" *ngIf="recuadro.imagen">
+                        <img class="img-fluid" src="{{ recuadro.imagen}}" alt="Card image cap">
+                    </p>
+                    <h4 class="text-center text-blue font-weight-bold">{{ recuadro.titulo }}</h4>
+                    <p class="text-center text-gray m-0 size14" [innerHTML]="recuadro.texto"></p>
+                </a>
             </ng-container>
-            <!-- <div class="col-xs-12 col-md-4 p-3 d-flex align-items-stretch wow animate__animated animate__fadeInUp">
-                <a href="#/giros">
-                    <div class="card d-flex justify-content-center p-4 border-radius border-0 box-shadow card-shadow-hover">
-                        <p class="text-center mb-2">
-                            <img class="img-fluid" src="./assets/home/SECCION-2/girosPNG.png" alt="Card image cap">
-                        </p>
-                        <br>
-                        <p class="text-center text-gray m-0">Envía y recibe tu dinero fácil, rápido y seguro con Gane SuperGIROS. Contamos con más de 1.000 Puntos de Servicios abiertos de domingo a domingo y en horario extendido, para que realices tus giros locales, nacionales e internacionales sin filas ni contratiempos.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-12 col-md-4 p-3 d-flex align-items-stretch wow animate__animated animate__bounceInRight">
-                <a href="#/betplay">
-                    <div class="card d-flex justify-content-center p-4 border-radius border-0 box-shadow card-shadow-hover">
-                        <p class="text-center mb-2">
-                            <img class="img-fluid" src="./assets/home/SECCION-2/betplayPNG.png" alt="Card image cap">
-                        </p>
-                        <p class="text-center text-gray m-0">Vive la experiencia BetPlay con Gane SuperGIROS. Recarga tu cuenta y retira tu saldo en cualquiera de nuestros puntos de servicio ¡fácil y rápido!</p>
-                    </div>
-                </a>
-            </div> -->
         </div>
     </div>
 </section>
-<section class="jumbotron bk-gane-virtual" style="background:url( '{{ ganevirtual_data.fondo }}' )"> 
+<div><ngx-skeleton-loader count="1" *ngIf="loader" class="d-flex pt-5" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'430px','border-radius': '10px','padding':'15px' }"></ngx-skeleton-loader></div>
+<section *ngIf="!loader" class="jumbotron bk-gane-virtual" style="background:url( '{{ ganevirtual_data.fondo }}' )"> 
     <ng-container class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-md-4 block-gvirtual">
@@ -114,7 +91,8 @@
     </ng-container>
 </section>
 <div class="section4 container">
-    <div class="row">
+    <ngx-skeleton-loader class="d-flex pt-5" count="2" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '10px' }"></ngx-skeleton-loader>
+    <div *ngIf="!loader" class="row">
         <div class="col-xs-12 col-sm-12 col-md-6">
             <div class="p-4 background-ruleta">
                 <p class="text-center">
@@ -174,15 +152,6 @@
                     </div>
                 </div>
                 <p class="text-center text-white font-weight-bold">Presiona el botón rojo para jugar</p>
-                <!-- <audio id="misc">
-                    <source src="../assets/sonidos/misc333.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <audio id="ding">
-                    <source src="../assets/sonidos/correct-ding.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio> -->
-                <!-- <button type="button" class="btn btn-success btn-lg" id="btn-example1">Start Spin!</button> -->
                 <p class="text-center">
                     <img id="btn-example1" class="img-fluid btn" src="./assets/home/SECCION-4/btn_giraPNG.png" alt="Card image cap" style="position:relative">
                 </p>
@@ -236,46 +205,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--
-                                        {{data.Value}}
-                                        <div *ngIf="data.Label == 'Modalidad'">
-                                            <div *ngFor="let data_m of data.Value">
-                                                {{data_m.string}} {{data_m.number}}
-                                            </div>
-                                        </div>
-                                        -->
                                     </div>
-
-                                    <!--<button class="calcular-apuesta font-weight-bold size18 text-blue" type="submit">Calcular</button>-->
-                                        <div class="form-group">
-                                            <label class="nunito d-block text-center font-weight-700 size21 letter-spacing0-4" for="exampleFormControlInput1">Resultado</label>
-                                            <input type="number" placeholder="${{valorModal * valorApostar}}" class="form-control monto-enviar" id="resultadoSimulaChance" readonly>
-                                        </div>
-                                        <p class="restricciones">*Aplican restricciones de ley</p>
+                                    <div class="form-group">
+                                        <label class="nunito d-block text-center font-weight-700 size21 letter-spacing0-4" for="exampleFormControlInput1">Resultado</label>
+                                        <input type="number" placeholder="${{valorModal * valorApostar}}" class="form-control monto-enviar" id="resultadoSimulaChance" readonly>
+                                    </div>
+                                    <p class="restricciones">*Aplican restricciones de ley</p>
                                 </form>
-                                
-                                <!--<div class="col-md-12">{{registrationForm.value | json}}</div>-->
-                                <!--<form id="form-simulador" [formGroup]="registrationForm">
-                                    <div class="" *ngFor="let control of dynamicFormArray">
-                                        <div [ngSwitch]="control.Type">
-                                            <div *ngSwitchCase="'select'">
-                                                <div class="form-group">
-                                                    <label class="nunito size14 letter-spacing0-4" for="exampleFormControlSelect1">{{control.Label}}</label>
-                                                    <select [formControlName]="control.ID" class="form-control" id="exampleFormControlSelect1">
-                                                        <option value="0">Elija una opción</option>
-                                                        <option *ngFor="let val of control.Value.split(',')" value="{{val}}">{{val}}</option>
-                                                    </select>
-                                                    <div *ngIf="registrationForm.get(control.ID).dirty || registrationForm.get(control.ID).touched">
-                                                        <small *ngIf="!registrationForm.get(control.ID).valid">
-                                                            {{control.Label}} es un campo requerido
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>-->
-                                        <!--
-                                    </div>
-                                </form>-->
                             </div>
                         </div>
                     </div>
@@ -285,8 +221,9 @@
     </div>
 </div>
 <section class="section5">
+    <ngx-skeleton-loader class="d-flex pt-5" count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '10px' }"></ngx-skeleton-loader>
     <ng-container *ngIf="puntosventa_data.fondo">
-        <div class="jumbotron border-0 rounded-0 pt-5 pb-5" style="background:url('{{ puntosventa_data.fondo }}');background-attachment: fixed;background-size: cover;background-repeat: no-repeat;background-position: center;height:380px">
+        <div *ngIf="!loader" class="jumbotron border-0 rounded-0 pt-5 pb-5" style="background:url('{{ puntosventa_data.fondo }}');background-attachment: fixed;background-size: cover;background-repeat: no-repeat;background-position: center;height:380px">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                     <div class="col-sm-12 col-md-5">
@@ -307,8 +244,10 @@
 
 <section class="section6">
     <div class="container pb-5 pt-2">
-        <h1 class="text-center text-blue mb-4">Campañas</h1>
-        <div class="row wow animate__animated animate__fadeInUp">
+        <ngx-skeleton-loader class="d-flex pt-5" count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'35px','border-radius': '10px','padding-top':'35px' }"></ngx-skeleton-loader>
+        <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '10px' }"></ngx-skeleton-loader>
+        <h1 *ngIf="!loader" class="text-center text-blue mb-4">Campañas</h1>
+        <div *ngIf="!loader" class="row wow animate__animated animate__fadeInUp">
             <ng-container *ngFor="let campanas of campanas_data | slice:0:4; let i = index">
                 <div class="col-sm-12 col-md-3">
                     <div class="card border-0 card-shadow-hover">
@@ -332,59 +271,17 @@
                             <small class="text-blue"><i class="far fa-clock"></i> {{ campanas.acf.fecha_de_inicio | date:'fullDate' | titlecase }}</small>
                             <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">{{ campanas.acf.sub_titulo }}</p>
                             <p class="size14 line-height1-4 text-blue mb-2">{{ campanas.excerpt.rendered }}</p>
-                            <!-- <button (click)="verCampana(campanas.id)" type="button" class="size13 text-yellow">
-                                Más información <i class="fas fa-long-arrow-alt-right"></i>
-                            </button> -->
                             <a (click)="verCampana(campanas.slug)" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                            <!-- <a [routerLink]="['/campana', campanas.slug]" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a> -->
                         </div>
                     </div>
                 </div>
             </ng-container>
-            <!-- <div class="col-sm-12 col-md-3">
-                <div class="card border-0 card-shadow-hover">
-                    <a href="#"><img class="card-img-top" src="./assets/home/SECCION-6/campana3PNG.png" alt="Card image cap"></a>
-                    <div class="card-body p-2">
-                        <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                        <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
-                        <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                        <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                        <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                        <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-3">
-                <div class="card border-0 card-shadow-hover">
-                    <a href="#"><img class="card-img-top" src="./assets/home/SECCION-6/campana1PNG.png" alt="Card image cap"></a>
-                    <div class="card-body p-2">
-                        <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                        <h5><span class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1">Vigente</span></h5>
-                        <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                        <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                        <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                        <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-3">
-                <div class="card border-0 card-shadow-hover">
-                    <a href="#"><img class="card-img-top" src="./assets/home/SECCION-6/campana2PNG.png" alt="Card image cap"></a>
-                    <div class="card-body p-2">
-                        <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                        <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
-                        <small class="text-blue mb-2"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                        <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                        <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                        <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </section>
 <section class="section7">
-    <div class="jumbotron suscribe border-0 rounded-0 pt-5 mb-0" style="background:url(./assets/home/SECCION-7/newsletter_bg.png);background-size: auto;background-position: bottom center;">
+    <ngx-skeleton-loader class="d-flex" count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '10px' }"></ngx-skeleton-loader>
+    <div *ngIf="!loader" class="jumbotron suscribe border-0 rounded-0 pt-5 mb-0" style="background:url(./assets/home/SECCION-7/newsletter_bg.png);background-size: auto;background-position: bottom center;">
         <div class="container h-100">
             <h2 class="text-center text-blue text-white mb-4">Suscríbete para recibir los resultados</h2>
             <form>
@@ -409,4 +306,3 @@
         </div>
     </div>
 </section>
-<!--<app-footer></app-footer>-->

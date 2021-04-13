@@ -30,7 +30,7 @@ export class InicioComponent implements OnInit {
   campanas_data:any[] = [];
 
   loader = true;
-  totalCount = 3;
+  totalCount = 1;
 
   constructor(private _router:Router, private httpClient:HttpClient, private fb:FormBuilder, private _homeservice:HomeService, private _campanaservice:CampanaService) {
     
@@ -49,11 +49,11 @@ export class InicioComponent implements OnInit {
 
     this._homeservice.getHome()
     .subscribe((res:any) => {
-      this.loader = false;
       this.sliderprincipal_data = res.acf.slider_principal;
       this.recuadros_data = res.acf.recuadros_seccion2;
       this.ganevirtual_data = res.acf.virtual_seccion3;
       this.puntosventa_data = res.acf.puntos_de_venta_seccion5;
+      this.loader = false;
     });
 
     this._campanaservice.getCampanas()
