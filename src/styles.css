@@ -1330,15 +1330,15 @@ tr td:hover{
 }
 
 /*********** Página de Contáctenos ***********/
-.contactenos input{
-    color: #192D6D;
+.contactenos input [type=submit]{
+    color: #FFFFFF;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 19px;
 }
-
-.contactenos input [type=submit]{
-    color: #FFFFFF;
+/*
+.contactenos input{
+    color: #192D6D;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 19px;
@@ -1352,7 +1352,7 @@ tr td:hover{
     border: 2px solid #000;
     transition:.1s;
 }
-
+*/
 .contactenos input::placeholder{
     color: #192D6D;
     font-family: 'Open Sans', sans-serif;
