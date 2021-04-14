@@ -6,9 +6,9 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener }
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('stickyMenu') menuElement: ElementRef;
-  sticky: boolean = false;
-  elementPosition: any;
+  // @ViewChild('stickyMenu') menuElement: ElementRef;
+  // sticky: boolean = false;
+  // elementPosition: any;
 
   constructor() { }
 
@@ -16,16 +16,16 @@ export class HeaderComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    this.elementPosition = this.menuElement.nativeElement.offsetTop;
+    // this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
-  @HostListener('window:scroll', ['$event'])
-  handleScroll(){
-    const windowScroll = window.pageYOffset;
-    if(windowScroll >= this.elementPosition){
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
-  }
+  // @HostListener('window:scroll', ['$event'])
+  // handleScroll(){
+  //   const windowScroll = window.pageYOffset;
+  //   if(windowScroll >= this.elementPosition){
+  //     this.sticky = true;
+  //   } else {
+  //     this.sticky = false;
+  //   }
+  // }
 
 }
