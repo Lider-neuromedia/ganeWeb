@@ -4,6 +4,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { HomeService } from './../services/home.service';
 import { CampanaService } from './../services/campana.service';
 import { Router } from '@angular/router'; 
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
+declare var $ : any; 
 
 @Component({
   selector: 'app-inicio',
@@ -32,8 +35,14 @@ export class InicioComponent implements OnInit {
   loader = true;
   totalCount = 1;
 
+  public suscrito: any;
+
   constructor(private _router:Router, private httpClient:HttpClient, private fb:FormBuilder, private _homeservice:HomeService, private _campanaservice:CampanaService) {
-    
+    this.suscrito = {
+      nombre: '',
+      email: '',
+      acepto:''
+    };
   }
 
   ngOnInit(): void {
@@ -78,6 +87,28 @@ export class InicioComponent implements OnInit {
     // console.log(this.registrationForm);
   }
 
- 
-
+  enviarSuscribir(form){
+    $.ajax({
+      url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
+      type: 'POST',
+      data: JSON.stringify(this.suscrito),
+      dataType:"json",
+      success: function(data) {
+        
+      }, error: function(error){
+        if(error.status === 200){
+          Swal.fire({
+            icon: 'success',
+            title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
+            showConfirmButton: true
+          }); 
+          //console.log(error);
+        form.reset();
+        } else {
+          Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
+        }
+      }
+    });
+   }
+  
 }

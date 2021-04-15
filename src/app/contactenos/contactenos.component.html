@@ -5,7 +5,7 @@
                 <ngx-skeleton-loader count="8" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader">
                     <h3 class="size24 line-height29 opensans text-blue font-weight-700 pb-1">¡Escríbenos!</h3>
-                    <form (ngSubmit)="enviarForm()" #formularioContacto="ngForm" id="formulario-contact" class="contactenos">
+                    <form (ngSubmit)="enviarForm(formularioContacto)" #formularioContacto="ngForm" id="formulario-contact" class="contactenos">
                         <div class="form-row pt-2 pb-2">
                             <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="nombre">Nombre completo</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" required>

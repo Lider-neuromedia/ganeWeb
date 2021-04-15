@@ -1438,6 +1438,14 @@ tr td:hover{
 }
 
 @media screen and (max-width: 767px) {
+    .tabs-num-suerte{
+        margin-top: 25px;
+    }
+    .section4 .background-ruleta{
+        background-size: cover;
+        border-radius: 12px;
+    }
+
     .tarjetaComunicado{
         display:block;
     }
