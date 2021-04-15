@@ -1438,6 +1438,11 @@ tr td:hover{
 }
 
 @media screen and (max-width: 767px) {
+    .background-sliders{
+        height: auto!important; 
+        background-size: cover!important;
+    }
+    
     .tabs-num-suerte{
         margin-top: 25px;
     }
