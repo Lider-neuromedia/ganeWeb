@@ -11,10 +11,10 @@
                 <div *ngIf="!loader" class="" style="background:url( '{{ home.fondo }}' )">
                     <div class="container pt-4 pb-4">
                         <div class="row align-items-center">
-                            <div class="col">
+                            <div class="col-sm-12 col-md-6">
                                 <img src="{{ home.imagen }}" alt="" class="img-fluid">
                             </div>
-                            <div class="col">
+                            <div class="col-sm-12 col-md-6">
                                 <h1 class="text-white m-0 font-weight-bold title-slide">{{ home.titulo }}</h1>
                                 <span class="text-white m-0 font-weight-normal title-slide" [innerHTML]="home.descripcion"></span>
                                 <p class="mt-4">
@@ -42,7 +42,7 @@
         <ngx-skeleton-loader class="d-flex pt-5" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '10px' }"></ngx-skeleton-loader>
         <div class="row">
             <ng-container *ngFor="let recuadro of recuadros_data">
-                <a *ngIf="!loader" href="{{ recuadro.url }}" class="col-xs-12 col-sm d-flex justify-content-center p-3 m-3 card p-4 border-radius box-shadow-big card-shadow-hover" style="border: 3px solid #29448b;">
+                <a *ngIf="!loader" href="{{ recuadro.url }}" class="col-sm-12 col-md d-flex justify-content-center p-3 m-3 card p-4 border-radius box-shadow-big card-shadow-hover" style="border: 3px solid #29448b;">
                     <p class="text-center mb-2" *ngIf="recuadro.imagen">
                         <img class="img-fluid" src="{{ recuadro.imagen}}" alt="Card image cap">
                     </p>
@@ -283,22 +283,31 @@
     <div *ngIf="!loader" class="jumbotron suscribe border-0 rounded-0 pt-5 mb-0" style="background:url(./assets/home/SECCION-7/newsletter_bg.png);background-size: auto;background-position: bottom center;">
         <div class="container h-100">
             <h2 class="text-center text-blue text-white mb-4">Suscríbete para recibir los resultados</h2>
-            <form>
+            <form (ngSubmit)="enviarSuscribir(formularioSuscribir)" #formularioSuscribir="ngForm" id="formulario-suscribirse" class="suscribirse">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-sm-4">
                         <label class="text-white size14">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Ejemplo: Juan David">
+                        <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="suscrito.nombre" placeholder="Ejemplo: Juan David" required>
+                        <small style="color:#fff" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                            Nombre es un campo requerido.
+                        </small>
                     </div>
                     <div class="col-sm-4">
                         <label class="text-white size14">Correo eletrónico</label>
-                        <input type="text" class="form-control" placeholder="Ejemplo: correo@gmail.com">
+                        <input type="email" class="form-control" id="emailSuscribe" name="email" #email="ngModel" [(ngModel)]="suscrito.email" email="true" required>
+                        <small style="color:#fff" *ngIf="email.invalid && (email.dirty || email.touched)">
+                            Ingrese un correo electrónico válido.
+                        </small>
                     </div>
                     <div class="col-sm-12 mt-4 form-check text-center">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" name="acepto" #acepto="ngModel" [(ngModel)]="suscrito.acepto" class="form-check-input" id="exampleCheck1" required>
                         <label class="text-white size14 form-check-label" for="exampleCheck1">Conozco y acepto la política de datos de <STRONG><a class="text-white" href="/assets/tratamiento-datos/M-DM-05-Politicas-de-Tratamiento-de-Datos-Personales-v5.pdf" target="_blank">REDCOLSA.</a></STRONG></label>
+                        <small style="color:#fff" *ngIf="acepto.invalid && (acepto.dirty || acepto.touched)">
+                            Debe aceptar las condiciones.
+                        </small>
                       </div>
                     <div class="col-sm-12 text-center mt-4 mb-4">
-                        <button type="submit" class="btn btn-yellow font-weight-bold size18 pr-5 pl-5">Enviar</button>
+                        <input type="submit" class="btn btn-yellow font-weight-bold size18 pr-5 pl-5" name="enviar" value="Enviar" [disabled]="formularioSuscribir.invalid">
                     </div>
                 </div>
             </form>
