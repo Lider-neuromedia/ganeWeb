@@ -10,7 +10,7 @@ import { PagesService } from './../services/pages.service';
 })
 export class CulturaAntilavadoComponent implements OnInit {
   titulo_data:any = {};
-  item_menu_data: any[] = [];
+  item_menu_data: any;
   public activePillIndex:number = 0;
   urlSafe: SafeResourceUrl;
   arreglo_video : any[] = [];
@@ -27,30 +27,17 @@ export class CulturaAntilavadoComponent implements OnInit {
       this.titulo_data = res.acf.titulo_principal;
       this.item_menu_data = res.acf.item_menu;
     
-
-      // for(let element of this.item_menu_data){
-      //   if(element.link_video === null || element.link_video === ''){
-      //     return '';
-      //   }
-        
-      //   results = element.link_video.match('[\\?&]v=([^&#]*)');
-      //   //video   = element.link_video;
-      //   video   = (results === null) ? element.link_video : results[0];
-      //   this.urlSafe = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);
-      //   console.log(video);
-      // }
-
-      
       this.item_menu_data.forEach(element => {
         if(element.link_video === null || element.link_video === ''){
           return '';
         }
-        
+        else {
         results = element.link_video.match('[\\?&]v=([^&#]*)');
         //video   = element.link_video;
-        video   = (results === null) ? element.link_video : results[1];
+        video = (results === null || results === '') ? element.link_video : results[0];
         this.urlSafe = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);
         console.log(video);
+        }
       });
     });
 

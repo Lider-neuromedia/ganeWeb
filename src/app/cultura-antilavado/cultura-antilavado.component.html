@@ -23,10 +23,10 @@
                 <div *ngIf="!loader" class="tab-content" id="v-tabContent">
                     <ng-container *ngFor="let data of item_menu_data; let index = index">
                         <div class="tab-pane fade" [ngClass]="{'show active': index === activePillIndex}" [attr.id]="'#'+'v-'+index" role="tabpanel">
-                            <iframe width="100%" height="315" *ngIf="data.link_video" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen1" src="{{ data.imagen1 }}" alt="Antilavado 1">
                             <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen2" src="{{ data.imagen2 }}" alt="Antilavado 2">
                             <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen3" src="{{ data.imagen3 }}" alt="Antilavado 3">
+                            <iframe width="100%" height="315" *ngIf="data.link_video" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </ng-container>
 

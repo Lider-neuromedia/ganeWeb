@@ -14,6 +14,7 @@ $(document).ready(function() {
     });
 });
 
+/*
 $(document).ready(function() {
     function enviarDatos(){
         var action_src = "https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/mail.php";
@@ -22,3 +23,4 @@ $(document).ready(function() {
         alert("The form was submitted");
     }
 });
+*/
