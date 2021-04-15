@@ -573,7 +573,11 @@ a:hover {
     color:#29448b !important;
     font-weight:500;
 }
-
+.topbar .navbar-nav>li>a:hover{
+    background: #29448b;
+    color:#E4E4E4 !important;
+    font-weight:500;
+}
 .topbar li a{
     font-weight: 500;
     padding-right:15px;
