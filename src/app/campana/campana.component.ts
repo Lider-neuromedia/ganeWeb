@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CampanaService } from './../services/campana.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-campana',
@@ -25,5 +26,13 @@ export class CampanaComponent implements OnInit {
         }
       })
   }
-
+  errorCampana(){
+    Swal.fire({
+      icon: 'info',
+      title: 'Oops...',
+      text: 'La campaña seleccionada ya expiró',
+      confirmButtonColor: "#EAB73B",
+      confirmButtonText: "Cerrar",
+    });
+  };
 }

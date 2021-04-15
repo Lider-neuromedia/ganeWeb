@@ -15,13 +15,13 @@
                         <p *ngIf="campana_data.acf" class="color-title"><span class="font-weight-700"><i class="far fa-clock"></i> Inicia:</span> {{ campana_data.acf.fecha_de_inicio | date:'fullDate' | titlecase }}<br>
                         <span class="font-weight-700"><i class="far fa-clock"></i> Finaliza:</span> {{ campana_data.acf.fecha_fin | date:'fullDate' | titlecase }}</p>
                         <div *ngIf="campana_data.acf">
-                            <h5 *ngIf="campana_data.acf.estado === 'Vigente'">
+                            <h5 *ngIf="campana_data.acf.estado === 'Vigente'" >
                                 <span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1 mr-3">{{ campana_data.acf.estado }}</span>
-                                <a class="btn-yellow-outline font-weight-bold size14 p-2 mt-3" href="{{ campana_data.acf.url_de_la_campana }}">Ir a la campaña</a>
+                                <a class="btn-yellow-outline font-weight-bold size14 p-2 mt-3" href="{{ campana_data.acf.url_de_la_campana }}" target="blank_">Ir a la campaña</a>
                             </h5>
                             <h5 *ngIf="campana_data.acf.estado === 'Terminada'">
                                 <span class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1 mr-3">{{ campana_data.acf.estado }}</span>
-                                <a class="btn-yellow-outline font-weight-bold size14 p-2 mt-3" href="{{ campana_data.acf.url_de_la_campana }}">Ir a la campaña</a>
+                                <a class="btn-yellow-outline font-weight-bold size14 p-2 mt-3" (click)="errorCampana()">Ir a la campaña</a>
                             </h5>
                             <br>
                             <div class="bg-white p-3">

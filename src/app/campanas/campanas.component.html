@@ -9,7 +9,7 @@
         <div *ngIf="!loader">
             <div class="row">
                 <ng-container *ngFor="let campanas of campanas_data">
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 mb-3">
                         <div class="card border-0 card-shadow-hover">
                             <a (click)="verCampana(campanas.id)" *ngIf="campanas.acf.imagen_destacada == null">
                                 <p class="text-center pt-2 pb-2">

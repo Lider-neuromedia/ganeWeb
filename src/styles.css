@@ -545,7 +545,13 @@ a:hover {
     transition: 0.4s;
     transform: scale(1.05);    
 }
-
+.swal2-styled{
+    padding: 5px 30px !important;
+}
+.swal2-styled:focus,
+.swal2-styled:active{
+    outline: none;
+}
 /* BASE */
 
 
