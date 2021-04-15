@@ -8,17 +8,17 @@
         <div><ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'430px','border-radius': '10px','padding':'15px' }"></ngx-skeleton-loader></div>
         <ng-container *ngFor="let home of sliderprincipal_data; first as isFirst">
             <div class="carousel-item"  *ngIf="home.fondo != undefined" [ngClass]="(isFirst) ? 'active' : ''">
-                <div *ngIf="!loader" class="" style="background:url( '{{ home.fondo }}' )">
+                <div *ngIf="!loader" class="background-sliders" style="background:url( '{{ home.fondo }}' ); height: 450px; background-position: center;">
                     <div class="container pt-4 pb-4">
                         <div class="row align-items-center">
                             <div class="col-sm-12 col-md-6">
-                                <img src="{{ home.imagen }}" alt="" class="img-fluid">
+                                <img *ngIf="home.imagen" src="{{ home.imagen }}" alt="" class="img-fluid">
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <h1 class="text-white m-0 font-weight-bold title-slide">{{ home.titulo }}</h1>
-                                <span class="text-white m-0 font-weight-normal title-slide" [innerHTML]="home.descripcion"></span>
+                                <h1 *ngIf="home.titulo" class="text-white m-0 font-weight-bold title-slide">{{ home.titulo }}</h1>
+                                <span *ngIf="home.descripcion" class="text-white m-0 font-weight-normal title-slide" [innerHTML]="home.descripcion"></span>
                                 <p class="mt-4">
-                                    <a class="btn btn-primary btn-lg btn-blue font-weight-normal pt-1 pb-1 pr-3 pl-3 wow animate__animated animate__fadeInUp" href="{{ home.url }}" role="button">{{ home.texto_boton }}</a>
+                                    <a class="btn btn-primary btn-lg btn-blue font-weight-normal pt-1 pb-1 pr-3 pl-3 wow animate__animated animate__fadeInUp" *ngIf="home.texto_boton" href="{{ home.url }}" role="button">{{ home.texto_boton }}</a>
                                 </p>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="nunito d-block text-center font-weight-700 size21 letter-spacing0-4" for="exampleFormControlInput1">Resultado</label>
+                                        <label class="nunito d-block text-center font-weight-700 size21 letter-spacing0-4" for="exampleFormControlInput1">Premiación</label>
                                         <input type="number" placeholder="${{valorModal * valorApostar}}" class="form-control monto-enviar" id="resultadoSimulaChance" readonly>
                                     </div>
                                     <p class="restricciones">*Aplican restricciones de ley</p>
