@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 export class PagesService {
 
   public url: string;
+  urlFormulario = 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/';
 
   constructor(private _http: HttpClient) {
     this.url = GLOBAL.url;
@@ -104,4 +105,10 @@ export class PagesService {
   getGeneralFooter(): Observable<any>{
     return this._http.get(`${this.url}/pages/1031/`);
   }
+
+  /*
+  enviarFormulario(): Observable<any> {
+    return this._http.get(`${this.urlFormulario}mail.php`);
+  }
+  */
 }

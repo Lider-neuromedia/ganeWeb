@@ -366,9 +366,7 @@ table th, table td{
 .box-shadow {
     box-shadow: 1px 1px 5px 1px rgba(125, 125, 125, .2)
 }
-.box-shadow-big{
-    box-shadow: 1px 1px 40px 10px rgb(125 125 125 / 20%);
-}
+
 .box-shadow-none {
     box-shadow: none;
 }
@@ -557,9 +555,7 @@ a:hover {
     padding-top: 0;
     padding-bottom: 0;
 }
-.topbar a{
-    font-weight: 600 !important;
-}
+
 .topbar li .bk-transparent:hover,
 .topbar li .bk-transparent a:active {
     background: transparent !important;
@@ -567,8 +563,8 @@ a:hover {
 
 .topbar li a:hover,
 .topbar li a:active {
-    background: #29448b;
-    color:#E4E4E4 !important;
+    background: #E4E4E4;
+    color:#29448b !important;
     font-weight:500;
 }
 
@@ -580,11 +576,11 @@ a:hover {
 }
 
 .sticky{
-    position: sticky;
+    position:sticky;
     top:0px;
     z-index:20;
     width:100%;
-    background: #fff;
+    background-color: #fff;
 }
 
 /***Topbar Items***/
@@ -1335,6 +1331,13 @@ tr td:hover{
 }
 
 /*********** Página de Contáctenos ***********/
+.contactenos input [type=submit]{
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+}
+/*
 .contactenos input{
     color: #192D6D;
     font-family: 'Open Sans', sans-serif;
@@ -1350,7 +1353,7 @@ tr td:hover{
     border: 2px solid #000;
     transition:.1s;
 }
-
+*/
 .contactenos input::placeholder{
     color: #192D6D;
     font-family: 'Open Sans', sans-serif;
