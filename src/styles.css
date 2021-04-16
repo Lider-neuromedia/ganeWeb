@@ -1453,6 +1453,18 @@ tr td:hover{
 }
 
 @media screen and (max-width: 767px) {
+    #navbarSupportedContent{
+        overflow-y: scroll;
+        height: 400px;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    #navbarSupportedContent::-webkit-scrollbar{
+        display: none;
+    }
+    .bg-blue-main{
+        padding-bottom: 15px;
+    }
     .slotwrapper ul{
         font-size: 70px;
     }
@@ -1779,7 +1791,7 @@ line-height: 30px;
         margin-top: 0;
     }
     .item-menu-servicios{
-        width: 21rem;
+        width: 100%;
         transform: translatex(0%);
     }
 
