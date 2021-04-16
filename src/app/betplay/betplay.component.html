@@ -30,22 +30,25 @@
             </div>
         </div>
         <div class="row section3">
-            <div class="col-xs-12 col-md-12">
+            <div class="col-xs-12 col-md-2"></div>
+            <div class="col-xs-12 col-md-8">
                 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ 'height':'235px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader">
-                    <img *ngIf="seccion_2_data" class="w-100 d-block" src="{{seccion_2_data}}" alt="seguridad">
-                    <h4 class="text-center mt-5 mb-3 title35"><strong>{{seccion_3_data.seccion_3_titulo}}</strong></h4>
-                    <p class="text-justify">
-                        {{seccion_3_data.seccion_3_texto}}
-                    </p>
+                    <div class="contact-betplay">
+                        <a href="https://api.whatsapp.com/send?phone=573102559421&amp;text=Hola, quiero recibir información!" target="_blank">
+                            <p style="color:#EFEFEF;" class="titulo-asesoria font-weight-700">Contáctanos para asesorarte</p>
+                            <p style="color:#EFEFEF;" class="num-tel font-weight-300">3102559421</p>
+                        </a>
+                    </div>
                 </div>
             </div>
+            <div class="col-xs-12 col-md-2"></div>
         </div>
         <div class="row section4">
             <div class="col-xs-12 col-md-12">
                 <ngx-skeleton-loader count="{{totalCount}}" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader">
-                    <table class="full-table mt-5 wow animate__animated animate__fadeInUp">
+                    <table class="full-table wow animate__animated animate__fadeInUp">
                         <thead>
                             <th>Barrio</th>
                             <th>Puntos de servicio</th>
