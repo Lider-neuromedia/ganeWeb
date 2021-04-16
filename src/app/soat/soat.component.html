@@ -42,4 +42,80 @@
             </div>
         </div>
     </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-Soat">
+                    <div class="row">
+                        <div class="formulario-soat">
+                            <form (ngSubmit)="enviarSoatFecha(formSoat)" #formSoat="ngForm" id="formularioSoat" class="form-soat">
+                                <div class="row">
+                                    <div class="col-md-12 mb-4">
+                                        <h3 class="text-center text-blue font-weight-700 size24">¡Te recordamos cuando debes renovar tu SOAT!</h3>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-row pt-2 pb-2">
+                                            <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-400 nombre" for="nombre">Nombre completo</label>
+                                            <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="usersoat.nombre" required>
+                                            <small *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                                                Nombre es un campo requerido.
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-row pt-2 pb-2">
+                                            <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-400 cedula" for="cedula">Cédula de ciudadanía</label>
+                                            <input type="number" class="form-control" id="cedula" name="cedula" #cedula="ngModel" [(ngModel)]="usersoat.cedula" required>
+                                            <small *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
+                                                Cédula es un campo requerido.
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-row pt-2 pb-2">
+                                            <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-400 placa" for="placa">Placa</label>
+                                            <input type="text" style="text-transform:uppercase;" class="form-control" id="placa" name="placa" #placa="ngModel" [(ngModel)]="usersoat.placa" required>
+                                            <small *ngIf="placa.invalid && (placa.dirty || placa.touched)">
+                                                Placa es un campo requerido.
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-row pt-2 pb-2">
+                                            <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-400 email" for="email">Correo electrónico</label>
+                                            <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="usersoat.email" email="true" required>
+                                            <small *ngIf="email.invalid && (email.dirty || email.touched)">
+                                                Email es un campo requerido.
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-row pt-2 pb-2">
+                                            <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-400 celular" for="celular">Celular</label>
+                                            <input type="tel" class="form-control" id="celular" name="celular" #celular="ngModel" [(ngModel)]="usersoat.celular" pattern="^\d+$" required>
+                                            <small *ngIf="celular.invalid && (celular.dirty || celular.touched)">
+                                                Celular es un campo requerido.
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-row pt-2 pb-2">
+                                            <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-400 vencimiento" for="vencimiento">Fecha de vencimiento</label>
+                                            <input type="date" class="form-control" id="vencimiento" name="vencimiento" #vencimiento="ngModel" [(ngModel)]="usersoat.vencimiento" required>
+                                            <small *ngIf="vencimiento.invalid && (vencimiento.dirty || vencimiento.touched)">
+                                                Fecha de vencimiento es un campo requerido.
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <input type="submit" class="btn btn-primary btn-blue mt-4 w-200px mx-auto d-block" name="enviar" value="Enviar" [disabled]="formSoat.invalid">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

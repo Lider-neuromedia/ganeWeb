@@ -161,6 +161,9 @@ a.whatsapp-buble {
 .w-40{
     width: 40%;
 }
+.w-200px{
+    width:200px;
+}
 
 p{
     color: #0A0A0A;
@@ -908,10 +911,6 @@ a:hover {
     box-shadow: 1px 4px 5px 2px rgba(0,0,0,.2);
 }
 
-.navbar.bg-blue-main .navbar-nav .nav-item{
-    
-}
-
 .navbar.bg-blue-main .navbar-nav .nav-item:active{
     background-color:#162751 !important;
     border-bottom: 2px solid #eab73b;
@@ -939,10 +938,6 @@ a:hover {
     background-color: #eab73b;
     padding-top: 19px;
     padding-bottom: 21px;
-}
-
-.nav-link.btn-yellow-wborder:hover{
-    
 }
 
 /*****Página de Giros******/
@@ -1107,6 +1102,13 @@ tr td:hover{
 
 /**********************************/
 
+/******** Página Soat **********/
+.formulario-soat{
+    border-radius: 2px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.32);
+    padding: 25px;  
+}
+/*******************************/
 /********Página Betplay********/
 .contact-betplay{
     background-image: url(./assets/betplay_page/contacto.png);
@@ -1350,10 +1352,6 @@ tr td:hover{
 }
 
 @media screen and (min-width: 1200px){
-    .caption {
-        /*height: 294px;
-        display: grid;*/
-    }
 }
 
 /*********** Página de Contáctenos ***********/
@@ -1443,9 +1441,6 @@ tr td:hover{
 }
 
 @media screen and (min-width: 992px) {
-    .tarjetaPublicacion .caption {
-        /* min-height: 300px; */
-        }
 }
 
 
