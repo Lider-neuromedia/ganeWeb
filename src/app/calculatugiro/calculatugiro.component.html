@@ -3,7 +3,7 @@
         <div class="w-100">
                 <form>
                     <div class="form-group">
-                        <label class="nunito size14 letter-spacing0-4" for="montoEnvio">Monto</label>
+                        <label class="nunito size14 letter-spacing0-4" for="montoEnvio">Valor a enviar:</label>
                         <select class="form-control" id="montoEnvio" name="seleccionaMonto" (change)="SetDropDownValue($event)">
                             <option value="" disabled>Elija una opción</option>
                             <option *ngFor="let valorMonto of valores_calcular_data; let i = index;" value="{{i}}">{{ valorMonto.valor_monto }}</option>
