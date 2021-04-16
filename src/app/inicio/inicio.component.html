@@ -1,7 +1,7 @@
 <section id="carouselExampleIndicators" class="section1 carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <ng-container *ngFor="let home of sliderprincipal_data; first as isFirst; let i = index">
-            <li data-target="#carouselExampleIndicators" data-slide-to="{{i}}" [ngClass]="(isFirst) ? 'active' : ''"></li>
+            <li data-target="#carouselExampleIndicators" [attr.data-slide-to]="i" [ngClass]="(isFirst) ? 'active' : ''"></li>
         </ng-container>
     </ol>
     <div class="carousel-inner">
@@ -211,6 +211,7 @@
                                         <input type="number" placeholder="${{valorModal * valorApostar}}" class="form-control monto-enviar" id="resultadoSimulaChance" readonly>
                                     </div>
                                     <p class="restricciones">*Aplican restricciones de ley</p>
+                                    <a class="text-center d-block font-weight-700 text-black" href="#/pago-premios">Política de pago de premios</a>
                                 </form>
                             </div>
                         </div>
