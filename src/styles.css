@@ -1434,6 +1434,11 @@ tr td:hover{
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+    .background-sliders{
+        height: 285px!important;
+        background-size: cover!important;
+    }
+
     .tarjetaPublicacion .caption {
         min-height: 200px;
         }
@@ -1448,8 +1453,17 @@ tr td:hover{
 }
 
 @media screen and (max-width: 767px) {
+    .slotwrapper ul{
+        font-size: 70px;
+    }
+    .btn-yellow-txt-white{
+        font-size: 20px;
+    }
+    .section1.carousel ol.carousel-indicators{
+        margin-bottom: 5px;
+    }
     .background-sliders{
-        height: auto!important; 
+        height: 135px!important; 
         background-size: cover!important;
     }
     
@@ -1488,6 +1502,7 @@ tr td:hover{
         width: 25%;
     }
     .slotwrapper {
+        top: 50%!important;
         width: 70%;
     }
 }
