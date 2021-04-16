@@ -1118,6 +1118,32 @@ tr td:hover{
 /**********************************/
 
 /********Página Betplay********/
+.contact-betplay{
+    background-image: url(./assets/betplay_page/contacto.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 181px 0;
+}
+
+.contact-betplay a{
+    display: block;
+    position: absolute;
+    padding-left: 40%;
+}
+.contact-betplay .num-tel::before{
+    content: url(https://pruebasneuro.co/N-1057backgane/wp-content/uploads/2021/04/ShapePNG.png);
+    padding: 0px 5px 0 0;
+}
+
+.contact-betplay .num-tel{
+    font-size:18px;
+}
+
+.contact-betplay .titulo-asesoria{
+    font-size:21px;
+}
+
 .betplay_pagina .section2 h3{
     color: #192D6D;
     font-family: 'Open Sans', sans-serif;
@@ -1434,6 +1460,21 @@ tr td:hover{
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+
+    .contact-betplay{
+        padding: 112px 0;
+    }
+    .contact-betplay a{
+        padding-left: 36%;
+    }
+    .contact-betplay .titulo-asesoria{
+        font-size:15px;
+        margin-bottom: 0;
+    }
+    .contact-betplay .num-tel{
+        font-size:14px;
+    }
+
     .background-sliders{
         height: 285px!important;
         background-size: cover!important;
@@ -1465,6 +1506,23 @@ tr td:hover{
     .bg-blue-main{
         padding-bottom: 15px;
     }
+    .contact-betplay{
+        padding: 72px 0 92px;
+    }
+    .contact-betplay a{
+        padding-left: 36%;
+    }
+    .contact-betplay .num-tel::before{
+        content:"";
+    }
+    .contact-betplay .titulo-asesoria{
+        font-size:11px;
+        margin-bottom: 0;
+    }
+    .contact-betplay .num-tel{
+        font-size:14px;
+    }
+
     .slotwrapper ul{
         font-size: 70px;
     }

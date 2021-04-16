@@ -19,7 +19,7 @@
                     <div class="card card-pagos card-shadow-hover">
                         <div class="card-body pt-4 pb-4">
                             <img class="mb-3 d-block mx-auto img-fluid" src="{{ tarjeta.imagen_tarjeta}}" alt="Logo Convenio">
-                            <p>{{ tarjeta.texto_tarjeta }}</p>
+                            <p class=text-justify>{{ tarjeta.texto_tarjeta }}</p>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn-wback text-center d-block mx-auto" data-toggle="modal" [attr.data-target]="'#'+'convenio'+i">
                                 Leer más
