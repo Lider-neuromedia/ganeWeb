@@ -22,7 +22,8 @@ export class SoatComponent implements OnInit {
       placa: '',
       email: '',
       celular: '',
-      vencimiento: ''
+      vencimiento: '',
+      acepto: ''
     };
   }
 

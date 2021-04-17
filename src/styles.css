@@ -1108,6 +1108,37 @@ tr td:hover{
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.32);
     padding: 25px;  
 }
+
+.formulario-soat label.vencimiento::before{
+    content: url(./assets/soat_page/fecha.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.celular::before{
+    content: url(./assets/soat_page/celular.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.email::before{
+    content: url(./assets/soat_page/correo.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.placa::before{
+    content: url(./assets/soat_page/placa.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.cedula::before{
+    content: url(./assets/soat_page/cedula.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.nombre::before{
+    content: url(./assets/soat_page/nombres.png);
+    padding-right:10px;
+}
+
 /*******************************/
 /********Página Betplay********/
 .contact-betplay{
