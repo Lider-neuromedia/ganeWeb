@@ -12,6 +12,23 @@
                         <h2 class="title35 wow animate__animated animate__fadeInUp" *ngIf="article_data.title">{{ article_data.title.rendered }}</h2>
                         <p class="text-blue wow animate__animated animate__fadeInUp">{{ article_data.date | date:'fullDate' | titlecase }}</p>
                         <p class="wow animate__animated animate__fadeInUp" *ngIf="article_data.content" [innerHTML]="article_data.content.rendered"></p>
+                        <div class="row">
+                            <ng-container *ngFor="let imagenes of article_data_acf.imagenes">
+                                <div class="col-xs-12 col-md-4">
+                                    <img src="{{ imagenes.imagen }}" class="img-fluid" alt="">
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="row">
+                            <ng-container *ngFor="let videos of article_data_acf.videos">
+                                <div class="col-xs-12 col-md-4">
+                                    <video width="100%" height="240" controls>
+                                        <source src="{{ videos.video }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </ng-container>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,38 +44,26 @@
                 <div class="col-md-12">
                     <h3 class="title-mision font-weight-600 mx-auto text-center d-block wow animate__animated animate__fadeInUp">Otros artículos</h3>
                 </div>
-                <div class="col-sm-4">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#"><img class="card-img-top" src="./assets/blog_page/LISTADO/not5.jpg" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="mb-0 font-weight-bold">Este es un título de prueba para artículo destacado</h5>
-                            <small class="text-gray-dark">Lunes 03 de Octubre de 2020</small>
-                            <p class="size14 line-height1-4 text-gray-dark mb-2 mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13">Seguir Leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
+                <div class="card-columns">
+                    <ng-container *ngFor="let post of articles_data | slice:0:3">
+                        <div class="card">
+                            <div class="sinEspacio">
+                                <a (click)="verArticle(post.slug)">
+                                    <img class="card-img-top" src="{{ post.featured_image }}" alt="Noticia">
+                                </a>
+                            </div>
+                            <div class="caption">
+                                <h3 class="tituloPublicacionSingular pt-2">
+                                    <a class="text-black" (click)="verArticle(post.slug)">{{ post.title.rendered }}</a>
+                                </h3>
+                                <p class="fechaNoticias">{{ post.date | date:'fullDate' | titlecase }}</p>
+                                <p class="text-gray" *ngIf="post.excerpt.rendered != ''">{{ post.excerpt.rendered }}</p>
+                                <div class="campoBotonNoticia pt-1 pb-3">
+                                    <a class="verNoticia" (click)="verArticle(post.slug)">Seguir leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#"><img class="card-img-top" src="./assets/blog_page/LISTADO/not6.jpg" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="mb-0 font-weight-bold">Este es un título de prueba para artículo destacado</h5>
-                            <small class="text-gray-dark">Lunes 03 de Octubre de 2020</small>
-                            <p class="size14 line-height1-4 text-gray-dark mt-3 mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13">Seguir Leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#"><img class="card-img-top" src="./assets/blog_page/LISTADO/not7.jpg" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="mb-0 font-weight-bold">Este es un título de prueba para artículo destacado</h5>
-                            <small class="text-gray-dark">Lunes 03 de Octubre de 2020</small>
-                            <p class="size14 line-height1-4 text-gray-dark mb-2 mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13">Seguir Leyendo <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
+                    </ng-container>
                 </div>
             </div>
         </div>

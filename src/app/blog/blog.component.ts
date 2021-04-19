@@ -25,6 +25,7 @@ export class BlogComponent implements OnInit {
   }
 
   verArticle(slug:string){
+    this._router.onSameUrlNavigation = "reload";
     this._router.navigate(['/articulo', slug]);
   }
 }

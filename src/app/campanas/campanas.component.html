@@ -9,7 +9,7 @@
         <div *ngIf="!loader">
             <div class="row">
                 <ng-container *ngFor="let campanas of campanas_data">
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 mb-3">
                         <div class="card border-0 card-shadow-hover">
                             <a (click)="verCampana(campanas.id)" *ngIf="campanas.acf.imagen_destacada == null">
                                 <p class="text-center pt-2 pb-2">
@@ -30,7 +30,6 @@
                                 </h5>
                                 <small class="text-blue"><i class="far fa-clock"></i> {{ campanas.acf.fecha_de_inicio | date:'fullDate' | titlecase }}</small>
                                 <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">{{ campanas.acf.sub_titulo }}</p>
-                                <p class="size14 line-height1-4 text-blue mb-2">{{ campanas.excerpt.rendered }}</p>
                                 <a (click)="verCampana(campanas.slug)" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>

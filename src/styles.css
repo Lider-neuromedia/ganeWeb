@@ -548,7 +548,13 @@ a:hover {
     transition: 0.4s;
     transform: scale(1.05);    
 }
-
+.swal2-styled{
+    padding: 5px 30px !important;
+}
+.swal2-styled:focus,
+.swal2-styled:active{
+    outline: none;
+}
 /* BASE */
 
 
@@ -570,7 +576,11 @@ a:hover {
     color:#29448b !important;
     font-weight:500;
 }
-
+.topbar .navbar-nav>li>a:hover{
+    background: #29448b;
+    color:#E4E4E4 !important;
+    font-weight:500;
+}
 .topbar li a{
     font-weight: 500;
     padding-right:15px;
@@ -1510,6 +1520,18 @@ tr td:hover{
 }
 
 @media screen and (max-width: 767px) {
+    #navbarSupportedContent{
+        overflow-y: scroll;
+        height: 400px;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    #navbarSupportedContent::-webkit-scrollbar{
+        display: none;
+    }
+    .bg-blue-main{
+        padding-bottom: 15px;
+    }
     .contact-betplay{
         padding: 72px 0 92px;
     }
@@ -1853,7 +1875,7 @@ line-height: 30px;
         margin-top: 0;
     }
     .item-menu-servicios{
-        width: 21rem;
+        width: 100%;
         transform: translatex(0%);
     }
 

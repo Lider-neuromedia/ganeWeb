@@ -1,9 +1,6 @@
 <div class="sticky">
-<nav class="navbar navbar-expand-lg navbar-light topbar">
+<nav class="navbar navbar-expand-lg navbar-light topbar d-none d-sm-block d-md-block">
     <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTopbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarTopbarContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
@@ -108,13 +105,113 @@
         </div>
     </div>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-blue-main ">
+<nav class="navbar navbar-expand-lg navbar-light bg-blue-main">
     <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="./assets/home/LogoPrincipal.png" alt="" class="img-logo"></a>
+            <a class="navbar-brand " href="#"><img src="./assets/home/LogoPrincipal.png" alt="" class="img-logo"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto d-lg-none d-xl-none">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-link-main" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nuestra empresa</a>
+                        <div class="dropdown-menu fade-up" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#/quienes-somos">¿Quiénes somos?</a>
+                            <a class="dropdown-item" href="#/comunicados">Comunicados de prensa</a>
+                            <a class="dropdown-item" href="#/periodico">Periódico gane al día</a>
+                            <a class="dropdown-item" href="#/privacidad">Aviso de privacidad</a>
+                            <a class="dropdown-item" href="#/financieros">Estados Financieros</a>
+    
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-link-main" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+                        <div class="dropdown-menu item-menu-servicios megamenu navbar-center animate fade-up">
+                            <div class="row menu-servicios">
+                                    <div class="col-md-4 serviciosItem">
+                                        <a class="bk-transparent" href="#/juegos">
+                                            <div class="img-servicio">
+                                                <img class="imagenMarcaMenu"src="./assets/home/iconos-header/JUEGOS_ICONPNG.png" alt="Juegos">
+                                            </div>
+                                            <div class="txt-servicio">
+                                                <p class="tituloItem-servicio">Juegos</p>
+                                                <p class="textoItem-servicio">En Cali le apostamos a la legalidad, conoce aquí la oferta que Gane tiene en Juegos de Suerte y Azar: Chance Tradicional, Doble Chance, Chance Millonario, Incentivos al Chance, Loterías.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 serviciosItem">
+                                        <a class="bk-transparent" href="#/giros">
+                                            <div class="img-servicio">
+                                                <img class="imagenMarcaMenu" src="./assets/home/iconos-header/super_giros_ICONPNG.png" alt="Supergiros">
+                                            </div>
+                                            <div class="txt-servicio">
+                                                <p class="tituloItem-servicio">Super Giros</p>
+                                                <p class="textoItem-servicio">¡Gane SuperGIROS, una alianza por Colombia! Ahora los clientes residentes en la sucursal del cielo podrán enviar o recibir sus giros locales y nacionales ¡fácil y rápido!</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 serviciosItem">
+                                        <a class="bk-transparent" href="#/betplay">
+                                            <div class="img-servicio">
+                                                <img class="imagenMarcaMenu"src="./assets/home/iconos-header/logoBet.png" alt="BetPlay">
+                                            </div>
+                                            <div class="txt-servicio">
+                                                <p class="tituloItem-servicio">BetPlay</p>
+                                                <p class="textoItem-servicio">Vive la experiencia BetPlay en Gane ¡Recarga, apuesta y retira sin complicaciones!</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                            </div>
+                            <div class="row menu-servicios">
+                                    <div class="col-md-4 serviciosItem">
+                                        <a class="bk-transparent" href="#/pagos">
+                                            <div class="img-servicio">
+                                                <img class="imagenMarcaMenu"src="./assets/home/iconos-header/002-borrowPNG.png" alt="Pagos">
+                                            </div>
+                                            <div class="txt-servicio">
+                                                <p class="tituloItem-servicio">Pagos</p>
+                                                <p class="textoItem-servicio">Continuamos facilitando la vida a los caleños con una amplia oferta de convenios para pago de facturas en los Puntos de Servicios Gane.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 serviciosItem">
+                                        <a class="bk-transparent" href="#/soat">
+                                            <div class="img-servicio">
+                                                <img class="imagenMarcaMenu"src="./assets/home/iconos-header/SOAT_ICONPNG.png" alt="Soat">
+                                            </div>
+                                            <div class="txt-servicio">
+                                                <p class="tituloItem-servicio">SOAT</p>
+                                                <p class="textoItem-servicio">¡Que en las vías no te cojan desprevenido! En Gane puedes adquirir la Póliza electrónica de Seguro Obligatorio de Accidentes de Tránsito para el vehículo.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 serviciosItem">
+                                        <a class="bk-transparent" href="#/recargas">
+                                            <div class="img-servicio">
+                                                <img class="imagenMarcaMenu"src="./assets/home/iconos-header/001-chatPNG.png" alt="Recargas">
+                                            </div>
+                                            <div class="txt-servicio">
+                                                <p class="tituloItem-servicio">Recargas</p>
+                                                <p class="textoItem-servicio">Gane le apuesta a la comunicación y el entretenimiento con la más amplia oferta de recargas a operadores, conócelos aquí.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                            </div>
+                    </div> <!-- dropdown-mega-menu.// -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-main" [routerLink]="['campanas']">Campañas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-main" href="#/contactenos">Contáctenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-main" href="#/puntos-venta">Puntos de venta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-main" href="#/blog">Blog</a>
+                    </li>
+                </ul>
                 <ul class="navbar-nav navbar-right main-menu-list ml-auto">
                     <li class="nav-item">
                         <a class="nav-link nav-link-main" href="#/juegos">Juegos</a>
@@ -129,7 +226,7 @@
                         <a class="nav-link nav-link-main" href="#/pagos">Pagos</a>
                     </li>
                     <li class="nav-item btn-virtual">
-                        <a class="nav-link btn-yellow-wborder" href="#">Gane Virtual</a>
+                        <a class="nav-link btn-yellow-wborder pr-3 pl-3" href="#">Gane Virtual</a>
                     </li>
                 </ul>
             </div>
