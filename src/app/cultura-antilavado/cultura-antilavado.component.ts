@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { PagesService } from './../services/pages.service';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-cultura-antilavado',
@@ -17,7 +18,7 @@ export class CulturaAntilavadoComponent implements OnInit {
 
   loader = true;
 
-  constructor(private httpClient:HttpClient, private _culturaantilavado:PagesService, public _sanitizer: DomSanitizer) { }
+  constructor(private _router:Router, private httpClient:HttpClient, private _culturaantilavado:PagesService, public _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     var video, results;
@@ -33,19 +34,15 @@ export class CulturaAntilavadoComponent implements OnInit {
         }
         else {
         results = element.link_video.match('[\\?&]v=([^&#]*)');
-        //video   = element.link_video;
         video = (results === null || results === '') ? element.link_video : results[0];
         this.urlSafe = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);
-        console.log(video);
         }
       });
     });
-
-    
-}
-public selectPill(index:number) {
-  this.activePillIndex = index;
-  // do some other stuff if necessary...
- }
-
+  }
+  public selectPill(index:number) {
+    this.loader = false;
+    this._router.navigateByUrl('/cultura-antilavado', {skipLocationChange: true})
+    this.activePillIndex = index;
+  }
 }
