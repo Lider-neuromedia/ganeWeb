@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { PagesService } from './../services/pages.service';
 import { Router } from '@angular/router'; 
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cultura-antilavado',
@@ -12,12 +13,11 @@ import { Router } from '@angular/router';
 export class CulturaAntilavadoComponent implements OnInit {
   titulo_data:any = {};
   item_menu_data: any;
-  public activePillIndex:number = 0;
   urlSafe: SafeResourceUrl;
   arreglo_video : any[] = [];
-
   loader = true;
-
+  subscription: Subscription;
+  
   constructor(private _router:Router, private httpClient:HttpClient, private _culturaantilavado:PagesService, public _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
@@ -40,9 +40,9 @@ export class CulturaAntilavadoComponent implements OnInit {
       });
     });
   }
-  public selectPill(index:number) {
-    this.loader = false;
-    this._router.navigateByUrl('/cultura-antilavado', {skipLocationChange: true})
-    this.activePillIndex = index;
+
+  selectPill() {
+    this._router.navigateByUrl('/cultura-antilavado', {skipLocationChange: true}).then(()=>
+    this._router.navigate(['/cultura-antilavado']))
   }
 }

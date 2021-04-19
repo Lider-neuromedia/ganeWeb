@@ -12,8 +12,8 @@
             <div class="col-xs-12 col-md-5">
                 <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{ 'height':'35px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader" class="nav flex-column nav-pills wow animate__animated animate__fadeInLeft" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <ng-container *ngFor="let item of item_menu_data; let index = index">
-                        <a class="nav-link" [attr.id]="'v-tab-'+index" [ngClass]="{'active': index === activePillIndex}" data-toggle="pill" [attr.href]="'#'+'v-'+index" role="tab" aria-selected="true" (click)="selectPill(index)">{{ item.titulo_item }}</a>
+                    <ng-container *ngFor="let item of item_menu_data; let i = index; first as isFirst">
+                        <a class="nav-link" [ngClass]="(isFirst) ? 'active' : ''"  id="tab{{i}}-tab" data-toggle="tab" href="#tab{{i}}" role="tab" aria-controls="tab{{i}}" (click)="selectPill()">{{ item.titulo_item }}</a>
                     </ng-container>
                 </div>
             </div>
@@ -21,8 +21,8 @@
                 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'230px' }"></ngx-skeleton-loader>
                 <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader" class="tab-content" id="v-tabContent">
-                    <ng-container *ngFor="let data of item_menu_data; let index = index">
-                        <div class="tab-pane fade" [ngClass]="{'show active': index === activePillIndex}" [attr.id]="'#'+'v-'+index" role="tabpanel">
+                    <ng-container *ngFor="let data of item_menu_data; let i = index; first as isFirst ">
+                        <div class="tab-pane fade" [ngClass]="(isFirst) ? 'active show' : ''" id="tab{{i}}" role="tabpanel" aria-labelledby="tab{{i}}-tab">
                             <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen1" src="{{ data.imagen1 }}" alt="Antilavado 1">
                             <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen2" src="{{ data.imagen2 }}" alt="Antilavado 2">
                             <img class="img-fluid mb-5 wow animate__animated animate__fadeInRight" *ngIf="data.imagen3" src="{{ data.imagen3 }}" alt="Antilavado 3">
