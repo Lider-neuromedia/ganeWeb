@@ -28,16 +28,16 @@ export class CulturaAntilavadoComponent implements OnInit {
       this.titulo_data = res.acf.titulo_principal;
       this.item_menu_data = res.acf.item_menu;
     
-      this.item_menu_data.forEach(element => {
-        if(element.link_video === null || element.link_video === ''){
-          return '';
-        }
-        else {
-        results = element.link_video.match('[\\?&]v=([^&#]*)');
-        video = (results === null || results === '') ? element.link_video : results[0];
-        this.urlSafe = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);
-        }
-      });
+      // this.item_menu_data.forEach(element => {
+      //   if(element.link_video === null || element.link_video === ''){
+      //     return '';
+      //   }
+      //   else {
+      //   results = element.link_video.match('[\\?&]v=([^&#]*)');
+      //   video = (results === null || results === '') ? element.link_video : results[0];
+      //   this.urlSafe = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+video);
+      //   }
+      // });
     });
   }
 
