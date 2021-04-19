@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, Subject, throwError } from 'rxjs';
 import { GLOBAL } from './global';
 import { map } from 'rxjs/operators';
 
@@ -10,11 +10,19 @@ import { map } from 'rxjs/operators';
 export class PagesService {
 
   public url: string;
+  
   urlFormulario = 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/';
+
+  private refresh: Subject<void>;
 
   constructor(private _http: HttpClient) {
     this.url = GLOBAL.url;
   }
+
+  get refresh$(){
+    return this.refresh;
+  }
+
   getQuienesSomos(): Observable<any>{
     return this._http.get(`${this.url}/pages/352/`);
   }
