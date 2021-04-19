@@ -832,7 +832,6 @@ a:hover {
 
 .section4 .background-ruleta{
     background:url(./assets/home/SECCION-4/bg_numero.jpg);
-    background-size: cover;
     background-repeat: no-repeat;
     border-radius: 12px;
 }
@@ -1499,9 +1498,7 @@ tr td:hover{
         top: 48%!important;
         width: 70%;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 10vh;
+        height: 12vh;
     }
 }
 
@@ -1510,17 +1507,13 @@ tr td:hover{
         top: 58%!important;
         width: 70%;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30vh;
+        height: 18vh;
     }
     .single-page .slotwrapper {
         top: 58%!important;
         width: 70%;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30vh;
+        height: 16vh;
     }
     .single-page .slotwrapper ul {
         width: 100%;
@@ -1931,12 +1924,25 @@ line-height: 30px;
 
 @media all and (min-width: 768px) {
     .section4 .slotwrapper {
-        top: 48%!important;
+        top: 41%!important;
         width: 70%;
-        height: 30vh;
+        height: 13vh;
         display: flex;
-        justify-content: center;
-        align-items: center;
+    }
+    .section4 .slotwrapper ul{
+        font-size:45px;
+    }
+    .section4 .background-ruleta{
+        background-size: cover;
+    }
+    .single-page .slotwrapper {
+        top: 32%!important;
+        width: 55%;
+        height: 10vh;
+        display: flex;
+    }
+    .single-page .slotwrapper ul{
+        font-size:30px;
     }
 }
 
@@ -1958,8 +1964,24 @@ line-height: 30px;
     .section4 .slotwrapper {
         top: 48%!important;
         width: 70%;
-        height: 30vh;
+        height: 18vh;
         display: flex;
+    }
+    .section4 .slotwrapper ul{
+        font-size:65px;
+    }
+    .section4 .background-ruleta{
+        background-size: cover;
+    }
+
+    .single-page .slotwrapper {
+        top: 45%!important;
+        width: 65%;
+        height: 11vh;
+        display: flex;
+    }
+    .single-page .slotwrapper ul{
+        font-size:35px;
     }
 }
 
@@ -1971,10 +1993,18 @@ line-height: 30px;
     .section4 .slotwrapper {
         top: 51%!important;
         width: 70%;
-        justify-content: center;
-        align-items: center;
-        height: 30vh;
-        display: block;
+        height: 15vh;
+        display: flex;
+    }
+    .single-page .slotwrapper {
+        top: 48%!important;
+        width: 70%;
+        height: 11vh;
+        display: flex;
+    }
+
+    .section4 .background-ruleta{
+        background-size: contain;
     }
 }
 
