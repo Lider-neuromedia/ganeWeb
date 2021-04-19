@@ -1,6 +1,6 @@
-@media screen and (min-width: 768px) {
-    .slotwrapper{
-        top: 52%!important;
+@media screen and (min-width: 1200px) {
+    .single-page .slotwrapper{
+        top: 50%!important;
         width: 70%;
     }
 }

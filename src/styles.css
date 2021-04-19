@@ -832,8 +832,9 @@ a:hover {
 
 .section4 .background-ruleta{
     background:url(./assets/home/SECCION-4/bg_numero.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 12px;
 }
 
 .single-page .background-ruleta{
@@ -1407,9 +1408,6 @@ tr td:hover{
     font-weight:500;
 }
 
-@media screen and (min-width: 1200px){
-}
-
 /*********** Página de Contáctenos ***********/
 .contactenos input [type=submit]{
     color: #FFFFFF;
@@ -1528,6 +1526,7 @@ tr td:hover{
         width: 100%;
         font-size: 55px;
     }
+    
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -1930,6 +1929,17 @@ line-height: 30px;
     }
 }
 
+@media all and (min-width: 768px) {
+    .section4 .slotwrapper {
+        top: 48%!important;
+        width: 70%;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 @media all and (min-width: 992px) {
     .navbar .nav-item .dropdown-menu{  
         display:block; 
@@ -1945,14 +1955,31 @@ line-height: 30px;
         visibility:visible; 
         top:100%; 
     }
+    .section4 .slotwrapper {
+        top: 48%!important;
+        width: 70%;
+        height: 30vh;
+        display: flex;
+    }
 }
+
+@media screen and (min-width: 1200px){
+    .single-page .slotwrapper ul {
+        width: 25%;
+        font-size: 50px;
+    }
+    .section4 .slotwrapper {
+        top: 51%!important;
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+        display: block;
+    }
+}
+
 
 /****Página Comunicado Interna****/
-.single-page .slotwrapper ul {
-    width: 61px;
-    font-size: 37px;
-}
-
 .single-page .ruleta{
     position: absolute;
     left: 50%;
