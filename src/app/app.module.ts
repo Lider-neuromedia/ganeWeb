@@ -63,6 +63,7 @@ import { RestauranteComponent } from './restaurante/restaurante.component';
 import { CampanaComponent } from './campana/campana.component';
 import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component';
 import { Error404Component } from './error404/error404.component';
+import { RuletaComponent } from './ruleta/ruleta.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { Error404Component } from './error404/error404.component';
     RestauranteComponent,
     CampanaComponent,
     CalculatugiroComponent,
-    Error404Component
+    Error404Component,
+    RuletaComponent
   ],
   imports: [
     BrowserModule,

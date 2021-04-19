@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
     $('#btn-example1').click(function() {
         $('#example1 ul').playSpin({
             time: 1000,
@@ -13,7 +13,7 @@ $(document).ready(function() {
         });
     });
 });
-
+*/
 /*
 $(document).ready(function() {
     function enviarDatos(){

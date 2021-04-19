@@ -1,4 +1,4 @@
-<div class="comunicado-interna_pagina pt-5 pb-5 bk-gray">
+<div class="single-page pt-5 pb-5 bk-gray">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-8">
@@ -20,78 +20,8 @@
                 <p class="size19 letter-spacing1-4 line-height23 opensans text-gray-dark" [innerHTML]="comunicado_data.content.rendered"></p>
             </div>
             <div class="col-xs-12 col-md-4">
-                <div class="p-4" style="background:url(./assets/home/SECCION-4/bg_numero.jpg);background-size: 100% 445px;background-repeat: no-repeat;">
-                    <p class="text-center">
-                        <img class="img-fluid" src="./assets/home/SECCION-4/concepto_numeroPNG.png" alt="Card image cap">
-                    </p>
-                    <div class="caption-slotmachine text-center">
-                        <img class="img-fluid" src="./assets/home/SECCION-4/gira_numerosPNG.png" alt="Card image cap" style="position:relative">
-                        <div class="slotwrapper ruleta" id="example1">
-                            <ul data-playslot="0" style="top: -800px;">
-                                <li>0</li>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                                <li>6</li>
-                                <li>7</li>
-                                <li>8</li>
-                                <li>9</li>
-                            </ul>
-                            <ul data-playslot="0" style="top: -400px;">
-                                <li>0</li>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                                <li>6</li>
-                                <li>7</li>
-                                <li>8</li>
-                                <li>9</li>
-                            </ul>
-                            <ul data-playslot="0" style="top: -600px;">
-                                <li>0</li>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                                <li>6</li>
-                                <li>7</li>
-                                <li>8</li>
-                                <li>9</li>
-                            </ul>
-                            <ul data-playslot="0" style="top: -200px;">
-                                <li>0</li>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                                <li>6</li>
-                                <li>7</li>
-                                <li>8</li>
-                                <li>9</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="text-center text-white font-weight-bold">Presiona el botón rojo para jugar</p>
-                    <!-- <audio id="misc">
-                        <source src="../assets/sonidos/misc333.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <audio id="ding">
-                        <source src="../assets/sonidos/correct-ding.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio> -->
-                    <!-- <button type="button" class="btn btn-success btn-lg" id="btn-example1">Start Spin!</button> -->
-                    <p class="text-center">
-                        <img id="btn-example1" class="img-fluid btn" src="./assets/home/SECCION-4/btn_giraPNG.png" alt="Card image cap" style="position:relative">
-                    </p>
-                </div>
-                <div class="p-4" style="background:url(./assets/home/ganevirtual.png);position:relative;background-size: cover;background-repeat: no-repeat;height: 340px;">
+                <app-ruleta></app-ruleta>
+                <div class="p-4 mt-4" style="background:url(./assets/home/ganevirtual.png);position:relative;background-size: cover;background-repeat: no-repeat;height: 340px;">
                     <a class="btn btn-yellow-txt-white size18 position-absolute bottom-30 right-0 left-0" href="#">Ingresar ahora</a>
                 </div>
             </div>

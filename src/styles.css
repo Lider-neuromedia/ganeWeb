@@ -696,6 +696,10 @@ a:hover {
     transform: scale(1.05);
     box-shadow: 1px 1px 5px 1px rgba(125, 125, 125, .6)
 }
+
+#calcula .formulario-giro {
+    box-shadow: none;
+}
 /*SECTION3*/
 .bk-gane-virtual{
     background-repeat: no-repeat;
@@ -830,6 +834,17 @@ a:hover {
     background:url(./assets/home/SECCION-4/bg_numero.jpg);
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.single-page .background-ruleta{
+    background:url(https://pruebasneuro.co/N-1057backgane/wp-content/uploads/2021/04/bg_numero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.single-page .img-num-suerte{
+    width:100%!important;
 }
 
 .calcular-apuesta{
@@ -1481,9 +1496,39 @@ tr td:hover{
 	}
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 575px) {
+    .slotwrapper {
+        top: 48%!important;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+    }
 }
 
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .section4 .slotwrapper {
+        top: 58%!important;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+    }
+    .single-page .slotwrapper {
+        top: 58%!important;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+    }
+    .single-page .slotwrapper ul {
+        width: 100%;
+        font-size: 55px;
+    }
+}
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
@@ -1550,7 +1595,7 @@ tr td:hover{
     }
 
     .slotwrapper ul{
-        font-size: 70px;
+        font-size: 45px;
     }
     .btn-yellow-txt-white{
         font-size: 20px;
@@ -1597,9 +1642,9 @@ tr td:hover{
     .slotwrapper ul {
         width: 25%;
     }
-    .slotwrapper {
-        top: 50%!important;
-        width: 70%;
+
+    .section4 .img-num-suerte{
+        width:100%!important;
     }
 }
 
@@ -1903,12 +1948,12 @@ line-height: 30px;
 }
 
 /****Página Comunicado Interna****/
-.comunicado-interna_pagina .slotwrapper ul {
+.single-page .slotwrapper ul {
     width: 61px;
     font-size: 37px;
 }
 
-.comunicado-interna_pagina .ruleta{
+.single-page .ruleta{
     position: absolute;
     left: 50%;
     top: 30%;
