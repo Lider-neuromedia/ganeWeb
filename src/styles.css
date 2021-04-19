@@ -161,6 +161,9 @@ a.whatsapp-buble {
 .w-40{
     width: 40%;
 }
+.w-200px{
+    width:200px;
+}
 
 p{
     color: #0A0A0A;
@@ -693,6 +696,10 @@ a:hover {
     transform: scale(1.05);
     box-shadow: 1px 1px 5px 1px rgba(125, 125, 125, .6)
 }
+
+#calcula .formulario-giro {
+    box-shadow: none;
+}
 /*SECTION3*/
 .bk-gane-virtual{
     background-repeat: no-repeat;
@@ -829,6 +836,17 @@ a:hover {
     background-repeat: no-repeat;
 }
 
+.single-page .background-ruleta{
+    background:url(https://pruebasneuro.co/N-1057backgane/wp-content/uploads/2021/04/bg_numero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.single-page .img-num-suerte{
+    width:100%!important;
+}
+
 .calcular-apuesta{
     display: block;
     width: 100%;
@@ -918,10 +936,6 @@ a:hover {
     box-shadow: 1px 4px 5px 2px rgba(0,0,0,.2);
 }
 
-.navbar.bg-blue-main .navbar-nav .nav-item{
-    
-}
-
 .navbar.bg-blue-main .navbar-nav .nav-item:active{
     background-color:#162751 !important;
     border-bottom: 2px solid #eab73b;
@@ -949,10 +963,6 @@ a:hover {
     background-color: #eab73b;
     padding-top: 19px;
     padding-bottom: 21px;
-}
-
-.nav-link.btn-yellow-wborder:hover{
-    
 }
 
 /*****Página de Giros******/
@@ -1117,6 +1127,44 @@ tr td:hover{
 
 /**********************************/
 
+/******** Página Soat **********/
+.formulario-soat{
+    border-radius: 2px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.32);
+    padding: 25px;  
+}
+
+.formulario-soat label.vencimiento::before{
+    content: url(./assets/soat_page/fecha.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.celular::before{
+    content: url(./assets/soat_page/celular.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.email::before{
+    content: url(./assets/soat_page/correo.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.placa::before{
+    content: url(./assets/soat_page/placa.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.cedula::before{
+    content: url(./assets/soat_page/cedula.png);
+    padding-right:10px;
+}
+
+.formulario-soat label.nombre::before{
+    content: url(./assets/soat_page/nombres.png);
+    padding-right:10px;
+}
+
+/*******************************/
 /********Página Betplay********/
 .contact-betplay{
     background-image: url(./assets/betplay_page/contacto.png);
@@ -1360,10 +1408,6 @@ tr td:hover{
 }
 
 @media screen and (min-width: 1200px){
-    .caption {
-        /*height: 294px;
-        display: grid;*/
-    }
 }
 
 /*********** Página de Contáctenos ***********/
@@ -1452,12 +1496,39 @@ tr td:hover{
 	}
 }
 
-@media screen and (min-width: 992px) {
-    .tarjetaPublicacion .caption {
-        /* min-height: 300px; */
-        }
+@media screen and (max-width: 575px) {
+    .slotwrapper {
+        top: 48%!important;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+    }
 }
 
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .section4 .slotwrapper {
+        top: 58%!important;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+    }
+    .single-page .slotwrapper {
+        top: 58%!important;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+    }
+    .single-page .slotwrapper ul {
+        width: 100%;
+        font-size: 55px;
+    }
+}
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
@@ -1524,7 +1595,7 @@ tr td:hover{
     }
 
     .slotwrapper ul{
-        font-size: 70px;
+        font-size: 45px;
     }
     .btn-yellow-txt-white{
         font-size: 20px;
@@ -1571,9 +1642,9 @@ tr td:hover{
     .slotwrapper ul {
         width: 25%;
     }
-    .slotwrapper {
-        top: 50%!important;
-        width: 70%;
+
+    .section4 .img-num-suerte{
+        width:100%!important;
     }
 }
 
@@ -1877,12 +1948,12 @@ line-height: 30px;
 }
 
 /****Página Comunicado Interna****/
-.comunicado-interna_pagina .slotwrapper ul {
+.single-page .slotwrapper ul {
     width: 61px;
     font-size: 37px;
 }
 
-.comunicado-interna_pagina .ruleta{
+.single-page .ruleta{
     position: absolute;
     left: 50%;
     top: 30%;
