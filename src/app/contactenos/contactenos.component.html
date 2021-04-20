@@ -9,25 +9,25 @@
                         <div class="form-row pt-2 pb-2">
                             <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="nombre">Nombre completo</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" required>
-                            <small *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                            <small style="color:#c30000;" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
                                 Nombre es un campo requerido.
                             </small>
                         </div>
                         <div class="form-row pt-2 pb-2">
                             <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="email">Correo Electrónico</label>
                             <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="user.email" email="true" required>
-                            <small *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <small style="color:#c30000;" *ngIf="email.invalid && (email.dirty || email.touched)">
                                 Ingrese un correo electrónico válido.
                             </small>
                         </div>
                         <div class="form-row pt-2 pb-2">
                             <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="telefono">Número de Teléfono</label>
                             <input type="tel" class="form-control" id="telefono" name="telefono" #telefono="ngModel" [(ngModel)]="user.telefono" pattern="^\d+$" required>
-                            <small *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                            <small style="color:#c30000;" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
                                 Ingrese un teléfono válido.
                             </small>
                         </div>
-                        <div class="form-row form-group pt-2 pb-2">
+                        <div class="form-row form-group pt-2 pb-2 mb-0">
                             <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="tipoConsulta">Tipo de consulta</label>
                             <select class="form-control tipo-consulta" id="selectConsulta" name="selectConsulta" #consulta="ngModel" [(ngModel)]="user.consulta" required>
                               <option value="" disabled>Elija una opción</option>
@@ -35,15 +35,22 @@
                               <option>PQRS</option>
                             </select>
                           </div>
-                          <small *ngIf="consulta.invalid && (consulta.dirty || consulta.touched)">
+                          <small style="color:#c30000;" *ngIf="consulta.invalid && (consulta.dirty || consulta.touched)">
                             El tipo de consulta es un campo requerido.
                           </small>
                         <div class="form-row pt-2 pb-2">
                             <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="asunto">Mensaje</label>
                             <textarea class="form-control" id="asunto" name="asunto" placeholder="Escribe aquí tu mensaje" #asunto="ngModel" [(ngModel)]="user.asunto" required></textarea>
-                            <small *ngIf="asunto.invalid && (asunto.dirty || asunto.touched)">
+                            <small style="color:#c30000;" *ngIf="asunto.invalid && (asunto.dirty || asunto.touched)">
                                 El mensaje es un campo requerido.
                               </small>
+                        </div>
+                        <div class="form-check text-center">
+                            <input type="checkbox" name="acepto" #acepto="ngModel" [(ngModel)]="user.acepto" class="form-check-input" id="acepto" required>
+                            <label class="text-gray-dark font-weight-500 size14 form-check-label" for="acepto">Conozco y acepto la política de datos de <STRONG><a class="text-black" href="/assets/tratamiento-datos/M-DM-05-Politicas-de-Tratamiento-de-Datos-Personales-v5.pdf" target="_blank">REDCOLSA.</a></STRONG></label>
+                            <small style="color:#c30000;" *ngIf="acepto.invalid && (acepto.dirty || acepto.touched)">
+                                Debe aceptar las condiciones.
+                            </small>
                         </div>
                         <input type="submit" class="btn btn-primary btn-blue mt-4 w-40 mx-auto d-block" name="enviar" value="Enviar" [disabled]="formularioContacto.invalid">
                       </form>

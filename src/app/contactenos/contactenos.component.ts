@@ -20,7 +20,8 @@ export class ContactenosComponent implements OnInit {
       email: '',
       telefono: '',
       consulta: '',
-      asunto: ''
+      asunto: '',
+      acepto: ''
     };
   }
 

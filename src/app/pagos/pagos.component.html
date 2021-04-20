@@ -40,7 +40,14 @@
         </div>
         <div class="row mb-5 mt-5 h-100 wow animate__animated animate__fadeInUp">
             <ng-container *ngFor="let logo of convenios_logos_data">
-                <div class="col-md-2 my-auto" ><img class="img-fluid d-block mx-auto p-3 scale" src="{{ logo.logo_convenio }}" alt="Logo Convenio"></div>
+                <div class="col-md-2 my-auto">
+                    <a *ngIf="logo.link_convenio.length > 0; else logos" href="{{ logo.link_convenio }}" target="_blank">
+                        <img class="img-fluid d-block mx-auto p-3 scale" src="{{ logo.logo_convenio }}" alt="Logo Convenio">
+                    </a>
+                    <ng-template #logos>
+                        <img class="img-fluid d-block mx-auto p-3 scale" src="{{ logo.logo_convenio }}" alt="Logo Convenio">
+                    </ng-template>
+                </div>
             </ng-container>
         </div>
     </div>

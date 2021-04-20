@@ -53,6 +53,12 @@ export class PagesService {
   getPagos(): Observable<any>{
     return this._http.get(`${this.url}/pages/235/`);
   }
+  getBlog(): Observable<any>{
+    return this._http.get(`${this.url}/pages/1294/`);
+  }
+  getCampana(): Observable<any>{
+    return this._http.get(`${this.url}/pages/1299/`);
+  }
   getQuienesSomosFundacion(): Observable<any>{
     return this._http.get(`${this.url}/pages/660/`);
   }
