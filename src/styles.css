@@ -1992,7 +1992,7 @@ line-height: 30px;
     .section4 .slotwrapper {
         top: 48%!important;
         width: 70%;
-        height: 7vh;
+        height: 17vh;
         display: flex;
         align-items: flex-start;
     }
@@ -2000,7 +2000,7 @@ line-height: 30px;
     .single-page .slotwrapper {
         top: 45%!important;
         width: 65%;
-        height: 4vh;
+        height: 10vh;
         display: flex;
     }
     .single-page .slotwrapper ul{
@@ -2017,7 +2017,7 @@ line-height: 30px;
     .section4 .slotwrapper {
         top: 51%!important;
         width: 70%;
-        height: 24vh;
+        height: 17vh;
         display: flex;
     }
     .single-page .slotwrapper {
