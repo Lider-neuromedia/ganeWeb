@@ -1498,7 +1498,8 @@ tr td:hover{
         top: 48%!important;
         width: 70%;
         display: flex;
-        height: 12vh;
+        height: 10vh;
+        align-items: center;
     }
 }
 
@@ -1924,10 +1925,11 @@ line-height: 30px;
 
 @media all and (min-width: 768px) {
     .section4 .slotwrapper {
-        top: 41%!important;
+        top: 40.6%!important;
         width: 70%;
-        height: 13vh;
+        height: 6vh;
         display: flex;
+        align-items: center;
     }
     .section4 .slotwrapper ul{
         font-size:45px;
@@ -1936,10 +1938,11 @@ line-height: 30px;
         background-size: cover;
     }
     .single-page .slotwrapper {
-        top: 32%!important;
+        top: 36%!important;
         width: 55%;
-        height: 10vh;
+        height: 3vh;
         display: flex;
+        align-items: center;
     }
     .single-page .slotwrapper ul{
         font-size:30px;
@@ -1985,6 +1988,27 @@ line-height: 30px;
     }
 }
 
+@media screen and (min-width: 1024px){
+    .section4 .slotwrapper {
+        top: 48%!important;
+        width: 70%;
+        height: 7vh;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .single-page .slotwrapper {
+        top: 45%!important;
+        width: 65%;
+        height: 4vh;
+        display: flex;
+    }
+    .single-page .slotwrapper ul{
+        font-size:35px;
+        height: 90px;
+    }
+}
+
 @media screen and (min-width: 1200px){
     .single-page .slotwrapper ul {
         width: 25%;
@@ -1993,13 +2017,13 @@ line-height: 30px;
     .section4 .slotwrapper {
         top: 51%!important;
         width: 70%;
-        height: 15vh;
+        height: 24vh;
         display: flex;
     }
     .single-page .slotwrapper {
         top: 48%!important;
         width: 70%;
-        height: 11vh;
+        height: 15vh;
         display: flex;
     }
 
