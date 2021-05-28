@@ -5,6 +5,8 @@ import { NgForm, FormGroup, FormBuilder, Validators, FormControl  } from '@angul
 import { Options } from 'select2';
 import { Select2OptionData } from 'select2';
 
+declare var $:any;
+
 const iconRetinaUrl = 'assets/maps/marker-icon-2x.png';
 const iconUrl = 'assets/maps/marker-icon.png';
 const shadowUrl = 'assets/maps/marker-shadow.png';
@@ -34,7 +36,6 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
   texto:any;
   dataMapsArr:any[] = [];
   loader = true;
-  date:number =  Date.now();
 
   pnt_apertura:string;
   pnt_cierre:string;
@@ -55,6 +56,10 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
 
   onSearch(val:any){
     this.custom(val);
+    // $('#direcciones').select2({
+    //   placeholder: "Selecciona una dirección",
+    //   allowClear: false
+    // })
   }
   
   custom(val:any){
@@ -62,7 +67,6 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
     this.pnt_apertura = val.pnt_apertura;
     this.pnt_cierre = val.pnt_cierre;
     this.map.flyTo([val.pnt_geox, val.pnt_geoy], 18);
-    // this.map.flyTo(val.split(","), 18);
   }
 
 

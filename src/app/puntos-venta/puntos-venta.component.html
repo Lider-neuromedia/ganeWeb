@@ -16,7 +16,8 @@
                                 <div class="has-feedback has-search">
                                     <!-- <input class="form-control" type="text" id="buscarpunto" name="search" placeholder="Dirección. Ejemplo: calle 13 ..." formControlName="search" value=""> -->
                                     <!-- <input type="text" class="form-control" #text placeholder="Dirección. Ejemplo: calle 13 ..." [(ngModel)]="texto" (input)="search()"> -->
-                                    <select name="search" id="" class="form-control" [(ngModel)]="texto" (ngModelChange)="onSearch($event)">
+                                    <select name="search" id="direcciones" class="form-control" [(ngModel)]="texto" (ngModelChange)="onSearch($event)">
+                                        <option value="" selected>Seleccione una dirección</option>
                                         <option *ngFor="let direccion of dataMaps.respuesta" [ngValue]="direccion">{{direccion.pnt_nombre}}</option>
                                     </select>
                                     <!-- {{ texto }} -->
