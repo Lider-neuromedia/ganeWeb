@@ -36,30 +36,57 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
   texto:any;
   dataMapsArr:any[] = [];
   loader = true;
+  dataFiltro: string[] = ['Apuestas','Giros', 'Recargas', 'BetPlay', 'Pagos'];
 
   pnt_apertura:string;
   pnt_cierre:string;
+  filtro: string = "Giros";
 
   public formMaps: Array<Select2OptionData>;
   public options: Options;
   public formControl = new FormControl();
+  marker: any;
 
 
   constructor(private form: FormBuilder, private _maps:MapsService) { }
   
   ngOnInit(): void {
-    this._maps.getLocations(this.data)
-    .subscribe((res:any) => {
-        this.dataMaps = res;
+    $('#filtro').select2({
+      placeholder: 'Giros, Apuesta'
     });
+
+    $('#filtro').change(function(){
+      filtraDatos($(this).val());
+    })
+
+    const filtraDatos = (srv) => {
+      this.puntosMapa(srv);
+    }
+
+    $('#direcciones').select2({
+      placeholder: 'Seleccione una dirección'
+    });
+    
+    $('#direcciones').change(function(){
+      // console.log(JSON.parse($(this).val()));
+      custom2(JSON.parse($(this).val()));
+    })
+
+    const custom2 = (val:any) => {
+      // console.log(val);
+      this.onSearch(val);
+    }
+    // this._maps.getLocations(this.data)
+    // .subscribe((res:any) => {
+    //     this.dataMaps = res;
+    // });
+    
+
   }
 
   onSearch(val:any){
+    // console.log(val);
     this.custom(val);
-    // $('#direcciones').select2({
-    //   placeholder: "Selecciona una dirección",
-    //   allowClear: false
-    // })
   }
   
   custom(val:any){
@@ -71,6 +98,10 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit(): void{
+    this.crearMapa();
+  }
+
+  crearMapa(){
     this.map = L.map('map', {
       center: [ 3.4211573, -76.5060715 ],
       zoom: 13
@@ -82,21 +113,35 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
     });
 
     tiles.addTo(this.map);
+  }
 
+  puntosMapa(srv: string){
+    
     this.data = {
       "puntoGeox":11,
       "puntoGeoy":19,
-      "srv_nombre":"Giros",
+      "srv_nombre":srv,
       "monto": 100000
     }
     this._maps.getLocations(this.data)
       .subscribe((res:any) => {
-        this.dataMaps = res;
-          this.dataMaps = res;
-          for(let direccion of res.respuesta){
-            const marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy]);
-            marker.addTo(this.map);
+        if(this.dataMaps.respuesta){
+          for (const direccion of this.dataMaps.respuesta) {
+            this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy]).addTo(this.map);
+            if (this.map.hasLayer(this.marker)) {
+              console.log(this.map.hasLayer(this.marker));
+              this.map.remove();
+              this.crearMapa();
+              
+              }
           }
+        }
+        this.dataMaps = res;
+          this.dataMaps = res; 
+          for(let direccion of res.respuesta){
+            this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy]).addTo(this.map);
+          }
+          console.log(this.dataMaps);
       }); 
   }
 }

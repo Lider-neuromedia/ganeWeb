@@ -11,6 +11,9 @@
 a:hover{
     cursor: pointer;
 }
+.select2-selection{
+    height: 2rem !important;
+}
 .fb{
     background-position: center;
 	padding: 20px;
