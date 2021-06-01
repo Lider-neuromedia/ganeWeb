@@ -67,6 +67,7 @@ import { Error404Component } from './error404/error404.component';
 import { RuletaComponent } from './ruleta/ruleta.component';
 import { InterceptorService } from './interceptors/interceptor.service';
 import { NgSelect2Module } from 'ng-select2';
+import { ResultadosComponent } from './resultados/resultados.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +117,8 @@ import { NgSelect2Module } from 'ng-select2';
     CampanaComponent,
     CalculatugiroComponent,
     Error404Component,
-    RuletaComponent
+    RuletaComponent,
+    ResultadosComponent
   ],
   imports: [
     BrowserModule,
