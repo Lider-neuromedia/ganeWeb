@@ -12,8 +12,19 @@
                 <div class="col-md-3 search-field">
                     <div class="bk-white shadow-search">
                         <form autocomplete="off" style="padding: 1rem;">
+                            <div class="text-center etiqueta">
+                                Por favor indica el monto del giro que desea realizar
+                            </div>
+                            <div class="text-center tipo">
+                                Por favor indica el servicio que desea realizar
+                            </div>
                             <div class="campo-busqueda">
-                                <div class="has-feedback has-search mb-3">
+                                <div class="has-feedback has-search mt-3 mb-3">
+                                    <input type="number" class="form-control monto" name="monto" [(ngModel)]="monto" placeholder="Monto" (keyup)="llenarFiltro()">
+                                </div>
+                            </div>
+                            <div class="campo-busqueda">
+                                <div class="has-feedback has-search mt-5 mb-3">
                                     <select name="search" id="filtro" class="form-control" [(ngModel)]="filtro">
                                         <option *ngFor="let srv of dataFiltro; let i = index" [value]="srv">{{srv}}</option>
                                     </select>
@@ -21,8 +32,6 @@
                             </div>
                             <div class="campo-busqueda">
                                 <div class="has-feedback has-search">
-                                    <!-- <input class="form-control" type="text" id="buscarpunto" name="search" placeholder="Dirección. Ejemplo: calle 13 ..." formControlName="search" value=""> -->
-                                    <!-- <input type="text" class="form-control" #text placeholder="Dirección. Ejemplo: calle 13 ..." [(ngModel)]="texto" (input)="search()"> -->
                                     <select name="search" id="direcciones" class="form-control" [(ngModel)]="texto">
                                         <option *ngFor="let direccion of dataMaps.respuesta; let i = index" [value]="direccion | json">{{direccion.pnt_nombre}}</option>
                                     </select>

@@ -36,11 +36,12 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
   texto:any;
   dataMapsArr:any[] = [];
   loader = true;
-  dataFiltro: string[] = ['Apuestas','Giros', 'Recargas', 'BetPlay', 'Pagos'];
-
+  dataFiltro: string[] = [];
+  monto: number;
   pnt_apertura:string;
-  pnt_cierre:string;
+  pnt_cierre:string;  
   filtro: string = "Giros";
+
 
   public formMaps: Array<Select2OptionData>;
   public options: Options;
@@ -76,12 +77,10 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
       // console.log(val);
       this.onSearch(val);
     }
-    // this._maps.getLocations(this.data)
-    // .subscribe((res:any) => {
-    //     this.dataMaps = res;
-    // });
-    
+  }
 
+  llenarFiltro(){
+    this.dataFiltro = ['Apuestas','Giros', 'Recargas', 'BetPlay', 'Pagos'];
   }
 
   onSearch(val:any){
@@ -121,7 +120,7 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
       "puntoGeox":11,
       "puntoGeoy":19,
       "srv_nombre":srv,
-      "monto": 100000
+      "monto": this.monto
     }
     this._maps.getLocations(this.data)
       .subscribe((res:any) => {

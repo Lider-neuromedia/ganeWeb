@@ -11,3 +11,62 @@
 #map {
     height: 100%;
 }
+.etiqueta{
+    font-size: 11px;
+    font-weight: bold;
+    color: #192D6D;
+    background-color: lightgray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20.4rem;
+    padding: 4px;
+}
+.tipo{
+    font-size: 11px;
+    font-weight: bold;
+    color: #192D6D;
+    background-color: lightgray;
+    position: absolute;
+    top: 5.2rem;
+    left: 0;
+    width: 20.4rem;
+    padding: 4px;
+}
+.monto{
+    position: relative;
+    top: 2px;
+}
+
+@media screen and (max-width: 1920px){
+    .etiqueta{
+        width: 29rem;
+    }
+    .tipo{
+        width: 29rem;
+    }
+}
+@media screen and (max-width: 1366px){
+    .etiqueta{
+        width: 20.4rem;
+    }
+    .tipo{
+        width: 20.4rem;
+    }
+}
+@media screen and (max-width: 1280px){
+    .etiqueta{
+        width: 19rem;
+    }
+    .tipo{
+        width: 19rem;
+    }
+}
+@media screen and (max-width: 1024px){
+    .etiqueta{
+        width: 15rem;
+    }
+    .tipo{
+        width: 15rem;
+    }
+}

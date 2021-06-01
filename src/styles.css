@@ -13,6 +13,7 @@ a:hover{
 }
 .select2-selection{
     height: 2rem !important;
+    border: 1px solid lightgray !important;
 }
 .fb{
     background-position: center;
