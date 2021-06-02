@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { GLOBAL } from './global';
 import { environment } from '../../environments/environment';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import * as L from 'leaflet';
 
 @Injectable({
@@ -14,6 +14,7 @@ export class MapsService {
   public SuperGiros_getLocations: any;
   dataPuntos:any = {};
   capitals: string = '/assets/data/usa-capitals.geojson';
+  cargando: boolean;
 
   constructor(private _http: HttpClient) {
     this.SuperGiros_getLocations = GLOBAL.SuperGiros_getLocations;
@@ -32,7 +33,11 @@ export class MapsService {
   //   );
   // }
   getLocations(data): Observable<any>{
-    return this._http.post(`${this.SuperGiros_getLocations}`, data);
+    if(this.cargando){
+      return of([]);
+    }
+    this.cargando = true;
+    return this._http.post(`${this.SuperGiros_getLocations}`, data).pipe(tap(() => this.cargando = false));
   }
 
   // private saveToken(accessToken: string){

@@ -8,6 +8,16 @@
 	right: 0%;
     display: block;
 }
+
+.content-resultados{
+    position: fixed;
+    z-index: 30;
+    top: 35%;
+    bottom: 50%;
+	/* right: 0%; */
+    display: block;
+}
+
 a:hover{
     cursor: pointer;
 }
@@ -84,6 +94,20 @@ a:hover{
     z-index: 999;
     width: 30px;
     height: 30px;
+}
+
+.resultados{
+    bottom: 50%;
+    right: .5%;
+    display: block;
+    background-color: #fff;
+    color: #fff;
+    background-repeat: no-repeat;
+    line-height: 16px;
+    z-index: 999;
+    width: 3rem;
+    height: 12rem;
+    background: transparent;
 }
 
 a.whatsapp-buble {
@@ -2069,7 +2093,7 @@ line-height: 30px;
 .search-field{
     position: absolute;
     top: 12%;
-    left: 10px;
+    left: 4rem;
     padding-left: 0;
 }
 #buscarpunto .select2 {

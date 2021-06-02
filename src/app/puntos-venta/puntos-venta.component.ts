@@ -4,6 +4,7 @@ import { MapsService } from './../services/maps.service';
 import { NgForm, FormGroup, FormBuilder, Validators, FormControl  } from '@angular/forms';
 import { Options } from 'select2';
 import { Select2OptionData } from 'select2';
+import Swal from 'sweetalert2';
 
 declare var $:any;
 
@@ -115,7 +116,8 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
   }
 
   puntosMapa(srv: string){
-    
+    Swal.fire('Reubicando puntos', 'Espere por favor', 'info');
+    Swal.showLoading();
     this.data = {
       "puntoGeox":11,
       "puntoGeoy":19,
@@ -125,21 +127,27 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
     this._maps.getLocations(this.data)
       .subscribe((res:any) => {
         if(this.dataMaps.respuesta){
+          console.log(this.dataMaps);
           for (const direccion of this.dataMaps.respuesta) {
-            this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy]).addTo(this.map);
-            if (this.map.hasLayer(this.marker)) {
-              console.log(this.map.hasLayer(this.marker));
-              this.map.remove();
-              this.crearMapa();
-              
-              }
+            if(direccion.pnt_geox !== null && direccion.pnt_geoy !== null){
+              this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy]).addTo(this.map);
+              if (this.map.hasLayer(this.marker)) {
+                console.log(this.map.hasLayer(this.marker));
+                this.map.remove();
+                this.crearMapa();
+                }
+            }
           }
         }
         this.dataMaps = res;
           this.dataMaps = res; 
+          console.log(this.dataMaps);
           for(let direccion of res.respuesta){
-            this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy]).addTo(this.map);
+            if(direccion.pnt_geox !== null && direccion.pnt_geoy !== null){
+              this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy]).addTo(this.map);
+            }
           }
+          Swal.close();
           console.log(this.dataMaps);
       }); 
   }
