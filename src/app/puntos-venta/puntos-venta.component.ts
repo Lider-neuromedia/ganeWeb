@@ -54,7 +54,18 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
   
   ngOnInit(): void {
     $('#filtro').select2({
-      placeholder: 'Giros, Apuesta'
+      placeholder: 'Giros, Apuesta',
+      language: {
+
+        noResults: function() {
+    
+          return "No hay resultado";        
+        },
+        searching: function() {
+    
+          return "Buscando..";
+        }
+      }
     });
 
     $('#filtro').change(function(){
@@ -66,7 +77,18 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
     }
 
     $('#direcciones').select2({
-      placeholder: 'Seleccione una dirección'
+      placeholder: 'Seleccione una dirección',
+      language: {
+
+        noResults: function() {
+    
+          return "No hay resultado";        
+        },
+        searching: function() {
+    
+          return "Buscando..";
+        }
+      }
     });
     
     $('#direcciones').change(function(){
