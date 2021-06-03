@@ -47,6 +47,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { ResultadosComponent } from './resultados/resultados.component';
 
 const APP_ROUTES: Routes = [
     {path: '', component: InicioComponent},
@@ -90,6 +91,7 @@ const APP_ROUTES: Routes = [
     {path: 'importante', component: ImportanteComponent},
     {path: 'cultura-transparencia', component: CulturaTransparenciaComponent},
     {path: 'restaurante', component: RestauranteComponent},
+    {path: 'resultados', component: ResultadosComponent},
     // {path: 'error', component: Error404Component},
     // {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
     {path: '**', pathMatch: 'full', component: Error404Component}

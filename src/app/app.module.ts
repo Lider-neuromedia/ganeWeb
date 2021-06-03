@@ -4,13 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
-import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APP_ROUTING } from './app.routes';
 import { HomeService } from './services/home.service';
 import { CampanaService } from './services/campana.service'; 
 import { ArticlesService } from './services/articles.service';
 import { PagesService } from './services/pages.service';
 import { PostsService } from './services/posts.service';
+import { MapsService } from './services/maps.service';
 
 // Lenguaje
 import localeEs from '@angular/common/locales/es';
@@ -64,6 +65,9 @@ import { CampanaComponent } from './campana/campana.component';
 import { CalculatugiroComponent } from './calculatugiro/calculatugiro.component';
 import { Error404Component } from './error404/error404.component';
 import { RuletaComponent } from './ruleta/ruleta.component';
+import { InterceptorService } from './interceptors/interceptor.service';
+import { NgSelect2Module } from 'ng-select2';
+import { ResultadosComponent } from './resultados/resultados.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +117,8 @@ import { RuletaComponent } from './ruleta/ruleta.component';
     CampanaComponent,
     CalculatugiroComponent,
     Error404Component,
-    RuletaComponent
+    RuletaComponent,
+    ResultadosComponent
   ],
   imports: [
     BrowserModule,
@@ -121,15 +126,25 @@ import { RuletaComponent } from './ruleta/ruleta.component';
     FormsModule,
     NgxSkeletonLoaderModule,
     ReactiveFormsModule,
+    NgSelect2Module,
     APP_ROUTING
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'es'},
+    { 
+      provide: LOCALE_ID, 
+      useValue: 'es',
+    },
+    // {
+    //   provide: HTTP_INTERCEPTORS, 
+    //   useClass: InterceptorService,
+    //   multi: true
+    // },
     ArticlesService,
     CampanaService,
     HomeService,
     PagesService,
-    PostsService
+    PostsService,
+    MapsService,
   ],
   bootstrap: [AppComponent]
 })

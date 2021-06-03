@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="190px" viewBox="0 0 49 190" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>LOTERIASSVG</title>
+    <defs>
+        <linearGradient x1="52.2873679%" y1="-6.59539505%" x2="47.4526669%" y2="102.229126%" id="linearGradient-1">
+            <stop stop-color="#192D6D" offset="0%"></stop>
+            <stop stop-color="#3659A6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LOTERIAS" transform="translate(-0.000000, 0.500000)">
+            <path d="M12,1.5 L49,1.5 L49,1.5 L49,189.5 L12,189.5 C5.372583,189.5 8.11624501e-16,184.127417 0,177.5 L0,13.5 C-8.11624501e-16,6.872583 5.372583,1.5 12,1.5 Z" id="Rectangle" fill="url(#linearGradient-1)" transform="translate(24.500000, 95.500000) rotate(-180.000000) translate(-24.500000, -95.500000) "></path>
+            <text id="LOTERÍAS" transform="translate(23.500000, 94.000000) rotate(-90.000000) translate(-23.500000, -94.000000) " font-family="OpenSans-Bold, Open Sans" font-size="18" font-weight="bold" letter-spacing="2.34521765" fill="#EAB73B">
+                <tspan x="-28.468273" y="101">LOTERÍAS</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

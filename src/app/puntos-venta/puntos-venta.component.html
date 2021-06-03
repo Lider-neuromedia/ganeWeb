@@ -1,26 +1,60 @@
-<div class="puntos-venta_pagina">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15930.308593166807!2d-76.5312183!3d3.4524803!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xac38d39904896988!2sGane%20Principal!5e0!3m2!1sen!2sco!4v1608658101671!5m2!1sen!2sco" width="100%" height="600px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<div class="puntos-venta_pagina" style="position:relative;height: 800px;z-index:1">
+        <div class="map-container" style="z-index: 0;">
+            <div class="map-frame">
+            <div id="map"></div>
             </div>
-            <div class="col-md-3 search-field">
-                <div class="bk-white shadow-search">
-                    <div class="campo-busqueda">
-                        <div class="has-feedback has-search">
-                            <input class="form-control" type="text" id="buscarpunto" name="buscarpunto" placeholder="Búsqueda" value="">
-                        </div>
-                    </div>
-                    <div class="row p-3">
-                        <div class="col-md-4">
-                            <a class="size13 d-block text-center text-gray-dark btn-transparent" href="#"><i class="far fa-clock"></i> Horarios</a>
-                        </div>
-                        <div class="col-md-8">
-                            <a class="size13 d-block text-center text-gray-dark btn-transparent" href="#">Enviar o recibir giros</a>
-                        </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- <div class="col-md-12 p-0">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15930.308593166807!2d-76.5312183!3d3.4524803!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xac38d39904896988!2sGane%20Principal!5e0!3m2!1sen!2sco!4v1608658101671!5m2!1sen!2sco" width="100%" height="600px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div> -->
+                <div class="col-md-3 search-field">
+                    <div class="bk-white shadow-search">
+                        <form autocomplete="off" style="padding: 1rem;">
+                            <div class="text-center etiqueta">
+                                Por favor indica el monto del giro que desea realizar
+                            </div>
+                            <div class="text-center tipo">
+                                Por favor indica el servicio que desea realizar
+                            </div>
+                            <div class="campo-busqueda">
+                                <div class="has-feedback has-search mt-3 mb-3">
+                                    <input type="number" class="form-control monto" name="monto" [(ngModel)]="monto" placeholder="Monto" (keyup)="llenarFiltro()">
+                                </div>
+                            </div>
+                            <div class="campo-busqueda">
+                                <div class="has-feedback has-search mt-5 mb-3">
+                                    <select name="search" id="filtro" class="form-control" [(ngModel)]="filtro">
+                                        <option *ngFor="let srv of dataFiltro; let i = index" [value]="srv">{{srv}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="campo-busqueda">
+                                <div class="has-feedback has-search">
+                                    <select name="search" id="direcciones" class="form-control" [(ngModel)]="texto">
+                                        <option *ngFor="let direccion of dataMaps.respuesta; let i = index" [value]="direccion | json">{{direccion.pnt_nombre}}</option>
+                                    </select>
+                                    <!-- {{ texto }} -->
+                                </div>
+                            </div>
+                        </form>    
+                            <div class="row p-3"*ngIf="pnt_apertura || pnt_cierre">
+                                <div class="col-md-6 d-flex align-items-center">
+                                    <span class="size11 d-block text-center text-gray-dark btn-transparent" href="#"><i class="far fa-clock"></i> Horario de apertura</span>
+                                    <small class="ml-2" *ngIf="pnt_apertura">{{ pnt_apertura }} AM</small>
+                                </div>
+                                <div class="col-md-6 d-flex align-items-center">
+                                    <span class="size11 d-block text-center text-gray-dark btn-transparent" href="#"><i class="far fa-clock"></i> Horario de cierre</span>
+                                    <small class="ml-2" *ngIf="pnt_cierre">{{ pnt_cierre }} PM</small>
+                                </div>
+                                <!-- <div class="col-md-8">
+                                    <a class="size13 d-block text-center text-gray-dark btn-transparent" href="#">Enviar o recibir giros</a>
+                                </div> -->
+                            </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
