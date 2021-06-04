@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 declare var $ : any; 
+declare var carouselGane;
 
 @Component({
   selector: 'app-inicio',
@@ -37,6 +38,8 @@ export class InicioComponent implements OnInit {
 
   public suscrito: any;
 
+  
+
   constructor(private _router:Router, private httpClient:HttpClient, private fb:FormBuilder, private _homeservice:HomeService, private _campanaservice:CampanaService) {
     this.suscrito = {
       nombre: '',
@@ -63,6 +66,7 @@ export class InicioComponent implements OnInit {
       this.ganevirtual_data = res.acf.virtual_seccion3;
       this.puntosventa_data = res.acf.puntos_de_venta_seccion5;
       this.loader = false;
+      carouselGane();
     });
 
     this._campanaservice.getCampanas()

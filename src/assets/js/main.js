@@ -24,3 +24,23 @@ $(document).ready(function() {
     }
 });
 */
+
+function carouselGane(){
+    jQuery(document).ready(function() {
+        jQuery('.carousel.carousel-multi-item-gane.v-2 .carousel-item').each(function(){
+            var next = jQuery(this).next();
+            if (!next.length) {
+            next = jQuery(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo(jQuery(this));
+        
+            for (var i=0;i<5;i++) {
+            next=next.next();
+            if (!next.length) {
+                next=jQuery(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo(jQuery(this));
+            }
+        });
+    });
+}

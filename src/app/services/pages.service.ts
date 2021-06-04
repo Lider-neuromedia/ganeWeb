@@ -119,6 +119,9 @@ export class PagesService {
   getGeneralFooter(): Observable<any>{
     return this._http.get(`${this.url}/pages/1031/`);
   }
+  getContactenos(): Observable<any>{
+    return this._http.get(`${this.url}/pages/1325/`);
+  }
 
   /*
   enviarFormulario(): Observable<any> {

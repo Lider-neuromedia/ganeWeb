@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { PagesService } from './../services/pages.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 declare var $ : any; 
@@ -12,9 +13,14 @@ declare var $ : any;
 export class ContactenosComponent implements OnInit {
   public user: any;
   loader = true;
+  texto_principal_data:any;
+  texto_secundario_data:any;
+  imagen_principal_data:any;
+  info_data:any[] = [];
+
   url ="https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/mail.php";
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private _contactenosservice:PagesService) { 
     this.user = {
       nombre: '',
       email: '',
@@ -27,6 +33,14 @@ export class ContactenosComponent implements OnInit {
 
   ngOnInit(): void {
     this.loader = false;
+    this._contactenosservice.getContactenos()
+      .subscribe((res:any) => {
+        this.loader = false;
+        this.texto_principal_data = res.acf.texto_principal;
+        this.texto_secundario_data = res.acf.texto_secundario;
+        this.imagen_principal_data = res.acf.imagen_principal;
+        this.info_data = res.acf.informacion;
+      });
   }
 
 
