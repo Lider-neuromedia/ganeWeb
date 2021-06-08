@@ -32,7 +32,6 @@ export class ContactenosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loader = false;
     this._contactenosservice.getContactenos()
       .subscribe((res:any) => {
         this.loader = false;

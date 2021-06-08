@@ -51,7 +51,8 @@
                     </ol>
                     -->
                     <div class="carousel-inner v-2" role="listbox">
-                        <ng-container>
+                        <ngx-skeleton-loader class="d-flex pt-5" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '10px' }"></ngx-skeleton-loader>
+                        <ng-container *ngIf="!loader">
                             <div class="carousel-item" *ngFor="let recuadro of recuadros_data; first as isFirst" [ngClass]="(isFirst) ? 'active' : ''">
                                 <div class="col-12 col-md-3">
                                     <a *ngIf="!loader" href="{{ recuadro.url }}" class="d-flex p-3 m-3 card border-radius box-shadow-servicios card-shadow-hover">
