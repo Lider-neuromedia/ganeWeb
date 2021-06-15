@@ -14,7 +14,11 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-      $('.modal-resultados').css('height',`${screen.height-217}px`);
+    if(screen.width > 1024){
+      $('.modal-resultados').css('height',`${screen.height-202}px`);
+    }else{
+      $('.modal-resultados').css('height',`${screen.height}px`);
+    }
   }
 
   abrirLoterias(){
