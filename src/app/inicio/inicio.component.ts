@@ -5,6 +5,7 @@ import { HomeService } from './../services/home.service';
 import { CampanaService } from './../services/campana.service';
 import { Router } from '@angular/router'; 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 declare var $ : any; 
 declare var carouselGane;
@@ -114,5 +115,33 @@ export class InicioComponent implements OnInit {
       }
     });
    }
+
+   customOptions: OwlOptions = {
+    loop: true,
+    autoplay:true,
+    autoplayTimeout:2500,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    // navText: ['', ''],
+    navText: [ '<i class="fa-chevron-left"></i>', '<i class="fa-chevron-right></i>"' ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: false
+  }
   
 }

@@ -68,6 +68,8 @@ import { RuletaComponent } from './ruleta/ruleta.component';
 import { InterceptorService } from './interceptors/interceptor.service';
 import { NgSelect2Module } from 'ng-select2';
 import { ResultadosComponent } from './resultados/resultados.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [
@@ -127,6 +129,8 @@ import { ResultadosComponent } from './resultados/resultados.component';
     NgxSkeletonLoaderModule,
     ReactiveFormsModule,
     NgSelect2Module,
+    CarouselModule,
+    BrowserAnimationsModule,
     APP_ROUTING
   ],
   providers: [

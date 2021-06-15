@@ -39,42 +39,24 @@
     </a>
 </section>
 <div class="pt-5 h-450">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div id="carousel-example-multi" class="carousel slide carousel-multi-item-gane v-2" data-ride="carousel">
-                    <!--
-                    <ol class="carousel-indicators">
-                        <ng-container *ngFor="let recuadro of recuadros_data; first as isFirst; let i = index">
-                            <li data-target="#carousel-example-multi" [attr.data-slide-to]="i" [ngClass]="(isFirst) ? 'active' : ''"></li>
-                        </ng-container>
-                    </ol>
-                    -->
-                    <div class="carousel-inner v-2" role="listbox">
-                        <ngx-skeleton-loader class="d-flex pt-5" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '10px' }"></ngx-skeleton-loader>
-                        <ng-container *ngIf="!loader">
-                            <div class="carousel-item" *ngFor="let recuadro of recuadros_data; first as isFirst" [ngClass]="(isFirst) ? 'active' : ''">
-                                <div class="col-12 col-md-3">
-                                    <a *ngIf="!loader" href="{{ recuadro.url }}" class="d-flex p-3 m-3 card border-radius box-shadow-servicios card-shadow-hover">
-                                        <p class="text-center mb-2" *ngIf="recuadro.imagen">
-                                            <img class="img-fluid" src="{{ recuadro.imagen}}" alt="Card image cap">
-                                        </p>
-                                        <h4 class="text-center text-blue font-weight-bold">{{ recuadro.titulo }}</h4>
-                                        <p class="text-servicio text-justify text-gray m-0 size14 text-center">{{ recuadro.texto }}</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </ng-container>
-                    </div>
-                    <a class="carousel-control-prev" href="#carousel-example-multi" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel-example-multi" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let slide of recuadros_data">
+                      <ng-template carouselSlide [dataMerge]="number">
+                        <a href="{{ slide.url }}" class="p-3 m-3 card border-radius box-shadow-servicios card-shadow-hover">
+                            <p class="text-center mb-2" *ngIf="slide.imagen">
+                                <img class="img-fluid" src="{{ slide.imagen}}" alt="Card image cap">
+                            </p>
+                            <h4 class="text-center text-blue font-weight-bold">{{ slide.titulo }}</h4>
+                            <p class="text-justify text-gray m-0 size14 text-center">{{ slide.texto }}</p>
+                        </a>
+                      </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+
             </div>
         </div>
     </div>
@@ -87,7 +69,7 @@
             <div class="col-md-4 pt-2">
                 <img class="img-fluid" src="{{ ganevirtual_data.chance_virtual_img }}" alt="gane-virtual">
                 <p class="txt-inform text-center space-txt" [innerHTML]="ganevirtual_data.texto_informacion"></p>
-                <a href="#" class="btn btn-purple wow animate__animated animate__fadeInUp">{{ ganevirtual_data.texto_boton }}</a>
+                <a [href]="ganevirtual_data.url" class="btn btn-purple wow animate__animated animate__fadeInUp">{{ ganevirtual_data.texto_boton }}</a>
             </div>
             <div class="col-md-8">
                 <img class="img-fluid mt-50n" src="{{ ganevirtual_data.chance_servicios_img }}" alt="gane-virtual">
