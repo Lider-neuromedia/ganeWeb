@@ -41,8 +41,7 @@
 <div class="pt-5 h-450">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-
+            <div class="col-md-12 services">
                 <owl-carousel-o [options]="customOptions">
                     <ng-container *ngFor="let slide of recuadros_data">
                       <ng-template carouselSlide [dataMerge]="number">
@@ -51,12 +50,11 @@
                                 <img class="img-fluid" src="{{ slide.imagen}}" alt="Card image cap">
                             </p>
                             <h4 class="text-center text-blue font-weight-bold">{{ slide.titulo }}</h4>
-                            <p class="text-justify text-gray m-0 size14 text-center">{{ slide.texto }}</p>
+                            <p class="text-servicio text-justify text-gray m-0 size14 text-center">{{ slide.texto }}</p>
                         </a>
                       </ng-template>
                     </ng-container>
                 </owl-carousel-o>
-
             </div>
         </div>
     </div>

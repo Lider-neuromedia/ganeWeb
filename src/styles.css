@@ -789,13 +789,13 @@ a:hover {
     box-shadow: 1px 1px 5px 1px rgba(125, 125, 125, .6)
 }
 
-.text-servicio{
+.services .text-servicio{
     display:none;
+    transition: .3s;
 }
 
-.carousel-multi-item-gane .carousel-item a:hover .text-servicio{
-    display:block;
-    transition: .3s;
+.services a:hover .text-servicio{
+    display: block;
 }
 
 #calcula .formulario-giro {
