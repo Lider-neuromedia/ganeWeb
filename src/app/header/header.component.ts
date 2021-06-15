@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     if(screen.width > 1024){
-      $('.modal-resultados').css('height',`${screen.height-122}px`);
+      $('.modal-resultados').css('height',`${screen.height-202}px`);
     }else{
       $('.modal-resultados').css('height',`${screen.height}px`);
     }
