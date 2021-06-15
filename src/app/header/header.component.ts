@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,11 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+      $('.modal-resultados').css('height',`${screen.height-217}px`);
+  }
+
+  abrirLoterias(){
+    $('.modal-resultados').toggleClass('abrir-modal');
   }
 
   ngAfterViewInit(){
