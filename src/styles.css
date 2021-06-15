@@ -11,15 +11,12 @@
 
 .content-resultados{
     position: fixed;
-    z-index: 30;
     top: 35%;
     bottom: 50%;
     left: .9rem;
-	/* right: 0%; */
-    /* display: block; */
+    z-index: 2;
     display: flex;
     flex-flow: row nowrap;
-    z-index: 2;
 }
 .abrir-modal{
     display: block !important;
@@ -27,11 +24,15 @@
 .modal-resultados{
     display: none;
     /* height: 34rem; */
-    position: relative;
     bottom: 8rem;
     background-color: #fff;
     overflow: auto;
     width: 34rem;
+    /* flex-grow: 1; */
+}
+.btn-loterias{
+    /* flex-grow: 46; */
+    padding: 0;
 }
 
 a:hover{
