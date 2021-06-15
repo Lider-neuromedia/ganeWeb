@@ -91,7 +91,6 @@ const APP_ROUTES: Routes = [
     {path: 'importante', component: ImportanteComponent},
     {path: 'cultura-transparencia', component: CulturaTransparenciaComponent},
     {path: 'restaurante', component: RestauranteComponent},
-    {path: 'resultados', component: ResultadosComponent},
     // {path: 'error', component: Error404Component},
     // {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
     {path: '**', pathMatch: 'full', component: Error404Component}
