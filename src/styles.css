@@ -2385,3 +2385,34 @@ line-height: 30px;
         margin-bottom: -1.88rem
     }
 }
+
+@media (min-width: 320px){
+    .content-resultados .modal-resultados{
+        bottom: 17rem;
+        width: 100%;
+    }
+    .content-resultados .modal-resultados .table td, .content-resultados .modal-resultados .table th{
+        padding: 0.2rem !important;
+    }
+}
+@media (min-width: 768px){
+    .content-resultados .modal-resultados{
+        bottom: 17rem;
+        width: 34rem;
+    }
+    .content-resultados .modal-resultados .table td, .content-resultados .modal-resultados .table th {
+        padding: 0.75rem !important;
+    }
+}
+@media (min-width: 1024px){
+    .content-resultados .modal-resultados{
+        bottom: 14rem;
+        width: 34rem;
+    }
+}
+@media (min-width: 1280px){
+    .content-resultados .modal-resultados{
+        bottom: 14rem;
+        width: 34rem;
+    }
+}
