@@ -21,7 +21,27 @@ const iconDefault = L.icon({
   tooltipAnchor: [16, -28],
   shadowSize: [41, 41]
 });
-L.Marker.prototype.options.icon = iconDefault;
+const iconUser = L.icon({
+  iconRetinaUrl,
+  iconUrl: './assets/punto_de_ventas/pin_userPNG.png',
+  shadowUrl,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  tooltipAnchor: [16, -28],
+  shadowSize: [41, 41]
+});
+const iconGane = L.icon({
+  iconRetinaUrl,
+  iconUrl: './assets/punto_de_ventas/pin_ganePNG.png',
+  shadowUrl,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  tooltipAnchor: [16, -28],
+  shadowSize: [41, 41]
+});
+// L.Marker.prototype.options.icon = iconDefault;
 
 @Component({
   selector: 'app-puntos-venta',
@@ -142,7 +162,7 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       });
       tiles.addTo(this.map);
-      L.marker([this.lat, this.long]).bindPopup('<h6 style="color: #192D6D; font-size=21px;">Tu Ubicación</h6>').addTo(this.map);
+      L.marker([this.lat, this.long], {icon: iconUser}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">Tu Ubicación</h6>').addTo(this.map);
     }, 1500);
   }
 
@@ -178,7 +198,7 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
         console.log(this.dataMaps);
         for (let direccion of res.respuesta) {
           if (direccion.pnt_geox !== null && direccion.pnt_geoy !== null && direccion.pnt_geox.toFixed(2) == latRedondeo && direccion.pnt_geoy.toFixed(2) == longRedondeo) {
-            this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy]).bindPopup('<h6 style="color: #192D6D; font-size=21px;">'+srv+'</h6>').addTo(this.map);
+            this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy], {icon: iconGane}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">'+srv+'</h6>').addTo(this.map);
             console.log(latRedondeo);
             console.log(direccion.pnt_geox.toFixed(2));
             console.log(longRedondeo);
