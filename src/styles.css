@@ -9,31 +9,6 @@
     display: block;
 }
 
-.content-resultados{
-    position: fixed;
-    top: 35%;
-    bottom: 50%;
-    left: .9rem;
-    z-index: 2;
-    display: flex;
-    flex-flow: row nowrap;
-}
-.abrir-modal{
-    display: block !important;
-}
-.modal-resultados{
-    display: none;
-    /* height: 34rem; */
-    bottom: 12rem;
-    background-color: #fff;
-    overflow: auto;
-    width: 34rem;
-    /* flex-grow: 1; */
-}
-.btn-loterias{
-    /* flex-grow: 46; */
-    padding: 0;
-}
 
 a:hover{
     cursor: pointer;
@@ -113,19 +88,7 @@ a:hover{
     height: 30px;
 }
 
-.resultados{
-    bottom: 50%;
-    right: .5%;
-    display: block;
-    background-color: #fff;
-    color: #fff;
-    background-repeat: no-repeat;
-    line-height: 16px;
-    z-index: 999;
-    width: 3rem;
-    height: 12rem;
-    background: transparent;
-}
+
 
 a.whatsapp-buble {
     outline: none;
@@ -779,7 +742,45 @@ a:hover {
     margin-top: 0;
 }
 
+.content-resultados{
+    position: fixed;
+    top: 0%;
+    /* bottom: 50%; */
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-flow: row nowrap;
+    /* background: #fff; */
+}
+.abrir-modal{
+    display: block !important;
+}
+.modal-resultados{
+    display: none;
+    /* height: 34rem; */
+    bottom: 12rem;
+    background-color: #fff;
+    overflow: auto;
+    width: 34rem;
+    /* flex-grow: 1; */
+}
+.btn-loterias{
+    /* flex-grow: 46; */
+    padding: 0;
+}
 
+.resultados{
+    bottom: 50%;
+    display: block;
+    /* background-color: #fff; */
+    color: #fff;
+    background-repeat: no-repeat;
+    line-height: 16px;
+    z-index: 999;
+    width: 3rem;
+    height: 12rem;
+    background: transparent;
+}
 
 /* HEADER */
 
@@ -2386,7 +2387,7 @@ line-height: 30px;
     }
 }
 
-@media (min-width: 320px){
+/* @media (min-width: 320px){
     .content-resultados .modal-resultados{
         bottom: 17rem;
         width: 100%;
@@ -2409,10 +2410,10 @@ line-height: 30px;
         bottom: 14rem;
         width: 34rem;
     }
-}
+}*/
 @media (min-width: 1280px){
-    .content-resultados .modal-resultados{
-        bottom: 14rem;
+    .content-resultados{
+        top: 17rem;
         width: 34rem;
     }
 }
