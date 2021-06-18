@@ -33,7 +33,7 @@
                             <div class="campo-busqueda">
                                 <div class="has-feedback has-search">
                                     <select name="search" id="direcciones" class="form-control" [(ngModel)]="texto">
-                                        <option *ngFor="let direccion of dataMaps.respuesta; let i = index" [value]="direccion | json">{{direccion.pnt_nombre}}</option>
+                                        <option *ngFor="let direccion of dataMaps; let i = index" [value]="direccion | json">{{direccion.pnt_nombre}}</option>
                                     </select>
                                     <!-- {{ texto }} -->
                                 </div>
