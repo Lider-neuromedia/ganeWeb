@@ -159,23 +159,21 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
       });
     setTimeout(() => {
       this.map = L.map('map',{
-        center: [ this.lat, this.long ],
+        center: [ this.lat, this.long],
         zoom: 17
       });
-//       'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-//     maxZoom: 25,
-//     attribution: 'Datos del mapa de &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imágenes © <a href="https://www.mapbox.com/">Mapbox</a>', 
-//     id: 'mapbox/streets-v11'
-// }
       const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         minZoom: 3,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       });
       tiles.addTo(this.map);
-      console.log(this.lat);
-      console.log(this.long);
-      L.marker([this.lat, this.long], {icon: iconUser}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">Tu Ubicación</h6>').addTo(this.map);
+      this.map.locate({enableHighAccuracy: true});
+      this.map.on('locationfound', e => {
+        const coords = [e.latlng.lat, e.latlng.lng];
+        console.log(e);
+        L.marker(coords, {icon: iconUser}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">Tu Ubicación</h6>').addTo(this.map);
+      })
     }, 7000);
   }
 
