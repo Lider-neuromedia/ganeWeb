@@ -146,14 +146,26 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
   }
 
   crearMapa() {
-    navigator.geolocation.getCurrentPosition((pos) => {
-      const { coords } = pos;
-      this.lat = coords.latitude;
-      this.long = coords.longitude;
+    navigator.geolocation.watchPosition((pos) => {
+      this.lat = pos.coords.latitude;
+      this.long = pos.coords.longitude;
     },
       (err) => {
         alert("No se encontró la ubicación");
-      })
+      }, {
+        enableHighAccuracy: true
+             ,timeout : 5000
+   })
+  //   navigator.geolocation.getCurrentPosition((pos) => {
+  //     this.lat = pos.coords.latitude;
+  //     this.long = pos.coords.longitude;
+  //   },
+  //     (err) => {
+  //       alert("No se encontró la ubicación");
+  //     }, {
+  //       enableHighAccuracy: true
+  //            ,timeout : 5000
+  //  })
     setTimeout(() => {
       this.map = L.map('map').setView([this.lat, this.long], 17);
       const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -163,7 +175,7 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
       });
       tiles.addTo(this.map);
       L.marker([this.lat, this.long], {icon: iconUser}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">Tu Ubicación</h6>').addTo(this.map);
-    }, 1500);
+    }, 5000);
   }
 
   puntosMapa(srv: string) {
