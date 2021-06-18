@@ -746,7 +746,7 @@ a:hover {
     position: fixed;
     top: 0%;
     /* bottom: 50%; */
-    left: 0;
+    left: 15px;
     z-index: 2;
     display: flex;
     flex-flow: row nowrap;
@@ -2251,6 +2251,7 @@ line-height: 30px;
     top: 12%;
     left: 4rem;
     padding-left: 0;
+    padding-right: 0;
 }
 #buscarpunto .select2 {
     width: 100% !important;
@@ -2411,9 +2412,28 @@ line-height: 30px;
         width: 34rem;
     }
 }*/
-@media (min-width: 1280px){
+
+
+@media (min-width: 320px){
+    .content-resultados{
+        top: 15rem;
+    }
+    .content-resultados .modal-resultados{
+        width: 27rem;
+    }
+}
+@media (min-width: 768px){
+    .content-resultados{
+        top: 15rem;
+        /* width: 34rem; */
+    }
+    .content-resultados .modal-resultados{
+        width: 34rem;
+    }
+}
+@media (min-width: 1024px){
     .content-resultados{
         top: 17rem;
-        width: 34rem;
+        /* width: 34rem; */
     }
 }
