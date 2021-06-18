@@ -2421,6 +2421,22 @@ line-height: 30px;
     .content-resultados .modal-resultados{
         width: 27rem;
     }
+    .containerFormMap{
+        width: 15rem;
+        margin-top: -50px;
+    }
+}
+@media (min-width: 425px){
+    .content-resultados{
+        top: 15rem;
+    }
+    .content-resultados .modal-resultados{
+        width: 27rem;
+    }
+    .containerFormMap{
+        width: 20rem;
+        margin-top: -50px;
+    }
 }
 @media (min-width: 768px){
     .content-resultados{
@@ -2430,10 +2446,17 @@ line-height: 30px;
     .content-resultados .modal-resultados{
         width: 34rem;
     }
+    .containerFormMap{
+        width: 15rem;
+        margin-top: auto;
+    }
 }
 @media (min-width: 1024px){
     .content-resultados{
         top: 17rem;
         /* width: 34rem; */
+    }
+    .containerFormMap{
+        width: auto;
     }
 }
