@@ -125,6 +125,10 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
   }
 
   llenarFiltro() {
+    this.monto === 0? this.monto = null: this.monto;
+    if(this.monto === null){
+      return;
+    }
     this.dataFiltro = ['Apuestas', 'Giros', 'Recargas', 'BetPlay', 'Pagos'];
   }
 
@@ -146,36 +150,31 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
   }
 
   crearMapa() {
-    navigator.geolocation.watchPosition((pos) => {
+    navigator.geolocation.getCurrentPosition((pos) => {
       this.lat = pos.coords.latitude;
       this.long = pos.coords.longitude;
     },
       (err) => {
         alert("No se encontró la ubicación");
-      }, {
-        enableHighAccuracy: true
-             ,timeout : 5000
-   })
-  //   navigator.geolocation.getCurrentPosition((pos) => {
-  //     this.lat = pos.coords.latitude;
-  //     this.long = pos.coords.longitude;
-  //   },
-  //     (err) => {
-  //       alert("No se encontró la ubicación");
-  //     }, {
-  //       enableHighAccuracy: true
-  //            ,timeout : 5000
-  //  })
+      });
     setTimeout(() => {
-      this.map = L.map('map').setView([this.lat, this.long], 17);
+      this.map = L.map('map',{
+        center: [ this.lat, this.long],
+        zoom: 17
+      });
       const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         minZoom: 3,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       });
       tiles.addTo(this.map);
-      L.marker([this.lat, this.long], {icon: iconUser}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">Tu Ubicación</h6>').addTo(this.map);
-    }, 5000);
+      this.map.locate({enableHighAccuracy: true});
+      this.map.on('locationfound', e => {
+        const coords = [e.latlng.lat, e.latlng.lng];
+        console.log(e);
+        L.marker(coords, {icon: iconUser}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">Tu Ubicación</h6>').addTo(this.map);
+      })
+    }, 7000);
   }
 
   puntosMapa(srv: string) {
