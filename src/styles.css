@@ -2220,6 +2220,14 @@ line-height: 30px;
         background-size: contain;
     }
 }
+@media (min-width: 1920px){
+    .section4 .slotwrapper {
+        top: 51%!important;
+        width: 68%;
+        height: 11vh;
+        display: flex;
+    }
+}
 
 
 /****Página Comunicado Interna****/
