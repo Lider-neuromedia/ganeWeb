@@ -32,13 +32,13 @@ export class ResultadosComponent implements OnInit {
       let FechaOb = reversedFecha.join('-');
       this.fechas = FechaOb;
     }
-    // this.servicio.generarToken().subscribe((resp: Token) => {
-    //   this.token = resp.accessToken
-    //   console.log(this.fechas);
-    //   this.servicio.generarResultados(this.fechas, this.token).subscribe((resp: any) => {
-    //     this.resultados = resp.message;
-    //   })
-    // });
+    this.servicio.generarToken().subscribe((resp: Token) => {
+      this.token = resp.accessToken
+      console.log(this.fechas);
+      this.servicio.generarResultados(this.fechas, this.token).subscribe((resp: any) => {
+        this.resultados = resp.message;
+      })
+    });
   }
   abrirLoterias(){
     $('.modal-resultados').toggleClass('abrir-modal');
