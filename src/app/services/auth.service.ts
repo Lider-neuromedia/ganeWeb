@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   url = "http://localhost:8400/";
+  // url = "http://10.130.12.35/";
   constructor(private auth: HttpClient) { }
 
   generarToken(){

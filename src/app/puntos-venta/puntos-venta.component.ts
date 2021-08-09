@@ -157,24 +157,22 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
       (err) => {
         alert("No se encontró la ubicación");
       });
-    setTimeout(() => {
-      this.map = L.map('map',{
-        center: [ this.lat, this.long],
-        zoom: 17
-      });
+      this.map = L.map('map');
       const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         minZoom: 3,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       });
       tiles.addTo(this.map);
-      this.map.locate({enableHighAccuracy: true});
+      this.map.locate({enableHighAccuracy: true,
+                       setView: true,
+                       maxZoom: 15,
+                      timeout: 5000});
       this.map.on('locationfound', e => {
         const coords = [e.latlng.lat, e.latlng.lng];
         console.log(e);
         L.marker(coords, {icon: iconUser}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">Tu Ubicación</h6>').addTo(this.map);
       })
-    }, 7000);
   }
 
   puntosMapa(srv: string) {
