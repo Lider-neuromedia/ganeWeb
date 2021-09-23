@@ -2084,7 +2084,22 @@ line-height: 30px;
         padding-left: 1.5rem !important;    
     }
 }
-
+@media (min-width: 320px){
+    .slotwrapper{
+        top: 45% !important;
+        width: 64%;
+        height: 7vh;
+    }
+}
+@media (min-width: 450px){
+    .slotwrapper ul{
+        height: 82px;
+    }
+    .slotwrapper{
+        top: 54% !important;
+        height: 13vh;
+    }
+}
 @media all and (min-width: 768px) {
     .pt-100 {
         padding-top: 100px;
@@ -2125,7 +2140,11 @@ line-height: 30px;
         font-size:30px;
     }
 }
-
+@media (min-width: 920px){
+    .slotwrapper ul{
+        height: 108px;
+    }
+}
 @media all and (min-width: 992px) {
     .logoMovil{
         display:none;
@@ -2220,6 +2239,11 @@ line-height: 30px;
     }
 }
 
+@media screen and (min-width: 1920px){
+    .section4 .slotwrapper {
+        height: 11vh;
+ }
+}
 
 /****Página Comunicado Interna****/
 .single-page .ruleta{

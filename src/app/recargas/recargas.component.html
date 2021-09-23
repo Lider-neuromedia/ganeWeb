@@ -30,7 +30,7 @@
         <div *ngIf="!loader">
             <div class="row mt-5" *ngIf="recargas_data.acf">
                 <ng-container *ngFor="let recarga of recargas_data.acf.otros_tipos_de_recargas">                
-                    <div class="col-xs-12 col-md-2">
+                    <div class="col-xs-12 col-md-2 d-flex align-items-center">
                         <img class="mx-auto d-block img-fluid scale" src="{{ recarga.logo }}" alt="Logo">
                     </div>
                 </ng-container>
