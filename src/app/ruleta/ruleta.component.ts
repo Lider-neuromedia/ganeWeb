@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 declare var $ : any; 
 
@@ -10,7 +10,7 @@ declare var $ : any;
 export class RuletaComponent implements OnInit {
 
   constructor() { }
-
+  @Input() slotwrapper: string;
   ngOnInit(): void {
   }
 
