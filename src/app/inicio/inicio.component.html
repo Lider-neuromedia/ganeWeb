@@ -1,4 +1,4 @@
-<section id="carouselExampleIndicators" class="section1 carousel slide" data-ride="carousel">
+<section id="carouselExampleIndicators" class="section1 carousel slide" data-ride="carousel" style="z-index: 1;">
     <ol class="carousel-indicators">
         <ng-container *ngFor="let home of sliderprincipal_data; first as isFirst; let i = index">
             <li data-target="#carouselExampleIndicators" [attr.data-slide-to]="i" [ngClass]="(isFirst) ? 'active' : ''"></li>
@@ -156,7 +156,7 @@
                             <div class="media-body">
                                 <h1 class="text-blue font-weight-800 size44">{{ puntosventa_data.titulo }}</h1>
                                 <p class="text-blue size17 line-height20 letter-spacing0-2n" [innerHTML]="puntosventa_data.texto"></p>
-                                <!--<a class="btn btn-yellow font-weight-bold size18 pr-5 pl-5" href="{{ puntosventa_data.url }}">{{ puntosventa_data.texto_boton }}</a>-->
+                                <a class="btn btn-yellow font-weight-bold size18 pr-5 pl-5" href="{{ puntosventa_data.url }}">{{ puntosventa_data.texto_boton }}</a>
                             </div>
                         </div>
                     </div>

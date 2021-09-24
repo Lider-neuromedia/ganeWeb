@@ -1,9 +1,12 @@
 <div class="container pb-5">
     <a (click)="abrirLoterias()" class="text-blue d-flex mt-5">Cerrar</a>
-    <h1 class="text-center mt-2" style="color: #192D6D;">Resultados</h1>
+    <img src="./assets/loterias/banner-resultados.png" class="img-fluid" alt="">
+    <!-- <h1 class="text-center mt-2" style="color: #192D6D;">Resultados</h1> -->
     <div class="form-group">
         <h3 class="col-md-6 text-center offset-md-3" style="font-size: 24px;">Consultar:</h3>
-        <input type="date" name="fecha" class="form-control col-md-6 offset-md-3 mb-3 mt-3" (change)="getDatosTabla($event)" id="date" min="2018-01-01" [max]="maxFecha" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+        <input type="date" name="fecha" class="form-control col-md-6 offset-md-3 mb-3 mt-3"
+            (change)="getDatosTabla($event)" id="date" min="2018-01-01" [max]="maxFecha"
+            pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
     </div>
     <div class="scroll-tabla">
         <table class="table pb-5 table-striped table-responsive" style="display: inline-table;">
@@ -14,17 +17,283 @@
                     <th>Serie</th>
                     <th>Fecha</th>
                 </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let resultado of resultados">
-                        <ng-container *ngIf="resultado.ltria">
-                            <td>{{resultado.ltria}}</td>
-                            <td>{{resultado.srie}}</td>
-                            <td>{{resultado.srie_rsltdo}}</td>
-                            <td>{{resultado.fcha_srteo | date}}</td>
-                        </ng-container>
-                    </tr>
-                </tbody>
+            </thead>
+            <tbody>
+                <tr *ngFor="let resultado of resultados">
+                    <ng-container *ngIf="resultado.ltria else noResultados">
+                        <td>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'ASSOL'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Super-astro-sol.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'BOGOT'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/bogota.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CAFNO'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Cafeterito.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CHOMI'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Chontico.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CABNO'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/la-caribeña.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'QUIND'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Quindio.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'DORMA'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Sorteo-dorado.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'ASLUN'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Super-astro-luna.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CHNOC'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Super-chontico.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'PAIDI'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-paisita.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'FANNO'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/La-fantastica.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'DORTA'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Sorteo-dorado.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'SINNO'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-sinuano.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'SINDI'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-sinuano.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'PAINO'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-paisita.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CAFDI'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Cafeterito.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'SAMDI'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-saman.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'SCHNO'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Super-chontico.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'VALLE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/valle.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'MANIZ'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/manizales.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'META'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Meta.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'HUILA'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/huila.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === '+ROJA'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Cruz-roja.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'TOLIM'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Tolima.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CUNDI'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/cundinamarca.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'SAMFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-saman.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CHDFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Chontico.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'DONFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Sorteo-dorado.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CHNFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Chontico.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CBNFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/la-caribeña.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'PSNFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-paisita.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'FANFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/La-fantastica.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'SINFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-sinuano.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CFNFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Cafeterito.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'SIDFE'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-sinuano.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'DORNO'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Sorteo-dorado.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'PAI3S'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/El-paisita.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'BOYAC'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Loteria-de-boyaca.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CHNSA'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Chontico.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'CAUCA'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <!-- <img src="./assets/loterias/Chontico.png" class="img-fluid" alt=""> -->
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'SANTA'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Santander.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'RISAR'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Risaralda.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="resultado.nmbre_corteo === 'MEDEL'">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./assets/loterias/Medellin.png" class="img-fluid" alt="">
+                                    {{resultado.ltria}}
+                                </div>
+                            </ng-container>
+                        </td>
+                        <td>{{resultado.srie}}</td>
+                        <td>{{resultado.srie_rsltdo}}</td>
+                        <td>{{resultado.fcha_srteo | date}}</td>
+                    </ng-container>
+                    <ng-template #noResultados>
+                        <td colspan="4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <span class="text-center">No hay resultados</span>
+                            </div>
+                        </td>
+                    </ng-template>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

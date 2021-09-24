@@ -25,6 +25,7 @@ export class AuthService {
     const body = {
       fcha_rsltdo: fecha
     }
+    console.log(fecha);
     const headers = new HttpHeaders({
       'x-access-token': token
     })

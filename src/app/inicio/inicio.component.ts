@@ -62,6 +62,7 @@ export class InicioComponent implements OnInit {
 
     this._homeservice.getHome()
     .subscribe((res:any) => {
+      console.log(res);
       this.sliderprincipal_data = res.acf.slider_principal;
       this.recuadros_data = res.acf.recuadros_seccion2;
       this.ganevirtual_data = res.acf.virtual_seccion3;
