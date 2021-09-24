@@ -1,0 +1,30 @@
+.scroll-tabla{
+    position: relative;
+    min-height: 200px;
+    max-height: 61vh;
+    overflow: auto;
+
+}
+@media (min-width: 320px){
+    
+}
+@media (min-width: 450px){
+    
+}
+@media (min-width: 768px){
+    
+}
+@media (min-width: 920px){
+    
+}
+@media (min-width: 1024px){
+    
+}
+@media (min-width: 1280px){
+
+}
+@media (min-width: 1366px){
+    .scroll-tabla{
+        max-height: 51vh;
+    }
+}
