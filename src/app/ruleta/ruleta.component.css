@@ -1,6 +1,135 @@
+@media (min-width: 320px){
+    .slotwrapper ul{
+        height: 62px;
+        font-size: 44px;
+        width: 25%;
+        line-height: 60px;
+    }
+    .slotwrapper{
+        top: 45% !important;
+        height: 9vh;
+        width: 63%;
+    }
+}
+@media (min-width: 450px){
+    .slotwrapper ul{
+        height: 82px;
+        font-size: 65px;
+        width: 25%;
+        line-height: 100px;
+    }
+    .slotwrapper{
+        top: 54% !important;
+        height: 13vh;
+        width: 68%;
+    }
+}
+@media (min-width: 768px){
+    .slotwrapper ul{
+        height: 100px;
+        font-size: 44px;
+        width: 25%;
+    }
+    .slotwrapper{
+        top: 40.7% !important;
+        height: 11vh;
+        width: 63%;
+    }
+}
+@media (min-width: 920px){
+    .slotwrapper ul{
+        height: 108px !important;
+    }
+    .slotwrapper{
+        top: 40.7% !important;
+        height: 11vh;
+        width: 65%;
+    }
+}
+
+
+@media screen and (min-width: 1024px){
+    .slotwrapper ul{
+        height: 82px;
+        font-size: 65px;
+        width: 25%;
+    }
+    .slotwrapper{
+        top: 48% !important;
+        height: 15vh;
+        width: 69%;
+    }
+    .section4 .slotwrapper {
+        top: 48%!important;
+        width: 70%;
+        height: 16vh;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .single-page .slotwrapper {
+        top: 45%!important;
+        width: 65%;
+        height: 10vh;
+        display: flex;
+    }
+    .single-page .slotwrapper ul{
+        font-size:35px;
+        height: 90px;
+    }
+}
 @media screen and (min-width: 1200px) {
     .single-page .slotwrapper{
         top: 50%!important;
         width: 70%;
+    }
+}
+@media screen and (min-width: 1280px){
+    .slotwrapper{
+        top: 51% !important;
+        height: 18vh;
+        width: 67%;
+    }
+    .slotwrapper ul{
+        height: 82px;
+        font-size: 65px;
+        width: 25%;
+    }
+}
+@media screen and (min-width: 1366px){
+    .slotwrapper{
+        top: 51% !important;
+        height: 17vh;
+        width: 68%;
+    }
+    .slotwrapper ul{
+        height: 82px;
+        font-size: 65px;
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .slotwrapper{
+        top: 51% !important;
+        height: 18vh;
+        width: 68%;
+    }
+    .slotwrapper ul{
+        height: 82px;
+        font-size: 65px;
+        width: 25%;
+    }
+}
+@media screen and (min-width: 1920px) and (min-height: 830px){
+    .slotwrapper{
+        top: 51% !important;
+        height: 12vh;
+        width: 68%;
+    }
+    .slotwrapper ul{
+        height: 82px;
+        font-size: 65px;
+        width: 25%;
     }
 }

@@ -40,5 +40,8 @@ export class ResultadosComponent implements OnInit {
       })
     });
   }
+  abrirLoterias(){
+    $('.modal-resultados').toggleClass('abrir-modal');
+  }
 
 }

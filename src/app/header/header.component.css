@@ -1,25 +1,3 @@
-@media screen and (max-width: 1920px) and (min-width: 1367px){
-    .modal-resultados{
-        bottom: 12rem;
-    }
-}
 
-@media screen and (max-width: 1366px) and (min-width: 1281px){
-    .modal-resultados{
-        bottom: 10rem;
-    }
-}
-
-@media screen and (max-width: 1280px) and (min-width: 1025px){
-    .modal-resultados{
-        bottom: 12rem;
-    }
-}
-
-@media screen and (max-width: 1024px){
-    .modal-resultados{
-        bottom: 12rem;
-    }
-}
 
 
