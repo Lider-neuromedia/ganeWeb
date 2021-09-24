@@ -210,31 +210,31 @@
     <div *ngIf="!loader" class="jumbotron suscribe border-0 rounded-0 pt-5 mb-0" style="background:url(./assets/home/SECCION-7/newsletter_bg.png);background-size: auto;background-position: bottom center;">
         <div class="container h-100">
             <h2 class="text-center text-blue text-white mb-4">Suscríbete para recibir los resultados</h2>
-            <form (ngSubmit)="enviarSuscribir(formularioSuscribir)" #formularioSuscribir="ngForm" id="formulario-suscribirse" class="suscribirse">
+            <form (ngSubmit)="enviarSuscribir()" [formGroup]="subscripcionForm" id="formulario-suscribirse" class="suscribirse">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-sm-4">
                         <label class="text-white size14">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="suscrito.nombre" placeholder="Ejemplo: Juan David" required>
-                        <small style="color:#fff" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                        <input type="text" class="form-control" formControlName="nombre" name="nombre" placeholder="Ejemplo: Juan David">
+                        <small style="color:#fff" *ngIf="validNombre">
                             Nombre es un campo requerido.
                         </small>
                     </div>
                     <div class="col-sm-4">
                         <label class="text-white size14">Correo eletrónico</label>
-                        <input type="email" class="form-control" id="emailSuscribe" name="email" #email="ngModel" [(ngModel)]="suscrito.email" email="true" required>
-                        <small style="color:#fff" *ngIf="email.invalid && (email.dirty || email.touched)">
+                        <input type="email" class="form-control" formControlName="email" id="emailSuscribe" name="email" email="true">
+                        <small style="color:#fff" *ngIf="validEmail">
                             Ingrese un correo electrónico válido.
                         </small>
                     </div>
                     <div class="col-sm-12 mt-4 form-check text-center">
-                        <input type="checkbox" name="acepto" #acepto="ngModel" [(ngModel)]="suscrito.acepto" class="form-check-input" id="exampleCheck1" required>
+                        <input type="checkbox" name="acepto" class="form-check-input" formControlName="acepto" id="exampleCheck1">
                         <label class="text-white size14 form-check-label" for="exampleCheck1">Conozco y acepto la política de datos de <STRONG><a class="text-white" href="/assets/tratamiento-datos/M-DM-05-Politicas-de-Tratamiento-de-Datos-Personales-v5.pdf" target="_blank">REDCOLSA.</a></STRONG></label>
-                        <small style="color:#fff" *ngIf="acepto.invalid && (acepto.dirty || acepto.touched)">
+                        <small style="color:#fff" *ngIf="validAcepto">
                             Debe aceptar las condiciones.
                         </small>
                     </div>
                     <div class="col-sm-12 text-center mt-4 mb-4">
-                        <input type="submit" class="btn btn-yellow font-weight-bold size18 pr-5 pl-5" name="enviar" value="Enviar" [disabled]="formularioSuscribir.invalid">
+                        <input type="submit" class="btn btn-yellow font-weight-bold size18 pr-5 pl-5" name="enviar" value="Enviar" [disabled]="subscripcionForm.invalid">
                     </div>
                 </div>
             </form>

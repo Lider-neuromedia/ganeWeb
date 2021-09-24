@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { HomeService } from './../services/home.service';
 import { CampanaService } from './../services/campana.service';
 import { Router } from '@angular/router'; 
@@ -18,6 +18,7 @@ declare var carouselGane;
 export class InicioComponent implements OnInit {
   isSubmitted = false;
   registrationForm: FormGroup;
+  subscripcionForm: FormGroup;
   dynamicFormArray: any;
   valorApuesta: number;
   valorModalidad: number;
@@ -50,10 +51,10 @@ export class InicioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.crearFormularioSubscripcion();
     this.registrationForm = this.fb.group({
       
     });
-
     //Calling API to get Dynamic Control Details
     this.httpClient.get('./assets/DynamicFormControl.json').subscribe(data => {
       this.dynamicFormArray = data;
@@ -76,7 +77,23 @@ export class InicioComponent implements OnInit {
       this.campanas_data = res;
     });
   }
-  
+  crearFormularioSubscripcion(){
+    this.subscripcionForm = this.fb.group({
+      nombre: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      acepto: [false, Validators.required]
+    })
+  }
+  get validNombre(){
+    return this.subscripcionForm.get('nombre').invalid && this.subscripcionForm.get('nombre').touched;
+  }
+  get validEmail(){
+    return this.subscripcionForm.get('email').invalid && this.subscripcionForm.get('email').touched;
+  }
+  get validAcepto(){
+    return this.subscripcionForm.get('acepto').invalid && this.subscripcionForm.get('acepto').touched && !this.formDemostracion.get('acepto').value;
+  }
+
   verCampana(slug:string){
     this._router.navigate(['/campana', slug]);
   }
@@ -93,11 +110,27 @@ export class InicioComponent implements OnInit {
     // console.log(this.registrationForm);
   }
 
-  enviarSuscribir(form){
+  enviarSuscribir(){
+    if(this.subscripcionForm.invalid && !this.subscripcionForm.get('acepto').value){
+      return Object.values( this.subscripcionForm.controls ).forEach(control => {
+        control.markAsTouched();
+      });
+    }
+
+    if(this.subscripcionForm.invalid){
+      return Object.values( this.subscripcionForm.controls ).forEach(control => {
+        control.markAsTouched();
+      });
+    }
+
+    if(!this.subscripcionForm.get('acepto').value){
+      alert('Debes aceptar Terminos y condiciones');
+      return;
+    }
     $.ajax({
       url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
       type: 'POST',
-      data: JSON.stringify(this.suscrito),
+      data: JSON.stringify(this.subscripcionForm.value),
       dataType:"json",
       success: function(data) {
         
@@ -109,11 +142,13 @@ export class InicioComponent implements OnInit {
             showConfirmButton: true
           }); 
           //console.log(error);
-        form.reset();
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
         }
       }
+    });
+    this.subscripcionForm.reset({
+      acepto: false
     });
    }
 
