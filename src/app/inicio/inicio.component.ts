@@ -91,7 +91,7 @@ export class InicioComponent implements OnInit {
     return this.subscripcionForm.get('email').invalid && this.subscripcionForm.get('email').touched;
   }
   get validAcepto(){
-    return this.subscripcionForm.get('acepto').invalid && this.subscripcionForm.get('acepto').touched && !this.formDemostracion.get('acepto').value;
+    return this.subscripcionForm.get('acepto').invalid && this.subscripcionForm.get('acepto').touched && !this.subscripcionForm.get('acepto').value;
   }
 
   verCampana(slug:string){
