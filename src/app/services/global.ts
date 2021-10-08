@@ -10,6 +10,6 @@ export var GLOBAL = {
     url: 'https://pruebasneuro.co/N-1057backgane/wp-json/wp/v2',
     // SuperGiros_auth: 'http://10.130.12.35:8080/api/auth/signin',
     // SuperGiros_getLocations: 'http://10.130.12.35:8080/puntoVenta/punto_de_venta',
-    SuperGiros_auth: 'http://51.81.215.41:8080/api/auth/signin',
-    SuperGiros_getLocations: 'http://51.81.215.41:8080/puntoVenta/punto_de_venta',
+    SuperGiros_auth: 'https://backweb.gane.com.co:8080/api/auth/signin',
+    SuperGiros_getLocations: 'https://backweb.gane.com.co:8080/puntoVenta/punto_de_venta',
 };

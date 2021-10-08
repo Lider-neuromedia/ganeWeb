@@ -10,7 +10,7 @@ export class AuthService {
 
   // url = "http://localhost:8400/";
   // url = "http://10.130.12.35:8080/";
-  url = "http://51.81.215.41:8080/";
+  url = "https://backweb.gane.com.co:8080/";
   constructor(private auth: HttpClient) { }
 
   generarToken(){
