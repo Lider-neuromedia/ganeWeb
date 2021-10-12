@@ -11,7 +11,7 @@ export class PagesService {
 
   public url: string;
   
-  // urlFormulario = 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/';
+  // urlFormulario = 'https://testing.gane.com.co/api/wp-content/themes/gane/';
 
   private refresh: Subject<void>;
 

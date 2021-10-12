@@ -37,7 +37,7 @@ export class SoatComponent implements OnInit {
 
   enviarSoatFecha(form) {
     $.ajax({
-      url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/soat.php',
+      url: 'https://testing.gane.com.co/api/wp-content/themes/gane/soat.php',
       type: 'POST',
       data: JSON.stringify(this.usersoat),
       dataType:"json",

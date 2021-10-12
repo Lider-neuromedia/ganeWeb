@@ -18,7 +18,7 @@ export class ContactenosComponent implements OnInit {
   imagen_principal_data:any;
   info_data:any[] = [];
 
-  url ="https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/mail.php";
+  url ="https://testing.gane.com.co/api/wp-content/themes/gane/mail.php";
 
   constructor(private http: HttpClient, private _contactenosservice:PagesService) { 
     this.user = {
@@ -45,7 +45,7 @@ export class ContactenosComponent implements OnInit {
 
 enviarForm(form) {
   $.ajax({
-    url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/mail.php',
+    url: 'https://testing.gane.com.co/api/wp-content/themes/gane/mail.php',
     type: 'POST',
     data: JSON.stringify(this.user),
     dataType:"json",
@@ -66,15 +66,4 @@ enviarForm(form) {
     }
   });
  }
-/*
-  onSubmit(){
-    alert("Formulario enviado!!");
-    console.log(this.user);
-    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    this.http.post('https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/mail.php', { title: 'Pruebas de correo' }).subscribe( data => {
-        console.log(data);
-      })
-  }
-}
-*/
 }

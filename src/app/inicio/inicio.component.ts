@@ -128,7 +128,7 @@ export class InicioComponent implements OnInit {
       return;
     }
     $.ajax({
-      url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
+      url: 'https://testing.gane.com.co/api/wp-content/themes/gane/suscribirse.php',
       type: 'POST',
       data: JSON.stringify(this.subscripcionForm.value),
       dataType:"json",

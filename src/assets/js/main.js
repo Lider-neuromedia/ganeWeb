@@ -17,7 +17,7 @@
 /*
 $(document).ready(function() {
     function enviarDatos(){
-        var action_src = "https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/mail.php";
+        var action_src = "https://testing.gane.com.co/api/wp-content/themes/gane/mail.php";
         var your_form = document.getElementById('formulario-contact');
         your_form.action = action_src ;
         alert("The form was submitted");
