@@ -41,6 +41,7 @@ export class FooterComponent implements OnInit {
     this._generalfooter.getGeneralFooter()
       .subscribe((res:any) => {
         this.grupo_datos_data = res.acf.grupo_datos;
+
         this.texto_ciudad_data = res.acf.texto_ciudad;
         this.texto_boton_data = res.acf.texto_boton;
         this.titulo_redes_data = res.acf.titulo_redes;

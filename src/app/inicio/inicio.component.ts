@@ -63,7 +63,6 @@ export class InicioComponent implements OnInit {
 
     this._homeservice.getHome()
     .subscribe((res:any) => {
-      console.log(res);
       this.sliderprincipal_data = res.acf.slider_principal;
       this.recuadros_data = res.acf.recuadros_seccion2;
       this.ganevirtual_data = res.acf.virtual_seccion3;
@@ -107,7 +106,6 @@ export class InicioComponent implements OnInit {
       }
       
     });
-    // console.log(this.registrationForm);
   }
 
   enviarSuscribir(){
@@ -141,7 +139,6 @@ export class InicioComponent implements OnInit {
             title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
             showConfirmButton: true
           }); 
-          //console.log(error);
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
         }

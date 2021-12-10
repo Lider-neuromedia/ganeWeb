@@ -114,12 +114,11 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
     });
 
     $('#direcciones').change(function () {
-      // console.log(JSON.parse($(this).val()));
+
       custom2(JSON.parse($(this).val()));
     })
 
     const custom2 = (val: any) => {
-      // console.log(val);
       this.onSearch(val);
     }
   }
@@ -133,7 +132,6 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
   }
 
   onSearch(val: any) {
-    // console.log(val);
     this.custom(val);
   }
 
@@ -170,7 +168,6 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
                       timeout: 5000});
       this.map.on('locationfound', e => {
         const coords = [e.latlng.lat, e.latlng.lng];
-        console.log(e);
         L.marker(coords, {icon: iconUser}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">Tu Ubicación</h6>').addTo(this.map);
       })
   }
@@ -186,38 +183,17 @@ export class PuntosVentaComponent implements OnInit, AfterViewInit {
     }
     this._maps.getLocations(this.data)
       .subscribe((res: any) => {
-        // if (this.dataMaps.respuesta) {
-        //   console.log(this.dataMaps);
-        //   for (const direccion of this.dataMaps.respuesta) {
-        //     if (direccion.pnt_geox !== null && direccion.pnt_geoy !== null) {
-        //       this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy]).addTo(this.map);
-        //       if (this.map.hasLayer(this.marker)) {
-        //         console.log(this.map.hasLayer(this.marker));
-        //         this.map.remove();
-        //         this.crearMapa();
-        //       }
-        //     }
-        //   }
-        // }
-        // this.dataMaps = res;
-        console.log("Lat "+this.lat+" Long "+this.long);
         let latRedondeo = this.lat.toFixed(2);
         let longRedondeo = this.long.toFixed(2);
         let i = 0;
-        console.log(this.dataMaps);
         for (let direccion of res.respuesta) {
           if (direccion.pnt_geox !== null && direccion.pnt_geoy !== null && direccion.pnt_geox.toFixed(2) == latRedondeo && direccion.pnt_geoy.toFixed(2) == longRedondeo) {
             this.marker = L.marker([direccion.pnt_geox, direccion.pnt_geoy], {icon: iconGane}).bindPopup('<h6 style="color: #192D6D; font-size=21px;">'+srv+'</h6>').addTo(this.map);
-            console.log(latRedondeo);
-            console.log(direccion.pnt_geox.toFixed(2));
-            console.log(longRedondeo);
-            console.log(direccion.pnt_geoy.toFixed(2));
             this.dataMaps.push(res.respuesta[i])
           }
           i++;
         }
         Swal.close();
-        console.log(this.dataMaps);
       });
   }
 }
