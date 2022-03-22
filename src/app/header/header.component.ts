@@ -1,31 +1,38 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+  HostListener,
+} from '@angular/core';
 declare var $: any;
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   // @ViewChild('stickyMenu') menuElement: ElementRef;
   // sticky: boolean = false;
   // elementPosition: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    if(screen.width > 1024){
-      $('.modal-resultados').css('height',`${screen.height-202}px`);
-    }else{
-      $('.modal-resultados').css('height',`${screen.height}px`);
+    if (screen.width > 1024) {
+      $('.modal-resultados').css('height', `${screen.height - 202}px`);
+    } else {
+      $('.modal-resultados').css('height', `${screen.height}px`);
     }
   }
 
-  abrirLoterias(){
+  abrirLoterias() {
     $('.modal-resultados').toggleClass('abrir-modal');
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     // this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
   // @HostListener('window:scroll', ['$event'])
@@ -37,5 +44,4 @@ export class HeaderComponent implements OnInit {
   //     this.sticky = false;
   //   }
   // }
-
 }
