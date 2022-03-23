@@ -1,111 +1,315 @@
 <section class="container-footer">
-    <footer class="bg-blue p-4">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h6 class="size13 text-white">GENERAL</h6>
-                    <hr class="m-0 mt-2 mb-2 w-50 border-white">
-                    <ng-container *ngFor="let data of grupo_datos_data">
-                        <div class="direccion mb-2">
-                            <p class="size13 text-white font-weight-normal m-0"><img style="width: 12px;margin-top: -3px;" src="{{ data.icono }}"> {{ data.titulo }}</p>
-                            <p class="size13 text-gray-light font-weight-light m-0" [innerHTML]="data.texto_general"></p>
-                        </div>
-                    </ng-container>
-                    <div class="ciudad mb-3">
-                        <p class="size13 text-white font-weight-normal m-0">{{ texto_ciudad_data }}</p>
-                    </div>
-                    <div class="contacto mb-3">
-                        <a href="#/contactenos" class="btn btn-yellow-outline size13 box-shadow-none">{{ texto_boton_data }}</a>
-                    </div>
-                    <div class="redes1">
-                        <p class="size13 text-white font-weight-light m-1">{{ titulo_redes_data }}</p>
-                        <ul class="list-unstyled d-flex">
-                            <ng-container *ngFor="let data of repetidor_de_redes_data">
-                                <li class="pr-2 pl-2">
-                                    <a href="{{data.link_red}}" target="_blank" class="size15 text-white font-weight-light"><img style="width:15px" src="{{data.icono_imagen}}"></a>
-                                </li>
-                            </ng-container>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col">
-                    <h6 class="size13 text-white">FUNDACIÓN SOCIAL</h6>
-                    <hr class="m-0 mt-2 mb-2 w-50 border-white">
-                    <ul class="list-unstyled">
-                        <li><a href="#/fundacion-social" class="size12 text-gray-light font-weight-light">¿Quiénes somos?</a></li>
-                        <li><a href="#/ayudas" class="size12 text-gray-light font-weight-light">Ayudas sociales</a></li>
-                        <li><a href="#/politicas" class="size12 text-gray-light font-weight-light">Políticas</a></li>
-                        <li><a href="#/educacion" class="size12 text-gray-light font-weight-light">Educación contínua</a></li>
-                        <li><a href="#/salud" class="size12 text-gray-light font-weight-light">Salud</a></li>
-                        <li><a href="#/vivienda" class="size12 text-gray-light font-weight-light">Vivienda</a></li>
-                        <li><a href="#/cultura" class="size12 text-gray-light font-weight-light">Recreación y deporte</a></li>
-                        <li><a href="#/primera-infancia" class="size12 text-gray-light font-weight-light">Infancia y adolescencia</a></li>
-                        <li><a href="#/cuidarte" class="size12 text-gray-light font-weight-light">Cuidarte</a></li>
-                        <li><a href="#/escuela" class="size12 text-gray-light font-weight-light">Escuela de iniciación deportiva</a></li>
-                        <li><a href="#/restaurante" class="mb-2 size12 text-gray-light font-weight-light">Restaurante Ganedelicias</a></li>
-                        <li><h6 class="mt-4 size12 text-white font-weight-bold">Informes fundación social gane</h6></li>
-                        <hr class="m-0 mt-2 mb-2 w-50 border-white">
-                        <li><a href="{{ estados_financieros_data }}" target="_blank" class="size12 text-gray-light font-weight-light">{{ estados_financieros_texto_data }}</a></li>
-                        <li><a href="{{ informe_anual_2019_data }}" target="_blank" class="size12 text-gray-light font-weight-light">{{ informe_anual_2019_texto_data }}</a></li>
-                        <li><a href="{{ datos_generales_data }}" target="_blank" class="size12 text-gray-light font-weight-light">{{ datos_generales_texto_data }}</a></li>
-                        <li><a href="{{ informe_del_revisor_fiscal_data }}" target="_blank" class="size12 text-gray-light font-weight-light">{{ informe_del_revisor_fiscal_texto_data }}</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h6 class="size13 text-white">EMPRESA</h6>
-                    <hr class="m-0 mt-2 mb-2 w-50 border-white">
-                    <ul class="list-unstyled">
-                        <!--<li><a href="#" class="size12 text-gray-light font-weight-light">Colocadores y colocadoras independientes FeGane</a></li>-->
-                        <li><a href="#/quienes-somos/#video-institucional" class="size12 text-gray-light font-weight-light">Video institucional</a></li>
-                        <li><a href="#/campanas" class="size12 text-gray-light font-weight-light">Campañas</a></li>
-                        <li><a href="#/preguntas" class="size12 text-gray-light font-weight-light">Preguntas frecuentes</a></li>
-                        <li><a href="#/pago-premios" class="size12 text-gray-light font-weight-light">Pago de premios</a></li>
-                        <li><a href="#/puntos-venta" class="size12 text-gray-light font-weight-light">Puntos de servicios</a></li>
-                        <!--<li><a href="#" class="size12 text-gray-light font-weight-light">Planeación estratégica</a></li>-->
-                        <li><a href="#/privacidad" class="size12 text-gray-light font-weight-light">Aviso de privacidad</a></li>
-                        <!--<li><a href="#" class="size12 text-gray-light font-weight-light">Galería de imágenes</a></li>-->
-                        <li><a href="#/periodico" class="size12 text-gray-light font-weight-light">Periódico Gane al día</a></li>
-                        <li><a href="#/comunicados" class="size12 text-gray-light font-weight-light">Comunicados de prensa</a></li>
-                        <li><a href="#/gestion" class="size12 text-gray-light font-weight-light">Sistema de gestión de calidad</a></li>
-                        <li><a href="#/financieros" class="size12 text-gray-light font-weight-light">Estados financieros</a></li>
-                        <!-- <li><h6 class="mt-3 size12 text-white font-weight-bold">Abonos</h6></li>
+  <footer class="bg-blue p-4">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h6 class="size13 text-white">GENERAL</h6>
+          <hr class="m-0 mt-2 mb-2 w-50 border-white" />
+          <ng-container *ngFor="let data of grupo_datos_data">
+            <div class="direccion mb-2">
+              <p class="size13 text-white font-weight-normal m-0">
+                <img
+                  style="width: 12px; margin-top: -3px"
+                  src="{{ data.icono }}"
+                />
+                {{ data.titulo }}
+              </p>
+              <p
+                class="size13 text-gray-light font-weight-light m-0"
+                [innerHTML]="data.texto_general"
+              ></p>
+            </div>
+          </ng-container>
+          <div class="ciudad mb-3">
+            <p class="size13 text-white font-weight-normal m-0">
+              {{ texto_ciudad_data }}
+            </p>
+          </div>
+          <div class="contacto mb-3">
+            <a
+              href="#/contactenos"
+              class="btn btn-yellow-outline size13 box-shadow-none"
+              >{{ texto_boton_data }}</a
+            >
+          </div>
+          <div class="redes1">
+            <p class="size13 text-white font-weight-light m-1">
+              {{ titulo_redes_data }}
+            </p>
+            <ul class="list-unstyled d-flex">
+              <ng-container *ngFor="let data of repetidor_de_redes_data">
+                <li class="pr-2 pl-2">
+                  <a
+                    href="{{ data.link_red }}"
+                    target="_blank"
+                    class="size15 text-white font-weight-light"
+                    ><img style="width: 15px" src="{{ data.icono_imagen }}"
+                  /></a>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+        </div>
+        <div class="col">
+          <h6 class="size13 text-white">FUNDACIÓN SOCIAL</h6>
+          <hr class="m-0 mt-2 mb-2 w-50 border-white" />
+          <ul class="list-unstyled">
+            <li>
+              <a
+                href="#/fundacion-social"
+                class="size12 text-gray-light font-weight-light"
+                >¿Quiénes somos?</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/ayudas"
+                class="size12 text-gray-light font-weight-light"
+                >Ayudas sociales</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/politicas"
+                class="size12 text-gray-light font-weight-light"
+                >Políticas</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/educacion"
+                class="size12 text-gray-light font-weight-light"
+                >Educación contínua</a
+              >
+            </li>
+            <li>
+              <a href="#/salud" class="size12 text-gray-light font-weight-light"
+                >Salud</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/vivienda"
+                class="size12 text-gray-light font-weight-light"
+                >Vivienda</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/cultura"
+                class="size12 text-gray-light font-weight-light"
+                >Recreación y deporte</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/primera-infancia"
+                class="size12 text-gray-light font-weight-light"
+                >Infancia y adolescencia</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/cuidarte"
+                class="size12 text-gray-light font-weight-light"
+                >Cuidarte</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/escuela"
+                class="size12 text-gray-light font-weight-light"
+                >Escuela de iniciación deportiva</a
+              >
+            </li>
+            <li>
+              <h6 class="mt-4 size12 text-white font-weight-bold">
+                Informes fundación social gane
+              </h6>
+            </li>
+            <hr class="m-0 mt-2 mb-2 w-50 border-white" />
+            <li>
+              <a
+                href="{{ estados_financieros_data }}"
+                target="_blank"
+                class="size12 text-gray-light font-weight-light"
+                >{{ estados_financieros_texto_data }}</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{ informe_anual_2019_data }}"
+                target="_blank"
+                class="size12 text-gray-light font-weight-light"
+                >{{ informe_anual_2019_texto_data }}</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{ datos_generales_data }}"
+                target="_blank"
+                class="size12 text-gray-light font-weight-light"
+                >{{ datos_generales_texto_data }}</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{ informe_del_revisor_fiscal_data }}"
+                target="_blank"
+                class="size12 text-gray-light font-weight-light"
+                >{{ informe_del_revisor_fiscal_texto_data }}</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <h6 class="size13 text-white">EMPRESA</h6>
+          <hr class="m-0 mt-2 mb-2 w-50 border-white" />
+          <ul class="list-unstyled">
+            <!--<li><a href="#" class="size12 text-gray-light font-weight-light">Colocadores y colocadoras independientes FeGane</a></li>-->
+            <li>
+              <a
+                href="#/quienes-somos/#video-institucional"
+                class="size12 text-gray-light font-weight-light"
+                >Video institucional</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/campanas"
+                class="size12 text-gray-light font-weight-light"
+                >Campañas</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/preguntas"
+                class="size12 text-gray-light font-weight-light"
+                >Preguntas frecuentes</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/pago-premios"
+                class="size12 text-gray-light font-weight-light"
+                >Pago de premios</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/puntos-venta"
+                class="size12 text-gray-light font-weight-light"
+                >Puntos de servicios</a
+              >
+            </li>
+            <!--<li><a href="#" class="size12 text-gray-light font-weight-light">Planeación estratégica</a></li>-->
+            <li>
+              <a
+                href="#/privacidad"
+                class="size12 text-gray-light font-weight-light"
+                >Aviso de privacidad</a
+              >
+            </li>
+            <!--<li><a href="#" class="size12 text-gray-light font-weight-light">Galería de imágenes</a></li>-->
+            <li>
+              <a
+                href="#/periodico"
+                class="size12 text-gray-light font-weight-light"
+                >Periódico Gane al día</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/comunicados"
+                class="size12 text-gray-light font-weight-light"
+                >Comunicados de prensa</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/gestion"
+                class="size12 text-gray-light font-weight-light"
+                >Sistema de gestión de calidad</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/financieros"
+                class="size12 text-gray-light font-weight-light"
+                >Estados financieros</a
+              >
+            </li>
+            <!-- <li><h6 class="mt-3 size12 text-white font-weight-bold">Abonos</h6></li>
                         <hr class="m-0 mt-2 mb-2 w-50 border-white">
                         <li><a href="#/america-cali" class="size12 text-gray-light font-weight-light">América de Cali y Deportivo Cali</a></li> -->
-                    </ul>
-                </div>
-                <div class="col">
-                    <h6 class="size13 text-white">PROVEEDORES</h6>
-                    <hr class="m-0 mt-2 mb-2 w-50 border-white">
-                    <ul class="list-unstyled">
-                        <!--<li><a href="#/politicas-fegane" class="size12 text-gray-light font-weight-light">Políticas FeGane</a></li>-->
-                        <!--<li><a href="#" class="size12 text-white font-weight-bold">Proveedores</a></li>-->
-                        <li><a href="https://www.gane.com.co/Proveedores/" target="_blank" class="size12 text-gray-light font-weight-light">Acceso a Proveedores</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h6 class="size13 text-white">ÉTICA Y BUEN GOBIERNO</h6>
-                    <hr class="m-0 mt-2 mb-2 w-50 border-white">
-                    <ul class="list-unstyled">
-                        <li><a href="#/cultura-anticorrupcion" class="size12 text-gray-light font-weight-light">Cultura Anticorrupción</a></li>
-                        <li><a href="#/cultura-antilavado" class="size12 text-gray-light font-weight-light">Cultura Antilavado</a></li>
-                        <li><a href="#/linea-etica" class="size12 text-gray-light font-weight-light">Línea Ética</a></li>
-                    </ul>
-                </div>
-            </div>
+          </ul>
         </div>
-    </footer>
-    <section class="copy bg-blue-dark p-3">
-        <div class="container">
-            <div class="row">
-                <div class="col text-left">
-                    <span class="text-white font-weight-light size13">Todos los derechos reservados @ REDCOLSA 2021</span>
-                </div>
-                <div class="col text-right">
-                    <span class="text-white font-weight-light size13">
-                        DISEÑADO Y DESARROLLADO POR <a href="https://www.neuromedia.com.co/" target="_blank" class="text-white font-weight-bold">NEUROMEDIA DIGITAL AGENCY</a>
-                    </span>
-                </div>
-            </div>
+        <div class="col">
+          <h6 class="size13 text-white">PROVEEDORES</h6>
+          <hr class="m-0 mt-2 mb-2 w-50 border-white" />
+          <ul class="list-unstyled">
+            <!--<li><a href="#/politicas-fegane" class="size12 text-gray-light font-weight-light">Políticas FeGane</a></li>-->
+            <!--<li><a href="#" class="size12 text-white font-weight-bold">Proveedores</a></li>-->
+            <li>
+              <a
+                href="https://www.gane.com.co/Proveedores/"
+                target="_blank"
+                class="size12 text-gray-light font-weight-light"
+                >Acceso a Proveedores</a
+              >
+            </li>
+          </ul>
         </div>
-    </section>
+        <div class="col">
+          <h6 class="size13 text-white">ÉTICA Y BUEN GOBIERNO</h6>
+          <hr class="m-0 mt-2 mb-2 w-50 border-white" />
+          <ul class="list-unstyled">
+            <li>
+              <a
+                href="#/cultura-anticorrupcion"
+                class="size12 text-gray-light font-weight-light"
+                >Cultura Anticorrupción</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/cultura-antilavado"
+                class="size12 text-gray-light font-weight-light"
+                >Cultura Antilavado</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/linea-etica"
+                class="size12 text-gray-light font-weight-light"
+                >Línea Ética</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <section class="copy bg-blue-dark p-3">
+    <div class="container">
+      <div class="row">
+        <div class="col text-left">
+          <span class="text-white font-weight-light size13"
+            >Todos los derechos reservados @ REDCOLSA 2021</span
+          >
+        </div>
+        <div class="col text-right">
+          <span class="text-white font-weight-light size13">
+            DISEÑADO Y DESARROLLADO POR
+            <a
+              href="https://www.neuromedia.com.co/"
+              target="_blank"
+              class="text-white font-weight-bold"
+              >NEUROMEDIA DIGITAL AGENCY</a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
