@@ -1,30 +1,61 @@
 <div class="cultura_pagina mt-5 mb-5">
-    <div class="container">
-        <div class="row h-100">
-            <div class="col-xs-12 col-md-6 my-auto">
-                <div>
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'45px' }"></ngx-skeleton-loader>
-                    <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'30px' }"></ngx-skeleton-loader>
-                </div>
-                <div *ngIf="!loader">
-                    <h3 class="montserrat font-weight-700 size35 line-height42 color-title ">{{ titulo_data }}</h3>
-                    <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft" [innerHTML]="texto_1_data"></p>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6 my-auto">
-                <div><ngx-skeleton-loader *ngIf="loader" animation="progress" appearance="circle" [theme]="{ width: '300px',height: '300px' }"></ngx-skeleton-loader></div>
-                <div *ngIf="!loader">
-                    <img class="d-block w-100 wow animate__animated animate__fadeInRight" *ngIf="imagen_derecha_data != false" src="{{ imagen_derecha_data }}" alt="Recreación Gane">
-                </div>
-            </div>
-            <div class="col-md-12">
-                <ngx-skeleton-loader count="4" *ngIf="loader" animation="progress" [theme]="{height:'30px' }"></ngx-skeleton-loader>
-                <div *ngIf="!loader">
-                    <h4 class="montserrat font-weight-700 size23 line-height42 color-title">{{ titulo2_data }}</h4>
-                    <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft" [innerHTML]="texto_2_data"></p>
-                    <p class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft" [innerHTML]="texto_final_data"></p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row h-100">
+      <div class="col-12 my-auto">
+        <div>
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ height: '235px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            count="10"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ height: '35px' }"
+          ></ngx-skeleton-loader>
         </div>
+        <div *ngIf="!loader">
+          <img
+            class="mb-5 d-block w-100 wow animate__animated animate__fadeInUp"
+            src="{{ banner_data }}"
+            alt="Banner Educacion"
+          />
+          <h3
+            class="montserrat font-weight-700 size35 line-height42 color-title"
+          >
+            {{ titulo_data }}
+          </h3>
+          <p
+            class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft"
+            [innerHTML]="texto_1_data"
+          ></p>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <ngx-skeleton-loader
+          count="4"
+          *ngIf="loader"
+          animation="progress"
+          [theme]="{ height: '30px' }"
+        ></ngx-skeleton-loader>
+        <div *ngIf="!loader">
+          <h4
+            class="montserrat font-weight-700 size23 line-height42 color-title"
+          >
+            {{ titulo2_data }}
+          </h4>
+          <p
+            class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft"
+            [innerHTML]="texto_2_data"
+          ></p>
+          <p
+            class="text-justify letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInLeft"
+            [innerHTML]="texto_final_data"
+          ></p>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -11,7 +11,7 @@
         <g id="banner-ganevirtual_composición">
             <use id="Rectangle-Copy-9" stroke="#EAB73B" mask="url(#mask-2)" stroke-width="2" stroke-dasharray="3" xlink:href="#path-1"></use>
             <rect id="Rectangle" fill="#FFFFFF" x="20" y="5" width="194" height="38" rx="19"></rect>
-            <text id="Todos-nuestros-servi" font-family="OpenSans-Bold, Open Sans" font-size="13" font-weight="bold" fill="#025BF5">
+            <text id="Todos-nuestros-servi" ="OpenSans-Bold, Open Sans" font-size="13" font-weight="bold" fill="#025BF5">
                 <tspan x="38" y="29">Todos nuestros servicios</tspan>
             </text>
             <text id="de-tu-mano" font-family="OpenSans-ExtraBold, Open Sans" font-size="40" font-weight="600" fill="#FFFFFF">

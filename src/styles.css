@@ -318,9 +318,9 @@ table td {
   border-radius: 13px;
 }
 
-.text-gray-dark {
+/* .text-gray-dark {
   color: #7c7c7c;
-}
+} */
 
 .text-black {
   color: #3a3a3a;
@@ -2606,4 +2606,9 @@ tr td:hover {
   .containerFormMap {
     width: auto;
   }
+}
+*{
+  font-family: 'Montserrat' !important;
+  text-align: justify !important;
+  letter-spacing: 0 !important;
 }

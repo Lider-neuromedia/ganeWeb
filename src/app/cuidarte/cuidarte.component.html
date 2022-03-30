@@ -1,34 +1,76 @@
 <div class="cuidarte_pagina mt-5 mb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
-                <div *ngIf="!loader">
-                    <h3 class="montserrat font-weight-700 size35 line-height42 color-title">{{ titulo_principal_data }}</h3>
-                    <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_principal_data"></p>
-                    <h4 class="color-title opensans size19 letter-spacing1-4 line-height23 font-weight-700">{{ titulo_complementario_data }}</h4>
-                    <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_complementario_data"></p>
-                    <p class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp" [innerHTML]="texto_final_data"></p>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6">
-                <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
-                <div *ngIf="!loader">
-                    <table class="full-table mt-5 mb-5 wow animate__animated animate__fadeInRight">
-                        <thead>
-                                <th colspan="2">{{tabla_data.titulo_tabla}}</th>
-                        </thead>
-                        <tbody>
-                            <ng-container *ngFor="let data of tabla_data.datos_items">
-                                <tr>
-                                    <td>{{ data.item_1 }}</td>
-                                    <td>{{ data.item_2 }}</td>
-                                </tr>
-                            </ng-container>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ngx-skeleton-loader
+          count="1"
+          *ngIf="loader"
+          animation="progress"
+          [theme]="{ height: '235px' }"
+        ></ngx-skeleton-loader>
+        <img
+          class="mb-5 d-block w-100 wow animate__animated animate__fadeInUp"
+          src="{{ banner_data }}"
+          alt="Banner Educacion"
+        />
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <ngx-skeleton-loader
+          count="10"
+          *ngIf="loader"
+          animation="progress"
+          [theme]="{ height: '35px' }"
+        ></ngx-skeleton-loader>
+        <div *ngIf="!loader">
+          <h3
+            class="montserrat font-weight-700 size35 line-height42 color-title"
+          >
+            {{ titulo_principal_data }}
+          </h3>
+          <p
+            class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp"
+            [innerHTML]="texto_principal_data"
+          ></p>
+          <h4
+            class="color-title opensans size19 letter-spacing1-4 line-height23 font-weight-700"
+          >
+            {{ titulo_complementario_data }}
+          </h4>
+          <p
+            class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp"
+            [innerHTML]="texto_complementario_data"
+          ></p>
+          <p
+            class="letter-spacing0-93 text-gray-dark wow animate__animated animate__fadeInUp"
+            [innerHTML]="texto_final_data"
+          ></p>
         </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <ngx-skeleton-loader
+          count="10"
+          *ngIf="loader"
+          animation="progress"
+          [theme]="{ height: '35px' }"
+        ></ngx-skeleton-loader>
+        <div *ngIf="!loader">
+          <table
+            class="full-table mt-5 mb-5 wow animate__animated animate__fadeInRight"
+          >
+            <thead>
+              <th colspan="2">{{ tabla_data.titulo_tabla }}</th>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let data of tabla_data.datos_items">
+                <tr>
+                  <td>{{ data.item_1 }}</td>
+                  <td>{{ data.item_2 }}</td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
