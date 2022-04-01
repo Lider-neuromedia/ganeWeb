@@ -1,50 +1,112 @@
 <div class="quienes_pagina">
-    <div class="section1 bk-gray mb-5 pb-5">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 pt-5 pl-100">
-                    <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'35px', 'margin-top': '12px' }"></ngx-skeleton-loader>
-                    <div *ngIf="!loader">
-                        <h3 *ngIf="quienesSomos_data.title" class="title-h3 pb-3">{{ quienesSomos_data.title.rendered }}</h3>
-                        <p *ngIf="quienesSomos_data.content" class="txt-normal text-justify" [innerHTML]="quienesSomos_data.content.rendered"></p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-6 pr-0">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'350px', 'margin-top':'50px'}"></ngx-skeleton-loader>
-                    <div *ngIf="!loader">
-                        <img *ngIf="quienesSomos_data.acf" class="float-right img-fluid d-inline-block wow animate__animated animate__fadeInRight" src="{{ quienesSomos_data.acf.imagen }}" alt="grupo">
-                    </div>
-                </div>
-            </div>
+  <div class="section1 bk-gray mb-5 pb-5">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 pt-5 pl-100">
+          <ngx-skeleton-loader
+            count="5"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ height: '35px', 'margin-top': '12px' }"
+          ></ngx-skeleton-loader>
+          <div *ngIf="!loader">
+            <h3 *ngIf="quienesSomos_data.title" class="title-h3 pb-3">
+              {{ quienesSomos_data.title.rendered }}
+            </h3>
+            <p
+              *ngIf="quienesSomos_data.content"
+              class="txt-normal text-justify"
+              [innerHTML]="quienesSomos_data.content.rendered"
+            ></p>
+          </div>
         </div>
-    </div>
-    <div class="section2 bk-white pt-5 pb-5 mb-5" id="video-institucional">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 wow animate__animated animate__fadeInLeft">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'335px' }"></ngx-skeleton-loader>
-                    <div *ngIf="!loader">
-                        <iframe width="100%" height="315" [src]="urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-6 pl-5">
-                    <div id="video-institucional"></div>
-                    <ngx-skeleton-loader count="8" *ngIf="loader" animation="progress" [theme]="{height:'28px' }"></ngx-skeleton-loader>
-                    <div *ngIf="!loader">
-                        <div>
-                            <img *ngIf="quienesSomos_data.acf" class="pr-4" src="{{ quienesSomos_data.acf.icono_mision }}" alt="Misión">
-                            <h4 *ngIf="quienesSomos_data.acf" class="title-mision">{{ quienesSomos_data.acf.titulo_mision }}</h4>
-                        </div>
-                        <p *ngIf="quienesSomos_data.acf" class="txt-normal" [innerHTML]="quienesSomos_data.acf.descripcion_mision"></p>
-                        <br>
-                        <div>
-                            <img *ngIf="quienesSomos_data.acf" class="pr-4" src="{{ quienesSomos_data.acf.icono_vision }}" alt="Visión">
-                            <h4 *ngIf="quienesSomos_data.acf" class="title-mision">{{ quienesSomos_data.acf.titulo_vision }}</h4>
-                        </div>
-                            <p *ngIf="quienesSomos_data.acf" class="text-justify txt-normal" [innerHTML]="quienesSomos_data.acf.descripcion_vision"></p>
-                    </div>
-                </div>
-            </div>
+        <div class="col-xs-12 col-md-6 pr-0">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ height: '350px', 'margin-top': '50px' }"
+          ></ngx-skeleton-loader>
+          <div *ngIf="!loader">
+            <img
+              *ngIf="quienesSomos_data.acf"
+              class="float-right img-fluid d-inline-block wow animate__animated animate__fadeInRight"
+              src="{{ quienesSomos_data.acf.imagen }}"
+              alt="grupo"
+            />
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <div class="section2 bk-white pt-5 pb-5 mb-5" id="video-institucional">
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-xs-12 col-md-6 wow animate__animated animate__fadeInLeft"
+        >
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ height: '335px' }"
+          ></ngx-skeleton-loader>
+          <div *ngIf="!loader">
+            <iframe
+              width="100%"
+              height="315"
+              [src]="urlSafe"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 pl-5">
+          <div id="video-institucional"></div>
+          <ngx-skeleton-loader
+            count="8"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ height: '28px' }"
+          ></ngx-skeleton-loader>
+          <div *ngIf="!loader">
+            <div>
+              <img
+                *ngIf="quienesSomos_data.acf"
+                class="pr-4"
+                src="{{ quienesSomos_data.acf.icono_mision }}"
+                alt="Misión"
+              />
+              <h4 *ngIf="quienesSomos_data.acf" class="title-mision">
+                {{ quienesSomos_data.acf.titulo_mision }}
+              </h4>
+            </div>
+            <p
+              *ngIf="quienesSomos_data.acf"
+              class="txt-normal"
+              [innerHTML]="quienesSomos_data.acf.descripcion_mision"
+            ></p>
+            <br />
+            <div>
+              <img
+                *ngIf="quienesSomos_data.acf"
+                class="pr-4"
+                src="{{ quienesSomos_data.acf.icono_vision }}"
+                alt="Visión"
+              />
+              <h4 *ngIf="quienesSomos_data.acf" class="title-mision">
+                {{ quienesSomos_data.acf.titulo_vision }}
+              </h4>
+            </div>
+            <p
+              *ngIf="quienesSomos_data.acf"
+              class="text-justify txt-normal"
+              [innerHTML]="quienesSomos_data.acf.descripcion_vision"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
