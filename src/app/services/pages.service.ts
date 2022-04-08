@@ -5,13 +5,12 @@ import { GLOBAL } from './global';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PagesService {
-
   public url: string;
-  
-  // urlFormulario = 'https://testing.gane.com.co/api/wp-content/themes/gane/';
+
+  // urlFormulario = 'https://gane.com.co/api/wp-content/themes/gane/';
 
   private refresh: Subject<void>;
 
@@ -19,107 +18,107 @@ export class PagesService {
     this.url = GLOBAL.url;
   }
 
-  get refresh$(){
+  get refresh$() {
     return this.refresh;
   }
 
-  getQuienesSomos(): Observable<any>{
+  getQuienesSomos(): Observable<any> {
     return this._http.get(`${this.url}/pages/352/`);
   }
-  getPeriodicos(): Observable<any>{
+  getPeriodicos(): Observable<any> {
     return this._http.get(`${this.url}/pages/433/`);
   }
-  getFinancieros(): Observable<any>{
+  getFinancieros(): Observable<any> {
     return this._http.get(`${this.url}/pages/452/`);
   }
-  getPrivacidad(): Observable<any>{
+  getPrivacidad(): Observable<any> {
     return this._http.get(`${this.url}/pages/469/`);
   }
-  getRecargas(): Observable<any>{
+  getRecargas(): Observable<any> {
     return this._http.get(`${this.url}/pages/500/`);
   }
-  getSoat(): Observable<any>{
+  getSoat(): Observable<any> {
     return this._http.get(`${this.url}/pages/535/`);
   }
-  getGiros(): Observable<any>{
+  getGiros(): Observable<any> {
     return this._http.get(`${this.url}/pages/103/`);
   }
-  getJuegos(): Observable<any>{
+  getJuegos(): Observable<any> {
     return this._http.get(`${this.url}/pages/317/`);
   }
-  getBetplay(): Observable<any>{
+  getBetplay(): Observable<any> {
     return this._http.get(`${this.url}/pages/157/`);
   }
-  getPagos(): Observable<any>{
+  getPagos(): Observable<any> {
     return this._http.get(`${this.url}/pages/235/`);
   }
-  getBlog(): Observable<any>{
+  getBlog(): Observable<any> {
     return this._http.get(`${this.url}/pages/1294/`);
   }
-  getCampana(): Observable<any>{
+  getCampana(): Observable<any> {
     return this._http.get(`${this.url}/pages/1299/`);
   }
-  getQuienesSomosFundacion(): Observable<any>{
+  getQuienesSomosFundacion(): Observable<any> {
     return this._http.get(`${this.url}/pages/660/`);
   }
-  getAyudasSociales(): Observable<any>{
+  getAyudasSociales(): Observable<any> {
     return this._http.get(`${this.url}/pages/681/`);
   }
-  getPoliticasFundacion(): Observable<any>{
+  getPoliticasFundacion(): Observable<any> {
     return this._http.get(`${this.url}/pages/687/`);
   }
-  getEducacionContinuaFundacion(): Observable<any>{
+  getEducacionContinuaFundacion(): Observable<any> {
     return this._http.get(`${this.url}/pages/701/`);
   }
-  getSalud(): Observable<any>{
+  getSalud(): Observable<any> {
     return this._http.get(`${this.url}/pages/714/`);
   }
-  getVivienda(): Observable<any>{
+  getVivienda(): Observable<any> {
     return this._http.get(`${this.url}/pages/763/`);
   }
-  getRecreacion(): Observable<any>{
+  getRecreacion(): Observable<any> {
     return this._http.get(`${this.url}/pages/781/`);
   }
-  getPrimeraInfancia(): Observable<any>{
+  getPrimeraInfancia(): Observable<any> {
     return this._http.get(`${this.url}/pages/797/`);
   }
-  getCuidarte(): Observable<any>{
+  getCuidarte(): Observable<any> {
     return this._http.get(`${this.url}/pages/811/`);
   }
-  getEscuelaIniciacionDeportiva(): Observable<any>{
+  getEscuelaIniciacionDeportiva(): Observable<any> {
     return this._http.get(`${this.url}/pages/831/`);
   }
-  getRestaurante(): Observable<any>{
+  getRestaurante(): Observable<any> {
     return this._http.get(`${this.url}/pages/851/`);
   }
-  getAmericaCali(): Observable<any>{
+  getAmericaCali(): Observable<any> {
     return this._http.get(`${this.url}/pages/859/`);
   }
-  getInformesFundacion(): Observable<any>{
+  getInformesFundacion(): Observable<any> {
     return this._http.get(`${this.url}/pages/875/`);
   }
-  getPreguntasFrecuentes(): Observable<any>{
+  getPreguntasFrecuentes(): Observable<any> {
     return this._http.get(`${this.url}/pages/894/`);
   }
-  getPagoPremios(): Observable<any>{
+  getPagoPremios(): Observable<any> {
     return this._http.get(`${this.url}/pages/917/`);
   }
-  getSistemaGestionCalidad(): Observable<any>{
+  getSistemaGestionCalidad(): Observable<any> {
     return this._http.get(`${this.url}/pages/934/`);
   }
-  getCulturaAnticorrupcion(): Observable<any>{
+  getCulturaAnticorrupcion(): Observable<any> {
     return this._http.get(`${this.url}/pages/943/`);
   }
-  getCulturaAntilavado(): Observable<any>{
+  getCulturaAntilavado(): Observable<any> {
     return this._http.get(`${this.url}/pages/968/`);
   }
-  getLineaEtica(): Observable<any>{
+  getLineaEtica(): Observable<any> {
     return this._http.get(`${this.url}/pages/993/`);
   }
-  getGeneralFooter(): Observable<any>{
+  getGeneralFooter(): Observable<any> {
     return this._http.get(`${this.url}/pages/1031/`);
   }
-  getContactenos(): Observable<any>{
+  getContactenos(): Observable<any> {
     return this._http.get(`${this.url}/pages/1325/`);
   }
 
