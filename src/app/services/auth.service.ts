@@ -24,9 +24,15 @@ export class AuthService {
     const body = {
       fcha_rsltdo: fecha,
     };
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
     return this.auth.post(
       `${this.url}loteriasseguras/api/consultar/resultados/loterias`,
-      body
+      body,
+      {
+        headers: headers,
+      }
     );
   }
 }
