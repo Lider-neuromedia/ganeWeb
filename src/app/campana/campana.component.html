@@ -1,39 +1,94 @@
 <div class="campana-interna_pagina">
-    <div class="bk-gray pt-5 pb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ 'width':'100%',height:'300px' }"></ngx-skeleton-loader>
-                    <div *ngIf="!loader">
-                        <img *ngIf="campana_data.acf" class="w-100" src="{{ campana_data.acf.imagen_interna }}" alt="Campana Banner">
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <ngx-skeleton-loader count="7" *ngIf="loader" animation="progress" [theme]="{ 'width':'100%',height:'30px' }"></ngx-skeleton-loader>
-                    <div *ngIf="!loader">
-                        <h2 *ngIf="campana_data.title" class="size35 color-title font-weight-700">{{ campana_data.title.rendered }}</h2>
-                        <p *ngIf="campana_data.acf" class="color-title"><span class="font-weight-700"><i class="far fa-clock"></i> Inicia:</span> {{ campana_data.acf.fecha_de_inicio | date:'fullDate' | titlecase }}<br>
-                        <span class="font-weight-700"><i class="far fa-clock"></i> Finaliza:</span> {{ campana_data.acf.fecha_fin | date:'fullDate' | titlecase }}</p>
-                        <div *ngIf="campana_data.acf">
-                            <h5 *ngIf="campana_data.acf.estado === 'Vigente'" >
-                                <span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1 mr-3">{{ campana_data.acf.estado }}</span>
-                                <a class="btn-yellow-outline font-weight-bold size14 p-2 mt-3" href="{{ campana_data.acf.url_de_la_campana }}" target="blank_">Ir a la campaña</a>
-                            </h5>
-                            <h5 *ngIf="campana_data.acf.estado === 'Terminada'">
-                                <span class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1 mr-3">{{ campana_data.acf.estado }}</span>
-                                <a class="btn-yellow-outline font-weight-bold size14 p-2 mt-3" (click)="errorCampana()">Ir a la campaña</a>
-                            </h5>
-                            <br>
-                            <div class="bg-white p-3">
-                                <h4 class="pb-2">Términos y condiciones</h4>
-                                <div *ngIf="campana_data.acf" class="size15 letter-spacing1-01" [innerHTML]="campana_data.acf.terminos_y_condiciones"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="bk-gray pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ width: '100%', height: '300px' }"
+          ></ngx-skeleton-loader>
+          <div *ngIf="!loader">
+            <img
+              *ngIf="campana_data.acf"
+              class="w-100"
+              src="{{ campana_data.acf.imagen_interna }}"
+              alt="Campana Banner"
+            />
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <ngx-skeleton-loader
+            count="7"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ width: '100%', height: '30px' }"
+          ></ngx-skeleton-loader>
+          <div *ngIf="!loader">
+            <h2
+              *ngIf="campana_data.title"
+              class="size35 color-title font-weight-700"
+            >
+              {{ campana_data.title.rendered }}
+            </h2>
+            <p *ngIf="campana_data.acf" class="color-title">
+              <span class="font-weight-700"
+                ><i class="far fa-clock"></i> Inicia:</span
+              >
+              {{
+                campana_data.acf.fecha_de_inicio | date: "fullDate" | titlecase
+              }}<br />
+              <span class="font-weight-700"
+                ><i class="far fa-clock"></i> Finaliza:</span
+              >
+              {{ campana_data.acf.fecha_fin | date: "fullDate" | titlecase }}
+            </p>
+            <div *ngIf="campana_data.acf">
+              <h5 *ngIf="campana_data.acf.estado === 'Vigente'">
+                <span
+                  class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1 mr-3"
+                  >{{ campana_data.acf.estado }}</span
+                >
+                <a
+                  class="btn-yellow-outline font-weight-bold size14 p-2 mt-3"
+                  href="{{ campana_data.acf.url_de_la_campana }}"
+                  target="blank_"
+                  >Ir a la campaña</a
+                >
+              </h5>
+              <h5 *ngIf="campana_data.acf.estado === 'Terminada'">
+                <span
+                  class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1 mr-3"
+                  >{{ campana_data.acf.estado }}</span
+                >
+                <a
+                  class="btn-yellow-outline font-weight-bold size14 p-2 mt-3"
+                  (click)="errorCampana()"
+                  >Ir a la campaña</a
+                >
+              </h5>
+              <br />
+              <div class="bg-white p-3">
+                <h4 class="pb-2">Términos y condiciones</h4>
+                <div
+                  *ngIf="campana_data.acf"
+                  class="size15 letter-spacing1-01"
+                  [innerHTML]="campana_data.acf.terminos_y_condiciones"
+                ></div>
+              </div>
             </div>
-            <ngx-skeleton-loader class="mt-5" count="5" *ngIf="loader" animation="progress" [theme]="{ 'width':'100%',height:'30px' }"></ngx-skeleton-loader>
-            <!-- <div class="row mt-5">
+          </div>
+        </div>
+      </div>
+      <ngx-skeleton-loader
+        class="mt-5"
+        count="5"
+        *ngIf="loader"
+        animation="progress"
+        [theme]="{ width: '100%', height: '30px' }"
+      ></ngx-skeleton-loader>
+      <!-- <div class="row mt-5">
                 <div *ngIf="!loader" class="">
                     <ul class="nav nav-tabs tabs-campana" id="myTab" role="tablist">
                         <li class="nav-item">
@@ -97,70 +152,135 @@
                     </div>
                 </div>
             </div> -->
-        </div>
     </div>
-    <div class="bk-white pt-5 pb-5">
-        <div class="container">
-            <div>
-                <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{'width':'100%', 'height':'235px', 'border-radius':'12px' }"></ngx-skeleton-loader>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="color-title font-weight-700 text-center pb-4">Otras Campañas</h2>
-                </div>
-                <div *ngIf="!loader" class="col-sm-3">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#/campana-interna"><img class="card-img-top" src="./assets/home/SECCION-6/campana4PNG.png" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                            <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
-                            <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                            <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#/campana-interna" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#"><img class="card-img-top" src="./assets/home/SECCION-6/campana3PNG.png" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                            <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
-                            <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                            <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#"><img class="card-img-top" src="./assets/home/SECCION-6/campana1PNG.png" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                            <h5><span class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1">Vigente</span></h5>
-                            <small class="text-blue"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                            <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card border-0 card-shadow-hover">
-                        <a href="#"><img class="card-img-top" src="./assets/home/SECCION-6/campana2PNG.png" alt="Card image cap"></a>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-blue font-weight-bold">Un minuto para ganar</h5>
-                            <h5><span class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1">Terminada</span></h5>
-                            <small class="text-blue mb-2"><i class="far fa-clock"></i> Lunes 03 de Octubre de 2020</small>
-                            <p class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue">Participa con chances de $1000 en adelante</p>
-                            <p class="size14 line-height1-4 text-blue mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus praesentium.</p>
-                            <a href="#" class="size13 text-yellow">Más información <i class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <div class="bk-white pt-5 pb-5">
+    <div class="container">
+      <div>
+        <ngx-skeleton-loader
+          class="d-flex"
+          count="4"
+          *ngIf="loader"
+          animation="progress"
+          appearance="circle"
+          [theme]="{ width: '100%', height: '235px', 'border-radius': '12px' }"
+        ></ngx-skeleton-loader>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="color-title font-weight-700 text-center pb-4">
+            Otras Campañas
+          </h2>
         </div>
+        <section class="section6 mt-5">
+          <div class="container pb-5 pt-2">
+            <ngx-skeleton-loader
+              class="d-flex pt-5"
+              count="1"
+              *ngIf="loader"
+              animation="progress"
+              appearance="circle"
+              [theme]="{
+                width: '100%',
+                height: '35px',
+                'border-radius': '10px',
+                'padding-top': '35px'
+              }"
+            ></ngx-skeleton-loader>
+            <ngx-skeleton-loader
+              class="d-flex"
+              count="4"
+              *ngIf="loader"
+              animation="progress"
+              appearance="circle"
+              [theme]="{
+                width: '100%',
+                height: '250px',
+                'border-radius': '10px'
+              }"
+            ></ngx-skeleton-loader>
+            <h1 *ngIf="!loader" class="text-center text-blue mb-4">
+              Experiencias que te harán ganar
+            </h1>
+            <div
+              *ngIf="!loader"
+              class="row wow animate__animated animate__fadeInUp"
+            >
+              <ng-container
+                *ngFor="
+                  let campanas of campanas_data | slice: 0:4;
+                  let i = index
+                "
+              >
+                <div class="col-sm-12 col-md-3">
+                  <div class="card border-0 card-shadow-hover">
+                    <a
+                      (click)="verCampana(campanas.slug)"
+                      *ngIf="campanas.acf.imagen_destacada == null"
+                    >
+                      <p class="text-center pt-2 pb-2">
+                        <i
+                          class="far fa-image text-gray d-block w-100"
+                          style="font-size: 8em"
+                        ></i>
+                        <span
+                          ><em class="text-gray">Imagen no disponible</em></span
+                        >
+                      </p>
+                    </a>
+                    <a
+                      (click)="verCampana(campanas.slug)"
+                      *ngIf="campanas.acf.imagen_destacada != null"
+                    >
+                      <img
+                        class="card-img-top"
+                        src="{{ campanas.acf.imagen_destacada }}"
+                        alt="Card image cap"
+                      />
+                    </a>
+                    <div class="card-body p-2">
+                      <h5 class="card-title text-blue font-weight-bold">
+                        {{ campanas.title.rendered }}
+                      </h5>
+                      <h5 *ngIf="campanas.acf.estado === 'Vigente'">
+                        <span
+                          class="badge badge-warning text-white font-weight-normal pr-3 pl-3 pb-1"
+                          >{{ campanas.acf.estado }}</span
+                        >
+                      </h5>
+                      <h5 *ngIf="campanas.acf.estado === 'Terminada'">
+                        <span
+                          class="badge badge-success text-white font-weight-normal pr-3 pl-3 pb-1"
+                          >{{ campanas.acf.estado }}</span
+                        >
+                      </h5>
+                      <small class="text-blue"
+                        ><i class="far fa-clock"></i>
+                        {{
+                          campanas.acf.fecha_de_inicio
+                            | date: "fullDate"
+                            | titlecase
+                        }}</small
+                      >
+                      <p
+                        class="size16 card-text mb-1 font-weight-bold line-height1-4 text-blue"
+                      >
+                        {{ campanas.acf.sub_titulo }}
+                      </p>
+                      <a
+                        (click)="verCampana(campanas.slug)"
+                        class="size13 text-yellow"
+                        >Más información
+                        <i class="fas fa-long-arrow-alt-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
+  </div>
 </div>

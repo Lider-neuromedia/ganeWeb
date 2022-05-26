@@ -46,7 +46,7 @@
                   name="monto"
                   [(ngModel)]="monto"
                   placeholder="Monto"
-                  (keyup)="llenarFiltro()"
+                  (keyup.enter)="puntosMapa(srvGlobal)"
                 />
               </div>
             </div>

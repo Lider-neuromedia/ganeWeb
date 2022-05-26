@@ -1,128 +1,308 @@
 <div class="soat_pagina pb-5">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-xs-12 col-md-7 pt-3 pl-100">
-                <div class="first-section-wrapper">
-                    <div class="gravatar">
-                        <ngx-skeleton-loader appearance="circle" *ngIf="loader" animation="progress" [theme]="{ width: '80px', height: '80px' }">
-                        </ngx-skeleton-loader>
-                    </div>
-                    <div class="gravatar-title">
-                        <div>
-                            <ngx-skeleton-loader *ngIf="loader" animation="progress" [theme]="{
-                            width: '200px',
-                            'border-radius': '0',
-                            height: '15px',
-                            'margin-bottom': '10px'
-                            }"></ngx-skeleton-loader>
-                        </div>
-                        <div>
-                            <ngx-skeleton-loader *ngIf="loader" animation="progress" [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }">
-                            </ngx-skeleton-loader>
-                        </div>
-                    </div>
-                </div>
-                <div *ngIf="!loader" class="title-w-image">
-                    <img *ngIf="soat_data.acf" class="mr-3 mt-n70" src="{{ soat_data.acf.icono }}" alt="Soat">
-                    <h3 *ngIf="soat_data.acf" class="title35 mt-3 mb-3 d-inline-block pb-3" [innerHTML]="soat_data.acf.titulo"></h3>
-                </div>
-                <ngx-skeleton-loader *ngIf="loader" count="5" animation="progress"></ngx-skeleton-loader>
-                <div *ngIf="!loader">
-                    <p *ngIf="soat_data.acf" class="text-justify mb-5" [innerHTML]="soat_data.acf.contenido"></p>
-                    <p *ngIf="soat_data.acf" class="font-weight-700 text-uppercase">{{ soat_data.acf.subtitulo }}</p>
-                    <a *ngIf="soat_data.acf" class="text-uppercase color-title pb-3 d-block" href="{{ soat_data.acf.archivo.url }}" target="blank_"><u>{{ soat_data.acf.texto_boton }}</u></a>
-                </div>
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-xs-12 col-md-7 pt-3 pl-100">
+        <div class="first-section-wrapper">
+          <div class="gravatar">
+            <ngx-skeleton-loader
+              appearance="circle"
+              *ngIf="loader"
+              animation="progress"
+              [theme]="{ width: '80px', height: '80px' }"
+            >
+            </ngx-skeleton-loader>
+          </div>
+          <div class="gravatar-title">
+            <div>
+              <ngx-skeleton-loader
+                *ngIf="loader"
+                animation="progress"
+                [theme]="{
+                  width: '200px',
+                  'border-radius': '0',
+                  height: '15px',
+                  'margin-bottom': '10px'
+                }"
+              ></ngx-skeleton-loader>
             </div>
-            <div class="col-xs-12 col-md-5 pr-0">
-                <ngx-skeleton-loader appearance="circle" *ngIf="loader" animation="progress" [theme]="{ 'width': '200px', height: '200px', 'border-radius': '10px'}">
-                </ngx-skeleton-loader>
-                <div *ngIf="!loader">
-                    <img *ngIf="soat_data.acf" class="w-100 d-inline-block wow animate__animated animate__fadeInRight" src="{{ soat_data.acf.imagen }}" alt="SoatMain">
-                </div>
+            <div>
+              <ngx-skeleton-loader
+                *ngIf="loader"
+                animation="progress"
+                [theme]="{
+                  width: '170px',
+                  'border-radius': '0',
+                  height: '15px'
+                }"
+              >
+              </ngx-skeleton-loader>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-Soat">
-                    <div class="row">
-                        <div class="formulario-soat">
-                            <form (ngSubmit)="enviarSoatFecha(formSoat)" #formSoat="ngForm" id="formularioSoat" class="form-soat">
-                                <div class="row">
-                                    <div class="col-md-12 mb-4">
-                                        <h3 class="text-center text-blue font-weight-700 size24">¡Te recordamos cuando debes renovar tu SOAT!</h3>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-row pt-2 pb-2">
-                                            <label class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 nombre" for="nombre">Nombre completo</label>
-                                            <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="usersoat.nombre" required>
-                                            <small *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-                                                Nombre es un campo requerido.
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-row pt-2 pb-2">
-                                            <label class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 cedula" for="cedula">Cédula de ciudadanía</label>
-                                            <input type="number" class="form-control" id="cedula" name="cedula" #cedula="ngModel" [(ngModel)]="usersoat.cedula" required>
-                                            <small *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
-                                                Cédula es un campo requerido.
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-row pt-2 pb-2">
-                                            <label class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 placa" for="placa">Placa</label>
-                                            <input type="text" style="text-transform:uppercase;" class="form-control" id="placa" name="placa" #placa="ngModel" [(ngModel)]="usersoat.placa" required>
-                                            <small *ngIf="placa.invalid && (placa.dirty || placa.touched)">
-                                                Placa es un campo requerido.
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-row pt-2 pb-2">
-                                            <label class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 email" for="email">Correo electrónico</label>
-                                            <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="usersoat.email" email="true" required>
-                                            <small *ngIf="email.invalid && (email.dirty || email.touched)">
-                                                Email es un campo requerido.
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-row pt-2 pb-2">
-                                            <label class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 celular" for="celular">Celular</label>
-                                            <input type="tel" class="form-control" id="celular" name="celular" #celular="ngModel" [(ngModel)]="usersoat.celular" pattern="^\d+$" required>
-                                            <small *ngIf="celular.invalid && (celular.dirty || celular.touched)">
-                                                Celular es un campo requerido.
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-row pt-2 pb-2">
-                                            <label class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 vencimiento" for="vencimiento">Fecha de vencimiento</label>
-                                            <input type="date" class="form-control" id="vencimiento" name="vencimiento" #vencimiento="ngModel" [(ngModel)]="usersoat.vencimiento" required>
-                                            <small *ngIf="vencimiento.invalid && (vencimiento.dirty || vencimiento.touched)">
-                                                Fecha de vencimiento es un campo requerido.
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 mt-4 form-check text-center">
-                                        <input type="checkbox" name="acepto" #acepto="ngModel" [(ngModel)]="usersoat.acepto" class="form-check-input" required>
-                                        <label class="text-black size14 form-check-label">Conozco y acepto la política de tratamiento de datos de <STRONG><a class="text-black" href="./assets/tratamiento-datos/M-DM-05-Politicas-de-Tratamiento-de-Datos-Personales-v5.pdf" target="_blank">REDCOLSA.</a></STRONG></label>
-                                        <small *ngIf="acepto.invalid && (acepto.dirty || acepto.touched)">
-                                            Debe aceptar las condiciones.
-                                        </small>
-                                    </div>
-                                    <input type="submit" class="btn btn-primary btn-blue mt-4 w-200px mx-auto d-block" name="enviar" value="Enviar" [disabled]="formSoat.invalid">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div *ngIf="!loader" class="title-w-image">
+          <img
+            *ngIf="soat_data.acf"
+            class="mr-3 mt-n70"
+            src="{{ soat_data.acf.icono }}"
+            alt="Soat"
+          />
+          <h3
+            *ngIf="soat_data.acf"
+            class="title35 mt-3 mb-3 d-inline-block pb-3"
+            [innerHTML]="soat_data.acf.titulo"
+          ></h3>
         </div>
+        <ngx-skeleton-loader
+          *ngIf="loader"
+          count="5"
+          animation="progress"
+        ></ngx-skeleton-loader>
+        <div *ngIf="!loader">
+          <p
+            *ngIf="soat_data.acf"
+            class="text-justify mb-5"
+            [innerHTML]="soat_data.acf.contenido"
+          ></p>
+          <p *ngIf="soat_data.acf" class="font-weight-700 text-uppercase">
+            {{ soat_data.acf.subtitulo }}
+          </p>
+          <a
+            *ngIf="soat_data.acf"
+            class="text-uppercase color-title pb-3 d-block"
+            href="{{ soat_data.acf.archivo.url }}"
+            target="blank_"
+            ><u>{{ soat_data.acf.texto_boton }}</u></a
+          >
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-5 pr-0">
+        <ngx-skeleton-loader
+          appearance="circle"
+          *ngIf="loader"
+          animation="progress"
+          [theme]="{ width: '200px', height: '200px', 'border-radius': '10px' }"
+        >
+        </ngx-skeleton-loader>
+        <div *ngIf="!loader">
+          <img
+            *ngIf="soat_data.acf"
+            class="w-100 d-inline-block wow animate__animated animate__fadeInRight"
+            src="{{ soat_data.acf.imagen }}"
+            alt="SoatMain"
+          />
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-Soat">
+          <div class="row">
+            <div class="formulario-soat">
+              <form
+                (ngSubmit)="enviarSoatFecha(formSoat)"
+                #formSoat="ngForm"
+                id="formularioSoat"
+                class="form-soat"
+              >
+                <div class="row">
+                  <div class="col-md-12 mb-4">
+                    <h3 class="text-center text-blue font-weight-700 size24">
+                      ¡Te recordamos cuando debes renovar tu SOAT!
+                    </h3>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-row pt-2 pb-2">
+                      <label
+                        class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 nombre"
+                        for="nombre"
+                        >Nombre completo</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombre"
+                        name="nombre"
+                        #nombre="ngModel"
+                        [(ngModel)]="usersoat.nombre"
+                        required
+                      />
+                      <small
+                        *ngIf="
+                          nombre.invalid && (nombre.dirty || nombre.touched)
+                        "
+                      >
+                        Nombre es un campo requerido.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-row pt-2 pb-2">
+                      <label
+                        class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 cedula"
+                        for="cedula"
+                        >Cédula de ciudadanía</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="cedula"
+                        name="cedula"
+                        #cedula="ngModel"
+                        [(ngModel)]="usersoat.cedula"
+                        required
+                      />
+                      <small
+                        *ngIf="
+                          cedula.invalid && (cedula.dirty || cedula.touched)
+                        "
+                      >
+                        Cédula es un campo requerido.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-row pt-2 pb-2">
+                      <label
+                        class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 placa"
+                        for="placa"
+                        >Placa</label
+                      >
+                      <input
+                        type="text"
+                        style="text-transform: uppercase"
+                        class="form-control"
+                        id="placa"
+                        name="placa"
+                        #placa="ngModel"
+                        [(ngModel)]="usersoat.placa"
+                        required
+                      />
+                      <small
+                        *ngIf="placa.invalid && (placa.dirty || placa.touched)"
+                      >
+                        Placa es un campo requerido.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-row pt-2 pb-2">
+                      <label
+                        class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 email"
+                        for="email"
+                        >Correo electrónico</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        #email="ngModel"
+                        [(ngModel)]="usersoat.email"
+                        email="true"
+                        required
+                      />
+                      <small
+                        *ngIf="email.invalid && (email.dirty || email.touched)"
+                      >
+                        Email es un campo requerido.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-row pt-2 pb-2">
+                      <label
+                        class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 celular"
+                        for="celular"
+                        >Celular</label
+                      >
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="celular"
+                        name="celular"
+                        #celular="ngModel"
+                        [(ngModel)]="usersoat.celular"
+                        pattern="^\d+$"
+                        required
+                      />
+                      <small
+                        *ngIf="
+                          celular.invalid && (celular.dirty || celular.touched)
+                        "
+                      >
+                        Celular es un campo requerido.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-row pt-2 pb-2">
+                      <label
+                        class="size14 letter-spacing0-4 line-height17 text-black font-weight-400 vencimiento"
+                        for="vencimiento"
+                        >Fecha de vencimiento</label
+                      >
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="vencimiento"
+                        name="vencimiento"
+                        #vencimiento="ngModel"
+                        [(ngModel)]="usersoat.vencimiento"
+                        required
+                      />
+                      <small
+                        *ngIf="
+                          vencimiento.invalid &&
+                          (vencimiento.dirty || vencimiento.touched)
+                        "
+                      >
+                        Fecha de vencimiento es un campo requerido.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 mt-4 form-check text-center">
+                    <input
+                      type="checkbox"
+                      name="acepto"
+                      #acepto="ngModel"
+                      [(ngModel)]="usersoat.acepto"
+                      class="form-check-input"
+                      required
+                    />
+                    <label class="text-black size14 form-check-label"
+                      >Conozco y acepto la política de tratamiento de datos de
+                      <STRONG
+                        ><a
+                          class="text-black"
+                          href="https://www.gane.com.co/api/wp-content/uploads/2022/04/M-DM-05-Poli%CC%81tica-de-Tratamiento-de-Datos-Personales-v7.pdf"
+                          target="_blank"
+                          >REDCOLSA.</a
+                        ></STRONG
+                      ></label
+                    >
+                    <small
+                      *ngIf="acepto.invalid && (acepto.dirty || acepto.touched)"
+                    >
+                      Debe aceptar las condiciones.
+                    </small>
+                  </div>
+                  <input
+                    type="submit"
+                    class="btn btn-primary btn-blue mt-4 w-200px mx-auto d-block"
+                    name="enviar"
+                    value="Enviar"
+                    [disabled]="formSoat.invalid"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
