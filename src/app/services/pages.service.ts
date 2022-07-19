@@ -44,7 +44,7 @@ export class PagesService {
     return this._http.get(`${this.url}/pages/103/`);
   }
   getJuegos(): Observable<any> {
-    return this._http.get(`${this.url}/pages/317/`);
+    return this._http.get(`${this.url}/pages/1952/`);
   }
   getBetplay(): Observable<any> {
     return this._http.get(`${this.url}/pages/157/`);
